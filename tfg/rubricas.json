@@ -1,0 +1,8 @@
+{
+  "N1": "Rúbrica NAVEGAR (N1 - Estructura): Identificar ubicación de información (menús, pies de página). Criterios: Precisión al señalar la sección correcta.",
+  "N2": "Rúbrica NAVEGAR (N2 - Relevancia): Filtrar información. Criterios: Distinguir información relevante de distractores.",
+  "E1": "Rúbrica EVALUAR (E1 - Características): Identificar metadatos (Autor, Fecha, Tipo). Criterios: Precisión en la extracción de datos.",
+  "E2": "Rúbrica EVALUAR (E2 - Intención/Expertise): Juzgar credibilidad. Criterios: Detectar sesgos y cualificación del autor.",
+  "I1": "Rúbrica INTEGRAR (I1 - Complementaria): Sintetizar fuentes. Para Resúmenes: 1 pto Introducción, 1 pto Idea Texto A, 1 pto Idea Texto B, 2 ptos Síntesis Conjunta.",
+  "I2": "Rúbrica INTEGRAR (I2 - Contradicción): Manejar conflicto. Criterios: Identificar en qué discrepan las fuentes y por qué."
+}

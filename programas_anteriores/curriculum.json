@@ -1,0 +1,55 @@
+{
+  "ciencias": {
+    "sesion1": [
+      {
+        "task_id": "ciencias_s1_t1",
+        "task_type": "resumen",
+        "task_prompt": "Antes de leer el resto del artículo, ¿puedes resumir la sección «Presas»? He resaltado el párrafo que debes resumir:\\nPresas\\nLas presas son muros gigantescos que retienen grandes cantidades de agua. En esencia, el muro detiene el caudal de un río y almacena el agua en un lago artificial llamado embalse. El agua almacenada en el embalse entra en la presa a través de una tubería llamada tubería forzada. La tubería forzada es de acero y puede tener 9 metros o más de diámetro. Es como un gran túnel de agua. El agua corre muy deprisa por la tubería forzada y aumenta rápidamente la presión.\\nDirectrices:\\nUn buen resumen tiene las siguientes cualidades:\\n- Debe incluir todas las ideas principales del texto y sólo las ideas principales.\\n- No debe incluir opiniones ni información ajenas al texto, aunque sean correctas.\\n- Debe estar escrito con tus propias palabras; no te limites a copiar frases del texto."
+      },
+      {
+        "task_id": "ciencias_s1_t2",
+        "task_type": "respuesta_corta",
+        "task_prompt": "En una frase, explica con tus propias palabras cómo se transforma la energía del agua en electricidad dentro de una central hidroeléctrica. Recuerda mencionar los elementos principales: presa, turbina y generador."
+      },
+      {
+        "task_id": "ciencias_s1_t3",
+        "task_type": "v_o_f",
+        "task_prompt": "Indica si las siguientes afirmaciones son Verdaderas (V) o Falsas (F):\\n1. Las centrales hidroeléctricas funcionan gracias al viento.\\n2. El agua que pasa por la presa hace girar una turbina.\\n3. Las presas crean un embalse donde se almacena el agua.\\n4. La energía hidroeléctrica produce contaminación por mercurio.\\n5. Las turbinas pueden causar la muerte de peces.\\n6. La energía hidroeléctrica se utiliza principalmente en zonas con ríos caudalosos.\\n7. El generador convierte la energía mecánica en electricidad.",
+        "correct_answer": [
+          "F",
+          "V",
+          "V",
+          "F",
+          "V",
+          "V",
+          "V"
+        ]
+      },
+      {
+        "task_id": "ciencias_s1_t4",
+        "task_type": "multiple",
+        "task_prompt": "He creado una sección de «Preguntas frecuentes» para el sitio web. Aquí están las preguntas que he escrito hasta ahora basándome en lo que leímos en el artículo.\\n¿A qué pregunta ayuda a responder el artículo?\\n\\n¿Tienen las centrales hidroeléctricas algún efecto negativo sobre el medio ambiente?\\n¿Cuántas presas hay en California, Oregón y Washington?\\n¿Dónde se encuentran la mayoría de las grandes centrales hidroeléctricas?\\n¿Qué empresas fabrican las mejores turbinas hidráulicas?",
+        "correct_answer": [
+          "C"
+        ]
+      },
+      {
+        "task_id": "ciencias_s1_t5",
+        "task_type": "clasificacion",
+        "task_prompt": "Clasifiquemos cada afirmación según describa una turbina de agua, una hélice de barco o ambas cosas.\\nTiene aspas que giran al ser empujadas por el agua\\nTiene cuchillas y un eje.\\nSe utiliza en el agua.\\nTiene cuchillas giratorias movidas por un motor.",
+        "correct_answer": [
+          "C",
+          "C",
+          "C",
+          "B"
+        ]
+      },
+{
+        "task_id": "ciencias_s1_t7",
+        "task_type": "v_y_d",
+        "task_prompt": "Completa la tabla con las ventajas y desventajas de la energía hidroeléctrica, basándote en el texto."
+      }
+    ]
+  }
+}
+		

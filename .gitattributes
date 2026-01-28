@@ -1,0 +1,12 @@
+# Normaliza texto a LF en el repositorio (ideal para Linux)
+* text=auto eol=lf
+
+# Evita que Git trate estos como texto (para no tocar EOL ni “arreglar” contenido)
+*.ipynb -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.pdf -text
+*.zip -text
+*.drawio -text

@@ -1,0 +1,109 @@
+{
+  "competencia_digital": {
+    "sesion1": [
+      {
+        "task_id": "dig_s1_t01",
+        "task_type": "multiple",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Estructura del texto",
+        "task_text": "",
+        "task_prompt": "Lee los mensajes del foro y contesta: ¿Quién ha sido el último en responder?\na) Lolo223\nb) Ameliaxd\nc) Garcíafuentes\nd) Pabloroco2",
+        "correct_answer": ["d"]
+      },
+      {
+        "task_id": "dig_s1_t02",
+        "task_type": "multiple",
+        "strategy": "navegar",
+        "sub_strategy": "N2",
+        "description": "Información relevante",
+        "task_text": "",
+        "task_prompt": "Accede a la sección 2.1. Fauna y flora afectada y contesta a la siguiente pregunta: ¿Qué especie se encuentra en peligro de extinción?\na) Lince ibérico\nb) Jabalí\nc) Lagartija\nd) Lobo",
+        "correct_answer": ["a"]
+      },
+      {
+        "task_id": "dig_s1_t03",
+        "task_type": "multiple",
+        "strategy": "navegar",
+        "sub_strategy": "N2",
+        "description": "Información relevante (Voluntariado)",
+        "task_text": "",
+        "task_prompt": "Te gustaría hacer un voluntariado... accede al apartado de 'Oferta de voluntariados' y selecciona qué información debes aportar:\na) Nombre, dirección, DNI...\nb) Carta de recomendación.\nc) Datos personales, disponibilidad y motivación.\nd) Solo el país donde deseas realizar el voluntariado.",
+        "correct_answer": ["c"]
+      },
+      {
+        "task_id": "dig_s1_t04",
+        "task_type": "selection_hotspot",
+        "strategy": "navegar",
+        "sub_strategy": "N2",
+        "description": "Ubicar información en interfaz",
+        "task_text": "",
+        "task_prompt": "¿En qué apartado de la siguiente página web puedes encontrar la información necesaria para conocer la fauna y la flora?\na) 'Medio ambiente' o sección equivalente\nb) 'Noticias deportivas'\nc) 'Tarifas o precios'\nd) 'Preguntas frecuentes sobre productos'",
+        "correct_answer": ["a"]
+      },
+      {
+        "task_id": "dig_s1_t05",
+        "task_type": "tabla_completion",
+        "strategy": "evaluar",
+        "sub_strategy": "E1",
+        "description": "Identificar características de la fuente",
+        "task_text": "",
+        "task_prompt": "Has realizado una búsqueda y obtenido 2 resultados. Completa la tabla identificando Autor, Tipo de documento y Fecha para cada uno.",
+        "correct_answer": {
+          "resultado_1": {"autor": "Ministerio", "tipo": "Informe oficial", "fecha": "2023"},
+          "resultado_2": {"autor": "Blog personal", "tipo": "Opinión", "fecha": "2020"}
+        }
+      },
+      {
+        "task_id": "dig_s1_t06",
+        "task_type": "short_answer_objective",
+        "strategy": "evaluar",
+        "sub_strategy": "E1",
+        "description": "Identificar autor/fecha",
+        "task_text": "",
+        "task_prompt": "De la siguiente fuente, identifica el autor, el tipo de documento y la fecha de publicación.",
+        "correct_answer": ["Juan Pérez", "Artículo de noticia", "12 de mayo 2024"]
+      },
+      {
+        "task_id": "dig_s1_t07",
+        "task_type": "multiple",
+        "strategy": "evaluar",
+        "sub_strategy": "E2",
+        "description": "Interpretar la fuente (Expertise)",
+        "task_text": "",
+        "task_prompt": "¿Qué autor de las siguientes búsquedas consideras que tiene la mayor experiencia en el tema?\na) El autor del blog de cocina\nb) El catedrático de universidad\nc) El usuario anónimo del foro\nd) El periodista deportivo",
+        "correct_answer": ["b"]
+      },
+      {
+        "task_id": "dig_s1_t08",
+        "task_type": "multiple",
+        "strategy": "integrar",
+        "sub_strategy": "I1",
+        "description": "Información complementaria",
+        "task_text": "",
+        "task_prompt": "Lee las webs A y B. ¿Cuál de las siguientes afirmaciones recoge la información esencial combinada de las dos páginas?\na) Solo la web A es importante.\nb) Ambas webs coinciden en que el ejercicio es saludable, pero la B añade ejemplos prácticos.\nc) La web B contradice a la A.\nd) Ninguna de las anteriores.",
+        "correct_answer": ["b"]
+      },
+      {
+        "task_id": "dig_s1_t09",
+        "task_type": "resumen_integrado",
+        "strategy": "integrar",
+        "sub_strategy": "I1",
+        "description": "Resumen de síntesis",
+        "task_text": "",
+        "task_prompt": "Lee los dos textos y elabora un breve resumen sobre 'El uso de la IA en educación'. Debes incluir: 1. Introducción. 2. Idea del texto 1. 3. Idea del texto 2. 4. Idea conjunta.",
+        "rubric_special_instructions": "Puntuación estricta según PDF: Introducción (1 pto), Idea Texto 1 (1 pto), Idea Texto 2 (1 pto), Idea Conjunta/Síntesis (2 ptos). Total 5 ptos."
+      },
+      {
+        "task_id": "dig_s1_t10",
+        "task_type": "short_answer_objective",
+        "strategy": "integrar",
+        "sub_strategy": "I2",
+        "description": "Información contradictoria",
+        "task_text": "",
+        "task_prompt": "Tras leer los siguientes textos, ¿En cuál de los dos están a favor de la prohibición de móviles?",
+        "correct_answer": ["texto 1"]
+      }
+    ]
+  }
+}
