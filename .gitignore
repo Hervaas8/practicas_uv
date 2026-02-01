@@ -22,4 +22,7 @@ Thumbs.db
 
 # Logs / outputs
 *.log
-outputs/
+outputs/# Loophole CLI (binario y paquetes)
+tools/loophole/loophole
+tools/loophole/*.tar.gz
+tools/loophole/*.zip
