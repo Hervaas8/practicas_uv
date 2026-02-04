@@ -5,7 +5,7 @@
 HOSTNAME_DESEADO="proyecto-psicologia" 
 
 # Tu puerto (DEBE ser el mismo que uses en tu código Python)
-PORT=7870
+PORT=8501
 
 # Carpeta de tu entorno virtual
 VENV_DIR=".venv"
@@ -18,7 +18,7 @@ PID=$(lsof -t -i:$PORT)
 if [ -n "$PID" ]; then
   kill -9 $PID
 fi
-pkill -f loophole
+pkill -f "./tools/loophole/loophole" || true
 
 
 # 2. Activar entorno virtual
@@ -30,7 +30,7 @@ fi
 # 3. Lanzar la aplicación Python en segundo plano con nohup
 # El uso de -u es para que los logs se escriban al instante
 echo "🚀 Lanzando aplicación Python..."
-nohup python3 -u main.py > app_output.log 2>&1 &
+nohup streamlit run app.py \ --server.port 8501 \ --server.address 127.0.0.1 \ --server.headless true \ --server.enableCORS false \ --server.enableXsrfProtection false > app_output.log 2>&1 &
 
 # Esperar a que la app esté lista localmente antes de abrir el túnel
 echo "⏳ Esperando a que la web app arranque en el puerto $PORT..."
@@ -42,8 +42,8 @@ echo "✅ App online."
 
 # 4. Lanzar el túnel de Loophole para abrir la web al exterior
 # Asume que el binario 'loophole' está en la misma carpeta
-if [ -f "./loophole" ]; then
-    nohup ./loophole http $PORT --hostname $HOSTNAME_DESEADO > tunnel_output.log 2>&1 &
+if [ -f "./tools/loophole/loophole" ]; then
+    nohup ./tools/loophole/loophole http $PORT --hostname $HOSTNAME_DESEADO > tunnel_output.log 2>&1 &
     echo "========================================================"
     echo "🎉 URL PÚBLICA: https://$HOSTNAME_DESEADO.loophole.site"
     echo "========================================================"
