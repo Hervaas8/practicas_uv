@@ -1,0 +1,461 @@
+{
+  "ciencias": {
+    "sesion1": [
+            {
+        "task_id": "cien_s1_t01",
+        "task_text": null,
+        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_prompt":"Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto.",
+        "task_type": "conectar",
+        "concepts": ["BIOTOPO", "BIOCENOSIS", "ECOLOGÍA", "ECOSISTEMA"],
+        "definitions": [
+    "Factores bióticos, componentes vivos y organismos que habitan un ecosistema",
+    "Ciencia que estudia las relaciones entre los diferentes seres vivos",
+    "Conjunto formado por seres vivos, el medio físico donde habitan y las relaciones que se establecen entre ellos",
+    "Ciencia que estudia las características de los seres vivos y los diferentes medios donde viven",
+    "Factores abióticos, componentes no vivos como el medio físico"
+  ],
+  "correct_mapping": {
+    "BIOTOPO": ["Factores abióticos, componentes no vivos como el medio físico"],
+    "BIOCENOSIS": ["Factores bióticos, componentes vivos y organismos que habitan un ecosistema"],
+    "ECOLOGÍA": [
+      "Ciencia que estudia las relaciones entre los diferentes seres vivos",
+      "Ciencia que estudia las características de los seres vivos y los diferentes medios donde viven"
+    ],
+    "ECOSISTEMA": ["Conjunto formado por seres vivos, el medio físico donde habitan y las relaciones que se establecen entre ellos"]
+  },
+        "strategy": "contenido",
+        "sub_strategy": null,
+        "description": "Conectar conceptos",        
+        "feedback": {
+            "success": "Tu resumen es completo y preciso. Has sintetizado bien las posturas enfrentadas.",
+            "failure": "Tu resumen está incompleto. Asegúrate de cubrir introducción, ventajas, desventajas y conclusión."
+}
+        
+
+      },
+      {
+        "task_id": "cien_s1_t02",
+        "task_prompt": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
+        "task_text": null,
+        "task_image": ["./data/img/sierra_calderona.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },{
+        "task_id": "cien_s1_t03",
+        "task_prompt": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
+        "task_text": null,
+        "task_image": ["./data/img/parque_natural.png"],
+        "regions": [
+              {
+                "x": 430, "y": 324, "w": 122, "h": 48, 
+                "is_correct": true,
+                "feedback_ok": "¡Correcto!."
+              }],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t04",
+        "task_text": null,
+        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_prompt":"Utiliza la información de los dos textos para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
+        "task_type": "v_y_d",
+        "strategy": "integrar",
+        "sub_strategy": "I1",
+        "description": "Ventajas y desventajas de dos noticias",
+
+        
+          "rubric": {
+          "Tiene al menos dos ventajas sobre el texto 1": 1,
+          "Tiene al menos dos ventajas sobre el texto 2": 1,
+          "Tiene al menos dos desventajas sobre el texto 1": 1,
+          "Tiene al menos dos desventajas sobre el texto 2": 1
+        },
+        
+        "feedback": {
+            "success": "Has completado la tabla adecuadamente.",
+            "failure": "No has completado la tabla de manera correcta"
+}
+        
+
+      },
+            {
+        "task_id": "cien_s1_t05",
+        "task_text": null,
+        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_prompt":"Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contraditoria?",
+        "task_type": "subjetivo",
+        "strategy": "integrar",
+        "sub_strategy": "I1",
+        "description": "Pregunta noticias",
+
+        
+          "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos."
+        ,
+        
+        "feedback": {
+            "success": "Correcto",
+            "failure": "Incorrecto"
+}
+        
+
+      },{
+        "task_id": "cien_s1_t06",
+        "task_text": null,
+        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_prompt":"Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿En qué están de acuerdo ambos textos?",
+        "task_type": "subjetivo",
+        "strategy": "integrar",
+        "sub_strategy": "I1",
+        "description": "Pregunta noticias 2",
+
+        
+          "rubric": "1 punto si menciona que los textos coinciden en alguno de los siguientes aspectos: 1.Ambos textos tratan el mismo proyecto (construcción del centro comercial);2.El proyecto tendrá un impacto relevante en el municipio;3.El centro comercial afectará al entorno económica, social o ambientalmente;4.Es una decisión importante para el futuro del municipio;5.Existen consecuencias positivas y/o negativas derivadas del proyecto;6.El proyecto genera interés y debate en la comunidad. 0 puntos si no lo hace"
+        ,
+        
+        "feedback": {
+            "success": "Correcto",
+            "failure": "Incorrecto"
+}
+        
+
+      },
+      {
+        "task_id": "cien_s1_t07",
+        "task_prompt": "Buscando en instagram he encontrado el siguiente post. Si haces click en los comentarios podrás ver todas las respuestas al post.",
+        "task_text": null,
+        "task_image": ["./data/img/mobil1.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+            {
+        "task_id": "cien_s1_t08",
+        "task_prompt": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:",
+        "task_text": null,
+        "task_image": ["./data/img/mobil1.png", "./data/img/mobil2.png"],
+        "task_type": "subjetivo",
+        "strategy": "evaluar",
+        "sub_strategy": "E1",
+        "description": "Identificar sección en web",
+        "rubric":{
+          "Dice que la postura de Elena es correcta": 1,
+          "Justifica correctamente porque la postura de Elena es correcta,(porque es importante contrastar información de más de una fuente, basarse en información de fuentes oficiales y de opiniones de expertos... con que diga una sirve)": 1
+        },
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+            {
+        "task_id": "cien_s1_t09",
+        "task_prompt": "Además, he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen!",
+        "task_text": null,
+        "task_image": ["./data/img/mobil2.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+                  {
+        "task_id": "cien_s1_t10",
+        "task_prompt": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n1.¿Cuántas respuestas tiene @Naturaviva en su comentario?\na)2\nb)3\nc)4\nd)0",
+        "task_text": null,
+        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_type": "objetivo",
+        "correct_answer": "c",
+        "strategy": "navegacion",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t11",
+        "task_prompt": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n2.¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
+        "task_text": null,
+        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_type": "objetivo",
+        "correct_answer": "c",
+        "strategy": "integracion",
+        "sub_strategy": "I1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t12",
+        "task_prompt": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
+        "task_text": null,
+        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_type": "objetivo",
+        "correct_answer": "d",
+        "strategy": "evaluacion",
+        "sub_strategy": "E1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t13",
+        "task_prompt": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 1: ¿De qué manera un ecosistema logra su autorregulación para mantener un equilibrio dinámico?\na) Manteniendo un número de individuos estrictamente fijo e inalterable en todas sus poblaciones.\nb) Mediante mecanismos que contrarrestan los cambios en las poblaciones, como la relación entre depredadores y presas.\nc) Eliminando por completo a los depredadores para permitir que las poblaciones de presas crezcan sin control.\nd) Dependiendo exclusivamente de la migración de especies hacia otros ecosistemas durante el invierno.",
+        "task_text": null,
+        "task_image": ["./data/img/video1.png"],
+        "task_type": "objetivo",
+        "correct_answer": "b",
+        "strategy": "contenido",
+        "sub_strategy": null,
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t14",
+        "task_prompt": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 2: ¿Cuál es el valor fundamental de la biodiversidad según su importancia ecológica y como fuente de recursos?\na) Su capacidad para garantizar que las poblaciones de seres vivos se mantengan estáticas y sin cambios evolutivos a lo largo del tiempo.\nb) Su papel esencial en el mantenimiento del equilibrio planetario, permitiendo la obtención de medicinas y alimentos, y regulando procesos como la captura de dióxido de carbono.\nc) El hecho de que la desaparición de una especie vegetal no tiene impacto sobre las poblaciones animales, ya que estas pueden adaptarse de inmediato.\nd) Su utilidad exclusiva para facilitar el crecimiento urbanístico y el desarrollo industrial sin restricciones en los ecosistemas naturales.",
+        "task_text": null,
+        "task_image": ["./data/img/video1.png"],
+        "task_type": "objetivo",
+        "correct_answer": "b",
+        "strategy": "contenido",
+        "sub_strategy": null,
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t15",
+        "task_prompt": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 3: ¿Cuál de las siguientes acciones humanas puede desencadenar un grave desequilibrio en un ecosistema?\na) La captura de dióxido de carbono y la emisión de oxígeno por parte de los vegetales.\nb) El proceso natural de evolución y adaptación de los seres vivos a lo largo de millones de años.\nc) El crecimiento urbanístico y el desarrollo industrial, que conllevan la destrucción de hábitats y la contaminación\nd) La obtención de medicamentos y materias primas de forma sostenible a partir de los seres vivos.",
+        "task_text": null,
+        "task_image": ["./data/img/video1.png"],
+        "task_type": "objetivo",
+        "correct_answer": "c",
+        "strategy": "contenido",
+        "sub_strategy": null,
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+        {"task_id": "cien_s1_t16",
+        "task_prompt": "Ahora vamos a volver a la página de la Generalitat Valenciana. ¿Accede al apartado conócenos para obtener información relevante sobre la fauna y la flora características de la Sierra Calderona?",
+        "task_text": null,
+        "task_image": ["./data/img/parque_natural.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }   
+      },
+      {"task_id": "cien_s1_t17",
+        "task_prompt": "Y dentro de “Conócenos”, accede al apartado “Naturaleza” para encontrar dicha información.",
+        "task_text": null,
+        "task_image": ["./data/img/generalitat.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }   
+      },
+            {"task_id": "cien_s1_t18",
+        "task_prompt": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información.",
+        "task_text": null,
+        "task_image": ["./data/img/generalitat.png"],
+        "regions": [
+              {
+                "x": 10, "y": 530, "w": 509, "h": 32, 
+                "is_correct": true, 
+                "feedback_ok": "Bien hecho."}],
+        "task_type": "interactivo",
+        "strategy": "navegar",
+        "sub_strategy": "N1",
+        "description": "Identificar sección en web",
+             "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }   
+      },
+      {
+        "task_id": "cien_s1_t19",
+        "task_prompt": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
+        "task_text": null,
+        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
+        "task_type": "objetivo",
+        "correct_answer": "c",
+        "strategy": "integracion",
+        "sub_strategy": "I1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t20",
+        "task_prompt": "Pregunta 2. ¿Qué información aparece en el texto largo y se refuerza en la infografía como indicador de la calidad del agua?\n\na)La presencia del Lagarto ocelado.\nb)La actividad de ciertos invertebrados acuáticos.\nc)La migración de aves rapaces. d)La abundancia de jabalíes y corzos.",
+        "task_text": null,
+        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
+        "task_type": "objetivo",
+        "correct_answer": "b",
+        "strategy": "integracion",
+        "sub_strategy": "I1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t21",
+        "task_prompt": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común.",
+        "task_text": null,
+        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
+        "task_type": "objetivo",
+        "correct_answer": "c",
+        "strategy": "integracion",
+        "sub_strategy": "I1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      },
+      {
+        "task_id": "cien_s1_t22",
+        "task_prompt": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
+        "task_text": null,
+        "task_image": ["./data/img/web.png"],
+        "task_type": "subjetivo",
+        "strategy": "evaluacion",
+        "sub_strategy": "E1",
+        "description": "Identificar sección en web",
+        "rubric":{
+          "Dice que no esta de acuerdo con Jaime": 1,
+          "Dice que acudiria a la pagina de la Facultad de Ciencias Ambientales": 1
+        },
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      }
+      ,
+      {
+        "task_id": "cien_s1_t23",
+        "task_prompt": "Elige el orden correcto de las imágenes para crear el orden final:\n\na) 2,3,1,4\nb) 1,2,4,3\nc) 2,1,4,3\nd) 4,2,1,3",
+        "task_text": null,
+        "task_image": ["./data/img/orden.png"],
+        "task_type": "objetivo",
+        "strategy": "integracion",
+        "correct_answer": "c",
+        "sub_strategy": "I1",
+        "description": "Identificar sección en web",
+        "feedback": {
+               
+                  "success": "¡Correcto!",
+                  "failure": "Incorrecto"
+                
+        }     
+      }
+      
+    ]
+  }
+}
