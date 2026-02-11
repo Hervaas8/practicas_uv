@@ -4,7 +4,7 @@
             {
         "task_id": "cien_s1_t01",
         "task_text": null,
-        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_image": ["./data/img/video1.png"],
         "task_prompt":"Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto.",
         "task_type": "conectar",
         "concepts": ["BIOTOPO", "BIOCENOSIS", "ECOLOGÍA", "ECOSISTEMA"],
@@ -28,8 +28,8 @@
         "sub_strategy": null,
         "description": "Conectar conceptos",        
         "feedback": {
-            "success": "Tu resumen es completo y preciso. Has sintetizado bien las posturas enfrentadas.",
-            "failure": "Tu resumen está incompleto. Asegúrate de cubrir introducción, ventajas, desventajas y conclusión."
+            "success": "Correcto",
+            "failure": "Incorrecto"
 }
         
 
