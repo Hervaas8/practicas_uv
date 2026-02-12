@@ -1,180 +1,93 @@
 [
-  {"id": "tarea_01",
-  "task_prompt":"A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.a",
-  "task_imagen":["./data/foro__arbol.png"],
-  "subtasks":[
   {
-    "id": "s1_01",
+    "id": "tarea_01",
+    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.a\n\nPregunta: 4. Ve al nuevo foro y lee el mensaje de Car22. ¿Quién ha sido el último en responder?\nOpciones:\n- a. Andrés\n- b. Car22\n- c. Pat00\n- d. Virdo",
+    "task_image": ["./data/foro_arbol.png"],
     "strategy": "navegar",
-    "question": "4. Ve al nuevo foro y lee el mensaje de Car22. ¿Quién ha sido el último en responder?",
-    "options": ["a. Andrés", "b. Car22", "c. Pat00", "d. Virdo"],
-    "correct": "c"
+    "correct_answer": "c"
   },
   {
-    "id": "s1_02",
+    "id": "tarea_02",
+    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.a\n\nPregunta: 5. ¿Consideras que Andrés y Virdo están de acuerdo en la solución al problema de Car22?\nOpciones:\n- a. Sí, porque ambos están de acuerdo en que el árbol de Navidad es demasiado débil para poder replantarlo.\n- b. No, porque uno le aconseja que lo replante, y el otro que no lo haga.\n- c. Sí, porque ambos le recomiendan que replante el árbol de Navidad y les parece una opción muy ecológica.\n- d. No, porque mientras un participante le aconseja regalar el árbol de Navidad, otro le aconseja que lo use como abono.",
+    "task_image": ["./data/foro_arbol.png"],
     "strategy": "integrar",
-    "question": "5. ¿Consideras que Andrés y Virdo están de acuerdo en la solución al problema de Car22?",
-    "options": [
-      "a. Sí, porque ambos están de acuerdo en que el árbol de Navidad es demasiado débil para poder replantarlo.",
-      "b. No, porque uno le aconseja que lo replante, y el otro que no lo haga.",
-      "c. Sí, porque ambos le recomiendan que replante el árbol de Navidad y les parece una opción muy ecológica.",
-      "d. No, porque mientras un participante le aconseja regalar el árbol de Navidad, otro le aconseja que lo use como abono."
-    ],
-    "correct": "b"
-  }]},
+    "correct_answer": "b"
+  },
   {
-    "id":"tarea_02",
-    "task_prompt":"A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.",
-    "task_imagen":["./data/wiki_francesa.png"],
-    "subtasks":[
-  {
-    "id": "s2_01",
+    "id": "tarea_03",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: En la web de la Revolución Francesa, sección 'Nuevo sistema político', ¿cuál es la frase de Rousseau?\nOpciones:\n- a. La soberanía ha de emanar de la voluntad general.\n- b. Es necesario poner límites a la libertad.\n- c. La soberanía puede ser divisible en varios poderes.\n- d. El voto debe ser universal, personal, libre y secreto.",
+    "task_image": ["./data/wiki_francesa.png"],
     "strategy": "navegar",
-    "question": "En la web de la Revolución Francesa, sección 'Nuevo sistema político', ¿cuál es la frase de Rousseau?",
-    "options": [
-      "a. La soberanía ha de emanar de la voluntad general.",
-      "b. Es necesario poner límites a la libertad.",
-      "c. La soberanía puede ser divisible en varios poderes.",
-      "d. El voto debe ser universal, personal, libre y secreto."
-    ],
-    "correct": "a"
+    "correct_answer": "a"
   },
   {
-    "id": "s2_02",
+    "id": "tarea_04",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: Debes acceder a la sección ‘3.2. Pérdida de poder de la iglesia’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿Por qué el Papa de Roma Pio VI planteó la posibilidad de echar de la Iglesia a los religiosos que aceptaron las leyes revolucionarias? Porque…\nOpciones:\n- a. No le interesaba contar con religiosos que ya no eran católicos.\n- b. juraron fidelidad a otro Papa distinto para la Iglesia.\n- c. las leyes revolucionarias limitaban el poder de la Iglesia.\n- d. se habían suprimido las órdenes religiosas a las que pertenecía",
+    "task_image": ["./data/wiki_francesa.png"],
     "strategy": "navegar",
-    "question": "Debes acceder a la sección ‘3.2. Pérdida de poder de la iglesia’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿Por qué el Papa de Roma Pio VI planteó la posibilidad de echar de la Iglesia a los religiosos que aceptaron las leyes revolucionarias? Porque…",
-    "options": [
-      "a. No le interesaba contar con religiosos que ya no eran católicos.",
-      "b. juraron fidelidad a otro Papa distinto para la Iglesia.",
-      "c. las leyes revolucionarias limitaban el poder de la Iglesia.",
-      "d. se habían suprimido las órdenes religiosas a las que pertenecía"
-    ],
-    "correct": "d"
+    "correct_answer": "d"
   },
   {
-    "id": "s2_03",
+    "id": "tarea_05",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: Debes acceder a la sección ‘3.3. Pérdida de poder del Rey’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿De qué países eran los monarcas absolutos que firmaron un acuerdo para socorrer al rey francés?\nOpciones:\n- a. Rusia y Prusia\n- b. La mayoría de los países europeos\n- c. Muchos de los países cristianos.\n- d. Austria y Prusia.",
+    "task_image": ["./data/wiki_francesa.png"],
     "strategy": "navegar",
-    "question": "Debes acceder a la sección ‘3.3. Pérdida de poder del Rey’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿De qué países eran los monarcas absolutos que firmaron un acuerdo para socorrer al rey francés?",
-    "options": [
-      "a. Rusia y Prusia",
-      "b. La mayoría de los países europeos",
-      "c. Muchos de los países cristianos.",
-      "d. Austria y Prusia."
-    ],
-    "correct": "d"
-  }]},
-  {
-    "id":"tarea_03",
-    "task_prompt":"A continuación visitarás una página de resultados del buscador Google. Lee atentamente las preguntas porque tendrás que hacer cosas distintas en diferentes preguntas.",
-    "task_imagen":["./data/google_1.png"],
-    "subtasks":[
-  {
-    "id": "s3_01",
-    "strategy": "integrar",
-    "question": "Lee las webs de “OMS: beneficios alimentos transgénicos...” y “Ministerio alerta sobre...” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas?  Los alimentos transgénicos…",
-    "options": [
-      "a. no deben ingerirse en una dieta equilibrada, aunque un estudio encuentra que no tienen efecto en las mujeres embarazadas",
-      "b. presentan un conjunto de ventajas para el consumidor, pero aún no tienen el visto bueno de Europa",
-      "c. pueden tener un alto valor nutritivo, pero podrían ser perjudiciales para la salud humana.",
-      "d. Etienen menos  minerales y vitaminas, como se ha demostrado en un estudio en mujeres embarazadas."
-    ],
-    "correct": "a"
-  }]},
-  {
-    "id":"tarea_04",
-    "task_prompt":"A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.",
-    "task_imagen":["./data/web_j.png"],
-    "subtasks":[
-  {
-    "id": "s4_01",
-    "strategy": "integrar",
-    "question": "Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:",
-    "options": [
-      "a. Estudiaba en el Instituto.",
-      "b. Estaba sentado junto a su familia y amigos viendo un partido.",
-      "c. Estudiaba en un centro de alto rendimiento para deportistas.",
-      "d. Jugaba en un equipo universitario."
-    ],
-    "correct": "c"
-
+    "correct_answer": "d"
   },
   {
-    "id": "s4_02",
+    "id": "tarea_06",
+    "task_prompt": "A continuación visitarás una página de resultados del buscador Google. Lee atentamente las preguntas porque tendrás que hacer cosas distintas en diferentes preguntas.\n\nPregunta: Lee las webs de “OMS: beneficios alimentos transgénicos...” y “Ministerio alerta sobre...” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas?  Los alimentos transgénicos…\nOpciones:\n- a. no deben ingerirse en una dieta equilibrada, aunque un estudio encuentra que no tienen efecto en las mujeres embarazadas\n- b. presentan un conjunto de ventajas para el consumidor, pero aún no tienen el visto bueno de Europa\n- c. pueden tener un alto valor nutritivo, pero podrían ser perjudiciales para la salud humana.\n- d. Etienen menos  minerales y vitaminas, como se ha demostrado en un estudio en mujeres embarazadas.",
+    "task_image": ["./data/google_1.png"],
     "strategy": "integrar",
-    "question": "¿Cuál es el videojuego más vendido para la videoconsola NDS?",
-    "options": [
-      "a. Pokemon Platinum.",
-      "b. Pokemon Oro",
-      "c. Red Dead Redemption.",
-      "d. Pokemon Plata."
-    ],
-    "correct": "c"
-
+    "correct_answer": "a"
   },
   {
-    "id": "s4_03",
+    "id": "tarea_07",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:\nOpciones:\n- a. Estudiaba en el Instituto.\n- b. Estaba sentado junto a su familia y amigos viendo un partido.\n- c. Estudiaba en un centro de alto rendimiento para deportistas.\n- d. Jugaba en un equipo universitario.",
+    "task_image": ["./data/web_j.png"],
     "strategy": "integrar",
-    "question": "De todos los talleres de fotografía que se anuncian. ¿Cuál ofrece más horas de clase?",
-    "options": [
-      "a. El de Foto Aula.",
-      "b. El de Photolocus.",
-      "c. El de Escuela Cinderela",
-      "d. El de la Asociación Culturarte."
-    ],
-    "correct": "c"
-
+    "correct_answer": "c"
   },
   {
-    "id": "s4_04",
+    "id": "tarea_08",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: ¿Cuál es el videojuego más vendido para la videoconsola NDS?\nOpciones:\n- a. Pokemon Platinum.\n- b. Pokemon Oro\n- c. Red Dead Redemption.\n- d. Pokemon Plata.",
+    "task_image": ["./data/web_j.png"],
     "strategy": "integrar",
-    "question": " Siempre que uses materiales reciclados para hacer manualidades, se recomienda que:",
-    "options": [
-      "a. Evites usar materiales peligrosos, como botellas de vidrio o latas.",
-      "b. Compres libros de manualidades y reciclaje.",
-      "c. El material esté limpio y seco.",
-      "d. Uses siempre guantes."
-    ],
-    "correct": "c"
-
+    "correct_answer": "c"
   },
   {
-    "id": "s4_05",
+    "id": "tarea_09",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: De todos los talleres de fotografía que se anuncian. ¿Cuál ofrece más horas de clase?\nOpciones:\n- a. El de Foto Aula.\n- b. El de Photolocus.\n- c. El de Escuela Cinderela\n- d. El de la Asociación Culturarte.",
+    "task_image": ["./data/web_j.png"],
     "strategy": "integrar",
-    "question": "Eres usuario de la Web Joven y quieres conseguir una raqueta de tenis. Para ello visitas la tienda on-line con mejor valoración de los usuarios de la Web Joven. ¿Cuánto te costará que te envíen la raqueta a casa? ",
-    "options": [
-      "a. Nada, es gratis.",
-      "b. Depende del tipo de producto que compre.",
-      "c. 5 € por producto.",
-      "d. 3 € por producto."
-    ],
-    "correct": "c"
-
+    "correct_answer": "c"
   },
   {
-    "id": "s4_06",
+    "id": "tarea_10",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Siempre que uses materiales reciclados para hacer manualidades, se recomienda que:\nOpciones:\n- a. Evites usar materiales peligrosos, como botellas de vidrio o latas.\n- b. Compres libros de manualidades y reciclaje.\n- c. El material esté limpio y seco.\n- d. Uses siempre guantes.",
+    "task_image": ["./data/web_j.png"],
     "strategy": "integrar",
-    "question": "Según las recomendaciones de la Web Joven, ¿cuál puede ser la razón por la que el ordenador abra programas por sí solo?",
-    "options": [
-      "a. El ordenador va demasiado lento.",
-      "b. El ordenador necesita un parche",
-      "c. El ordenador tiene virus",
-      "d. El sistema no se puede analizar."
-    ],
-    "correct": "c"
-
+    "correct_answer": "c"
   },
   {
-    "id": "s4_07",
+    "id": "tarea_11",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Eres usuario de la Web Joven y quieres conseguir una raqueta de tenis. Para ello visitas la tienda on-line con mejor valoración de los usuarios de la Web Joven. ¿Cuánto te costará que te envíen la raqueta a casa?\nOpciones:\n- a. Nada, es gratis.\n- b. Depende del tipo de producto que compre.\n- c. 5 € por producto.\n- d. 3 € por producto.",
+    "task_image": ["./data/web_j.png"],
     "strategy": "integrar",
-    "question": "La Web Joven acaba de publicar un informe sobre el riesgo de extinción de aves y mamíferos. ¿Qué riesgo de extinción existe en Canadá?",
-    "options": [
-      "a. Riesgo alto.",
-      "b. Riesgo intermedio.",
-      "c. Riesgo bajo.",
-      "d. No hay información de Canadá."
-    ],
-    "correct": "c"
-
-  }]}
-  
+    "correct_answer": "c"
+  },
+  {
+    "id": "tarea_12",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Según las recomendaciones de la Web Joven, ¿cuál puede ser la razón por la que el ordenador abra programas por sí solo?\nOpciones:\n- a. El ordenador va demasiado lento.\n- b. El ordenador necesita un parche\n- c. El ordenador tiene virus\n- d. El sistema no se puede analizar.",
+    "task_image": ["./data/web_j.png"],
+    "strategy": "integrar",
+    "correct_answer": "c"
+  },
+  {
+    "id": "tarea_13",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: La Web Joven acaba de publicar un informe sobre el riesgo de extinción de aves y mamíferos. ¿Qué riesgo de extinción existe en Canadá?\nOpciones:\n- a. Riesgo alto.\n- b. Riesgo intermedio.\n- c. Riesgo bajo.\n- d. No hay información de Canadá.",
+    "task_image": ["./data/web_j.png"],
+    "strategy": "integrar",
+    "correct_answer": "c"
+  }
 ]
