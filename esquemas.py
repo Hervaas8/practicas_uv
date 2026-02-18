@@ -15,9 +15,10 @@ class TaskEvaluationHistory(BaseModel):
     sub_strategy: Optional[str] = None
     student_response: Any
     score: float
-    score_weighted: float # En el nuevo sistema será igual a score al no haber dificultad
+    score_weighted: float 
     feedback_shown: str
     reasoning: str
+    is_test_task: bool = False 
 
 # --- ESTADO DEL GRAFO (LangGraph) ---
 class StudentGraphState(BaseModel):
@@ -26,8 +27,12 @@ class StudentGraphState(BaseModel):
     current_subject: Optional[str] = None
     current_session: Optional[str] = None
     
-    # Navegación de tareas (ahora plano)
-    remaining_tasks: List[dict] = [] # Lista de tareas directamente de tareas2.json
+    test_mode: bool = False 
+    
+    # Navegación y Progreso
+    remaining_tasks: List[dict] = [] 
+    total_tasks: int = 0  # NUEVO: Para calcular el progreso (total inicial)
+    
     current_task: Optional[dict] = None
     current_task_prompt: Optional[str] = None
     
@@ -35,7 +40,7 @@ class StudentGraphState(BaseModel):
     current_student_response: Optional[Any] = None
     
     # Adaptatividad y Progreso
-    competency_levels: Dict[str, str] = {} # ej: {"navegar": "nivel_2"}
+    competency_levels: Dict[str, str] = {} 
     task_history: List[TaskEvaluationHistory] = []
     
     # Feedback para la interfaz
