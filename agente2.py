@@ -51,7 +51,8 @@ def calculate_levels_from_test(history: List[TaskEvaluationHistory]) -> Dict[str
             scores_by_strat[h.strategy].append(h.score)
     
     new_levels = {}
-    strategies = ["navegar", "integrar", "evaluar", "contenido"] 
+    # MODIFICACIÓN: Eliminamos "contenido" de las estrategias con nivel
+    strategies = ["navegar", "integrar", "evaluar"] 
     
     for strat in strategies:
         scores = scores_by_strat.get(strat, [])
@@ -65,17 +66,58 @@ def calculate_levels_from_test(history: List[TaskEvaluationHistory]) -> Dict[str
                 
     return new_levels
 
-def calculate_dynamic_level(current_strategy: str, current_score: float, history: List[TaskEvaluationHistory]) -> str:
-    """Calcula el nivel dinámicamente durante el curso."""
-    relevant = [h.score for h in history if h.strategy == current_strategy and not h.is_test_task]
-    relevant.append(current_score)
+def calculate_dynamic_level(current_strategy: str, current_level: str, current_score: float, history: List[TaskEvaluationHistory]) -> str:
+    """
+    Calcula el nuevo nivel basándose en la matriz de transición de las últimas 3 respuestas.
+    Lógica basada en aciertos (score >= 0.5) y fallos.
+    """
+    # 1. Recuperamos las últimas tareas de esta estrategia (excluyendo el test)
+    relevant_history = [h for h in history if h.strategy == current_strategy and not h.is_test_task]
     
-    last_4 = relevant[-4:]
-    avg = sum(last_4) / len(last_4) if last_4 else 0
+    # 2. Cogemos las últimas 2 para sumar a la actual (Total ventana: max 3)
+    last_entries = relevant_history[-2:]
     
-    if avg < 0.50: return "nivel_1" 
-    elif avg < 0.80: return "nivel_2"
-    else: return "nivel_3"
+    # 3. Determinamos aciertos/fallos (True/False)
+    # Consideramos Acierto si score >= 0.5
+    results = [h.score >= 0.5 for h in last_entries]
+    results.append(current_score >= 0.5) # Añadimos la actual
+    
+    hits = sum(results)         # Número de aciertos en la ventana
+    
+    # --- LÓGICA DE TRANSICIÓN SEGÚN MATRIZ ---
+    
+    if current_level == "nivel_1":
+        # NIVEL 1:
+        # 3 aciertos (VVV) -> Sube
+        # 2 aciertos (VVx) -> Sube
+        # Menos de 2 -> Se mantiene
+        if hits >= 2:
+            return "nivel_2"
+        else:
+            return "nivel_1"
+
+    elif current_level == "nivel_2":
+        # NIVEL 2:
+        # 3 aciertos (VVV) -> Sube a Nivel 3
+        # 2 aciertos (VVx) -> Se mantiene
+        # 1 o 0 aciertos (Vxx, xxx) -> Baja a Nivel 1
+        if hits == 3:
+            return "nivel_3"
+        elif hits <= 1:
+            return "nivel_1"
+        else:
+            return "nivel_2"
+
+    elif current_level == "nivel_3":
+        # NIVEL 3:
+        # 3 aciertos (VVV) -> Se mantiene
+        # Menos de 3 (VVx, Vxx, xxx) -> Baja a Nivel 2
+        if hits == 3:
+            return "nivel_3"
+        else:
+            return "nivel_2"
+
+    return current_level
 
 # --- NODOS DEL GRAFO ---
 
@@ -85,7 +127,6 @@ def node_load_curriculum(state: StudentGraphState):
 def node_select_task(state: StudentGraphState):
     """Selecciona la siguiente tarea. Maneja la transición Test -> Curso."""
     
-    # 1. Si hay tareas pendientes, cogemos la siguiente
     if state.remaining_tasks:
         next_task = state.remaining_tasks[0]
         return {
@@ -93,7 +134,6 @@ def node_select_task(state: StudentGraphState):
             "current_task_prompt": next_task.get("task_prompt", "")
         }
     
-    # 2. Si NO hay tareas, pero estamos en TEST_MODE, calculamos niveles y cargamos curso.
     if state.test_mode:
         print("--- FINALIZADO TEST INICIAL. CALCULANDO NIVELES ---")
         new_levels = calculate_levels_from_test(state.task_history)
@@ -105,13 +145,12 @@ def node_select_task(state: StudentGraphState):
             "test_mode": False, 
             "competency_levels": new_levels,
             "remaining_tasks": main_tasks,
-            "total_tasks": len(main_tasks), # REINICIAMOS EL CONTADOR DE PROGRESO PARA EL CURSO
+            "total_tasks": len(main_tasks),
             "current_task": main_tasks[0] if main_tasks else None,
             "current_task_prompt": main_tasks[0].get("task_prompt", "") if main_tasks else "",
             "last_feedback_message": msg
         }
 
-    # 3. Fin del curso
     return {"current_task": None}
 
 def node_evaluate(state: StudentGraphState):
@@ -121,18 +160,25 @@ def node_evaluate(state: StudentGraphState):
     
     if not current_task: return {}
 
-    level = state.competency_levels.get(current_task.get("strategy"), "nivel_1")
-    res = evaluate_task(current_task, answer, level)
+    # Obtenemos el nivel actual para la evaluación (si es contenido, no tiene nivel, usamos default para prompt)
+    strat = current_task.get("strategy", "general")
+    current_level_val = state.competency_levels.get(strat, "nivel_1")
+    
+    res = evaluate_task(current_task, answer, current_level_val)
     
     if not res: return {"last_feedback_message": "Error técnico en la evaluación."}
 
-    strat = current_task.get("strategy", "general")
     is_test = state.test_mode
-    
     new_levels = state.competency_levels.copy()
     
-    if not is_test:
-        new_level = calculate_dynamic_level(strat, res["score"], state.task_history)
+    # MODIFICACIÓN: Solo recalculamos nivel si NO es test Y NO es estrategia de contenido
+    if not is_test and strat != "contenido":
+        new_level = calculate_dynamic_level(
+            strat, 
+            current_level_val, 
+            res["score"], 
+            state.task_history
+        )
         new_levels[strat] = new_level
     
     feedback_msg = res["feedback_shown"]
@@ -152,7 +198,7 @@ def node_evaluate(state: StudentGraphState):
     )
 
     return {
-        "remaining_tasks": state.remaining_tasks[1:], # Eliminamos la tarea hecha
+        "remaining_tasks": state.remaining_tasks[1:], 
         "task_history": state.task_history + [history_entry],
         "current_task": None,
         "competency_levels": new_levels,

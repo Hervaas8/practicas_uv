@@ -10,31 +10,19 @@ st.set_page_config(page_title="Tutor IA - Ciencias", layout="wide")
 st.markdown(
     """
     <style>
-        /* Centramos el contenedor de la imagen */
         div[data-testid="stImage"] {
             display: flex;
             justify_content: center;
             align-items: center;
             width: 100%;
         }
-
-        /* Reglas para la imagen en sí */
         div[data-testid="stImage"] img {
-            /* 1. LÍMITE HORIZONTAL: Nunca más ancha que el contenedor */
             max-width: 100% !important;
-            
-            /* 2. LÍMITE VERTICAL: Nunca más alta que 550px */
             max-height: 550px !important;
-            
-            /* 3. ADAPTACIÓN: Calcula las dimensiones automáticamente respetando los límites */
             width: auto !important;
             height: auto !important;
-            
-            /* 4. VISUALIZACIÓN: Asegura que se vea completa (contain) */
             object-fit: contain !important;
         }
-
-        /* Estilo para las métricas del sidebar */
         [data-testid="stMetricValue"] {
             font-size: 1.2rem !important;
         }
@@ -43,7 +31,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Inicialización de estados
 if "thread_id" not in st.session_state:
     st.session_state.thread_id = str(uuid.uuid4())
     st.session_state.current_step = "setup" 
@@ -66,16 +53,17 @@ def start_agent(do_test):
     else:
         initial_tasks = load_curriculum()
         is_test_mode = False
+        # MODIFICACIÓN: Eliminamos "contenido" de los niveles iniciales por defecto
         default_levels = {
-            "navegar": "nivel_1", "integrar": "nivel_1", 
-            "evaluar": "nivel_1", "contenido": "nivel_1"
+            "navegar": "nivel_1", 
+            "integrar": "nivel_1", 
+            "evaluar": "nivel_1"
         }
 
-    # Invocamos pasando también total_tasks
     app.invoke({
         "student_id": "alumno_demo",
         "remaining_tasks": initial_tasks,
-        "total_tasks": len(initial_tasks), # Inicializamos el contador
+        "total_tasks": len(initial_tasks),
         "test_mode": is_test_mode,
         "competency_levels": default_levels,
         "current_subject": "ciencias",
@@ -115,19 +103,17 @@ def render_competency_sidebar(levels, is_test):
     else:
         st.sidebar.markdown("### Niveles de Competencia")
         
-        # Diccionario de colores para los niveles
         colors = {
             "nivel_1": "🔴 Nivel 1 (Básico)",
             "nivel_2": "🟠 Nivel 2 (Intermedio)",
             "nivel_3": "🟢 Nivel 3 (Avanzado)"
         }
         
-        # Mapeo de nombres más amigables para las estrategias
         names = {
             "navegar": "Navegación",
             "integrar": "Integración",
-            "evaluar": "Evaluación",
-            "contenido": "Contenido"
+            "evaluar": "Evaluación"
+            # MODIFICACIÓN: "contenido" eliminado de la visualización
         }
         
         for strategy, level_key in levels.items():
@@ -153,19 +139,16 @@ if st.session_state.current_step == "setup":
             start_agent(do_test=False)
 
 else:
-    # Obtenemos estado actual
     state_vals = app.get_state(config).values
     is_test_mode = get_val(state_vals, "test_mode")
     competencies = get_val(state_vals, "competency_levels")
     
-    # 1. RENDERIZAR SIDEBAR CON NIVELES
     render_competency_sidebar(competencies, is_test_mode)
     
     task = st.session_state.display_task
 
     if not task:
         st.success("¡Sesión finalizada con éxito!")
-        # Barra de progreso al 100%
         st.progress(1.0)
         if st.button("Reiniciar"):
             st.session_state.clear()
@@ -180,13 +163,9 @@ else:
             full_prompt = st.session_state.display_prompt
             t_type = str(task.get("task_type", "")).strip().lower()
             
-            # --- CAMBIO IMPORTANTE: Regex más estricta ---
-            # Antes: r"([a-d][\)\.])\s*([^\n]+)"  <- Fallaba con "pregunta."
-            # Ahora: r"(?:^|\n)\s*([a-d][\)\.])\s*([^\n]+)" <- Exige que empiece la línea
             options_pattern = r"(?:^|\n)\s*([a-d][\)\.])\s*([^\n]+)"
             found_options = re.findall(options_pattern, full_prompt)
 
-            # --- RENDERIZADO DE TAREAS ---
             if st.session_state.current_step == "working" and t_type == "objetivo" and found_options:
                 split_match = re.search(r"(?i)(\n\s*Opciones:?)|(\n\s*[-•]?\s*[a-d][\)\.])", full_prompt)
                 clean_text = full_prompt[:split_match.start()].strip() if split_match else full_prompt
@@ -260,12 +239,10 @@ else:
                             st.warning(f"Imagen no encontrada: {img_path}")
                     idx += 1
         
-        # --- BARRA DE PROGRESO (ABAJO) ---
         st.divider()
         total = get_val(state_vals, "total_tasks") or 1
         remaining = len(get_val(state_vals, "remaining_tasks"))
         
-        # Cálculo del progreso
         completed = total - remaining
         progress_val = max(0.0, min(1.0, completed / total))
         
