@@ -1,6 +1,9 @@
 import streamlit as st
 from streamlit_image_coordinates import streamlit_image_coordinates
 import uuid, os, re
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 from agente2 import app, load_test_inicial, load_curriculum
 
 # --- CONFIGURACIÓN ---
@@ -53,7 +56,6 @@ def start_agent(do_test):
     else:
         initial_tasks = load_curriculum()
         is_test_mode = False
-        # MODIFICACIÓN: Eliminamos "contenido" de los niveles iniciales por defecto
         default_levels = {
             "navegar": "nivel_1", 
             "integrar": "nivel_1", 
@@ -113,7 +115,6 @@ def render_competency_sidebar(levels, is_test):
             "navegar": "Navegación",
             "integrar": "Integración",
             "evaluar": "Evaluación"
-            # MODIFICACIÓN: "contenido" eliminado de la visualización
         }
         
         for strategy, level_key in levels.items():
@@ -141,19 +142,214 @@ if st.session_state.current_step == "setup":
 else:
     state_vals = app.get_state(config).values
     is_test_mode = get_val(state_vals, "test_mode")
-    competencies = get_val(state_vals, "competency_levels")
+    competencies = get_val(state_vals, "competency_levels") or {}
     
     render_competency_sidebar(competencies, is_test_mode)
     
     task = st.session_state.display_task
 
     if not task:
-        st.success("¡Sesión finalizada con éxito!")
+        # --- DASHBOARD FINAL DE SESIÓN ---
+        st.balloons()
+        st.title("🏆 ¡Sesión finalizada con éxito!")
+        st.markdown("Aquí tienes el resumen de tu rendimiento en esta sesión. ¡Buen trabajo!")
         st.progress(1.0)
-        if st.button("Reiniciar"):
+        
+        # 1. EXTRACCIÓN DE DATOS GLOBALES
+        history = get_val(state_vals, "task_history") or []
+        final_levels = competencies
+        
+        # 2. CÁLCULO DE LA RACHA MÁXIMA
+        max_streak = 0
+        current_streak = 0
+        
+        for h in history:
+            score = h.get('score', 0) if isinstance(h, dict) else getattr(h, 'score', 0)
+            if score >= 0.5: 
+                current_streak += 1
+                if current_streak > max_streak:
+                    max_streak = current_streak
+            else:
+                current_streak = 0
+                
+        if max_streak > 1:
+            st.success(f"🔥 **¡Racha Imparable!** Durante esta sesión llegaste a acertar **{max_streak}** tareas seguidas.")
+        elif max_streak == 1:
+            st.info("Has completado las tareas, ¡la próxima vez seguro que logras encadenar varios aciertos seguidos!")
+        elif history:
+            st.info("¡Gracias por tu esfuerzo! Sigue practicando para mejorar tus resultados.")
+
+        # 3. ESTRUCTURA DE PESTAÑAS
+        tab_estrategias, tab_opinion = st.tabs(["🧠 Mis Habilidades (Estrategias)", "🗣️ Mi Opinión"])
+        
+        # --- PESTAÑA: ESTRATEGIAS ---
+        with tab_estrategias:
+            st.markdown("### 🎯 Tus Niveles Finales por Competencia")
+            
+            strat_names = {"navegar": "Navegación", "integrar": "Integración", "evaluar": "Evaluación"}
+            strat_colors = {"nivel_1": "🔴 Básico", "nivel_2": "🟠 Intermedio", "nivel_3": "🟢 Avanzado"}
+            
+            cols = st.columns(3)
+            for i, (strat_key, strat_name) in enumerate(strat_names.items()):
+                lvl = final_levels.get(strat_key, "nivel_1")
+                with cols[i]:
+                    st.metric(label=strat_name, value=strat_colors.get(lvl, lvl))
+                    
+            st.divider()
+            
+            # GRÁFICO DE BARRAS Y CONSIDERACIONES
+            st.markdown("### 📊 Tu Perfil Competencial (Puntuación Media)")
+            col_barras, col_text = st.columns([1, 1], gap="large")
+            
+            strat_scores = {"navegar": [], "integrar": [], "evaluar": []}
+            for h in history:
+                is_dict = isinstance(h, dict)
+                strat = h.get('strategy', '') if is_dict else getattr(h, 'strategy', '')
+                score = h.get('score', 0) if is_dict else getattr(h, 'score', 0)
+                
+                strat = strat.replace("navegacion", "navegar").replace("integracion", "integrar").replace("evaluacion", "evaluar")
+                if strat in strat_scores:
+                    strat_scores[strat].append(score)
+            
+            avg_scores = {}
+            for k, v in strat_scores.items():
+                avg_scores[k] = sum(v)/len(v) if v else 0.0
+                
+            with col_barras:
+                df_barras = pd.DataFrame({
+                    "Estrategia": ["Navegación", "Integración", "Evaluación"],
+                    "Puntuación": [avg_scores["navegar"], avg_scores["integrar"], avg_scores["evaluar"]]
+                })
+                
+                fig_barras = px.bar(
+                    df_barras, 
+                    x="Estrategia", 
+                    y="Puntuación", 
+                    color="Estrategia",
+                    range_y=[0, 1],
+                    color_discrete_sequence=["#FF5722", "#2196F3", "#4CAF50"]
+                )
+                
+                fig_barras.update_layout(
+                    showlegend=False,
+                    margin=dict(l=20, r=20, t=20, b=20),
+                    height=300
+                )
+                
+                # Añadir el texto del valor encima de la barra
+                fig_barras.update_traces(texttemplate='%{y:.2f}', textposition='outside')
+                
+                st.plotly_chart(fig_barras, use_container_width=True)
+                
+            with col_text:
+                st.markdown("#### Consideraciones:")
+                for strat_key, strat_name in strat_names.items():
+                    lvl = final_levels.get(strat_key, "nivel_1")
+                    if lvl == "nivel_3":
+                        msg = f"**{strat_name}:** Has **adquirido** una gran soltura y eficacia. ¡Excelente dominio!"
+                        st.success(msg)
+                    elif lvl == "nivel_2":
+                        msg = f"**{strat_name}:** Estás **en proceso de adquirir** las herramientas necesarias. Vas por muy buen camino."
+                        st.info(msg)
+                    else:
+                        msg = f"**{strat_name}:** Aún **estás desarrollando** tus habilidades base. Con un poco más de práctica lo dominarás."
+                        st.warning(msg)
+                        
+            st.divider()
+            
+            # EVOLUCIÓN HISTÓRICA POR NIVELES
+            st.markdown("### 📈 Evolución de tus Niveles")
+            st.write("Observa cómo han cambiado tus niveles competenciales a lo largo de las tareas:")
+            
+            chart_data = []
+            
+            try:
+                # Recuperamos el historial de estados de LangGraph y lo analizamos
+                state_snapshots = list(app.get_state_history(config))
+                state_snapshots.reverse() # De más antiguo a más reciente
+                
+                levels_by_task = {}
+                
+                for snap in state_snapshots:
+                    state_dict = snap.values
+                    if not state_dict: continue
+                        
+                    th = state_dict.get("task_history", [])
+                    
+                    # Contamos cuántas tareas principales se han hecho en este punto
+                    main_tasks_completed = sum(1 for x in th if not (x.get('is_test_task', False) if isinstance(x, dict) else getattr(x, 'is_test_task', False)))
+                    
+                    # Al iterar de antiguo a nuevo, nos quedamos siempre con el estado más reciente de cada momento
+                    levels_by_task[main_tasks_completed] = state_dict.get("competency_levels", {})
+                    
+                # Construimos la tabla final
+                for task_num in sorted(levels_by_task.keys()):
+                    step_name = "Inicio" if task_num == 0 else f"T{task_num}"
+                    levels = levels_by_task[task_num]
+                    
+                    for s_key, s_name in strat_names.items():
+                        lvl_str = levels.get(s_key, "nivel_1")
+                        lvl_num = int(lvl_str.split("_")[1]) if isinstance(lvl_str, str) and "_" in lvl_str else 1
+                        
+                        chart_data.append({
+                            "Tarea": step_name,
+                            "Estrategia": s_name,
+                            "Nivel": lvl_num
+                        })
+                        
+            except Exception as e:
+                st.warning(f"No se pudo cargar el historial de niveles: {e}")
+                
+            if chart_data:
+                df_chart = pd.DataFrame(chart_data)
+                
+                fig_line = px.line(
+                    df_chart, 
+                    x="Tarea", 
+                    y="Nivel", 
+                    color="Estrategia", 
+                    markers=True,
+                    line_shape="hv", # Esto hace que la línea sea "escalonada"
+                    color_discrete_sequence=["#FF5722", "#2196F3", "#4CAF50"]
+                )
+                
+                fig_line.update_layout(
+                    height=380, 
+                    margin=dict(l=20, r=20, t=20, b=20),
+                    yaxis=dict(
+                        tickmode='array',
+                        tickvals=[1, 2, 3],
+                        ticktext=['Nivel 1<br>(Básico)', 'Nivel 2<br>(Intermedio)', 'Nivel 3<br>(Avanzado)'],
+                        range=[0.8, 3.2] # Añade un poco de margen para que no se corte por arriba/abajo
+                    )
+                )
+                
+                st.plotly_chart(fig_line, use_container_width=True)
+            else:
+                st.info("No hay suficientes datos para mostrar la gráfica de evolución.")
+
+        # --- PESTAÑA: OPINIÓN DEL ALUMNO ---
+        with tab_opinion:
+            st.markdown("### ¿Qué te ha parecido la sesión de hoy?")
+            st.write("Tu opinión nos ayuda a mejorar y a ajustar el nivel de los próximos retos.")
+            
+            student_rating = st.feedback("faces")
+            
+            if student_rating is not None:
+                if student_rating >= 3:
+                    st.success("¡Nos alegra mucho que te haya gustado!")
+                elif student_rating == 2:
+                    st.info("¡Gracias por tu valoración! Seguiremos mejorando.")
+                else:
+                    st.warning("Sentimos que haya sido dura. ¡Revisaremos el nivel para la próxima!")
+
+        st.divider()
+        if st.button("↻ Terminar y Salir"):
             st.session_state.clear()
             st.rerun()
+            
     else:
+        # --- LÓGICA DE TAREAS ---
         if is_test_mode:
             st.warning("📝 MODO TEST INICIAL - Responde lo mejor que puedas")
         
