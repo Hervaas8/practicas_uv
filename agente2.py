@@ -31,12 +31,12 @@ def load_test_inicial():
         print(f"Error cargando test_inicial.json: {e}")
         return []
 
-def load_curriculum():
-    """Carga el curriculum principal."""
+def load_curriculum(session_id="sesion1"):
+    """Carga el curriculum de la sesión especificada."""
     try:
         with open("tareas2.json", "r", encoding="utf-8-sig") as f:
             data = json.load(f)
-            return data.get("ciencias", {}).get("sesion1", [])
+            return data.get("ciencias", {}).get(session_id, [])
     except Exception as e:
         print(f"Error cargando tareas2.json: {e}")
         return []
@@ -51,7 +51,6 @@ def calculate_levels_from_test(history: List[TaskEvaluationHistory]) -> Dict[str
             scores_by_strat[h.strategy].append(h.score)
     
     new_levels = {}
-    # MODIFICACIÓN: Eliminamos "contenido" de las estrategias con nivel
     strategies = ["navegar", "integrar", "evaluar"] 
     
     for strat in strategies:
@@ -71,51 +70,26 @@ def calculate_dynamic_level(current_strategy: str, current_level: str, current_s
     Calcula el nuevo nivel basándose en la matriz de transición de las últimas 3 respuestas.
     Lógica basada en aciertos (score >= 0.5) y fallos.
     """
-    # 1. Recuperamos las últimas tareas de esta estrategia (excluyendo el test)
     relevant_history = [h for h in history if h.strategy == current_strategy and not h.is_test_task]
-    
-    # 2. Cogemos las últimas 2 para sumar a la actual (Total ventana: max 3)
     last_entries = relevant_history[-2:]
     
-    # 3. Determinamos aciertos/fallos (True/False)
-    # Consideramos Acierto si score >= 0.5
     results = [h.score >= 0.5 for h in last_entries]
-    results.append(current_score >= 0.5) # Añadimos la actual
+    results.append(current_score >= 0.5) 
     
-    hits = sum(results)         # Número de aciertos en la ventana
-    
-    # --- LÓGICA DE TRANSICIÓN SEGÚN MATRIZ ---
+    hits = sum(results)         
     
     if current_level == "nivel_1":
-        # NIVEL 1:
-        # 3 aciertos (VVV) -> Sube
-        # 2 aciertos (VVx) -> Sube
-        # Menos de 2 -> Se mantiene
-        if hits >= 2:
-            return "nivel_2"
-        else:
-            return "nivel_1"
+        if hits >= 2: return "nivel_2"
+        else: return "nivel_1"
 
     elif current_level == "nivel_2":
-        # NIVEL 2:
-        # 3 aciertos (VVV) -> Sube a Nivel 3
-        # 2 aciertos (VVx) -> Se mantiene
-        # 1 o 0 aciertos (Vxx, xxx) -> Baja a Nivel 1
-        if hits == 3:
-            return "nivel_3"
-        elif hits <= 1:
-            return "nivel_1"
-        else:
-            return "nivel_2"
+        if hits == 3: return "nivel_3"
+        elif hits <= 1: return "nivel_1"
+        else: return "nivel_2"
 
     elif current_level == "nivel_3":
-        # NIVEL 3:
-        # 3 aciertos (VVV) -> Se mantiene
-        # Menos de 3 (VVx, Vxx, xxx) -> Baja a Nivel 2
-        if hits == 3:
-            return "nivel_3"
-        else:
-            return "nivel_2"
+        if hits == 3: return "nivel_3"
+        else: return "nivel_2"
 
     return current_level
 
@@ -137,8 +111,7 @@ def node_select_task(state: StudentGraphState):
     if state.test_mode:
         print("--- FINALIZADO TEST INICIAL. CALCULANDO NIVELES ---")
         new_levels = calculate_levels_from_test(state.task_history)
-        main_tasks = load_curriculum()
-        
+        main_tasks = load_curriculum(state.current_session or "sesion1")
         msg = "Test inicial completado. Hemos adaptado el curso a tu nivel."
         
         return {
@@ -160,7 +133,7 @@ def node_evaluate(state: StudentGraphState):
     
     if not current_task: return {}
 
-    # Obtenemos el nivel actual para la evaluación (si es contenido, no tiene nivel, usamos default para prompt)
+    # Obtenemos el nivel actual para la evaluación
     strat = current_task.get("strategy", "general")
     current_level_val = state.competency_levels.get(strat, "nivel_1")
     
@@ -171,7 +144,6 @@ def node_evaluate(state: StudentGraphState):
     is_test = state.test_mode
     new_levels = state.competency_levels.copy()
     
-    # MODIFICACIÓN: Solo recalculamos nivel si NO es test Y NO es estrategia de contenido
     if not is_test and strat != "contenido":
         new_level = calculate_dynamic_level(
             strat, 
@@ -194,7 +166,10 @@ def node_evaluate(state: StudentGraphState):
         score_weighted=res["score"], 
         feedback_shown=feedback_msg,
         reasoning=res["reasoning"],
-        is_test_task=is_test
+        is_test_task=is_test,
+        contenido=current_task.get("contenido", False),
+        conceptos=current_task.get("conceptos", []),
+        current_levels=new_levels.copy() # <-- NUEVO: Guardamos la foto del nivel
     )
 
     return {

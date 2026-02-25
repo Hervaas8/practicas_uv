@@ -19,6 +19,11 @@ class TaskEvaluationHistory(BaseModel):
     feedback_shown: str
     reasoning: str
     is_test_task: bool = False 
+    
+    # CAMPOS DE CONTENIDO Y EVOLUCIÓN
+    contenido: bool = False
+    conceptos: List[str] = []
+    current_levels: Dict[str, str] = {} # NUEVO: Guarda una foto del nivel en ese instante
 
 # --- ESTADO DEL GRAFO (LangGraph) ---
 class StudentGraphState(BaseModel):
@@ -31,7 +36,7 @@ class StudentGraphState(BaseModel):
     
     # Navegación y Progreso
     remaining_tasks: List[dict] = [] 
-    total_tasks: int = 0  # NUEVO: Para calcular el progreso (total inicial)
+    total_tasks: int = 0  
     
     current_task: Optional[dict] = None
     current_task_prompt: Optional[str] = None
