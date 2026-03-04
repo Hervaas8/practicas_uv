@@ -114,7 +114,6 @@ def render_competency_sidebar(levels, is_test):
         st.rerun()
 
 # --- FUNCIÓN REUTILIZABLE PARA EL DASHBOARD INDIVIDUAL (ALUMNO Y PROFESOR) ---
-# --- FUNCIÓN REUTILIZABLE PARA EL DASHBOARD INDIVIDUAL (ALUMNO Y PROFESOR) ---
 def render_student_dashboard(history, final_levels, current_session, enable_evolution_chart=False):
     """Pinta las pestañas de Estrategias y Contenidos de un alumno."""
     
@@ -200,7 +199,6 @@ def render_student_dashboard(history, final_levels, current_session, enable_evol
             if not is_test:
                 task_counter += 1
                 step_name = f"T{task_counter}"
-                # Recuperamos la foto del nivel guardada
                 levels_snapshot = h.get('current_levels', {}) if is_dict else getattr(h, 'current_levels', {})
                 
                 if levels_snapshot:
@@ -229,14 +227,11 @@ def render_student_dashboard(history, final_levels, current_session, enable_evol
             global_score = sum(scores) / len(scores) if scores else 0
             global_score_10 = global_score * 10 
             
-            fig_gauge = go.Figure(go.Indicator(
-                mode = "gauge+number", value = global_score_10, domain = {'x': [0, 1], 'y': [0, 1]}, title = {'text': "Nota Global"},
-                gauge = {'axis': {'range': [None, 10]}, 'bar': {'color': "darkblue"}, 'steps' : [{'range': [0, 5], 'color': "#ffcdd2"}, {'range': [5, 8], 'color': "#ffe082"}, {'range': [8, 10], 'color': "#c8e6c9"}]}
-            ))
-            fig_gauge.update_layout(height=300, margin=dict(l=10, r=10, t=40, b=10))
+            # ELIMINADO EL GRÁFICO TIPO VELOCÍMETRO, CAMBIADO POR UN MÉTRICO SIMPLE
+            col_nota, col_feedback = st.columns([1, 2], gap="large")
             
-            col_gauge, col_feedback = st.columns([1, 1], gap="large")
-            with col_gauge: st.plotly_chart(fig_gauge, use_container_width=True)
+            with col_nota:
+                st.metric(label="Nota Global de Contenidos", value=f"{global_score_10:.1f} / 10")
                 
             with col_feedback:
                 st.markdown("#### Consideraciones Globales:")
@@ -277,6 +272,7 @@ def render_student_dashboard(history, final_levels, current_session, enable_evol
                     if repasar:
                         for item in repasar: st.write(item)
                     else: st.write("¡Ninguno! Todo va muy bien.")
+
 
 # ==========================================
 # --- ENRUTADOR PRINCIPAL ---
@@ -449,7 +445,7 @@ elif st.session_state.user_role == 'profesor':
                         history=student_specific_data['task_history'], 
                         final_levels=student_specific_data['competency_levels'], 
                         current_session=selected_prof_session,
-                        enable_evolution_chart=False # Desactivamos la gráfica de líneas porque requiere la memoria en vivo del agente
+                        enable_evolution_chart=False 
                     )
 
         st.divider()
