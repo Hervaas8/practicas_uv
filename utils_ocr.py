@@ -4,7 +4,14 @@ from PIL import Image
 import pytesseract
 
 
-pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+if sys.platform == 'win32':
+    # Si detecta que estás en tu Windows local, usa tu ruta de siempre
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+else:
+    # Si detecta que estás en el servidor (Linux), usa la ruta por defecto de Linux
+    # Nota: Muchas veces en Linux ni siquiera hace falta especificar esta línea porque ya está en el PATH,
+    # pero ponerla asegura que lo encuentre.
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 def extract_text_from_image(image_path: str) -> str:
     """

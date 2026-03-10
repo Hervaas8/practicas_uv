@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # --- IMPORTACIÓN DE UTILIDADES OCR ---
 try:
-    from utils_ocr import extract_text_from_image
+    from utils_easy import extract_text_from_image
 except ImportError:
     def extract_text_from_image(path): return "[ERROR: Módulo OCR no encontrado]"
 

@@ -74,10 +74,10 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-          "Tiene al menos dos ventajas sobre el texto 1": 1,
-          "Tiene al menos dos ventajas sobre el texto 2": 1,
-          "Tiene al menos dos desventajas sobre el texto 1": 1,
-          "Tiene al menos dos desventajas sobre el texto 2": 1
+          "Tiene al menos dos ventajas sobre el texto 1, que aparezcan nombradas en el texto": 1,
+          "Tiene al menos dos ventajas sobre el texto 2,que aparezcan nombradas en el texto": 1,
+          "Tiene al menos dos desventajas sobre el texto 1,que aparezcan nombradas en el texto": 1,
+          "Tiene al menos dos desventajas sobre el texto 2,que aparezcan nombradas en el texto": 1
         },
         "feedback": {"success": "Has completado la tabla adecuadamente.", "failure": "No has completado la tabla de manera correcta"}
       },
@@ -99,14 +99,14 @@
         "task_id": "cien_s1_t06",
         "task_text": null,
         "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
-        "task_prompt":"Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿En qué están de acuerdo ambos textos?",
+        "task_prompt":"Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?",
         "task_type": "subjetivo",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Pregunta noticias 2",
         "contenido": true,
         "conceptos": ["Impacto ambiental", "Desarrollo y sociedad"],
-        "rubric": "1 punto si menciona que los textos coinciden en alguno de los siguientes aspectos: 1.Ambos textos tratan el mismo proyecto; 2.El proyecto tendrá un impacto relevante; 3.Afectará al entorno; 4.Decisión importante; 5.Consecuencias positivas/negativas; 6.Genera debate. 0 puntos si no lo hace",
+        "rubric": "1 punto si menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate, con sus propias palabras, 0 puntos si no lo hace o lo hace de manera general y vaga",
         "feedback": {"success": "Correcto", "failure": "Incorrecto"}
       },
       {
@@ -114,7 +114,7 @@
         "task_prompt": "Buscando en instagram he encontrado el siguiente post. Si haces click en los comentarios podrás ver todas las respuestas al post.",
         "task_text": null,
         "task_image": ["./data/img/mobil1.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "regions": [{"x": 14, "y": 378, "w": 102, "h": 22, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
@@ -135,8 +135,9 @@
         "contenido": false,
         "conceptos": [],
         "rubric":{
-          "Dice que la postura de Elena es correcta": 1,
-          "Justifica correctamente porque la postura de Elena es correcta": 1
+          "Postura": "Dice que la postura de Elena es correcta 1 punto, si dice que la postura de Jaime es correcta 0 puntos",
+           "Justificación": "Justifica la elección con un argumento coherente relacionado con la fiabilidad de la información, contraste de fuentes o necesidad de evidencia 1 punto, si no toma postura, expresa una justificación vaga (porque sí, me gusta más) o un argumento no relacionado con la calidad de la información 0 puntos"
+          
         },
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
       },
@@ -145,7 +146,7 @@
         "task_prompt": "Además, he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen!",
         "task_text": null,
         "task_image": ["./data/img/mobil2.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "regions": [{"x": 31, "y": 234, "w": 153, "h": 31, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
@@ -245,7 +246,7 @@
         "task_prompt": "Ahora vamos a volver a la página de la Generalitat Valenciana. ¿Accede al apartado conócenos para obtener información relevante sobre la fauna y la flora características de la Sierra Calderona?",
         "task_text": null,
         "task_image": ["./data/img/parque_natural.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "regions": [{"x": 373, "y": 271, "w": 125, "h": 62, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
@@ -259,7 +260,7 @@
         "task_prompt": "Y dentro de “Conócenos”, accede al apartado “Naturaleza” para encontrar dicha información.",
         "task_text": null,
         "task_image": ["./data/img/generalitat.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "regions": [{"x": 225, "y": 224, "w": 84, "h": 54, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
@@ -273,7 +274,7 @@
         "task_prompt": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información.",
         "task_text": null,
         "task_image": ["./data/img/generalitat.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "regions": [{"x": 225, "y": 224, "w": 84, "h": 54, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
@@ -336,8 +337,8 @@
         "contenido": false,
         "conceptos": [],
         "rubric":{
-          "Dice que no esta de acuerdo con Jaime": 1,
-          "Dice que acudiria a la pagina de la Facultad de Ciencias Ambientales": 1
+          "Decision": "No esta de acuerdo con Jaime y justifica la elección con un argumento coherente relacionado con la fiabilidad de la información, contraste de fuentes o necesidad de evidencia 1 punto, si no toma postura, expresa una justificación vaga (porque sí, me gusta más) o un argumento no relacionado con la calidad de la información 0 puntos",
+          "Pagina": "Dice la Facultad de Ciencias Ambientales 1 punto, si dice cualquier otra página 0 puntos"
         },
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
       },
