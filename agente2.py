@@ -166,6 +166,7 @@ def node_evaluate(state: StudentGraphState):
 
     history_entry = TaskEvaluationHistory(
         task_id=current_task.get("task_id"),
+        task_prompt=current_task.get("task_prompt", ""),
         strategy=strat,
         sub_strategy=current_task.get("sub_strategy", ""),
         student_response=str(answer),

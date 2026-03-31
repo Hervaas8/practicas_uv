@@ -4,6 +4,8 @@ import sys
 from configuracion_llm import get_llm_evaluador
 from esquemas import LLMEvaluationOutput
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 
 # --- IMPORTACIÓN DE UTILIDADES OCR ---
 try:
@@ -16,6 +18,7 @@ try:
     with open("prompts.yaml", "r", encoding="utf-8-sig") as f:
         prompts = yaml.safe_load(f)
     PROMPT_TEMPLATE = prompts["eval_subjective_prompt"]
+    PROMPT_FEEDBACK_FINAL = prompts["eval_strategy_feedback_prompt"] # NUEVO
     llm_evaluador = get_llm_evaluador()
 except Exception as e:
     print(f"Error crítico al cargar configuración en motor_evaluacion: {e}")
@@ -116,3 +119,44 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         "reasoning": reasoning,
         "feedback_shown": select_feedback(task, score / max_ref if max_ref > 0 else 0)
     }
+
+
+def generate_strategy_feedback(strategy_name: str, level: str, history: list) -> str:
+    """Genera un feedback cualitativo usando el LLM basado en el historial de una estrategia."""
+    
+    def get_val(item, key, default=""):
+        return item.get(key, default) if isinstance(item, dict) else getattr(item, key, default)
+
+    # Filtramos solo las tareas de esta estrategia y que NO sean del test inicial
+    strat_history = [
+        h for h in history 
+        if get_val(h, 'strategy') == strategy_name and not get_val(h, 'is_test_task', False)
+    ]
+    
+    if not strat_history:
+        return "No hay suficientes datos en esta sesión para realizar un análisis detallado."
+
+    # Construimos el texto del historial
+    historial_texto = ""
+    for i, h in enumerate(strat_history):
+        historial_texto += f"Tarea {i+1}:\n"
+        historial_texto += f"- Pregunta: {get_val(h, 'task_prompt')}\n"
+        historial_texto += f"- Respuesta del alumno: {get_val(h, 'student_response')}\n"
+        historial_texto += f"- Nota: {get_val(h, 'score', 0)}\n"
+        historial_texto += f"- Motivo de la nota: {get_val(h, 'reasoning')}\n\n"
+
+    # Quitamos el StrOutputParser() porque llm_evaluador ya devuelve un LLMEvaluationOutput
+    prompt_tmpl = PromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
+    chain = prompt_tmpl | llm_evaluador 
+    
+    try:
+        resultado = chain.invoke({
+            "estrategia": strategy_name.capitalize(),
+            "nivel": level,
+            "historial_texto": historial_texto.strip()
+        })
+        # El LLM habrá puesto nuestro párrafo dentro del campo reasoning
+        return resultado.reasoning
+    except Exception as e:
+        print(f"Error generando feedback final para {strategy_name}: {e}")
+        return "Ha habido un problema al generar tus consideraciones detalladas."

@@ -11,6 +11,7 @@ class LLMEvaluationOutput(BaseModel):
 class TaskEvaluationHistory(BaseModel):
     """Registro de cada tarea completada por el alumno."""
     task_id: str
+    task_prompt: str = "" # NUEVO: Guardamos la pregunta para el feedback final
     strategy: str
     sub_strategy: Optional[str] = None
     student_response: Any
@@ -23,7 +24,7 @@ class TaskEvaluationHistory(BaseModel):
     # CAMPOS DE CONTENIDO Y EVOLUCIÓN
     contenido: bool = False
     conceptos: List[str] = []
-    current_levels: Dict[str, str] = {} # NUEVO: Guarda una foto del nivel en ese instante
+    current_levels: Dict[str, str] = {} 
 
 # --- ESTADO DEL GRAFO (LangGraph) ---
 class StudentGraphState(BaseModel):
@@ -46,6 +47,7 @@ class StudentGraphState(BaseModel):
     
     # Adaptatividad y Progreso
     competency_levels: Dict[str, str] = {} 
+    detailed_feedback: Dict[str, str] = {} # NUEVO: Para guardar las consideraciones del LLM
     task_history: List[TaskEvaluationHistory] = []
     
     # Feedback para la interfaz

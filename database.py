@@ -30,7 +30,7 @@ def init_db():
         )
     ''')
 
-    # 3. Tabla Resultados de Sesiones
+    # 3. Tabla Resultados de Sesiones (Actualizada con detailed_feedback)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS resultados_sesion (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -38,10 +38,17 @@ def init_db():
             session_id TEXT,
             competency_levels TEXT,
             task_history TEXT,
+            detailed_feedback TEXT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY(alumno_id) REFERENCES usuarios(id)
         )
     ''')
+    
+    # Intentamos añadir la columna detailed_feedback por si la tabla ya existía de antes
+    try:
+        cursor.execute("ALTER TABLE resultados_sesion ADD COLUMN detailed_feedback TEXT")
+    except sqlite3.OperationalError:
+        pass # La columna ya existe
 
     # --- DATOS DE PRUEBA ---
     cursor.execute("SELECT COUNT(*) FROM usuarios")
@@ -77,12 +84,13 @@ def authenticate_user(username, password):
     conn.close()
     return dict(user) if user else None
 
-def save_student_results(alumno_id, session_id, competency_levels, task_history):
+def save_student_results(alumno_id, session_id, competency_levels, task_history, detailed_feedback=None):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     
     levels_json = json.dumps(competency_levels)
     history_json = json.dumps([h.dict() if hasattr(h, 'dict') else h for h in task_history])
+    feedback_json = json.dumps(detailed_feedback) if detailed_feedback else "{}"
     
     cursor.execute("SELECT id FROM resultados_sesion WHERE alumno_id = ? AND session_id = ?", (alumno_id, session_id))
     row = cursor.fetchone()
@@ -90,14 +98,14 @@ def save_student_results(alumno_id, session_id, competency_levels, task_history)
     if row:
         cursor.execute('''
             UPDATE resultados_sesion 
-            SET competency_levels = ?, task_history = ?, timestamp = CURRENT_TIMESTAMP
+            SET competency_levels = ?, task_history = ?, detailed_feedback = ?, timestamp = CURRENT_TIMESTAMP
             WHERE id = ?
-        ''', (levels_json, history_json, row[0]))
+        ''', (levels_json, history_json, feedback_json, row[0]))
     else:
         cursor.execute('''
-            INSERT INTO resultados_sesion (alumno_id, session_id, competency_levels, task_history)
-            VALUES (?, ?, ?, ?)
-        ''', (alumno_id, session_id, levels_json, history_json))
+            INSERT INTO resultados_sesion (alumno_id, session_id, competency_levels, task_history, detailed_feedback)
+            VALUES (?, ?, ?, ?, ?)
+        ''', (alumno_id, session_id, levels_json, history_json, feedback_json))
         
     conn.commit()
     conn.close()
@@ -109,7 +117,7 @@ def get_professor_students_data(profesor_id):
     cursor = conn.cursor()
     
     cursor.execute('''
-        SELECT u.id as alumno_id, u.name as alumno_name, rs.session_id, rs.competency_levels, rs.task_history, rs.timestamp
+        SELECT u.id as alumno_id, u.name as alumno_name, rs.session_id, rs.competency_levels, rs.task_history, rs.detailed_feedback, rs.timestamp
         FROM alumnos_profesor ap
         JOIN usuarios u ON ap.alumno_id = u.id
         LEFT JOIN resultados_sesion rs ON u.id = rs.alumno_id
@@ -127,6 +135,7 @@ def get_professor_students_data(profesor_id):
             "session_id": r["session_id"],
             "competency_levels": json.loads(r["competency_levels"]) if r["competency_levels"] else None,
             "task_history": json.loads(r["task_history"]) if r["task_history"] else None,
+            "detailed_feedback": json.loads(r["detailed_feedback"]) if r["detailed_feedback"] else {},
             "timestamp": r["timestamp"]
         })
     return results

@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 
 # --- IMPORTACIONES DEL AGENTE Y BASE DE DATOS ---
 from agente2 import app, load_test_inicial, load_curriculum
+from motor_evaluacion import generate_strategy_feedback
 from database import authenticate_user, save_student_results, get_professor_students_data
 
 # --- CONFIGURACIÓN ---
@@ -65,7 +66,9 @@ def start_agent(do_test, session_id):
         "test_mode": is_test_mode,
         "competency_levels": default_levels,
         "current_subject": "ciencias",
-        "current_session": session_id
+        "current_session": session_id,
+        "task_history": [],
+        "detailed_feedback": {}
     }, config=config)
     
     new_state = app.get_state(config).values
@@ -114,9 +117,11 @@ def render_competency_sidebar(levels, is_test):
         st.rerun()
 
 # --- FUNCIÓN REUTILIZABLE PARA EL DASHBOARD INDIVIDUAL (ALUMNO Y PROFESOR) ---
-def render_student_dashboard(history, final_levels, current_session, enable_evolution_chart=False):
+def render_student_dashboard(history, final_levels, current_session, detailed_feedback=None, enable_evolution_chart=False):
     """Pinta las pestañas de Estrategias y Contenidos de un alumno."""
-    
+    if detailed_feedback is None:
+        detailed_feedback = {}
+        
     # Cálculo de racha
     max_streak = 0
     current_streak = 0
@@ -185,6 +190,11 @@ def render_student_dashboard(history, final_levels, current_session, enable_evol
                     st.info(f"**{strat_name}:** En proceso de adquirir las herramientas necesarias. Va por buen camino.")
                 else:
                     st.warning(f"**{strat_name}:** Aún desarrollando habilidades base. Requiere más práctica.")
+                
+                # --- NUEVO: DESPLEGABLE CON FEEDBACK DETALLADO DEL LLM ---
+                if detailed_feedback and strat_key in detailed_feedback:
+                    with st.expander(f"🔍 Ver análisis detallado de {strat_name}"):
+                        st.write(detailed_feedback[strat_key])
                     
         # --- EVOLUCIÓN DESDE LA BASE DE DATOS ---
         st.divider()
@@ -227,7 +237,6 @@ def render_student_dashboard(history, final_levels, current_session, enable_evol
             global_score = sum(scores) / len(scores) if scores else 0
             global_score_10 = global_score * 10 
             
-            # ELIMINADO EL GRÁFICO TIPO VELOCÍMETRO, CAMBIADO POR UN MÉTRICO SIMPLE
             col_nota, col_feedback = st.columns([1, 2], gap="large")
             
             with col_nota:
@@ -435,16 +444,18 @@ elif st.session_state.user_role == 'profesor':
                 sel_student_id = st.selectbox("Selecciona un alumno para ver su dashboard:", list(student_dict.keys()), format_func=lambda x: student_dict[x])
                 
                 if sel_student_id:
-                    # Encontramos los datos específicos de ese alumno en esa sesión
                     student_specific_data = next(d for d in session_data if d['alumno_id'] == sel_student_id)
                     st.markdown(f"**Viendo datos de: {student_specific_data['alumno_name']} - {selected_prof_session}**")
                     st.divider()
                     
-                    # Usamos la función reutilizable para pintar el mismo dashboard que ve el alumno
+                    # Recuperar el detailed_feedback de la base de datos
+                    detailed_fb = student_specific_data.get('detailed_feedback', {})
+                    
                     render_student_dashboard(
                         history=student_specific_data['task_history'], 
                         final_levels=student_specific_data['competency_levels'], 
                         current_session=selected_prof_session,
+                        detailed_feedback=detailed_fb,
                         enable_evolution_chart=False 
                     )
 
@@ -494,17 +505,33 @@ elif st.session_state.user_role == 'alumno':
             final_levels = competencies
             current_session = get_val(state_vals, "current_session")
             
+            # --- NUEVO: GENERAR EL FEEDBACK DETALLADO CON SPINNER ---
+            detailed_feedback = get_val(state_vals, "detailed_feedback") or {}
+            
+            # Si no se ha generado todavía en esta sesión, lo generamos
+            if not detailed_feedback and history:
+                with st.spinner("🤖 El Tutor IA está analizando tus respuestas para redactar tus consideraciones finales..."):
+                    for strat_key in ["navegar", "integrar", "evaluar"]:
+                        nivel_actual = final_levels.get(strat_key, "nivel_1")
+                        # Llamada al motor para generar el texto cualitativo
+                        texto = generate_strategy_feedback(strat_key, nivel_actual, history)
+                        detailed_feedback[strat_key] = texto
+                    
+                    # Lo guardamos en el estado para que no se regenere si el alumno recarga la página
+                    app.update_state(config, {"detailed_feedback": detailed_feedback})
+
             # --- GUARDAR EN BASE DE DATOS ---
             if history:
                 save_student_results(
                     alumno_id=st.session_state.user_id,
                     session_id=current_session,
                     competency_levels=final_levels,
-                    task_history=history
+                    task_history=history,
+                    detailed_feedback=detailed_feedback
                 )
             
-            # Llamada a la función reutilizable para pintar el dashboard
-            render_student_dashboard(history, final_levels, current_session, enable_evolution_chart=True)
+            # Pintamos el dashboard pasando el feedback detallado
+            render_student_dashboard(history, final_levels, current_session, detailed_feedback, enable_evolution_chart=True)
 
             # --- PESTAÑA EXTRA SOLO PARA ALUMNO: OPINIÓN ---
             st.markdown("### 🗣️ Mi Opinión")
@@ -529,7 +556,7 @@ elif st.session_state.user_role == 'alumno':
                         app.update_state(config, {
                             "current_session": next_session, "remaining_tasks": new_tasks, "total_tasks": len(new_tasks),
                             "current_task": new_tasks[0], "current_task_prompt": new_tasks[0].get("task_prompt", ""),
-                            "task_history": [], "last_feedback_message": None
+                            "task_history": [], "last_feedback_message": None, "detailed_feedback": {}
                         })
                         st.session_state.display_task = new_tasks[0]
                         st.session_state.display_prompt = new_tasks[0].get("task_prompt", "")
