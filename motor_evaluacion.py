@@ -121,8 +121,18 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
     }
 
 
+# --- 1. DICCIONARIO DE SUB-ESTRATEGIAS ---
+MAPA_SUBESTRATEGIAS = {
+    "N1": "Identificar la estructura del texto online",
+    "N2": "Determinar relevancia de la info",
+    "I1": "Combinar información complementaria",
+    "I2": "Enfrentarse al conflicto intertextual",
+    "E1": "Analizar expertise del autor",
+    "E2": "Analizar benevolencia"
+}
+
 def generate_strategy_feedback(strategy_name: str, level: str, history: list) -> str:
-    """Genera un feedback cualitativo usando el LLM basado en el historial de una estrategia."""
+    """Genera un feedback cualitativo usando el LLM basado en el historial y sub-estrategias."""
     
     def get_val(item, key, default=""):
         return item.get(key, default) if isinstance(item, dict) else getattr(item, key, default)
@@ -136,16 +146,26 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
     if not strat_history:
         return "No hay suficientes datos en esta sesión para realizar un análisis detallado."
 
-    # Construimos el texto del historial
+    # Construimos el diccionario de sub-estrategias usadas
+    sub_vistas = set()
     historial_texto = ""
+    
     for i, h in enumerate(strat_history):
-        historial_texto += f"Tarea {i+1}:\n"
+        sub_code = get_val(h, 'sub_strategy', "General")
+        significado = MAPA_SUBESTRATEGIAS.get(sub_code, "Habilidad general")
+        
+        if sub_code != "General" and sub_code is not None:
+            sub_vistas.add(f"- {sub_code}: {significado}")
+
+        historial_texto += f"Tarea {i+1} (Habilidad específica: {sub_code}):\n"
         historial_texto += f"- Pregunta: {get_val(h, 'task_prompt')}\n"
         historial_texto += f"- Respuesta del alumno: {get_val(h, 'student_response')}\n"
         historial_texto += f"- Nota: {get_val(h, 'score', 0)}\n"
         historial_texto += f"- Motivo de la nota: {get_val(h, 'reasoning')}\n\n"
 
-    # Quitamos el StrOutputParser() porque llm_evaluador ya devuelve un LLMEvaluationOutput
+    sub_info_ayuda = "\n".join(sub_vistas)
+
+    # Llamamos al LLM
     prompt_tmpl = PromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
     chain = prompt_tmpl | llm_evaluador 
     
@@ -153,9 +173,10 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
         resultado = chain.invoke({
             "estrategia": strategy_name.capitalize(),
             "nivel": level,
+            "sub_info": sub_info_ayuda,
             "historial_texto": historial_texto.strip()
         })
-        # El LLM habrá puesto nuestro párrafo dentro del campo reasoning
+        # El LLM devuelve el párrafo estructurado en el campo reasoning
         return resultado.reasoning
     except Exception as e:
         print(f"Error generando feedback final para {strategy_name}: {e}")

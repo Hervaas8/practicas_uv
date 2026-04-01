@@ -603,15 +603,12 @@ elif st.session_state.user_role == 'alumno':
                             st.info("🎯 Haz clic directamente en la imagen de la derecha para responder.")
                         elif t_type == "v_y_d":
                             st.info("Completa la tabla:")
-                            with st.form("form_vyd"):
+                            with st.form(f"form_vyd_{task['task_id']}"):
                                 r1c1, r1c2 = st.columns(2)
-                                v1 = r1c1.text_area("Ventajas T1")
-                                d1 = r1c2.text_area("Desventajas T1")
-                                r2c1, r2c2 = st.columns(2)
-                                v2 = r2c1.text_area("Ventajas T2")
-                                d2 = r2c2.text_area("Desventajas T2")
+                                v = r1c1.text_area("Ventajas")
+                                d = r1c2.text_area("Desventajas")
                                 if st.form_submit_button("Enviar"):
-                                    submit_answer(f"T1 V:{v1} D:{d1} | T2 V:{v2} D:{d2}")
+                                    submit_answer(f"Ventajas: {v} | Desventajas: {d}")
                         elif t_type == "conectar":
                             user_map = {}
                             for concept in task.get("concepts", []):
