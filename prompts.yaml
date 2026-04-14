@@ -42,7 +42,7 @@ eval_strategy_feedback_prompt: |
   1. Escribe en segunda persona del singular ("has logrado", "te sugiero", "he notado que").
   2. Comienza destacando un aspecto positivo real basado en las tareas donde sacó buena nota.
   3. Señala específicamente en qué tipos de ejercicios o conceptos ha tenido problemas, fijándote en sus respuestas incorrectas o incompletas y en el "Motivo de la nota".
-  4. NO menciones los códigos (ej: no digas "fallas en I1"), usa su SIGNIFICADO para apoyar tu feedback (ej: "tienes dificultades al extraer las ideas principales").
+  4. NO menciones los códigos (ej: no digas "fallas en I1"), usa su SIGNIFICADO para apoyar tu feedbackgit  (ej: "tienes dificultades al extraer las ideas principales").
   5. Sé muy específico: si el historial muestra que acierta en una sub-habilidad pero falla en otra, felicítalo por la primera y dale un consejo concreto para la segunda.
   6. Si todo está perfecto, simplemente felicítalo y anímalo a mantener ese nivel.
   7. Escribe un único párrafo fluido en ESPAÑOL. NO uses viñetas ni negritas en exceso.

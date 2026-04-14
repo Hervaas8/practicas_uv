@@ -84,9 +84,9 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
     else:
         # Calculamos el peso total de la rúbrica si es un diccionario (varios objetivos)
         rubric = task.get("rubric", {})
-        max_possible_points = 1.0
+        max_score = 1.0
         if isinstance(rubric, dict):
-            max_possible_points = float(sum(v for v in rubric.values() if isinstance(v, (int, float))))
+            max_score = float(sum(v for v in rubric.values() if isinstance(v, (int, float))))
 
         context_parts = [task.get("task_text", "")]
         for img in (task.get("task_image", []) if isinstance(task.get("task_image"), list) else [task.get("task_image")]):
@@ -100,11 +100,11 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         try:
             # Informamos al LLM del máximo de puntos para que evalúe cada item por separado
             llm_result = chain.invoke({
-                "task_text": final_context,
-                "rubrica_text": f"Puntuación total máxima: {max_possible_points}. Detalle: {rubric_text}",
-                "task_prompt": task.get("task_prompt", ""),
-                "student_answer": student_answer
-            })
+            "task_text": final_context,
+            "rubrica_text": json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric),
+            "task_prompt": f"{task.get('task_prompt', '')}. NOTA: Esta tarea tiene varios objetivos, evalúa cada uno y suma los puntos según la rúbrica (Total máximo: {max_score})",
+            "student_answer": student_answer
+        })
             score = round(llm_result.score, 2)
             reasoning = llm_result.reasoning
         except Exception as e:
@@ -113,11 +113,11 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
     # Normalizamos el feedback basado en el porcentaje obtenido sobre el máximo
     # En tareas de 1 solo punto, score == normalized_score.
     # En tareas de 2 puntos, si saca 1.0, el normalized_score es 0.5 (aprobado).
-    max_ref = max_possible_points if 'max_possible_points' in locals() else 1.0
+    
     return {
         "score": score,
         "reasoning": reasoning,
-        "feedback_shown": select_feedback(task, score / max_ref if max_ref > 0 else 0)
+        "feedback_shown": select_feedback(task, score / max_score if max_ref > 0 else 0)
     }
 
 
