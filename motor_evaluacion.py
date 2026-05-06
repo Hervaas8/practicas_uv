@@ -18,7 +18,7 @@ try:
     with open("prompts.yaml", "r", encoding="utf-8-sig") as f:
         prompts = yaml.safe_load(f)
     PROMPT_TEMPLATE = prompts["eval_subjective_prompt"]
-    PROMPT_FEEDBACK_FINAL = prompts["eval_strategy_feedback_prompt"] # NUEVO
+    PROMPT_FEEDBACK_FINAL = prompts["eval_strategy_feedback_prompt"]
     llm_evaluador = get_llm_evaluador()
 except Exception as e:
     print(f"Error crítico al cargar configuración en motor_evaluacion: {e}")
@@ -80,13 +80,12 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         else:
             score, reasoning = 0.0, "Coordenadas no válidas."
 
-    # --- TIPO: SUBJETIVO / V_Y_D (Evaluación Multi-Objetivo) ---
+    # --- TIPO: SUBJETIVO / V_Y_D ---
     else:
-        # Calculamos el peso total de la rúbrica si es un diccionario (varios objetivos)
         rubric = task.get("rubric", {})
-        max_score = 1.0
+        max_possible_points = 1.0
         if isinstance(rubric, dict):
-            max_score = float(sum(v for v in rubric.values() if isinstance(v, (int, float))))
+            max_possible_points = float(sum(v for v in rubric.values() if isinstance(v, (int, float))))
 
         context_parts = [task.get("task_text", "")]
         for img in (task.get("task_image", []) if isinstance(task.get("task_image"), list) else [task.get("task_image")]):
@@ -98,28 +97,33 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
         chain = prompt_tmpl | llm_evaluador
         try:
-            # Informamos al LLM del máximo de puntos para que evalúe cada item por separado
             llm_result = chain.invoke({
-            "task_text": final_context,
-            "rubrica_text": json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric),
-            "task_prompt": f"{task.get('task_prompt', '')}. NOTA: Esta tarea tiene varios objetivos, evalúa cada uno y suma los puntos según la rúbrica (Total máximo: {max_score})",
-            "student_answer": student_answer
-        })
+                "task_text": final_context,
+                "rubrica_text": f"Puntuación total máxima: {max_possible_points}. Detalle: {rubric_text}",
+                "task_prompt": task.get("task_prompt", ""),
+                "student_answer": student_answer
+            })
             score = round(llm_result.score, 2)
             reasoning = llm_result.reasoning
         except Exception as e:
             print(f"Error LLM: {e}"); return None
 
-    # Normalizamos el feedback basado en el porcentaje obtenido sobre el máximo
-    # En tareas de 1 solo punto, score == normalized_score.
-    # En tareas de 2 puntos, si saca 1.0, el normalized_score es 0.5 (aprobado).
-    
+    # --- CÁLCULO DE MAX_REF SEGURO ---
+    max_ref = 1.0
+    if task_type not in ["conectar", "objetivo", "interactivo"]:
+        rubric = task.get("rubric", {})
+        if isinstance(rubric, dict):
+            puntos = sum(v for v in rubric.values() if isinstance(v, (int, float)))
+            if puntos > 0:
+                max_ref = float(puntos)
+
+    porcentaje_acierto = score / max_ref if max_ref > 0 else 0.0
+
     return {
         "score": score,
         "reasoning": reasoning,
-        "feedback_shown": select_feedback(task, score / max_score if max_ref > 0 else 0)
+        "feedback_shown": select_feedback(task, porcentaje_acierto)
     }
-
 
 # --- 1. DICCIONARIO DE SUB-ESTRATEGIAS ---
 MAPA_SUBESTRATEGIAS = {
@@ -133,11 +137,9 @@ MAPA_SUBESTRATEGIAS = {
 
 def generate_strategy_feedback(strategy_name: str, level: str, history: list) -> str:
     """Genera un feedback cualitativo usando el LLM basado en el historial y sub-estrategias."""
-    
     def get_val(item, key, default=""):
         return item.get(key, default) if isinstance(item, dict) else getattr(item, key, default)
 
-    # Filtramos solo las tareas de esta estrategia y que NO sean del test inicial
     strat_history = [
         h for h in history 
         if get_val(h, 'strategy') == strategy_name and not get_val(h, 'is_test_task', False)
@@ -146,7 +148,6 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
     if not strat_history:
         return "No hay suficientes datos en esta sesión para realizar un análisis detallado."
 
-    # Construimos el diccionario de sub-estrategias usadas
     sub_vistas = set()
     historial_texto = ""
     
@@ -165,7 +166,6 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
 
     sub_info_ayuda = "\n".join(sub_vistas)
 
-    # Llamamos al LLM
     prompt_tmpl = PromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
     chain = prompt_tmpl | llm_evaluador 
     
@@ -176,7 +176,6 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
             "sub_info": sub_info_ayuda,
             "historial_texto": historial_texto.strip()
         })
-        # El LLM devuelve el párrafo estructurado en el campo reasoning
         return resultado.reasoning
     except Exception as e:
         print(f"Error generando feedback final para {strategy_name}: {e}")
