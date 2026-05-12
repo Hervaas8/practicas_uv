@@ -1,93 +1,306 @@
 [
   {
     "id": "tarea_01",
-    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.a\n\nPregunta: 4. Ve al nuevo foro y lee el mensaje de Car22. ¿Quién ha sido el último en responder?\na. Andrés\nb. Car22\nc. Pat00\nd. Virdo",
-    "task_image": ["./data/img/foro_arbol.png"],
+    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n1. Ve al nuevo foro y lee el mensaje de Car22. ¿Quién ha sido el último en responder?\na. Andrés\nb. Car22\nc. Pat00\nd. Virdo",
+    "task_image": ["./data/img_pre/foro_arbol.png"],
     "strategy": "navegar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_02",
-    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.a\n\nPregunta: 5. ¿Consideras que Andrés y Virdo están de acuerdo en la solución al problema de Car22?\na. Sí, porque ambos están de acuerdo en que el árbol de Navidad es demasiado débil para poder replantarlo.\nb. No, porque uno le aconseja que lo replante, y el otro que no lo haga.\nc. Sí, porque ambos le recomiendan que replante el árbol de Navidad y les parece una opción muy ecológica.\nd. No, porque mientras un participante le aconseja regalar el árbol de Navidad, otro le aconseja que lo use como abono.",
-    "task_image": ["./data/img/foro_arbol.png"],
+    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n2. ¿Consideras que Andrés y Virdo están de acuerdo en la solución al problema de Car22?\na. Sí, porque ambos están de acuerdo en que el árbol de Navidad es demasiado débil para poder replantarlo.\nb. No, porque uno le aconseja que lo replante, y el otro que no lo haga.\nc. Sí, porque ambos le recomiendan que replante el árbol de Navidad y les parece una opción muy ecológica.\nd. No, porque mientras un participante le aconseja regalar el árbol de Navidad, otro le aconseja que lo use como abono.",
+    "task_image": ["./data/img_pre/foro_arbol.png"],
     "strategy": "integrar",
     "correct_answer": "b"
   },
   {
     "id": "tarea_03",
+    "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n3.¿Qué recomendación crees que debería seguir Car22?\na. La de Pat00, porque le anima con su mensaje.\nb. La de Virdo, porque sabe mucho de árboles de Navidad.\nc. La de Andrés, porque es un experto en el tema.\nd. Las tres son buenas recomendaciones.",
+    "task_image": ["./data/img_pre/foro_arbol.png"],
+    "strategy": "integrar",
+    "correct_answer": "c"
+  },
+  {
+    "id": "tarea_04",
+    "task_prompt": "Quieres abrirte una cuenta en una nueva red social llamada Lingo. Has escuchado que tiene mejores prestaciones que Instagram pero que podría tener problemas de seguridad. Has hecho la consulta en Internet y has obtenido los siguientes 4 resultados.\n\n4. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema?\na. Ventajas...\nb. Diviértete...\nc. Tutorial.\nd. Beneficios...",
+    "task_image": ["./data/img_pre/google_1.png"],
+    "strategy": "integrar",
+    "correct_answer": "d"
+  },
+  {
+    "id": "tarea_05",
+    "task_prompt": "Quieres abrirte una cuenta en una nueva red social llamada Lingo. Has escuchado que tiene mejores prestaciones que Instagram pero que podría tener problemas de seguridad. Has hecho la consulta en Internet y has obtenido los siguientes 4 resultados.\n\n5. ¿El/la autor/a de qué página crees que es más experto/a en el tema? \na. Ventajas… porque sale primero en la lista.\nb. Diviértete… porque escribe bien del tema.\nc. Tutorial...porque tiene un blog de tecnología.\nd. Beneficios...porque viene de la universidad.",
+    "task_image": ["./data/img_pre/google_1.png"],
+    "strategy": "integrar",
+    "correct_answer": "d"
+  },
+  {
+    "id": "tarea_03",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: En la web de la Revolución Francesa, sección 'Nuevo sistema político', ¿cuál es la frase de Rousseau?\na. La soberanía ha de emanar de la voluntad general.\nb. Es necesario poner límites a la libertad.\nc. La soberanía puede ser divisible en varios poderes.\nd. El voto debe ser universal, personal, libre y secreto.",
-    "task_image": ["./data/img/wiki_francesa.png"],
+    "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "a"
   },
   {
     "id": "tarea_04",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: Debes acceder a la sección ‘3.2. Pérdida de poder de la iglesia’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿Por qué el Papa de Roma Pio VI planteó la posibilidad de echar de la Iglesia a los religiosos que aceptaron las leyes revolucionarias? Porque…\na. No le interesaba contar con religiosos que ya no eran católicos.\nb. juraron fidelidad a otro Papa distinto para la Iglesia.\nc. las leyes revolucionarias limitaban el poder de la Iglesia.\nd. se habían suprimido las órdenes religiosas a las que pertenecía",
-    "task_image": ["./data/img/wiki_francesa.png"],
+    "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_05",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\nPregunta: Debes acceder a la sección ‘3.3. Pérdida de poder del Rey’ de la página web principal ‘La Revolución Francesa’, y contestar a la siguiente pregunta:\n¿De qué países eran los monarcas absolutos que firmaron un acuerdo para socorrer al rey francés?\na. Rusia y Prusia\nb. La mayoría de los países europeos\nc. Muchos de los países cristianos.\nd. Austria y Prusia.",
-    "task_image": ["./data/img/wiki_francesa.png"],
+    "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_06",
-    "task_prompt": "A continuación visitarás una página de resultados del buscador Google. Lee atentamente las preguntas porque tendrás que hacer cosas distintas en diferentes preguntas.\n\nPregunta: Lee las webs de “OMS: beneficios alimentos transgénicos...” y “Ministerio alerta sobre...” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas? Los alimentos transgénicos…\na. no deben ingerirse en una dieta equilibrada, aunque un estudio encuentra que no tienen efecto en las mujeres embarazadas\nb. presentan un conjunto de ventajas para el consumidor, pero aún no tienen el visto bueno de Europa\nc. pueden tener un alto valor nutritivo, pero podrían ser perjudiciales para la salud humana.\nd. Etienen menos minerales y vitaminas, como se ha demostrado en un estudio en mujeres embarazadas.",
-    "task_image": ["./data/img/google_1.png"],
-    "strategy": "integrar",
-    "correct_answer": "a"
-  },
-  {
-    "id": "tarea_07",
-    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:\na. Estudiaba en el Instituto.\nb. Estaba sentado junto a su familia y amigos viendo un partido.\nc. Estudiaba en un centro de alto rendimiento para deportistas.\nd. Jugaba en un equipo universitario.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n10. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema? \na. Morenos...\nb. Consejos...\nc. Uso...\nd. Ponte...",
+    "task_image": ["./data/img_pre/web_rayos.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
+    "id": "tarea_06",
+    "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n11. ¿Cuál de los/las autores/as que aparecen en los resultados es más experto/a en el tema?  \na. La experta Isabel Belmonte\nb. El Dr. García\nc. El autor del blog Mis trucos…\nd. El peluquero R. Garrido",
+    "task_image": ["./data/img_pre/web_rayos.png"],
+    "strategy": "integrar",
+    "correct_answer": "b"
+  },
+  {
+    "id": "tarea_06",
+    "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n12.  ¿Cuál de las páginas crees que quiere venderte un producto? \na. Morenos...\nb. Consejos...\nc. Uso...\nd. Ponte...",
+    "task_image": ["./data/img_pre/web_rayos.png"],
+    "strategy": "integrar",
+    "correct_answer": "d"
+  },
+  {
+    "id": "tarea_07",
+    "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:\na. Estudiaba en el Instituto.\nb. Estaba sentado junto a su familia y amigos viendo un partido.\nc. Estudiaba en un centro de alto rendimiento para deportistas.\nd. Jugaba en un equipo universitario.",
+    "task_image": ["./data/img_pre/web_j.png"],
+    "strategy": "integrar",
+    "correct_answer": "c",
+    "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/main.png",
+        "links": [
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "mediambiente"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "reciclaje"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "animales"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "plantas"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "tecnologia"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "videojuegos"},
+          {"x": 50, "y": 150, "w": 150, "h": 40, "target": "moviles"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "ordenadores"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "salud"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "cuerpo"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "sentimientos"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "adicciones"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "deportes"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "baloncesto"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "futbol"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "material"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "cursos"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "musica"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "danza"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "plastica"}
+        ]
+      },
+      "medioambiente": {
+        "image": "./data/img_pre/nav_fauna.png",
+        "links": [
+          {"x": 200, "y": 300, "w": 100, "h": 30, "target": "reciclaje"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "animales"},
+          {"x": 50, "y": 100, "w": 150, "h": 40, "target": "plantas"}
+        ]
+      },
+      "tecnologia": {
+        "image": "./data/img_pre/nav_flora.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "videojuegos"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "moviles"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "ordenadores"}]
+      },
+      "salud": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "cuerpo"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "sentimientos"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "adicciones"}]
+      },
+      "deportes": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "baloncesto"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "futbol"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "material"}]
+      },
+      "cursos": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "musica"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "danza"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "plastica"}]
+      },
+      "reciclaje": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "contenedor"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "manualidades"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "erres"}]
+      },
+      "animales": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "lince"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "especies"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "causas"}]
+      },
+      "plantas": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "flora"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "consumo"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "cambio"}]
+      },
+      "videojuegos": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "maniac"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "vendidos"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "estrenos"}]
+      },
+      "moviles": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "nuevo"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "consejos"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "nacio"}]
+      },
+      "ordenadores": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "multimedia"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "problemas"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "informatica"}]
+      },
+      "cuerpo": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "calzado"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "acne"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "senos"}]
+      },
+      "sentimientos": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "examen"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "presion"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "autoestima"}]
+      },
+      "adicciones": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "tabaco"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "botellon"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "drogas"}]
+      },
+      "baloncesto": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "altura"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "nba"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "eleccion"}]
+      },
+      "futbol": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "futbolista"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "cantera"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "femenino"}]
+      },
+      "material": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "aventura"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "compras"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "nike"}]
+      },
+      "musica": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "solfeo"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "canto"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "guitarra"}]
+      },
+      "danza": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "aprende"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "apuntate"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "baile"}]
+      },
+      "plastica": {
+        "image": "./data/img_pre/nav_lince.png",
+        "links": [{"x": 50, "y": 100, "w": 150, "h": 40, "target": "fotografia"},
+      {"x": 50, "y": 100, "w": 150, "h": 40, "target": "grafiti"},
+    {"x": 50, "y": 100, "w": 150, "h": 40, "target": "pintura"}]
+      }
+    }
+  },
+  {
     "id": "tarea_08",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: ¿Cuál es el videojuego más vendido para la videoconsola NDS?\na. Pokemon Platinum.\nb. Pokemon Oro\nc. Red Dead Redemption.\nd. Pokemon Plata.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_09",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: De todos los talleres de fotografía que se anuncian. ¿Cuál ofrece más horas de clase?\na. El de Foto Aula.\nb. El de Photolocus.\nc. El de Escuela Cinderela\nd. El de la Asociación Culturarte.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_10",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Siempre que uses materiales reciclados para hacer manualidades, se recomienda que:\na. Evites usar materiales peligrosos, como botellas de vidrio o latas.\nb. Compres libros de manualidades y reciclaje.\nc. El material esté limpio y seco.\nd. Uses siempre guantes.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_11",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Eres usuario de la Web Joven y quieres conseguir una raqueta de tenis. Para ello visitas la tienda on-line con mejor valoración de los usuarios de la Web Joven. ¿Cuánto te costará que te envíen la raqueta a casa?\na. Nada, es gratis.\nb. Depende del tipo de producto que compre.\nc. 5 € por producto.\nd. 3 € por producto.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_12",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: Según las recomendaciones de la Web Joven, ¿cuál puede ser la razón por la que el ordenador abra programas por sí solo?\na. El ordenador va demasiado lento.\nb. El ordenador necesita un parche\nc. El ordenador tiene virus\nd. El sistema no se puede analizar.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_13",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nPregunta: La Web Joven acaba de publicar un informe sobre el riesgo de extinción de aves y mamíferos. ¿Qué riesgo de extinción existe en Canadá?\na. Riesgo alto.\nb. Riesgo intermedio.\nc. Riesgo bajo.\nd. No hay información de Canadá.",
-    "task_image": ["./data/img/web_j.png"],
+    "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
     "correct_answer": "c"
+  },
+  {
+    "id": "tarea_12",
+    "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n23. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema? \na. Los videos...\nb. Concurso...\nc. Problemas...\nd. Peligro...",
+    "task_image": ["./data/img_pre/web_tik.png"],
+    "strategy": "integrar",
+    "correct_answer": "d"
+  },
+  {
+    "id": "tarea_12",
+    "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n24. ¿El/la autor/a de qué página crees que tiene más experiencia en saber si los vídeos de TikTok pueden ser robados para fines publicitarios? \na. Los videos...porque sale primero en la lista.\nb. Concurso... porque es del Ministerio.\nc. Problemas...porque tiene un blog de tecnología.\nd. Peligro...porque es una asociación que ayuda a los usuarios.",
+    "task_image": ["./data/img_pre/web_tik.png"],
+    "strategy": "integrar",
+    "correct_answer": "d"
+  },
+  {
+    "id": "tarea_12",
+    "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n25.  ¿Cuál de las páginas crees que quiere venderte un producto? \na. Los videos...\nb. Concurso...\nc. Problemas...\nd. Peligro...",
+    "task_image": ["./data/img_pre/web_tik.png"],
+    "strategy": "integrar",
+    "correct_answer": "a"
+  },
+  {
+    "id": "tarea_12",
+    "task_prompt": "27. En esta ocasión tienes que buscar información en Internet sobre las posibles soluciones que se han propuesto para combatir los efectos del cambio climático en el planeta. Elige una de las siguientes opciones:\na. Cambio climático\nb. Cambio climático soluciones\nc. Soluciones para el cambio climático\nd. Cómo solucionar el cambio climático en el planeta",
+    "task_image": [],
+    "strategy": "integrar",
+    "correct_answer": "a"
   }
+  
 ]
