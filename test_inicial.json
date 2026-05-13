@@ -88,6 +88,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n13. Te gustaría aprender a cantar, y para ello decides apuntarte a la oferta formativa del Servicio de Juventud. Busca la dirección del centro donde aprenderás a cantar. Se encuentra en la calle…\na. Padre Vitoria\nb. Central\nc. Donoso Cortés\nd.Goya",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -417,6 +418,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n¿Qué talla española de sujetador utilizará una chica cuyo contorno son 104 cm y la medida de bajo pecho es 82 cm?\na. La 90 C\nb.La 100 B\nc.La 95 D\nd. La 115 A",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -746,6 +748,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n15.Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:\na. Estudiaba en el Instituto.\nb. Estaba sentado junto a su familia y amigos viendo un partido.\nc. Estudiaba en un centro de alto rendimiento para deportistas.\nd. Jugaba en un equipo universitario.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -1075,6 +1078,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n16.¿Cuál es el videojuego más vendido para la videoconsola NDS?\na. Pokemon Platinum.\nb. Pokemon Oro\nc. Red Dead Redemption.\nd. Pokemon Plata.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -1404,6 +1408,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n17.De todos los talleres de fotografía que se anuncian. ¿Cuál ofrece más horas de clase?\na. El de Foto Aula.\nb. El de Photolocus.\nc. El de Escuela Cinderela\nd. El de la Asociación Culturarte.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -1733,6 +1738,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nAlgunas compañías envían SMS de descargas multimedia para captar clientes y cobrar esas descargas a precios muy altos. Estos mensajes suelen ser...\na.De numeros muy cortos o muy largos. \nb. Mensajes muy largos o muy cortos.\nc. Siempre de compañías telefónicas.\nd. Mensajes 100% seguros.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -2062,6 +2068,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n19.Siempre que uses materiales reciclados para hacer manualidades, se recomienda que:\na. Evites usar materiales peligrosos, como botellas de vidrio o latas.\nb. Compres libros de manualidades y reciclaje.\nc. El material esté limpio y seco.\nd. Uses siempre guantes.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -2391,6 +2398,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n20.Eres usuario de la Web Joven y quieres conseguir una raqueta de tenis. Para ello visitas la tienda on-line con mejor valoración de los usuarios de la Web Joven. ¿Cuánto te costará que te envíen la raqueta a casa?\na. Nada, es gratis.\nb. Depende del tipo de producto que compre.\nc. 5 € por producto.\nd. 3 € por producto.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -2720,6 +2728,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n21.Según las recomendaciones de la Web Joven, ¿cuál puede ser la razón por la que el ordenador abra programas por sí solo?\na. El ordenador va demasiado lento.\nb. El ordenador necesita un parche\nc. El ordenador tiene virus\nd. El sistema no se puede analizar.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
@@ -3049,6 +3058,7 @@
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n22.La Web Joven acaba de publicar un informe sobre el riesgo de extinción de aves y mamíferos. ¿Qué riesgo de extinción existe en Canadá?\na. Riesgo alto.\nb. Riesgo intermedio.\nc. Riesgo bajo.\nd. No hay información de Canadá.",
     "task_image": ["./data/img_pre/web_j.png"],
     "strategy": "integrar",
+    "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {

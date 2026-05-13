@@ -16,15 +16,17 @@ def load_test_inicial():
         
         adapted_tasks = []
         for t in raw_tasks:
+            # AHORA RESPETA EL TASK_TYPE DEL JSON Y CARGA LAS PANTALLAS
             adapted_tasks.append({
                 "task_id": t.get("id"),
                 "task_prompt": t.get("task_prompt"),
                 "task_image": t.get("task_image", []),
-                "task_type": "objetivo",
+                "task_type": t.get("task_type", "objetivo"), # Si no tiene, por defecto es objetivo
                 "correct_answer": t.get("correct_answer"),
                 "strategy": t.get("strategy", "general"),
                 "sub_strategy": None,
-                "description": "Test Inicial"
+                "description": "Test Inicial",
+                "pantallas": t.get("pantallas", {}) # <-- Súper importante para la navegación
             })
         return adapted_tasks
     except Exception as e:
@@ -66,15 +68,25 @@ def calculate_levels_from_test(history: List[TaskEvaluationHistory]) -> Dict[str
     return new_levels
 
 def calculate_dynamic_level(current_strategy: str, current_level: str, current_score: float, history: List[TaskEvaluationHistory]) -> str:
-    """Calcula el nuevo nivel basándose en una ventana de al menos 3 respuestas."""
+    """
+    Calcula el nuevo nivel basándose en una ventana de al menos 3 respuestas.
+    No realiza cambios hasta que el historial + la respuesta actual sumen 3 registros.
+    """
+    # Filtramos el historial para esta estrategia específica (excluyendo el test)
     relevant_history = [h for h in history if h.strategy == current_strategy and not h.is_test_task]
     
+    # NUEVA REGLA: Si el total de respuestas (historial + la actual) es menor que 3, no hay cambio
     if (len(relevant_history) + 1) < 3:
         return current_level
 
+    # Tomamos las últimas 2 del historial para completar la ventana de 3 con la actual
     last_entries = relevant_history[-2:]
+    
+    # Sumamos los hits. Un 'hit' es un punto entero ganado (soporta tareas multi-objetivo)
+    # Ejemplo: Si una tarea valía 2 puntos y sacó un 2.0, suma 2 hits.
     hits = sum(h.score_weighted for h in last_entries) + current_score
     
+    # Umbrales de decisión (Basados en una ventana de 3 tareas estándar o equivalentes en puntos)
     if current_level == "nivel_1":
         if hits >= 2.0: return "nivel_2"
         else: return "nivel_1"
@@ -126,13 +138,13 @@ def node_evaluate(state: StudentGraphState):
     """Evalúa la respuesta e integra la lógica de cambio de nivel por ventana."""
     current_task = state.current_task
     answer = state.current_student_response
-    tiempo = getattr(state, 'current_response_time', 0.0)
     
     if not current_task: return {}
 
     strat = current_task.get("strategy", "general")
     current_level_val = state.competency_levels.get(strat, "nivel_1")
     
+    # El motor ahora devuelve el score bruto (ej: 2.0 si hay dos objetivos en la rúbrica)
     res = evaluate_task(current_task, answer, current_level_val)
     
     if not res: return {"last_feedback_message": "Error técnico en la evaluación."}
@@ -140,6 +152,7 @@ def node_evaluate(state: StudentGraphState):
     is_test = state.test_mode
     new_levels = state.competency_levels.copy()
     
+    # Solo calculamos cambio dinámico fuera del modo test y si no es contenido puro
     if not is_test and strat != "contenido":
         new_level = calculate_dynamic_level(
             strat, 
@@ -159,15 +172,14 @@ def node_evaluate(state: StudentGraphState):
         strategy=strat,
         sub_strategy=current_task.get("sub_strategy", ""),
         student_response=str(answer),
-        score=res["score"],
+        score=res["score"], # Puntuación bruta para el cálculo de hits
         score_weighted=res["score"], 
         feedback_shown=feedback_msg,
         reasoning=res["reasoning"],
         is_test_task=is_test,
         contenido=current_task.get("contenido", False),
         conceptos=current_task.get("conceptos", []),
-        current_levels=new_levels.copy(),
-        time_taken=tiempo  # NUEVO: Guardado en el historial
+        current_levels=new_levels.copy()
     )
 
     return {
