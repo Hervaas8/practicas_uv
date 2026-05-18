@@ -116,13 +116,10 @@ def render_competency_sidebar(levels, is_test):
         st.session_state.clear()
         st.rerun()
 
-# --- FUNCIÓN REUTILIZABLE PARA EL DASHBOARD INDIVIDUAL (ALUMNO Y PROFESOR) ---
 def render_student_dashboard(history, final_levels, current_session, detailed_feedback=None, enable_evolution_chart=False):
-    """Pinta las pestañas de Estrategias y Contenidos de un alumno."""
     if detailed_feedback is None:
         detailed_feedback = {}
         
-    # Cálculo de racha
     max_streak = 0
     current_streak = 0
     for h in history:
@@ -140,7 +137,6 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
 
     tab_estrategias, tab_contenidos = st.tabs(["🧠 Habilidades (Estrategias)", "📚 Conocimientos (Contenidos)"])
     
-    # --- PESTAÑA: ESTRATEGIAS ---
     with tab_estrategias:
         st.markdown("### 🎯 Niveles Finales por Competencia")
         strat_names = {"navegar": "Navegación", "integrar": "Integración", "evaluar": "Evaluación"}
@@ -191,12 +187,10 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
                 else:
                     st.warning(f"**{strat_name}:** Aún desarrollando habilidades base. Requiere más práctica.")
                 
-                # --- NUEVO: DESPLEGABLE CON FEEDBACK DETALLADO DEL LLM ---
                 if detailed_feedback and strat_key in detailed_feedback:
                     with st.expander(f"🔍 Ver análisis detallado de {strat_name}"):
                         st.write(detailed_feedback[strat_key])
                     
-        # --- EVOLUCIÓN DESDE LA BASE DE DATOS ---
         st.divider()
         st.markdown("### 📈 Evolución de Niveles")
         chart_data = []
@@ -223,9 +217,8 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
             fig_line.update_layout(height=380, margin=dict(l=20, r=20, t=20, b=20), yaxis=dict(tickmode='array', tickvals=[1, 2, 3], ticktext=['Nivel 1<br>(Básico)', 'Nivel 2<br>(Intermedio)', 'Nivel 3<br>(Avanzado)'], range=[0.8, 3.2]))
             st.plotly_chart(fig_line, use_container_width=True)
         else:
-            st.info("No hay datos históricos de evolución disponibles (puede ser una sesión antigua guardada antes de esta actualización).")
+            st.info("No hay datos históricos de evolución disponibles.")
 
-    # --- PESTAÑA: CONTENIDOS ---
     with tab_contenidos:
         st.markdown("### 📊 Progreso en Contenidos")
         content_history = [h for h in history if (h.get('contenido', False) if isinstance(h, dict) else getattr(h, 'contenido', False))]
@@ -287,7 +280,6 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
 # --- ENRUTADOR PRINCIPAL ---
 # ==========================================
 
-# 1. PANTALLA DE LOGIN
 if not st.session_state.logged_in:
     st.title("🔐 Acceso a Tutor IA")
     st.markdown("Por favor, inicia sesión para continuar.")
@@ -313,7 +305,6 @@ if not st.session_state.logged_in:
                     
         st.info("💡 **Cuentas de prueba:**\n- Profesor: `profe_ana` / `1234`\n- Alumnos: `juan`, `maria`, `luis` / `1234`")
 
-# 2. PANTALLA DEL PROFESOR
 elif st.session_state.user_role == 'profesor':
     st.title(f"👨‍🏫 Panel Docente - {st.session_state.user_name}")
     
@@ -326,17 +317,14 @@ elif st.session_state.user_role == 'profesor':
             st.session_state.clear()
             st.rerun()
     else:
-        # SELECTOR DE SESIÓN PARA EL PROFESOR
         available_sessions = sorted(list(set([d['session_id'] for d in completed_data])))
         selected_prof_session = st.selectbox("📂 Selecciona la sesión a analizar:", available_sessions)
         
-        # Filtramos datos SOLO para la sesión seleccionada
         session_data = [d for d in completed_data if d['session_id'] == selected_prof_session]
         
         if not session_data:
             st.warning("No hay datos completados por tus alumnos para esta sesión.")
         else:
-            # --- PROCESAMIENTO DE DATOS DE LA SESIÓN ---
             all_strat_scores = {"navegar": [], "integrar": [], "evaluar": []}
             all_concept_scores = {}
             student_global_scores = [] 
@@ -367,7 +355,6 @@ elif st.session_state.user_role == 'profesor':
             global_strat_score = sum(avg_strats.values()) / len(avg_strats) if avg_strats else 0
             global_content_score = sum(avg_concepts.values()) / len(avg_concepts) if avg_concepts else 0
 
-            # --- TABS DEL DASHBOARD DOCENTE ---
             tab_general, tab_emparejamiento, tab_individual = st.tabs(["📊 Visión de la Clase", "🤝 Emparejamiento", "👤 Vista Individual de Alumno"])
             
             with tab_general:
@@ -439,7 +426,6 @@ elif st.session_state.user_role == 'profesor':
 
             with tab_individual:
                 st.markdown("### 🔍 Análisis de Alumno")
-                # Diccionario para que el selectbox muestre el nombre del alumno pero nos devuelva el ID
                 student_dict = {d['alumno_id']: d['alumno_name'] for d in session_data}
                 sel_student_id = st.selectbox("Selecciona un alumno para ver su dashboard:", list(student_dict.keys()), format_func=lambda x: student_dict[x])
                 
@@ -448,7 +434,6 @@ elif st.session_state.user_role == 'profesor':
                     st.markdown(f"**Viendo datos de: {student_specific_data['alumno_name']} - {selected_prof_session}**")
                     st.divider()
                     
-                    # Recuperar el detailed_feedback de la base de datos
                     detailed_fb = student_specific_data.get('detailed_feedback', {})
                     
                     render_student_dashboard(
@@ -464,7 +449,6 @@ elif st.session_state.user_role == 'profesor':
             st.session_state.clear()
             st.rerun()
 
-# 3. PANTALLA DEL ALUMNO
 elif st.session_state.user_role == 'alumno':
 
     if st.session_state.current_step == "setup":
@@ -495,7 +479,6 @@ elif st.session_state.user_role == 'alumno':
         task = st.session_state.display_task
 
         if not task:
-            # --- DASHBOARD FINAL DE SESIÓN (ALUMNO) ---
             st.balloons()
             st.title("🏆 ¡Sesión finalizada con éxito!")
             st.markdown("Aquí tienes el resumen de tu rendimiento en esta sesión. ¡Buen trabajo!")
@@ -505,22 +488,17 @@ elif st.session_state.user_role == 'alumno':
             final_levels = competencies
             current_session = get_val(state_vals, "current_session")
             
-            # --- NUEVO: GENERAR EL FEEDBACK DETALLADO CON SPINNER ---
             detailed_feedback = get_val(state_vals, "detailed_feedback") or {}
             
-            # Si no se ha generado todavía en esta sesión, lo generamos
             if not detailed_feedback and history:
                 with st.spinner("🤖 El Tutor IA está analizando tus respuestas para redactar tus consideraciones finales..."):
                     for strat_key in ["navegar", "integrar", "evaluar"]:
                         nivel_actual = final_levels.get(strat_key, "nivel_1")
-                        # Llamada al motor para generar el texto cualitativo
                         texto = generate_strategy_feedback(strat_key, nivel_actual, history)
                         detailed_feedback[strat_key] = texto
                     
-                    # Lo guardamos en el estado para que no se regenere si el alumno recarga la página
                     app.update_state(config, {"detailed_feedback": detailed_feedback})
 
-            # --- GUARDAR EN BASE DE DATOS ---
             if history:
                 save_student_results(
                     alumno_id=st.session_state.user_id,
@@ -530,10 +508,8 @@ elif st.session_state.user_role == 'alumno':
                     detailed_feedback=detailed_feedback
                 )
             
-            # Pintamos el dashboard pasando el feedback detallado
             render_student_dashboard(history, final_levels, current_session, detailed_feedback, enable_evolution_chart=True)
 
-            # --- PESTAÑA EXTRA SOLO PARA ALUMNO: OPINIÓN ---
             st.markdown("### 🗣️ Mi Opinión")
             st.write("¿Qué te ha parecido la sesión de hoy?")
             student_rating = st.feedback("faces")
@@ -571,7 +547,6 @@ elif st.session_state.user_role == 'alumno':
                 st.rerun()
                 
         else:
-            # --- LÓGICA DE TAREAS EN VIVO ---
             if is_test_mode: st.warning("📝 MODO TEST INICIAL - Responde lo mejor que puedas")
             col_izq, col_der = st.columns([1, 1], gap="large")
 
@@ -581,7 +556,6 @@ elif st.session_state.user_role == 'alumno':
                 options_pattern = r"(?:^|\n)\s*([a-d][\)\.])\s*([^\n]+)"
                 found_options = re.findall(options_pattern, full_prompt)
 
-                # --- NUEVO: Textos y botones para la navegación interactiva ---
                 if st.session_state.current_step == "working" and t_type == "navegacion_test":
                     split_match = re.search(r"(?i)(\n\s*Opciones:?)|(\n\s*[-•]?\s*[a-d][\)\.])", full_prompt)
                     clean_text = full_prompt[:split_match.start()].strip() if split_match else full_prompt
@@ -598,7 +572,6 @@ elif st.session_state.user_role == 'alumno':
                         if st.button("Enviar Respuesta"): 
                             submit_answer(selection)
 
-                # --- TAREAS ORIGINALES: OBJETIVO ---
                 elif st.session_state.current_step == "working" and t_type == "objetivo" and found_options:
                     split_match = re.search(r"(?i)(\n\s*Opciones:?)|(\n\s*[-•]?\s*[a-d][\)\.])", full_prompt)
                     clean_text = full_prompt[:split_match.start()].strip() if split_match else full_prompt
@@ -628,11 +601,70 @@ elif st.session_state.user_role == 'alumno':
                                 d = r1c2.text_area("Desventajas")
                                 if st.form_submit_button("Enviar"):
                                     submit_answer(f"Ventajas: {v} | Desventajas: {d}")
+                        
                         elif t_type == "conectar":
                             user_map = {}
                             for concept in task.get("concepts", []):
                                 user_map[concept] = st.multiselect(f"Para: **{concept}**", task.get("definitions", []), key=f"k_{concept}")
                             if st.button("Validar"): submit_answer(user_map)
+                            
+                        # --- NUEVO: LÓGICA TABLA GRID (SI/NO Autocorregible) ---
+                        elif t_type == "tabla_grid":
+                            st.info(full_prompt)
+                            user_answers = {}
+                            
+                            with st.form(f"form_grid_{task.get('task_id', '0')}"):
+                                c1, c2, c3 = st.columns([1, 2, 1])
+                                c1.markdown("**Motivos**")
+                                c2.markdown("**Implicaciones**")
+                                c3.markdown("**¿Causa de prisión hoy?**")
+                                st.divider()
+                                
+                                opciones = ["---"] + task.get("opciones", ["SI", "NO"])
+                                
+                                for i, fila in enumerate(task.get("filas", [])):
+                                    c1, c2, c3 = st.columns([1, 2, 1])
+                                    motivo = fila.get("motivo", "")
+                                    c1.write(motivo)
+                                    c2.info(fila.get("implicacion", ""))
+                                    
+                                    user_answers[motivo] = c3.selectbox(
+                                        "Selecciona", 
+                                        opciones, 
+                                        key=f"grid_{task.get('task_id')}_{i}",
+                                        label_visibility="collapsed"
+                                    )
+                                    st.divider()
+                                    
+                                if st.form_submit_button("Enviar Respuestas", use_container_width=True):
+                                    if "---" in user_answers.values():
+                                        st.error("⚠️ Debes seleccionar una opción para todas las filas.")
+                                    else:
+                                        submit_answer(user_answers)
+
+                        # --- NUEVO: LÓGICA TABLA SUBJETIVA (Con andamiaje) ---
+                        elif task.get("es_tabla") is True:
+                            st.info("📝 Por favor, completa cada uno de los apartados solicitados:")
+                            user_answers = {}
+                            valores_iniciales = task.get("valores_iniciales", {}) 
+                            
+                            with st.form(f"form_tabla_{task.get('task_id', '0')}"):
+                                for apartado in task.get("apartados_tabla", []):
+                                    texto_previo = valores_iniciales.get(apartado, "") 
+                                    user_answers[apartado] = st.text_area(
+                                        f"**{apartado}**", 
+                                        value=texto_previo, 
+                                        height=120
+                                    )
+                                
+                                if st.form_submit_button("Enviar Tabla Completada", use_container_width=True):
+                                    if any(not v.strip() for v in user_answers.values()):
+                                        st.error("⚠️ Debes rellenar todos los campos de la tabla antes de enviar.")
+                                    else:
+                                        resp_formateada = "\n".join([f"### {apartado}:\n{respuesta}" for apartado, respuesta in user_answers.items()])
+                                        submit_answer(resp_formateada)
+
+                        # --- POR DEFECTO: TEXTO LIBRE ---
                         else:
                             resp = st.text_area("Escribe tu respuesta:", height=150)
                             if st.button("Enviar"): submit_answer(resp)
@@ -644,11 +676,9 @@ elif st.session_state.user_role == 'alumno':
             with col_der:
                 t_type = str(task.get("task_type", "")).strip().lower()
                 
-                # --- NUEVO: Lógica de imágenes para el test de navegación ---
                 if t_type == "navegacion_test" and st.session_state.current_step == "working":
                     task_id_key = task.get("id") or task.get("task_id")
                     
-                    # Inicializar ruta si es tarea nueva
                     if "ruta_nav" not in st.session_state or st.session_state.get("last_task_id") != task_id_key:
                         st.session_state.ruta_nav = ["inicio"]
                         st.session_state.last_task_id = task_id_key
@@ -657,13 +687,11 @@ elif st.session_state.user_role == 'alumno':
                     pantallas = task.get("pantallas", {})
                     pantalla_data = pantallas.get(pantalla_actual_id, {})
                     
-                    # Fallback por si hay un error en el JSON
                     img_raw = task.get("task_image", [""])
                     img_fallback = img_raw[0] if isinstance(img_raw, list) and len(img_raw) > 0 else img_raw
                     img_path = pantalla_data.get("image", img_fallback)
 
                     if os.path.exists(img_path):
-                        # La clave debe ser única para forzar el recargo de la imagen
                         coords = streamlit_image_coordinates(
                             img_path, 
                             key=f"nav_{task_id_key}_{pantalla_actual_id}_{len(st.session_state.ruta_nav)}"
@@ -677,13 +705,11 @@ elif st.session_state.user_role == 'alumno':
                     else:
                         st.warning(f"Imagen no encontrada: {img_path}")
 
-                    # Botón para volver atrás debajo de la imagen
                     if len(st.session_state.ruta_nav) > 1:
                         if st.button("⬅️ Volver a la pantalla anterior"):
                             st.session_state.ruta_nav.pop()
                             st.rerun()
 
-                # --- TUS TAREAS ORIGINALES (pestañas, imágenes estáticas, interactivo de 1 clic) ---
                 else:
                     img_list = task.get("task_image", [])
                     if isinstance(img_list, str): img_list = [img_list]

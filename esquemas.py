@@ -17,10 +17,11 @@ class TaskEvaluationHistory(BaseModel):
     student_response: Any
     score: float
     score_weighted: float 
+    max_score: float = 1.0  # NUEVO: Indica cuántos huecos ocupa la tarea
     feedback_shown: str
     reasoning: str
     is_test_task: bool = False 
-    time_taken: float = 0.0  # NUEVO: Tiempo en segundos
+    time_taken: float = 0.0  
     
     # CAMPOS DE CONTENIDO Y EVOLUCIÓN
     contenido: bool = False
@@ -45,7 +46,7 @@ class StudentGraphState(BaseModel):
     
     # Respuesta del alumno
     current_student_response: Optional[Any] = None
-    current_response_time: float = 0.0  # NUEVO: Tiempo de la tarea actual
+    current_response_time: float = 0.0  
     
     # Adaptatividad y Progreso
     competency_levels: Dict[str, str] = {} 
