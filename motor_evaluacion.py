@@ -35,6 +35,14 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
     task_id = task.get('task_id', 'Desconocida')
     task_type = task.get('task_type')
     
+    # Resolver el prompt dependiendo de si es diccionario
+    prompt_data = task.get("task_prompt", "")
+    if isinstance(prompt_data, dict):
+        nivel_map = {"nivel_1": "nivel_bajo", "nivel_2": "nivel_medio", "nivel_3": "nivel_alto"}
+        task_prompt_str = prompt_data.get(nivel_map.get(student_level, "nivel_bajo"), "")
+    else:
+        task_prompt_str = str(prompt_data)
+    
     score = 0.0
     max_score = 1.0 # Lo inicializamos aquí para que esté disponible en todas las ramas
     reasoning = ""
@@ -121,7 +129,7 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
             llm_result = chain.invoke({
             "task_text": final_context,
             "rubrica_text": json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric),
-            "task_prompt": f"{task.get('task_prompt', '')}. NOTA: Esta tarea tiene varios objetivos, evalúa cada uno y suma los puntos según la rúbrica (Total máximo: {max_score})",
+            "task_prompt": f"{task_prompt_str}. NOTA: Esta tarea tiene varios objetivos, evalúa cada uno y suma los puntos según la rúbrica (Total máximo: {max_score})",
             "student_answer": student_answer
         })
             score = round(llm_result.score, 2)

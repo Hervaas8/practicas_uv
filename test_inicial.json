@@ -36,31 +36,143 @@
   },
   {
     "id": "tarea_06",
-    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n6. Debes acceder a la sección '2.2. La Asamblea Nacional' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿Qué dice el artículo 1 del nuevo orden legal establecido y promovido por la Asamblea Nacional y las posteriores instituciones revolucionarias? \na. El Tercer Estado debía tener en sus manos el poder político de Francia.\nb.Las instituciones se encargarán de buscar el bien común de todos los hombres.\nc. Los hombres nacen y permanecen libres e iguales en derechos.\nd. El principio de toda soberanía del Estado reside esencialmente en la nación.",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n6. Debes acceder a la sección '2.2. Las Revueltas Populares' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿Qué nueva fuerza armada de carácter revolucionario se organizó en París tras la toma de La Bastilla? \na. El ejército real de Versalles.\nb.La Guardia Nacional.\nc. Los Estados Generales.\nd. El ayuntamiento popular",
     "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
-    "correct_answer": "a"
+    "correct_answer": "a",
+    "task_type": "navegacion_test",
+      "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/wiki_francesa.png",
+        "links": [
+          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
+          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
+          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
+          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+        ]
+      },
+      "revueltas": {
+        "image": "./data/img_pre/revueltas.png",
+        "links": []
+      },
+      "huida": {
+        "image": "./data/img_pre/huida.png",
+        "links": []
+      },
+      "iglesia": {
+        "image": "./data/img_pre/iglesia.png",
+        "links": []
+      },
+      "derechos": {
+        "image": "./data/img_pre/derechos.png",
+        "links": []
+      }
+    }
   },
   {
     "id": "tarea_07",
-    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n7. Debes acceder a la sección '3.1. Nuevo sistema político' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta:¿Cuál de las siguientes frases pertenece a Rousseau, uno de los más importantes filósofos de Francia?\na. La soberanía ha de emanar de la voluntad general\nb. Para garantizar la libertad política del ciudadano es necesario poner límites.\nc.La soberanía puede ser divisible en varios poderes\nd.El voto debe ser universal, personal, libre y secreto.",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n7.Debes acceder a la sección '3.1. La Declaración de los Derechos del Hombre' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿Cuál de las siguientes afirmaciones define el concepto de soberanía nacional recogido en la Declaración de agosto de 1789?\na. El poder reside en el conjunto de los ciudadanos.\nb. La ley garantiza la libertad de expresión religiosa.\nc.El monarca mantiene el control de las instituciones.\nd. Todos los franceses tienen derecho a las propiedades.",
     "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
-    "correct_answer": "d"
+    "correct_answer": "d",
+        "task_type": "navegacion_test",
+      "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/wiki_francesa.png",
+        "links": [
+          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
+          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
+          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
+          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+        ]
+      },
+      "revueltas": {
+        "image": "./data/img_pre/revueltas.png",
+        "links": []
+      },
+      "huida": {
+        "image": "./data/img_pre/huida.png",
+        "links": []
+      },
+      "iglesia": {
+        "image": "./data/img_pre/iglesia.png",
+        "links": []
+      },
+      "derechos": {
+        "image": "./data/img_pre/derechos.png",
+        "links": []
+      }
+    }
   },
   {
     "id": "tarea_08",
-    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n8.Debes acceder a la sección '3.2. Pérdida de poder de la iglesia' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta:\n¿Por qué el Papa de Roma Pio VI planteó la posibilidad de echar de la Iglesia a los religiosos que aceptaron las leyes revolucionarias? Porque…\na. No le interesaba contar con religiosos que ya no eran católicos.\nb. juraron fidelidad a otro Papa distinto para la Iglesia.\nc. las leyes revolucionarias limitaban el poder de la Iglesia.\nd. se habían suprimido las órdenes religiosas a las que pertenecía",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n8.Debes acceder a la sección '3.2. Pérdida de poder de la iglesia' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta:\n¿Por qué una parte importante de los eclesiásticos franceses decidió liderar revueltas contrarrevolucionarias en algunas regiones? Porque...\na. No estaban de acuerdo con pagar las deudas del Rey.\nb. Rechazaban someter la Iglesia al control del nuevo Estado.\nc. Exigían que la Guardia Nacional protegiera sus monasterios.\nd. Querían obligar a los ciudadanos a cumplir los sacramentos.",
     "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
-    "correct_answer": "d"
+    "correct_answer": "d",
+        "task_type": "navegacion_test",
+      "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/wiki_francesa.png",
+        "links": [
+          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
+          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
+          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
+          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+        ]
+      },
+      "revueltas": {
+        "image": "./data/img_pre/revueltas.png",
+        "links": []
+      },
+      "huida": {
+        "image": "./data/img_pre/huida.png",
+        "links": []
+      },
+      "iglesia": {
+        "image": "./data/img_pre/iglesia.png",
+        "links": []
+      },
+      "derechos": {
+        "image": "./data/img_pre/derechos.png",
+        "links": []
+      }
+    }
   },
   {
     "id": "tarea_09",
-    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n9.Debes acceder a la sección '3.3. Pérdida de poder del Rey' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta:\n¿De qué países eran los monarcas absolutos que firmaron un acuerdo para socorrer al rey francés?\na. Rusia y Prusia\nb. La mayoría de los países europeos\nc. Muchos de los países cristianos.\nd. Austria y Prusia.",
+    "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n9. Debes acceder a la sección '3.3. Huida del Rey' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿En qué localidad francesa fue reconocido y detenido el monarca en su intento de fuga?\na. La ciudad de Varennes.\nb. El palacio de Versalles.\nc. La capital de París.\nd. La provincia de Lyon.",
     "task_image": ["./data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
-    "correct_answer": "d"
+    "correct_answer": "d",
+        "task_type": "navegacion_test",
+      "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/wiki_francesa.png",
+        "links": [
+          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
+          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
+          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
+          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+        ]
+      },
+      "revueltas": {
+        "image": "./data/img_pre/revueltas.png",
+        "links": []
+      },
+      "huida": {
+        "image": "./data/img_pre/huida.png",
+        "links": []
+      },
+      "iglesia": {
+        "image": "./data/img_pre/iglesia.png",
+        "links": []
+      },
+      "derechos": {
+        "image": "./data/img_pre/derechos.png",
+        "links": []
+      }
+    }
   },
   {
     "id": "tarea_10",
@@ -86,7 +198,7 @@
   {
     "id": "tarea_13",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n13. Te gustaría aprender a cantar, y para ello decides apuntarte a la oferta formativa del Servicio de Juventud. Busca la dirección del centro donde aprenderás a cantar. Se encuentra en la calle…\na. Padre Vitoria\nb. Central\nc. Donoso Cortés\nd.Goya",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["./data/img_pre/main.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
@@ -3416,7 +3528,40 @@
     "task_prompt": "28.   Lee las webs “Las energías renovables ayudan...” y “Es demasiado tarde para luchar…” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas? Las energías renovables…\na. reducen la emisión de gases perjudiciales, pero tienen un coste demasiado elevado.\nb.están impulsando la economía mundial, y pueden salvar al planeta según la Hipótesis Gaia.\nc. aumentan  en el uso de petróleo y de gas, pero solo en zonas desérticas como el Sahara.\nd.no representan una solución al cambio climático, y además contribuyen al calentamiento.",
     "task_image": ["./data/img_pre/web_cambio.png"],
     "strategy": "integrar",
-    "correct_answer": "a"
+    "correct_answer": "a",
+    "task_type": "navegacion_test",
+      "pantallas": {
+      "inicio": {
+        "image": "./data/img_pre/web_cambio.png",
+        "links": [
+          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "periodico"},
+          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "blog"},
+          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "uv"},
+          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "ciencia"},
+          {"x": 46, "y": 222, "w": 79, "h": 26, "target": "iberdrola"}
+        ]
+      },
+      "periodico": {
+        "image": "./data/img_pre/periodico.png",
+        "links": []
+      },
+      "blog": {
+        "image": "./data/img_pre/blog.png",
+        "links": []
+      },
+      "uv": {
+        "image": "./data/img_pre/uv.png",
+        "links": []
+      },
+      "ciencia": {
+        "image": "./data/img_pre/ciencia.png",
+        "links": []
+      },
+      "iberdrola": {
+        "image": "./data/img_pre/iberdrola.png",
+        "links": []
+      }
+    }
   }
   
 ]
