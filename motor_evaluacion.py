@@ -186,8 +186,16 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
 
     sub_info_ayuda = "\n".join(sub_vistas)
 
-    prompt_tmpl = PromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
-    chain = prompt_tmpl | llm_evaluador 
+    # IMPORTAMOS EL ENRUTADOR NUEVO
+    from configuracion_llm import get_llm_estructurado
+    from langchain_core.prompts import ChatPromptTemplate
+    
+    # IMPORTANTE: Asegúrate de que PROMPT_FEEDBACK_FINAL está definido arriba leyendo prompts.yaml
+    prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
+    
+    # Pedimos el LLM específico con nuestro esquema de 1 campo
+    llm_feedback = get_llm_estructurado("feedback_estrategia") 
+    chain = prompt_tmpl | llm_feedback 
     
     try:
         resultado = chain.invoke({
@@ -196,7 +204,12 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
             "sub_info": sub_info_ayuda,
             "historial_texto": historial_texto.strip()
         })
-        return resultado.reasoning
+        
+        # Extraemos el string del objeto devuelto por el LLM estructurado
+        return resultado.texto_feedback
+
+
+        
     except Exception as e:
         print(f"Error generando feedback final para {strategy_name}: {e}")
-        return "Ha habido un problema al generar tus consideraciones detalladas."
+        return "Ha habido un problema al generar tus consideraciones."

@@ -42,10 +42,24 @@ eval_strategy_feedback_prompt: |
   1. Escribe en segunda persona del singular ("has logrado", "te sugiero", "he notado que").
   2. Comienza destacando un aspecto positivo real basado en las tareas donde sacó buena nota.
   3. Señala específicamente en qué tipos de ejercicios o conceptos ha tenido problemas, fijándote en sus respuestas incorrectas o incompletas y en el "Motivo de la nota".
-  4. NO menciones los códigos (ej: no digas "fallas en I1"), usa su SIGNIFICADO para apoyar tu feedbackgit  (ej: "tienes dificultades al extraer las ideas principales").
+  4. NO menciones los códigos (ej: no digas "fallas en I1"), usa su SIGNIFICADO para apoyar tu feedback  (ej: "tienes dificultades al extraer las ideas principales").
   5. Sé muy específico: si el historial muestra que acierta en una sub-habilidad pero falla en otra, felicítalo por la primera y dale un consejo concreto para la segunda.
   6. Si todo está perfecto, simplemente felicítalo y anímalo a mantener ese nivel.
   7. Escribe un único párrafo fluido en ESPAÑOL. NO uses viñetas ni negritas en exceso.
   
   MUY IMPORTANTE SOBRE EL FORMATO: 
-  El sistema requiere una salida estructurada. Debes asignar 1.0 al campo 'score', y escribir tu párrafo dirigido al alumno EXACTAMENTE dentro del campo 'reasoning'. NO escribas comentarios sobre cómo has seguido las reglas ni hables en tercera persona, escribe SOLAMENTE el texto final que leerá el alumno en el campo 'reasoning'.
+  Escribe tu párrafo dirigido al alumno EXACTAMENTE dentro del campo 'texto_feedback'. NO escribas comentarios sobre cómo has seguido las reglas ni hables en tercera persona, escribe SOLAMENTE el texto final que leerá el alumno en el campo 'texto_feedback'.
+
+
+
+plagio_prompt: |
+  Eres un auditor académico. Tu tarea es analizar si dos estudiantes han copiado entre sí.
+  Ignora que el significado sea idéntico (es normal porque responden a la misma pregunta).
+  Céntrate ÚNICAMENTE en la similitud estructural, orden de ideas, uso de conectores o repetición de errores inusuales.
+  
+  Pregunta original: "{pregunta}"
+  Respuesta Alumno 1: "{resp_a}"
+  Respuesta Alumno 2: "{resp_b}"
+  
+  Evalúa si hay evidencia de copia (Posible Plagio), indicios (Dudoso) o si es casualidad natural (Posible No Plagio).
+  Justifica tu veredicto con un análisis técnico de las similitudes estructurales o patrones compartidos entre ambas respuestas para que el profesor pueda tomar una decisión informada.

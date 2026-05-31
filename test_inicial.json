@@ -45,10 +45,10 @@
       "inicio": {
         "image": "./data/img_pre/wiki_francesa.png",
         "links": [
-          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
-          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
-          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
-          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+          {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
+          {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
+          {"x": 391, "y": 799, "w": 383, "h": 36, "target": "iglesia"},
+          {"x": 391, "y": 750, "w": 525, "h": 44, "target": "derechos"}
         ]
       },
       "revueltas": {
@@ -80,10 +80,10 @@
       "inicio": {
         "image": "./data/img_pre/wiki_francesa.png",
         "links": [
-          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
-          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
-          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
-          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+          {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
+          {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
+          {"x": 391, "y": 799, "w": 383, "h": 36, "target": "iglesia"},
+          {"x": 391, "y": 750, "w": 525, "h": 44, "target": "derechos"}
         ]
       },
       "revueltas": {
@@ -115,10 +115,10 @@
       "inicio": {
         "image": "./data/img_pre/wiki_francesa.png",
         "links": [
-          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
-          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
-          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
-          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+          {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
+          {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
+          {"x": 391, "y": 799, "w": 383, "h": 36, "target": "iglesia"},
+          {"x": 391, "y": 750, "w": 525, "h": 44, "target": "derechos"}
         ]
       },
       "revueltas": {
@@ -150,10 +150,10 @@
       "inicio": {
         "image": "./data/img_pre/wiki_francesa.png",
         "links": [
-          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "revueltas"},
-          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "huida"},
-          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "iglesia"},
-          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "derechos"}
+          {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
+          {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
+          {"x": 391, "y": 799, "w": 383, "h": 36, "target": "iglesia"},
+          {"x": 391, "y": 750, "w": 525, "h": 44, "target": "derechos"}
         ]
       },
       "revueltas": {
@@ -3526,19 +3526,19 @@
   {
     "id": "tarea_26",
     "task_prompt": "28.   Lee las webs “Las energías renovables ayudan...” y “Es demasiado tarde para luchar…” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas? Las energías renovables…\na. reducen la emisión de gases perjudiciales, pero tienen un coste demasiado elevado.\nb.están impulsando la economía mundial, y pueden salvar al planeta según la Hipótesis Gaia.\nc. aumentan  en el uso de petróleo y de gas, pero solo en zonas desérticas como el Sahara.\nd.no representan una solución al cambio climático, y además contribuyen al calentamiento.",
-    "task_image": ["./data/img_pre/web_cambio.png"],
+    "task_image": ["./data/img_pre/web_cambio.jpg"],
     "strategy": "integrar",
     "correct_answer": "a",
     "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/web_cambio.png",
+        "image": "./data/img_pre/web_cambio.jpg",
         "links": [
-          {"x": 37, "y": 97, "w": 124, "h": 28, "target": "periodico"},
-          {"x": 66, "y": 130, "w": 70, "h": 24, "target": "blog"},
-          {"x": 70, "y": 158, "w": 138, "h": 21, "target": "uv"},
-          {"x": 70, "y": 190, "w": 125, "h": 23, "target": "ciencia"},
-          {"x": 46, "y": 222, "w": 79, "h": 26, "target": "iberdrola"}
+          {"x": 44, "y": 234, "w": 617, "h": 40, "target": "periodico"},
+          {"x": 42, "y": 401, "w": 637, "h": 41, "target": "blog"},
+          {"x": 44, "y": 542, "w": 586, "h": 39, "target": "uv"},
+          {"x": 43, "y": 705, "w": 739, "h": 46, "target": "ciencia"},
+          {"x": 41, "y": 874, "w": 768, "h": 54, "target": "iberdrola"}
         ]
       },
       "periodico": {

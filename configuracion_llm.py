@@ -1,35 +1,39 @@
-# **Archivo: configuracion_llm.py**
-
 from langchain_openai import ChatOpenAI
-from esquemas import LLMEvaluationOutput # <-- Importamos el nuevo esquema
-
-# --- Configuración de "poligpt" ---
+from esquemas import LLMEvaluationOutput, LLMPlagiarismOutput, LLMFeedbackEstrategia
 
 POLIGPT_API_BASE = "https://api.poligpt.upv.es"
 POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"
-POLIGPT_MODEL_NAME = "poligpt"
 
-# --- Clientes LLM ---
+# --- MAPAS DE ENRUTAMIENTO ---
+MAPA_MODELOS = {
+    "evaluacion": "poligpt",
+    "feedback_estrategia": "poligpt",
+    "plagio": "poligpt",
+    "general": "poligpt"
+}
 
-def get_llm():
-    """Retorna el cliente LLM estándar para "poligpt"."""
-        
+MAPA_ESQUEMAS = {
+    "evaluacion": LLMEvaluationOutput,
+    "feedback_estrategia": LLMFeedbackEstrategia,
+    "plagio": LLMPlagiarismOutput
+}
+
+# --- FUNCIONES LLM ---
+
+def get_llm(tipo_tarea="general"):
+    nombre_modelo = MAPA_MODELOS.get(tipo_tarea, MAPA_MODELOS["general"])
     return ChatOpenAI(
-        model=POLIGPT_MODEL_NAME,
+        model=nombre_modelo,
         api_key=POLIGPT_API_KEY,
         base_url=POLIGPT_API_BASE
     )
 
+def get_llm_estructurado(tipo_tarea):
+    llm = get_llm(tipo_tarea)
+    esquema = MAPA_ESQUEMAS.get(tipo_tarea)
+    if esquema is None:
+        raise ValueError(f"No hay esquema para la tarea: {tipo_tarea}")
+    return llm.with_structured_output(esquema)
+
 def get_llm_evaluador():
-    """
-    Retorna el cliente LLM configurado para forzar la salida JSON 
-    basada en nuestra NUEVA rúbrica de salida (LLMEvaluationOutput).
-    """
-    llm = get_llm()
-    if llm is None:
-        return None
-
-    # Forzamos al LLM a que SIEMPRE devuelva un JSON con la estructura
-    # de nuestra clase LLMEvaluationOutput
-    return llm.with_structured_output(LLMEvaluationOutput)
-
+    return get_llm_estructurado(tipo_tarea="evaluacion")

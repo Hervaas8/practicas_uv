@@ -9,6 +9,7 @@ import plotly.graph_objects as go
 from agente2 import app, load_test_inicial, load_curriculum
 from motor_evaluacion import generate_strategy_feedback
 from database import authenticate_user, save_student_results, get_professor_students_data
+from detector_plagio import auditar_sesion_completa
 
 # --- CONFIGURACIÓN ---
 st.set_page_config(page_title="Tutor IA - Ciencias", layout="wide")
@@ -355,8 +356,12 @@ elif st.session_state.user_role == 'profesor':
             global_strat_score = sum(avg_strats.values()) / len(avg_strats) if avg_strats else 0
             global_content_score = sum(avg_concepts.values()) / len(avg_concepts) if avg_concepts else 0
 
-            tab_general, tab_emparejamiento, tab_individual = st.tabs(["📊 Visión de la Clase", "🤝 Emparejamiento", "👤 Vista Individual de Alumno"])
-            
+            tab_general, tab_emparejamiento, tab_individual, tab_auditoria = st.tabs([
+                "📊 Visión de la Clase", 
+                "🤝 Emparejamiento", 
+                "👤 Vista Individual de Alumno", 
+                "🕵️ Posibles Plagios"
+            ])            
             with tab_general:
                 st.markdown(f"### Notas Globales de la Clase ({selected_prof_session})")
                 c1, c2 = st.columns(2)
@@ -443,6 +448,58 @@ elif st.session_state.user_role == 'profesor':
                         detailed_feedback=detailed_fb,
                         enable_evolution_chart=False 
                     )
+            with tab_auditoria:
+                st.markdown(f"### 🕵️ Auditoría de Originalidad - {selected_prof_session}")
+                st.write("Analiza las respuestas de texto libre de esta sesión buscando coincidencias estructurales sospechosas entre los alumnos.")
+                
+                if st.button("🔍 Iniciar Auditoría Completa", use_container_width=True, type="primary"):
+                    with st.spinner("Analizando respuestas y consultando a PoliGPT... Esto puede tardar un poco."):
+                        
+                        # Llamamos a nuestro motor de plagio (el umbral está en 70% por defecto)
+                        reporte_plagio = auditar_sesion_completa(session_data, umbral=0.70)
+                        
+                        if not reporte_plagio:
+                            st.success("✅ ¡Todo limpio! No se han detectado coincidencias estructurales anómalas en las respuestas de texto libre de esta sesión.")
+                        else:
+                            st.warning("⚠️ Se han detectado similitudes matemáticas. Revisa los análisis detallados a continuación.")
+                            st.divider()
+                            
+                            # Iteramos sobre las tareas que han dado positivo
+                            for task_id, info_tarea in reporte_plagio.items():
+                                st.markdown(f"#### 📝 Pregunta: *{info_tarea['prompt']}*")
+                                
+                                # Iteramos sobre las alertas de esa tarea
+                                for alerta in info_tarea['alertas']:
+                                    veredicto = alerta['analisis'].get('veredicto', 'Sospechoso')
+                                    
+                                    # Asignar semáforo de colores según el LLM
+                                    if veredicto == "Posible Plagio":
+                                        color_icon = "🔴"
+                                    elif veredicto == "Dudoso":
+                                        color_icon = "🟠"
+                                    else:
+                                        color_icon = "🟢" # Falso Positivo
+                                    
+                                    titulo_expander = f"{color_icon} {alerta['alumno_1']} vs {alerta['alumno_2']} - Similitud: {alerta['similitud_matematica']}% [{veredicto}]"
+                                    
+                                    with st.expander(titulo_expander):
+                                        col1, col2 = st.columns(2)
+                                        with col1:
+                                            st.markdown(f"**👤 {alerta['alumno_1']}:**\n> {alerta['respuesta_1']}")
+                                        with col2:
+                                            st.markdown(f"**👤 {alerta['alumno_2']}:**\n> {alerta['respuesta_2']}")
+                                        
+                                        st.divider()
+                                        st.markdown(f"**🤖 Veredicto IA:** {alerta['analisis'].get('justificacion', '')}")
+                                        
+                                        # Mostrar bloques idénticos si los hay
+                                        frases = alerta['analisis'].get('frases_identicas', [])
+                                        if frases:
+                                            st.markdown("**🔍 Bloques idénticos detectados:**")
+                                            for f in frases:
+                                                st.write(f"- *\"{f}\"*")
+                                
+                                st.divider()
 
         st.divider()
         if st.button("🚪 Cerrar Sesión", key="logout_prof_2"):
