@@ -56,7 +56,15 @@
       "description": "Información poema",
       "contenido": true,
       "conceptos": [],
-      "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
+      "rubric": {
+      "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+      },
+      "Punto 2- Circunstancias de su muerte": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
+      }},      
       "feedback": {"success": "Correcto", "failure": "Incorrecto"}
     },
     {
@@ -78,9 +86,17 @@
       "description": "Información poema",
       "contenido": true,
       "conceptos": [],
-      "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
+      "rubric": {
+      "Punto 1 - Relación del poeta con la República o Guerra Civil": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
+      },
+      "Punto 2 - Ideas o valores que defendía": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
+      },      
       "feedback": {"success": "Correcto", "failure": "Incorrecto"}
-    },
+    }},
     {
       "task_id": "lit_s1_t05",
       "task_prompt": {
@@ -186,8 +202,10 @@
       "description": "Información poema",
       "contenido": true,
       "conceptos": [],
-      "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "rubric": {
+      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+      "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+    },      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
     },
     {
       "task_id": "lit_s1_t11",
@@ -276,8 +294,11 @@
       "description": "Información poema",
       "contenido": true,
       "conceptos": [],
-      "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "rubric": {
+      "0": "'Huelva', 'Sevilla', 'Torrijos (Madrid)', 'Orihuela', 'Palencia' u 'Ocaña'.",
+      "1": "'Alicante'."
+    },
+          "feedback": {"success": "Correcto", "failure": "Incorrecto"}
     },
     {
       "task_id": "lit_s1_t16",
@@ -329,7 +350,15 @@
       "description": "Información poema",
       "contenido": true,
       "conceptos": [],
-      "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
+      "rubric": {
+      "Punto 1 - Sentencia/Condena": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+      },
+      "Punto 2 - Acusación": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
+      }},      
       "feedback": {"success": "Correcto", "failure": "Incorrecto"}
     },
     {

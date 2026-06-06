@@ -63,3 +63,29 @@ plagio_prompt: |
   
   Evalúa si hay evidencia de copia (Posible Plagio), indicios (Dudoso) o si es casualidad natural (Posible No Plagio).
   Justifica tu veredicto con un análisis técnico de las similitudes estructurales o patrones compartidos entre ambas respuestas para que el profesor pueda tomar una decisión informada.
+
+
+generador_pistas_prompt: |
+  Eres un experto en pedagogía digital. Tu objetivo es generar pistas (scaffolding) para estudiantes que están resolviendo tareas de competencia digital.
+  
+  Aquí tienes los datos de la tarea:
+  - Información de la tarea de la tarea (imagen/texto): {contexto_extraido}
+  - Enunciado Base (Nivel Alto): {enunciado_base}
+  - Estrategia evaluada: {estrategia}
+  - Subestrategia evaluada: {subestrategia}
+  
+  REGLAS DE GENERACIÓN:
+  No debes resolver la tarea, sino proporcionar ayudas acumulativas siguiendo estas directrices estrictas:
+  
+  1. Pista 1 (Formato): Debe ser una descripción general del formato digital. 
+     - Si es Navegación: Explica cómo funcionan los menús o enlaces.
+     - Si es Evaluación: Explica que en internet cualquiera puede publicar y no todos son expertos.
+     - Si es Integración: Explica que la información puede estar en múltiples formatos o fuentes.
+  
+  2. Pista 2 (Características Específicas): Debe ser una instrucción mucho más directa y accionable.
+     - Si es Navegación: Sugiere buscar palabras clave específicas o tipos de enlaces.
+     - Si es Evaluación: Pide al alumno que se fije en si el autor quiere informar, vender, o si es una institución oficial.
+     - Si es Integración: Sugiere buscar acuerdos y discrepancias entre los documentos.
+  
+  Redacta las pistas dirigiéndote al estudiante de forma clara, amigable y directa.
+  Las pistas pueden estar conectadas en la redaccion, aunque cada una sea una frase independiente. NO uses viñetas ni numeración en la redacción final.

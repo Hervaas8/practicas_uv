@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from esquemas import LLMEvaluationOutput, LLMPlagiarismOutput, LLMFeedbackEstrategia
+from esquemas import LLMEvaluationOutput, LLMPlagiarismOutput, LLMFeedbackEstrategia, LLMScaffoldingOutput
 
 POLIGPT_API_BASE = "https://api.poligpt.upv.es"
 POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"
@@ -9,13 +9,15 @@ MAPA_MODELOS = {
     "evaluacion": "poligpt",
     "feedback_estrategia": "poligpt",
     "plagio": "poligpt",
-    "general": "poligpt"
+    "general": "poligpt",
+    "generador": "poligpt"
 }
 
 MAPA_ESQUEMAS = {
     "evaluacion": LLMEvaluationOutput,
     "feedback_estrategia": LLMFeedbackEstrategia,
-    "plagio": LLMPlagiarismOutput
+    "plagio": LLMPlagiarismOutput,
+    "generador": LLMScaffoldingOutput
 }
 
 # --- FUNCIONES LLM ---

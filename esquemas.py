@@ -28,6 +28,14 @@ class LLMFeedbackEstrategia(BaseModel):
         description="Párrafo cualitativo completo con las consideraciones y análisis del alumno para esta estrategia."
     )
 
+class LLMScaffoldingOutput(BaseModel):
+    """Estructura forzada para la generación de pistas (scaffolding)."""
+    pista_1: str = Field(
+        description="Pista de nivel 1 (Formato). Describe de forma general cómo funciona el entorno digital o el formato de la información, sin dar la respuesta."
+    )
+    pista_2: str = Field(
+        description="Pista de nivel 2 (Características Específicas). Instrucción más directa y accionable, dando palabras clave o indicando en qué fijarse exactamente."
+    )
 # ==========================================
 # --- HISTORIAL Y ESTADO DEL GRAFO ---
 # ==========================================

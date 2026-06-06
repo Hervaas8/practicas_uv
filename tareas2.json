@@ -42,15 +42,18 @@
         "task_id": "cien_s1_t02",
         "task_prompt": {
           "nivel_bajo": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
-          "nivel_medio": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
+          "nivel_medio": "He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
           "nivel_alto": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”"
         },
         "task_text": null,
         "task_image": ["./data/img/sierra_calderona.png"],
-        "regions": [{"x": 10, "y": 530, "w": 509, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
-        "task_type": "interactivo",
-        "strategy": "navegar",
+        "task_type": "subjetivo",
+        "strategy": "evaluar",
         "sub_strategy": "N1",
+        "rubric": {
+      "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
+      "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
+    },
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
@@ -79,9 +82,9 @@
         "task_text": null,
         "task_image": ["./data/img/actualidad.png"],
         "task_prompt": {
-          "nivel_bajo": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
-          "nivel_medio": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
-          "nivel_alto": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:"
+          "nivel_bajo": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, una ideas en cada casilla:",
+          "nivel_medio": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+          "nivel_alto": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, una ideas en cada casilla:"
         },
         "task_type": "v_y_d",
         "strategy": "integrar",
@@ -90,9 +93,10 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-          "Tiene al menos dos ventajas sobre el texto 1, que aparezcan nombradas en el texto": 1,
-          "Tiene al menos dos desventajas sobre el texto 1, que aparezcan nombradas en el texto": 1
-        },
+      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles.",
+      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+    },
         "feedback": {"success": "Has completado la tabla adecuadamente.", "failure": "No has completado la tabla de manera correcta"}
       },
       {
@@ -101,7 +105,7 @@
         "task_image": ["./data/img/naquera.png"],
         "task_prompt": {
           "nivel_bajo": "Utiliza la información del segundo texto (Náquera) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
-          "nivel_medio": "Utiliza la información del segundo texto (Náquera) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
+          "nivel_medio": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
           "nivel_alto": "Utiliza la información del segundo texto (Náquera) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:"
         },
         "task_type": "v_y_d",
@@ -111,8 +115,8 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-          "Tiene al menos dos ventajas sobre el texto 2, que aparezcan nombradas en el texto": 1,
-          "Tiene al menos dos desventajas sobre el texto 2, que aparezcan nombradas en el texto": 1
+          "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad.",          "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
         },
         "feedback": {"success": "Has completado la tabla adecuadamente.", "failure": "No has completado la tabla de manera correcta"}
       },
@@ -122,7 +126,7 @@
         "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
         "task_prompt": {
           "nivel_bajo": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contradictoria?",
-          "nivel_medio": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contradictoria?",
+          "nivel_medio": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
           "nivel_alto": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contradictoria?"
         },
         "task_type": "subjetivo",
@@ -131,7 +135,10 @@
         "description": "Pregunta noticias",
         "contenido": false,
         "conceptos": [],
-        "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
+        "rubric": {
+      "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
+      "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+    },
         "feedback": {"success": "Correcto", "failure": "Incorrecto"}
       },
       {
@@ -140,7 +147,7 @@
         "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
         "task_prompt": {
           "nivel_bajo": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?",
-          "nivel_medio": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?",
+          "nivel_medio": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
           "nivel_alto": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?"
         },
         "task_type": "subjetivo",
@@ -149,8 +156,11 @@
         "description": "Pregunta noticias 2",
         "contenido": true,
         "conceptos": ["Impacto ambiental", "Desarrollo y sociedad"],
-        "rubric": "1 punto si menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate, con sus propias palabras, 0 puntos si no lo hace o lo hace de manera general y vaga",
-        "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+"rubric": {
+      "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
+      "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+    },
+            "feedback": {"success": "Correcto", "failure": "Incorrecto"}
       },
       {
         "task_id": "cien_s1_t08",
@@ -174,7 +184,7 @@
         "task_id": "cien_s1_t09",
         "task_prompt": {
           "nivel_bajo": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:",
-          "nivel_medio": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:",
+          "nivel_medio": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial // Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos// Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
           "nivel_alto": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:"
         },
         "task_text": null,
@@ -185,11 +195,10 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "rubric":{
-          "Postura": "Dice que la postura de Elena es correcta 1 punto, si dice que la postura de Jaime es correcta 0 puntos",
-           "Justificación": "Justifica la elección con un argumento coherente relacionado con la fiabilidad de la información, contraste de fuentes o necesidad de evidencia 1 punto, si no toma postura, expresa una justificación vaga (porque sí, me gusta más) o un argumento no relacionado con la calidad de la información 0 puntos"
-          
-        },
+        "rubric": {
+      "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+      "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+    },
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
       },
       {
@@ -250,16 +259,19 @@
         "task_id": "cien_s1_t13",
         "task_prompt": {
           "nivel_bajo": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
-          "nivel_medio": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
+          "nivel_medio": "En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
           "nivel_alto": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc"
         },
         "task_text": null,
         "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
-        "task_type": "objetivo",
-        "correct_answer": "d",
+        "task_type": "subjetivo",
         "strategy": "evaluar",
         "sub_strategy": "E1",
         "description": "Identificar sección en web",
+        "rubric": {
+      "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+      "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+    },
         "contenido": false,
         "conceptos": [],
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
@@ -364,7 +376,7 @@
           "nivel_alto": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información."
         },
         "task_text": null,
-        "task_image": ["./data/img/generalitat.png"],
+        "task_image": ["./data/img/generalitat2.png"],
         "regions": [{"x": 225, "y": 224, "w": 84, "h": 54, "is_correct": true, "feedback_ok": "Bien hecho."}],
         "task_type": "interactivo",
         "strategy": "navegar",
@@ -378,11 +390,11 @@
         "task_id": "cien_s2_t20",
         "task_prompt": {
           "nivel_bajo": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
-          "nivel_medio": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
+          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na)Las libélulas..\nb)Los Efemerópteros y los Plecópteros\nc)Ambas son correctas.\nd)Los invertebrados no pueden indicar la calidad del agua.",
           "nivel_alto": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua."
         },
         "task_text": null,
-        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
+        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
         "task_type": "objetivo",
         "correct_answer": "c",
         "strategy": "integrar",
@@ -395,14 +407,14 @@
       {
         "task_id": "cien_s2_t21",
         "task_prompt": {
-          "nivel_bajo": "Pregunta 2. ¿Qué información aparece en el texto largo y se refuerza en la infografía como indicador de la calidad del agua?\n\na)La presencia del Lagarto ocelado.\nb)La actividad de ciertos invertebrados acuáticos.\nc)La migración de aves rapaces.\nd)La abundancia de jabalíes y corzos.",
-          "nivel_medio": "Pregunta 2. ¿Qué información aparece en el texto largo y se refuerza en la infografía como indicador de la calidad del agua?\n\na)La presencia del Lagarto ocelado.\nb)La actividad de ciertos invertebrados acuáticos.\nc)La migración de aves rapaces.\nd)La abundancia de jabalíes y corzos.",
-          "nivel_alto": "Pregunta 2. ¿Qué información aparece en el texto largo y se refuerza en la infografía como indicador de la calidad del agua?\n\na)La presencia del Lagarto ocelado.\nb)La actividad de ciertos invertebrados acuáticos.\nc)La migración de aves rapaces.\nd)La abundancia de jabalíes y corzos."
+          "nivel_bajo": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
+          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales vertebrados podemos encontrar en la Sierra Calderona?\na)Aves y mamíferos.\nb)Peces, reptiles y anfibios, aves y mamíferos\nc)No hay animales vertebrados.\nd)Reptiles y anfibios.",
+          "nivel_alto": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua."
         },
         "task_text": null,
-        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
+        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
         "task_type": "objetivo",
-        "correct_answer": "b",
+        "correct_answer": "c",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Identificar sección en web",
@@ -414,17 +426,20 @@
         "task_id": "cien_s2_t22",
         "task_prompt": {
           "nivel_bajo": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común.",
-          "nivel_medio": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común.",
+          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
           "nivel_alto": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común."
         },
         "task_text": null,
-        "task_image": ["./data/img/fauna.png", "./data/img/infografia.png"],
-        "task_type": "objetivo",
-        "correct_answer": "c",
+        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
+        "task_type": "subjetivo",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Identificar sección en web",
         "contenido": false,
+        "rubric": {
+      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+      "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
+    },
         "conceptos": [],
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
       },
@@ -432,7 +447,7 @@
         "task_id": "cien_s2_t23",
         "task_prompt": {
           "nivel_bajo": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
-          "nivel_medio": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
+          "nivel_medio": "Avatar: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? // Avatar: Yo me fiaría de “El Rincón del Estudiante” , nosotros somos estudiantes y seguro que tiene materiales fáciles // Docente: Recordad que en Internet no toda la información es de calidad¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
           "nivel_alto": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:"
         },
         "task_text": null,
@@ -443,30 +458,19 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "rubric":{
-          "Decision": "No esta de acuerdo con Jaime y justifica la elección con un argumento coherente relacionado con la fiabilidad de la información, contraste de fuentes o necesidad de evidencia 1 punto, si no toma postura, expresa una justificación vaga (porque sí, me gusta más) o un argumento no relacionado con la calidad de la información 0 puntos",
-          "Pagina": "Dice la Facultad de Ciencias Ambientales 1 punto, si dice cualquier otra página 0 puntos"
-        },
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "rubrica": {
+      "Punto 1 - Acuerdo con Jaime": {
+        "0": "Estar de acuerdo con la afirmación de Jaime.",
+        "1": "No estar de acuerdo con la afirmación de Jaime."
       },
-      {
-        "task_id": "cien_s2_t24",
-        "task_prompt": {
-          "nivel_bajo": "Elige el orden correcto de las imágenes para crear el orden final:\n\na) 2,3,1,4\nb) 1,2,4,3\nc) 2,1,4,3\nd) 4,2,1,3",
-          "nivel_medio": "Elige el orden correcto de las imágenes para crear el orden final:\n\na) 2,3,1,4\nb) 1,2,4,3\nc) 2,1,4,3\nd) 4,2,1,3",
-          "nivel_alto": "Elige el orden correcto de las imágenes para crear el orden final:\n\na) 2,3,1,4\nb) 1,2,4,3\nc) 2,1,4,3\nd) 4,2,1,3"
-        },
-        "task_text": null,
-        "task_image": ["./data/img/orden.png"],
-        "task_type": "objetivo",
-        "strategy": "integrar",
-        "correct_answer": "c",
-        "sub_strategy": "I1",
-        "description": "Identificar sección en web",
-        "contenido": false,
-        "conceptos": [],
+      "Punto 2 - Selección de web y justificación": {
+        "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
+        "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
+      }
+    },
         "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
       }
+      
     ]
   }
 }
