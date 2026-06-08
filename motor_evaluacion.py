@@ -1,11 +1,10 @@
 import json
 import yaml
 import sys
-from configuracion_llm import get_llm_evaluador
-from esquemas import LLMEvaluationOutput
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+import base64
+import os
+from configuracion_llm import get_llm_evaluador, is_vision_model
+from langchain_core.messages import HumanMessage
 
 # --- IMPORTACIÓN DE UTILIDADES OCR ---
 try:
@@ -19,10 +18,16 @@ try:
         prompts = yaml.safe_load(f)
     PROMPT_TEMPLATE = prompts["eval_subjective_prompt"]
     PROMPT_FEEDBACK_FINAL = prompts["eval_strategy_feedback_prompt"]
-    llm_evaluador = get_llm_evaluador()
 except Exception as e:
     print(f"Error crítico al cargar configuración en motor_evaluacion: {e}")
     sys.exit(1)
+
+def encode_image(image_path):
+    """Codifica una imagen local a Base64 para pasarla a la API."""
+    if not os.path.exists(image_path):
+        return None
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
 
 def select_feedback(task: dict, normalized_score: float):
     """Selecciona feedback basado en el porcentaje de éxito (0.0 a 1.0)."""
@@ -31,7 +36,7 @@ def select_feedback(task: dict, normalized_score: float):
     feedback_dict = task.get("feedback", {})
     return feedback_dict.get(key, "Feedback no configurado.")
 
-def evaluate_task(task: dict, student_answer: any, student_level: str):
+def evaluate_task(task: dict, student_answer: any, student_level: str, override_model: str = None):
     task_id = task.get('task_id', 'Desconocida')
     task_type = task.get('task_type')
     
@@ -44,8 +49,9 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         task_prompt_str = str(prompt_data)
     
     score = 0.0
-    max_score = 1.0 # Lo inicializamos aquí para que esté disponible en todas las ramas
+    max_score = 1.0 
     reasoning = ""
+    scores_por_item = {}
 
     # --- TIPO: CONECTAR ---
     if task_type == "conectar":
@@ -89,57 +95,82 @@ def evaluate_task(task: dict, student_answer: any, student_level: str):
         else:
             score, reasoning = 0.0, "Coordenadas no válidas."
 
-    # --- TIPO: TABLA GRID (SI/NO u Opciones Múltiples autocorregibles) ---
+    # --- TIPO: TABLA GRID ---
     elif task_type == "tabla_grid":
         filas = task.get("filas", [])
         matches = 0
-        
         for fila in filas:
             motivo = fila.get("motivo", "")
             respuesta_esperada = str(fila.get("correcta", "")).strip().upper()
-            
             if isinstance(student_answer, dict):
                 respuesta_alumno = str(student_answer.get(motivo, "")).strip().upper()
                 if respuesta_esperada == respuesta_alumno:
                     matches += 1
-                
-        # Regla binarizada: si acierta más de la mitad, es un 1.0
         raw_score = matches / len(filas) if filas else 0
         score = 1.0 if raw_score > 0.5 else 0.0
-        reasoning = f"Auto-corregido (Tabla Grid): {matches} de {len(filas)} aciertos. Nota final ajustada a {score}."
+        reasoning = f"Auto-corregido (Tabla Grid): {matches} de {len(filas)} aciertos. Nota ajustada a {score}."
 
-    # --- TIPO: SUBJETIVO / V_Y_D / TABLAS (Evaluación Multi-Objetivo) ---
+    # --- TIPO: SUBJETIVO / V_Y_D / TABLAS (Evaluación LLM Multi-Objetivo) ---
     else:
-        # Calculamos el peso total de la rúbrica si es un diccionario (varios objetivos)
         rubric = task.get("rubric", {})
         if isinstance(rubric, dict):
-            max_score = float(sum(v for v in rubric.values() if isinstance(v, (int, float))))
+            max_score = float(len(rubric)) # OPCIÓN B: La tarea pesa tantos huecos como ítems tenga la rúbrica.
         else:
             max_score = 1.0
 
-        context_parts = [task.get("task_text", "")]
-        for img in (task.get("task_image", []) if isinstance(task.get("task_image"), list) else [task.get("task_image")]):
-            if img: context_parts.append(extract_text_from_image(img))
-        
-        final_context = "\n\n".join(filter(None, context_parts))
+        # Lógica Híbrida: Visión vs OCR
+        modelo_activo = override_model if override_model else "poligpt-vision"
+        es_vision = is_vision_model(modelo_activo)
+        llm_evaluador = get_llm_evaluador(override_model=modelo_activo)
 
-        prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-        chain = prompt_tmpl | llm_evaluador
+        texto_ocr_adicional = ""
+        rutas_imagenes = task.get("task_image", [])
+        if isinstance(rutas_imagenes, str): rutas_imagenes = [rutas_imagenes]
+
+        if not es_vision:
+            # Si NO tiene visión, extraemos por OCR y lo añadimos al texto
+            partes_ocr = []
+            for img_path in rutas_imagenes:
+                if img_path: partes_ocr.append(extract_text_from_image(img_path))
+            texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES]:\n" + "\n".join(filter(None, partes_ocr))
+
+        texto_base = task.get("task_text", "")
+        if texto_base is None: texto_base = ""
+        contexto_completo = texto_base + texto_ocr_adicional
+
+        instrucciones = PROMPT_TEMPLATE.replace("{task_text}", contexto_completo)\
+                                       .replace("{rubrica_text}", json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric))\
+                                       .replace("{task_prompt}", f"{task_prompt_str}. NOTA: Evalúa cada ítem de la rúbrica. (Total máximo esperado: {max_score})")\
+                                       .replace("{student_answer}", str(student_answer))
+
+        content = [{"type": "text", "text": instrucciones}]
+
+        # Si SÍ tiene visión, adjuntamos la imagen real en Base64
+        if es_vision and rutas_imagenes:
+            for img_path in rutas_imagenes:
+                img_b64 = encode_image(img_path)
+                if img_b64:
+                    content.append({"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{img_b64}"}})
+
+        msg = HumanMessage(content=content)
+
         try:
-            llm_result = chain.invoke({
-            "task_text": final_context,
-            "rubrica_text": json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric),
-            "task_prompt": f"{task_prompt_str}. NOTA: Esta tarea tiene varios objetivos, evalúa cada uno y suma los puntos según la rúbrica (Total máximo: {max_score})",
-            "student_answer": student_answer
-        })
-            score = round(llm_result.score, 2)
-            reasoning = llm_result.reasoning
+            resultado = llm_evaluador.invoke([msg])
+            scores_por_item = resultado.scores_por_item
+            # Imponemos que el score total sea la suma real de los ítems para evitar alucinaciones
+            if scores_por_item:
+                score = float(sum(scores_por_item.values()))
+            else:
+                score = round(resultado.score, 2)
+            reasoning = resultado.reasoning
         except Exception as e:
-            print(f"Error LLM: {e}"); return None
+            print(f"Error LLM: {e}")
+            return None
 
     return {
         "score": score,
         "max_score": max_score,
+        "scores_por_item": scores_por_item, # Lo pasamos para el benchmark
         "reasoning": reasoning,
         "feedback_shown": select_feedback(task, score / max_score if max_score > 0 else 0)
     }
@@ -155,61 +186,26 @@ MAPA_SUBESTRATEGIAS = {
 }
 
 def generate_strategy_feedback(strategy_name: str, level: str, history: list) -> str:
-    """Genera un feedback cualitativo usando el LLM basado en el historial y sub-estrategias."""
-    
+    # Lógica inalterada, pero adaptada si quieres
     def get_val(item, key, default=""):
         return item.get(key, default) if isinstance(item, dict) else getattr(item, key, default)
 
-    strat_history = [
-        h for h in history 
-        if get_val(h, 'strategy') == strategy_name and not get_val(h, 'is_test_task', False)
-    ]
-    
-    if not strat_history:
-        return "No hay suficientes datos en esta sesión para realizar un análisis detallado."
+    strat_history = [h for h in history if get_val(h, 'strategy') == strategy_name and not get_val(h, 'is_test_task', False)]
+    if not strat_history: return "No hay suficientes datos."
 
     sub_vistas = set()
     historial_texto = ""
-    
     for i, h in enumerate(strat_history):
         sub_code = get_val(h, 'sub_strategy', "General")
-        significado = MAPA_SUBESTRATEGIAS.get(sub_code, "Habilidad general")
-        
-        if sub_code != "General" and sub_code is not None:
-            sub_vistas.add(f"- {sub_code}: {significado}")
+        if sub_code != "General" and sub_code: sub_vistas.add(f"- {sub_code}: {MAPA_SUBESTRATEGIAS.get(sub_code, 'Habilidad general')}")
+        historial_texto += f"Tarea {i+1}: Respuesta: {get_val(h, 'student_response')} | Nota: {get_val(h, 'score', 0)}/{get_val(h, 'max_score', 1)}\n"
 
-        historial_texto += f"Tarea {i+1} (Habilidad específica: {sub_code}):\n"
-        historial_texto += f"- Pregunta: {get_val(h, 'task_prompt')}\n"
-        historial_texto += f"- Respuesta del alumno: {get_val(h, 'student_response')}\n"
-        historial_texto += f"- Nota: {get_val(h, 'score', 0)}\n"
-        historial_texto += f"- Motivo de la nota: {get_val(h, 'reasoning')}\n\n"
-
-    sub_info_ayuda = "\n".join(sub_vistas)
-
-    # IMPORTAMOS EL ENRUTADOR NUEVO
     from configuracion_llm import get_llm_estructurado
     from langchain_core.prompts import ChatPromptTemplate
-    
-    # IMPORTANTE: Asegúrate de que PROMPT_FEEDBACK_FINAL está definido arriba leyendo prompts.yaml
     prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
-    
-    # Pedimos el LLM específico con nuestro esquema de 1 campo
     llm_feedback = get_llm_estructurado("feedback_estrategia") 
     chain = prompt_tmpl | llm_feedback 
-    
     try:
-        resultado = chain.invoke({
-            "estrategia": strategy_name.capitalize(),
-            "nivel": level,
-            "sub_info": sub_info_ayuda,
-            "historial_texto": historial_texto.strip()
-        })
-        
-        # Extraemos el string del objeto devuelto por el LLM estructurado
-        return resultado.texto_feedback
-
-
-        
-    except Exception as e:
-        print(f"Error generando feedback final para {strategy_name}: {e}")
-        return "Ha habido un problema al generar tus consideraciones."
+        res = chain.invoke({"estrategia": strategy_name.capitalize(), "nivel": level, "sub_info": "\n".join(sub_vistas), "historial_texto": historial_texto.strip()})
+        return res.texto_feedback
+    except Exception: return "Ha habido un problema al generar tus consideraciones."

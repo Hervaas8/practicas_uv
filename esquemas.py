@@ -7,7 +7,10 @@ from typing import List, Optional, Dict, Any, Literal
 
 class LLMEvaluationOutput(BaseModel):
     """Estructura forzada para la respuesta del LLM evaluador de tareas."""
-    score: float = Field(description="Nota numérica siguiendo la rúbrica")
+    score: float = Field(description="Nota numérica global sumando todos los ítems.")
+    scores_por_item: Dict[str, float] = Field(
+        description="Diccionario con la nota desglosada por cada ítem evaluado en la rúbrica. Clave: Nombre del ítem. Valor: Nota."
+    )
     reasoning: str = Field(description="Explicación técnica de la nota basada en la rúbrica")
 
 class LLMPlagiarismOutput(BaseModel):
@@ -31,15 +34,16 @@ class LLMFeedbackEstrategia(BaseModel):
 class LLMScaffoldingOutput(BaseModel):
     """Estructura forzada para la generación de pistas (scaffolding)."""
     pista_1: str = Field(
-        description="Pista de nivel 1 (Formato). Describe de forma general cómo funciona el entorno digital o el formato de la información, sin dar la respuesta."
+        description="Pista de nivel 1 (Formato). Describe de forma general cómo funciona el entorno digital o el formato de la información."
     )
     pista_2: str = Field(
-        description="Pista de nivel 2 (Características Específicas). Instrucción más directa y accionable, dando palabras clave o indicando en qué fijarse exactamente."
+        description="Pista de nivel 2 (Características Específicas). Instrucción más directa y accionable."
     )
+
 # ==========================================
 # --- HISTORIAL Y ESTADO DEL GRAFO ---
 # ==========================================
-# (Mantén tus clases TaskEvaluationHistory y StudentGraphState exactamente igual que las tienes)
+
 class TaskEvaluationHistory(BaseModel):
     task_id: str
     task_prompt: str = ""

@@ -458,7 +458,7 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "rubrica": {
+        "rubric": {
       "Punto 1 - Acuerdo con Jaime": {
         "0": "Estar de acuerdo con la afirmación de Jaime.",
         "1": "No estar de acuerdo con la afirmación de Jaime."

@@ -1,0 +1,583 @@
+{
+  "cien_s1_t02": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
+    "rubric": {
+      "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
+      "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
+    },
+    "task_image": [
+      "./data/img/sierra_calderona.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "La mejor página sería la de Parcs Naturals de la Comunitat Valenciana. Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo creo que la mejor es la de Parcs Naturals, o sea la de la Generalitat. Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "La mejor sería una que sale de parques naturales porque es como más seria. Aunque también AllTrails tiene rutas y fotos, pero no sé si eso es para informarse bien. Yo miraría esa y luego igual otra para comparar."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "La de Parcs Naturals. Es oficial y ya está."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Yo pondría la de AllTrails porque sale la montaña y rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno. Creo que esa es más verdadera."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Depende de lo que queramos buscar. Puede ser mejor la oficial, pero las otras también pueden tener información. Yo creo que más o menos la de Parcs Naturals, aunque no estoy seguro del todo."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Yo elegiría Google porque tiene muchas imágenes y así se ve mejor el castillo. Además la Sierra Calderona parece un sitio bonito para ir con amigos."
+      }
+    ]
+  },
+  "cien_s1_t04": {
+    "tipo_tarea": "v_y_d",
+    "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+    "rubric": {
+      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles.",
+      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+    },
+    "task_image": [
+      "./data/img/actualidad.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Ventajas: creación de empleo y turismo local. | Desventajas: aumento del tráfico y alteración de especies sensibles."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo. | Desventajas: puede haber más tráfico y afectar a animales o plantas."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Ventajas: que da trabajo y hace que el pueblo tenga más movimiento. También turismo. | Desventajas: lo del hábitat se puede romper y habría tráfico, creo."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Ventajas: empleo y dinero. | Desventajas: tráfico y daño al parque."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Ventajas: que hacen tiendas y la gente compra más. | Desventajas: se puede romper el abitad y los coches molestan."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Ventajas: puede crear empleo y ayudar al pueblo, más o menos. | Desventajas: quizá aumente el tráfico y afecte al parque."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Ventajas: me gustan las noticias porque salen fotos del castillo. | Desventajas: la letra es muy pequeña."
+      }
+    ]
+  },
+  "cien_s1_t05": {
+    "tipo_tarea": "v_y_d",
+    "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+    "rubric": {
+      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad.",
+      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+    },
+    "task_image": [
+      "./data/img/naquera.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Ventajas: atraer más visitantes y crear nuevos servicios. | Desventajas: puede dañar el ecosistema y meter demasiada presión humana."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Ventajas: dicen que tendría diseño sostenible y que vendría más gente. | Desventajas: puede alterar la tranquilidad y fastidiar el monte, y ya."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Ventajas: que el centro comercial sería moderno y sostenible. | Desventajas: que igual molesta a los vecinos y a los animales, porque habría mucha gente y coches."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Ventajas: más visitantes. | Desventajas: menos tranquilidad."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Ventajas: que será sostenible y eso es bueno para construir. | Desventajas: puede molestar al monte y a los animales porque hay mucho ruido."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Ventajas: puede traer visitantes y servicios. | Desventajas: también puede ser malo si altera la tranquilidad, pero depende de cómo lo hagan."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Ventajas: parece un periódico de verdad. | Desventajas: no sé, yo prefiero ir al centro comercial de mi ciudad."
+      }
+    ]
+  },
+  "cien_s1_t06": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
+    "rubric": {
+      "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
+      "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+    },
+    "task_image": [
+      "./data/img/actualidad.png",
+      "./data/img/naquera.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo creo que son complementarios, o sea, no dicen cosas contrarias. Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Son un poco complementarios porque hablan de lo mismo, del centro comercial ese. Aunque uno parece más oficial y el otro más de noticias, pero los dos dicen cosas buenas y malas."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Complementaria. Dicen casi lo mismo, ventajas y problemas."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Son contradictorias porque una dice que es bueno y la otra que es malo. Pero las dos hablan del centro comercial y de que puede aver trabajo."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Puede ser complementaria, pero depende de cómo se mire. Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "A mí me parece que el sitio tiene buenas vistas y que estaría bien ir de excursión. Además, la foto de la montaña se ve muy chula."
+      }
+    ]
+  },
+  "cien_s1_t07": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
+    "rubric": {
+      "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
+      "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+    },
+    "task_image": [
+      "./data/img/actualidad.png",
+      "./data/img/naquera.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Los textos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona. Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Va sobre que quieren hacer un centro comercial en Náquera, cerca de la Sierra Calderona. Eso puede traer trabajo y tiendas, pero también puede molestar a los animales, a los vecinos y al parque, porque habría más tráfico y ruido."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Hablan de hacer un centro comercial. Puede dar trabajo, pero también estropear el parque."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Los textos dicen que van a hacer un centro comercial en la montaña. Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Los textos hablan más o menos de un centro comercial cerca de la Sierra Calderona. Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "El tema principal es que la Sierra Calderona tiene paisajes bonitos y se puede ir a pasear. También salen fotos de montañas y de un castillo, que parece un sitio interesante para visitar."
+      }
+    ]
+  },
+  "cien_s1_t09": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial // Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos// Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
+    "rubric": {
+      "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+      "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+    },
+    "task_image": [
+      "./data/img/mobil1.png",
+      "./data/img/mobil2.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "La postura de Elena me parece más acertada. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo creo que Elena tiene más razón, o sea, los comentarios pueden ayudar a saber lo que piensa la gente. Pero no vale solo con eso, hay que mirar información más fiable y ya."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Creo que Elena, porque en Instagram la gente dice cosas pero igual no saben todo. Aunque Jaime también puede tener razón porque casi todos están en contra, pero habría que mirar más páginas y eso."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Elena. No puedes decidir solo por comentarios."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Yo creo que Jaime porque si todos ponen comentarios malos será que el centro comercial está mal. Aunque Elena dice de mirar expertos y eso también puede servir."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Puede que Elena tenga más razón, pero depende. Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Yo creo que Instagram está bien porque tiene muchos likes y fotos. Además el centro comercial parece grande y seguro que tendrá tiendas chulas."
+      }
+    ]
+  },
+  "cien_s1_t13": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
+    "rubric": {
+      "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+      "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+    },
+    "task_image": [
+      "./data/img/mobil2.png",
+      "./data/img/mobil3.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Yo elegiría @UniversidadVic, porque no se queda solo en decir si está bien o mal. Dice que hay que analizar los beneficios y también los impactos en el medio ambiente."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo elegiría @UniversidadVic, o sea, parece más serio. No solo opina enfadado, sino que dice de mirar las consecuencias antes de decidir."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Creo que elegiría el de UniversidadVic porque suena como más de estudiar el tema. Aunque los otros también tienen razón porque quieren proteger la sierra, pero ese lo explica más tranquilo."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "@UniversidadVic. Parece el único que piensa un poco."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Yo elegiría @Almalibre porque dice que la Sierra Calderona es unica y hay que protegerla. Parece que sabe porque habla de no hacer comercios allí."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Puede ser @UniversidadVic, aunque depende. Parece que habla más tranquilo, pero los otros también pueden tener algo de razón."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Yo elegiría el perfil que tenga más seguidores, porque así seguro que sube mejores fotos. Además Instagram sirve para ver paisajes bonitos."
+      }
+    ]
+  },
+  "cien_s2_t22": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
+    "rubric": {
+      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+      "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
+    },
+    "task_image": [
+      "./data/img/invertebrados.png",
+      "./data/img/vertebrados.png",
+      "./data/img/peces.png",
+      "./data/img/reptiles.png",
+      "./data/img/aves.png",
+      "./data/img/mamiferos.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Sí, la Sierra Calderona está declarada zona ZEPA. Significa Zona de Especial Protección para las Aves, o sea, un lugar protegido porque hay aves importantes que cuidar."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Sí, es zona ZEPA. Eso quiere decir que es una zona especial para proteger a las aves, porque allí viven muchas y algunas son importantes."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Sí, creo que pone que la Sierra Calderona es ZEPA. Es algo de proteger a las aves, porque hay pájaros y rapaces por la zona y no se les debe molestar."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Sí. ZEPA es una zona para proteger aves."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Sí, es una zona ZEPA. Eso significa que es una zona de animales protegidos, sobre todo pajaros, para que no los cacen o los molesten."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Creo que sí, parece que la Sierra Calderona es zona ZEPA. Más o menos significa que es una zona protegida para aves, aunque no sé exactamente cómo funciona."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Sí, porque en la Sierra Calderona hay muchos animales y también peces. A mí me parecen más interesantes los mamíferos como el jabalí."
+      }
+    ]
+  },
+  "cien_s2_t23": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Avatar: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? // Avatar: Yo me fiaría de “El Rincón del Estudiante” , nosotros somos estudiantes y seguro que tiene materiales fáciles // Docente: Recordad que en Internet no toda la información es de calidad¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
+    "rubric": {
+      "Punto 1 - Acuerdo con Jaime": {
+        "0": "Estar de acuerdo con la afirmación de Jaime.",
+        "1": "No estar de acuerdo con la afirmación de Jaime."
+      },
+      "Punto 2 - Selección de web y justificación": {
+        "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
+        "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
+      }
+    },
+    "task_image": [
+      "./data/img/web.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "No estoy de acuerdo con Jaime. Yo iría a la página de la Facultad de Ciencias Ambientales, porque parece una fuente más experta y relacionada con el medio ambiente, no solo una web de apuntes para estudiantes."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo creo que Jaime no tiene del todo razón, o sea, El Rincón del Estudiante puede ser fácil, pero no tiene por qué ser el mejor. Yo miraría la página de la Facultad de Ciencias Ambientales porque parece más seria."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "No sé, Jaime un poco sí porque si es para estudiantes se entiende mejor. Pero para informarme bien de la fauna elegiría la de la Facultad de Ciencias Ambientales, porque suena más de expertos y de animales o naturaleza."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "No. Iría a la Facultad de Ciencias Ambientales, parece más fiable."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Yo sí estoy un poco con Jaime porque somos estudiantes y esa página será más fácil. Pero también la facultad esa puede saber más porque es de ciencias y medio ambiente."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Depende, porque El Rincón del Estudiante puede servir, pero quizá no sea la página más experta. Creo que miraría la Facultad de Ciencias Ambientales, aunque tampoco estoy seguro del todo."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Yo elegiría EcoLodge porque parece un sitio para dormir en la naturaleza. Además, si vas allí puedes ver la Sierra Calderona mejor que leyendo páginas."
+      }
+    ]
+  },
+  "lit_s1_t03": {
+    "tipo_tarea": "subjetivo_tabla",
+    "task_prompt": "Estupendo, ya tenemos los textos con la información que necesitamos. Empezaremos creando una ficha de Miguel Hernández con información básica del poeta.\nRecuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
+    "rubric": {
+      "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+      },
+      "Punto 2- Circunstancias de su muerte": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
+      }
+    },
+    "task_image": [
+      "./data/img/infancia.png",
+      "./data/img/inicios.png",
+      "./data/img/cambio.png",
+      "./data/img/guerra.png",
+      "./data/img/cautiverio.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "### Lugar y año de nacimiento:\nOrihuela, Alicante, en 1910.\n### Lugar y año de muerte:\nAlicante, en 1942.\n### Circunstancias de su muerte:\nmurió en la cárcel después de la Guerra Civil, enfermo y sin poder recibir buen tratamiento."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "### Lugar y año de nacimiento:\nnació en Orihuela en 1910.\n### Lugar y año de muerte:\nmurió en Alicante en 1942.\n### Circunstancias de su muerte:\nestaba en la cárcel y se puso enfermo, o sea, no le dejaron salir para curarse bien."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "### Lugar y año de nacimiento:\nMiguel Hernández nació en Orihuela, en 1910.\n### Lugar y año de muerte:\ncreo que murió en Alicante, en 1942.\n### Circunstancias de su muerte:\nfue después de la guerra, cuando estaba preso, y estaba enfermo o algo así."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "### Lugar y año de nacimiento:\nOrihuela, 1910.\n### Lugar y año de muerte:\nAlicante, 1942.\n### Circunstancias de su muerte:\nmurió en la cárcel."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "### Lugar y año de nacimiento:\nnació en Alicante, en 1910.\n### Lugar y año de muerte:\nmurió en la carcel en 1942.\n### Circunstancias de su muerte:\nlo metieron preso por la guerra y se murio porque estaba malo."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "### Lugar y año de nacimiento:\nparece que nació en Orihuela, en 1910.\n### Lugar y año de muerte:\ncreo que murió en Alicante, en 1942.\n### Circunstancias de su muerte:\nmás o menos murió estando preso y enfermo, aunque no sé todos los detalles."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "### Lugar y año de nacimiento:\nera poeta y escribía poemas.\n### Lugar y año de muerte:\nsus libros son bastante conocidos.\n### Circunstancias de su muerte:\nme suena que estudió poco pero le gustaba leer."
+      }
+    ]
+  },
+  "lit_s1_t04": {
+    "tipo_tarea": "subjetivo_tabla",
+    "task_prompt": "Continuamos con una otra ficha sobre el poeta. Cuando navegamos\npor internet podemos encontrarnos con información casi ilimitada y en\nocasiones tenemos que utilizar y combinar información de distintos\ndocumentos. Utiliza las pestañas para leer los distintos textos y completa la\nsiguiente ficha.",
+    "rubric": {
+      "Punto 1 - Relación del poeta con la República o Guerra Civil": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
+      },
+      "Punto 2 - Ideas o valores que defendía": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
+      }
+    },
+    "task_image": [
+      "./data/img/infancia.png",
+      "./data/img/inicios.png",
+      "./data/img/cambio.png",
+      "./data/img/guerra.png",
+      "./data/img/cautiverio.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nSe alistó en el Ejército de la República y fue comisario cultural en el frente. También escribió poesía relacionada con la guerra.\n### Ideas o valores que defendía:\nDefendía la libertad, la justicia social y la solidaridad con la gente más humilde."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nMiguel Hernández apoyó a la República y estuvo en el ejército durante la Guerra Civil. También escribía poemas sobre lo que pasaba.\n### Ideas o valores que defendía:\nDefendía la libertad, la justicia y ayudar a los más pobres, o sea, no solo pensaba en él."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nEstuvo en la Guerra Civil con la República y creo que también fue como encargado de cultura o algo así. Luego lo metieron en la cárcel cuando terminó la guerra.\n### Ideas o valores que defendía:\nDefendía cosas como la libertad y la justicia, y también la gente sencilla del pueblo."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nApoyó a la República y luchó en la guerra.\n### Ideas o valores que defendía:\nLibertad y justicia."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nMiguel Hernández estaba con la Republica en la guerra y por eso luego fue preso. Escribia poemas de eso.\n### Ideas o valores que defendía:\nDefendia que la gente pobre estuviera mejor y que hubiera livertad."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nParece que estuvo bastante relacionado con la República durante la Guerra Civil, porque participó en el ejército y escribió sobre esa época.\n### Ideas o valores que defendía:\nCreo que defendía valores como la libertad y la justicia, aunque no sé exactamente todos."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "### Relación del poeta con la República o Guerra Civil:\nMiguel Hernández escribió muchos poemas famosos y algunos tienen nombres raros.\n### Ideas o valores que defendía:\nLe gustaba leer y conocer a otros escritores importantes."
+      }
+    ]
+  },
+  "lit_s1_t10": {
+    "tipo_tarea": "subjetivo",
+    "task_prompt": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
+    "rubric": {
+      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+      "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+    },
+    "task_image": [
+      "./data/img/poema3.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "Los “bueyes” representan a la gente que se deja mandar y baja la cabeza ante los castigos. Los “leones” son las personas valientes que se levantan y luchan por lo que creen justo."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "Yo creo que los bueyes son como la gente que obedece y no se defiende. Los leones son los que tienen fuerza y valentía para levantarse, o sea, para luchar."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "Los bueyes creo que son personas más tranquilas o que agachan la cabeza cuando les mandan. Y los leones son los fuertes, los que no se quedan quietos y se defienden, como el pueblo cuando lucha."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "Los bueyes son los que se rinden. Los leones son los que luchan."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "Los bueyes son como personas flojas que no hacen nada y les castigan. Los leones son los valientes que se enfadan y pelean por su pueblo."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "Creo que los bueyes pueden representar a gente que no se defiende mucho. Los leones quizá son los que tienen valor, aunque no estoy seguro de si se refiere exactamente a eso."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "Los bueyes y los leones son animales distintos. Los bueyes viven en el campo y los leones viven en la selva, y los dos salen en documentales."
+      }
+    ]
+  },
+  "lit_s1_t17": {
+    "tipo_tarea": "subjetivo_tabla",
+    "task_prompt": "Con toda la información disponible, completad la siguiente ficha.",
+    "rubric": {
+      "Punto 1 - Sentencia/Condena": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+      },
+      "Punto 2 - Acusación": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
+      }
+    },
+    "task_image": [
+      "./data/img/infancia.png",
+      "./data/img/inicios.png",
+      "./data/img/cambio.png",
+      "./data/img/guerra.png",
+      "./data/img/cautiverio.png",
+      "./data/img/expediente2.png"
+    ],
+    "respuestas": [
+      {
+        "perfil": "nivel_alto",
+        "respuesta": "### Condenas recibidas:\nPrimero fue condenado a muerte y después le cambiaron la condena por 30 años de prisión.\n### Motivos de las condenas:\nLo acusaron de apoyar la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
+      },
+      {
+        "perfil": "normal",
+        "respuesta": "### Condenas recibidas:\nLe pusieron pena de muerte, pero luego se la cambiaron por 30 años de cárcel.\n### Motivos de las condenas:\nFue por sus ideas políticas y porque escribía poemas apoyando al pueblo y a la República."
+      },
+      {
+        "perfil": "despistado",
+        "respuesta": "### Condenas recibidas:\nPrimero lo condenaron a muerte y luego creo que le dejaron 30 años en prisión.\n### Motivos de las condenas:\nPorque estaba relacionado con la República y escribía poemas de la guerra, o algo así."
+      },
+      {
+        "perfil": "borde",
+        "respuesta": "### Condenas recibidas:\nPena de muerte y luego 30 años de cárcel.\n### Motivos de las condenas:\nPor sus ideas políticas y sus poemas."
+      },
+      {
+        "perfil": "menos_nivel",
+        "respuesta": "### Condenas recibidas:\nLo condenaron a muerte, pero despues eran 30 años en la carcel.\n### Motivos de las condenas:\nPorque estaba con la Republica y escribia cosas del pueblo en la guerra."
+      },
+      {
+        "perfil": "ambiguo",
+        "respuesta": "### Condenas recibidas:\nParece que primero fue condenado a muerte y luego se cambió por prisión.\n### Motivos de las condenas:\nCreo que fue por sus ideas y por lo que escribió durante la guerra, aunque no sé todos los detalles."
+      },
+      {
+        "perfil": "trampa",
+        "respuesta": "### Condenas recibidas:\nEscribió libros y poemas famosos.\n### Motivos de las condenas:\nPorque era poeta y conocía a otros escritores importantes."
+      }
+    ]
+  }
+}
