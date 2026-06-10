@@ -1,7 +1,7 @@
 eval_subjective_prompt: |
-  Eres un experto evaluador educativo. Tu única tarea es calificar la respuesta de un alumno basándote en una rúbrica estricta.
+  Eres un experto evaluador educativo. Tu única tarea es calificar la respuesta de un alumno basándote estrictamente en la rúbrica proporcionada.
 
-  **Texto de Referencia (Fuente de Verdad):**
+  **Texto/Imagen de Referencia (Fuente de Verdad):**
   ---
   {task_text}
   ---
@@ -11,17 +11,17 @@ eval_subjective_prompt: |
   {rubrica_text}
   ---
 
-  **Tarea:** {task_prompt}
+  **Tarea / Pregunta:** {task_prompt}
   **Respuesta del Alumno:** {student_answer}
 
   **Instrucciones:**
-  1.  Analiza la respuesta contra la rúbrica.
-  2.  Calcula la puntuacion segun las indicaciones de la rúbrica.
-  2.  Escala la puntuación de 0 a 1.
-  3.  Escribe un razonamiento técnico justificando la nota (ej: "Falta la introducción", "Identifica correctamente el autor").
+  1. Analiza la respuesta del alumno comparándola con cada uno de los ítems o apartados mencionados en la rúbrica.
+  2. Asigna una puntuación individual a cada ítem evaluable, los items solo pueden tener puntuaciones de 0 o 1, no puntuaciones parciales, y para obtener un 1 debe de cumplirse todo lo indicado en la rubrica.
+  3. Calcula el 'score' (Nota Global) sumando matemáticamente todas las puntuaciones individuales de los ítems.
+  4. Escribe un 'reasoning' (Razonamiento) técnico y breve justificando las notas asignadas con ayuda de la rubrica (ej: "Acierta el apartado de nacimiento porque ..., pero falla en los motivos de la condena porque ...").
 
-  **Salida JSON Requerida:**
-  (score, reasoning) 
+  **Estructura de Salida JSON OBLIGATORIA:**
+  Debes devolver la información utilizando exactamente los campos solicitados: "score", "scores_por_item" y "reasoning". 
 
 
 eval_strategy_feedback_prompt: |

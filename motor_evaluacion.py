@@ -3,6 +3,8 @@ import yaml
 import sys
 import base64
 import os
+from PIL import Image
+import io
 from configuracion_llm import get_llm_evaluador, is_vision_model
 from langchain_core.messages import HumanMessage
 
@@ -22,12 +24,25 @@ except Exception as e:
     print(f"Error crítico al cargar configuración en motor_evaluacion: {e}")
     sys.exit(1)
 
-def encode_image(image_path):
-    """Codifica una imagen local a Base64 para pasarla a la API."""
+def encode_image(image_path, max_size=(800, 800)):
+    """Redimensiona, comprime a JPEG y codifica una imagen a Base64 para no saturar los tokens."""
     if not os.path.exists(image_path):
         return None
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
+    try:
+        with Image.open(image_path) as img:
+            # Convertir a RGB por si es un PNG con fondo transparente
+            img = img.convert("RGB")
+            # Redimensionar manteniendo la proporción
+            img.thumbnail(max_size, Image.Resampling.LANCZOS)
+            
+            # Guardar en memoria como JPEG con algo de compresión
+            buffer = io.BytesIO()
+            img.save(buffer, format="JPEG", quality=85)
+            
+            return base64.b64encode(buffer.getvalue()).decode('utf-8')
+    except Exception as e:
+        print(f"Error procesando la imagen {image_path}: {e}")
+        return None
 
 def select_feedback(task: dict, normalized_score: float):
     """Selecciona feedback basado en el porcentaje de éxito (0.0 a 1.0)."""
@@ -110,11 +125,22 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         score = 1.0 if raw_score > 0.5 else 0.0
         reasoning = f"Auto-corregido (Tabla Grid): {matches} de {len(filas)} aciertos. Nota ajustada a {score}."
 
-    # --- TIPO: SUBJETIVO / V_Y_D / TABLAS (Evaluación LLM Multi-Objetivo) ---
+# --- TIPO: SUBJETIVO / V_Y_D / TABLAS (Evaluación Multi-Objetivo) ---
     else:
         rubric = task.get("rubric", {})
+        
+        # 1. Detectar inteligentemente si es un ítem único o multi-ítem
+        es_multi_item = False
         if isinstance(rubric, dict):
-            max_score = float(len(rubric)) # OPCIÓN B: La tarea pesa tantos huecos como ítems tenga la rúbrica.
+            # Si algún valor dentro de la rúbrica es otro diccionario, hay sub-ítems
+            if any(isinstance(v, dict) for v in rubric.values()):
+                es_multi_item = True
+                # Contamos solo las claves que son diccionarios (ignoramos cosas como "Instrucciones")
+                items_evaluables = [k for k, v in rubric.items() if isinstance(v, dict)]
+                max_score = float(len(items_evaluables))
+            else:
+                # Es un ítem único (sus valores son strings descriptivos para el 0 y el 1)
+                max_score = 1.0
         else:
             max_score = 1.0
 
@@ -128,7 +154,6 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         if isinstance(rutas_imagenes, str): rutas_imagenes = [rutas_imagenes]
 
         if not es_vision:
-            # Si NO tiene visión, extraemos por OCR y lo añadimos al texto
             partes_ocr = []
             for img_path in rutas_imagenes:
                 if img_path: partes_ocr.append(extract_text_from_image(img_path))
@@ -138,14 +163,29 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         if texto_base is None: texto_base = ""
         contexto_completo = texto_base + texto_ocr_adicional
 
+        # 2. Instrucción dinámica para el LLM
+        # 2. Instrucción dinámica para el LLM (REFORZADA PARA FORZAR EL ESQUEMA)
+        if es_multi_item:
+            nota_llm = (
+                f"NOTA CRÍTICA: Esta tarea tiene {int(max_score)} apartados. Evalúa CADA UNO por separado. "
+                f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON de salida incluya el campo 'scores_por_item' "
+                f"conteniendo un diccionario con la nota de cada apartado. (Total máximo: {max_score})"
+            )
+        else:
+            nota_llm = (
+                f"NOTA CRÍTICA: Esta tarea evalúa un ÚNICO ítem. "
+                f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON incluya el campo 'scores_por_item' con un único elemento. "
+                f"Ejemplo del formato que DEBES usar: {{\"score\": 1.0, \"scores_por_item\": {{\"Concepto_Unico\": 1.0}}, \"reasoning\": \"...\"}}. "
+                f"(Total máximo: {max_score})"
+            )
+
         instrucciones = PROMPT_TEMPLATE.replace("{task_text}", contexto_completo)\
                                        .replace("{rubrica_text}", json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric))\
-                                       .replace("{task_prompt}", f"{task_prompt_str}. NOTA: Evalúa cada ítem de la rúbrica. (Total máximo esperado: {max_score})")\
+                                       .replace("{task_prompt}", f"{task_prompt_str}. {nota_llm}")\
                                        .replace("{student_answer}", str(student_answer))
 
         content = [{"type": "text", "text": instrucciones}]
 
-        # Si SÍ tiene visión, adjuntamos la imagen real en Base64
         if es_vision and rutas_imagenes:
             for img_path in rutas_imagenes:
                 img_b64 = encode_image(img_path)
@@ -157,11 +197,13 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         try:
             resultado = llm_evaluador.invoke([msg])
             scores_por_item = resultado.scores_por_item
-            # Imponemos que el score total sea la suma real de los ítems para evitar alucinaciones
+            
+            # Sumamos las notas asegurándonos de que no alucine
             if scores_por_item:
                 score = float(sum(scores_por_item.values()))
             else:
                 score = round(resultado.score, 2)
+                
             reasoning = resultado.reasoning
         except Exception as e:
             print(f"Error LLM: {e}")
@@ -170,7 +212,7 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
     return {
         "score": score,
         "max_score": max_score,
-        "scores_por_item": scores_por_item, # Lo pasamos para el benchmark
+        "scores_por_item": scores_por_item, 
         "reasoning": reasoning,
         "feedback_shown": select_feedback(task, score / max_score if max_score > 0 else 0)
     }
