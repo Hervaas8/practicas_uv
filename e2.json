@@ -3,52 +3,86 @@
     {
       "task_id": "lit_s1_t01",
       "task_prompt": {
-        "nivel_bajo": "Hola, buscando en internet me salen los siguientes enlaces. Por mi experiencia la información en internet no siempre es de calidad. ¿Qué enlace crees que deberíamos escoger?\na)Wikipedia\nb)Vida del poeta\nc)Rincon del vago\nd)El perfil de Instagram",
-        "nivel_medio": "Hola, buscando en internet me salen los siguientes enlaces. Por mi experiencia la información en internet no siempre es de calidad. ¿Qué enlace crees que deberíamos escoger?\na)Wikipedia\nb)Vida del poeta\nc)Rincon del vago\nd)El perfil de Instagram",
-        "nivel_alto": "Hola, buscando en internet me salen los siguientes enlaces. Por mi experiencia la información en internet no siempre es de calidad. ¿Qué enlace crees que deberíamos escoger?\na)Wikipedia\nb)Vida del poeta\nc)Rincon del vago\nd)El perfil de Instagram"
+        "nivel_bajo": "Avatar 1: Hola, buscando en internet “Miguel Hernández” me salen los siguientes enlaces. Por mi experiencia, la información en internet no siempre es de calidad. Para preparar la defensa es mejor seleccionar páginas de instituciones oficiales. Evitaría páginas en las que pueda escribir cualquiera, como blogs. Haz clic en el enlace que deberíamos escoger.",
+        "nivel_medio": "Avatar 1: Hola, buscando en internet “Miguel Hernández” me salen los siguientes enlaces. Por mi experiencia, la información en internet no siempre es de calidad. Haz clic en el enlace que deberíamos escoger.",
+        "nivel_alto": "Avatar 1: Hola, buscando en internet “Miguel Hernández” me salen los siguientes enlaces. Haz clic en el enlace que deberíamos escoger."
       },
       "task_text": null,
-      "task_image": ["./data/img/miguel.png"],
+      "task_image": [
+        "./data/img/miguel.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 327, "y": 374, "w": 177, "h": 32, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 327,
+          "y": 374,
+          "w": 177,
+          "h": 32,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t02",
       "task_prompt": {
-        "nivel_bajo": "Ahora vamos a conocer más la vida de Miguel Hernández. Este tipo de webs tiene menús para organizar la información. ¿Qué enlace deberíamos escoger?",
-        "nivel_medio": "Ahora vamos a conocer más la vida de Miguel Hernández. Este tipo de webs tiene menús para organizar la información. ¿Qué enlace deberíamos escoger?",
-        "nivel_alto": "Ahora vamos a conocer más la vida de Miguel Hernández. Este tipo de webs tiene menús para organizar la información. ¿Qué enlace deberíamos escoger?"
+        "nivel_bajo": "Docente: En esta web hay información sobre la vida y obra de Miguel Hernández. Primero, vamos a investigar sobre su vida. Este tipo de webs tiene menús para organizar la información. Como queremos profundizar en cómo fue su vida y su obra, yo me centraría en enlaces como “el poeta” o similares ¿Dónde deberíamos clicar?",
+        "nivel_medio": "Docente: En esta web hay información sobre la vida y obra de Miguel Hernández. Primero, vamos a investigar sobre su vida. Este tipo de webs tiene menús para organizar la información ¿Dónde deberíamos clicar?",
+        "nivel_alto": "Docente: En esta web hay información sobre la vida y obra de Miguel Hernández. Primero, vamos a investigar sobre su vida ¿Dónde deberíamos clicar?"
       },
       "task_text": null,
-      "task_image": ["./data/img/miguel2.png"],
-      "regions": [{"x": 157, "y": 90, "w": 62, "h": 26, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "task_image": [
+        "./data/img/miguel2.png"
+      ],
+      "regions": [
+        {
+          "x": 157,
+          "y": 90,
+          "w": 62,
+          "h": 26,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "task_type": "interactivo",
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t03",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png"
+      ],
       "task_prompt": {
-        "nivel_bajo": "Estupendo, ya tenemos los textos con la información que necesitamos. Empezaremos creando una ficha de Miguel Hernández con información básica del poeta.\nRecuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
-        "nivel_medio": "Estupendo, ya tenemos los textos con la información que necesitamos. Empezaremos creando una ficha de Miguel Hernández con información básica del poeta.\nRecuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
-        "nivel_alto": "Estupendo, ya tenemos los textos con la información que necesitamos. Empezaremos creando una ficha de Miguel Hernández con información básica del poeta.\nRecuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras."
+        "nivel_bajo": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Fíjate bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos y completa la siguiente ficha con tus palabras.",
+        "nivel_medio": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
+        "nivel_alto": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. Completa la siguiente ficha con tus palabras."
       },
       "task_type": "subjetivo",
       "apartados_tabla": [
-        "Lugar y año de nacimiento", 
-        "Lugar y año de muerte", 
+        "Lugar y año de nacimiento",
+        "Lugar y año de muerte",
         "Circunstancias de su muerte"
       ],
       "strategy": "navegar",
@@ -57,28 +91,38 @@
       "contenido": true,
       "conceptos": [],
       "rubric": {
-      "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+        "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+        },
+        "Punto 2- Circunstancias de su muerte": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
+        }
       },
-      "Punto 2- Circunstancias de su muerte": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
-      }},      
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t04",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png"
+      ],
       "task_prompt": {
-        "nivel_bajo": "Continuamos con una otra ficha sobre el poeta. Cuando navegamos\npor internet podemos encontrarnos con información casi ilimitada y en\nocasiones tenemos que utilizar y combinar información de distintos\ndocumentos. Utiliza las pestañas para leer los distintos textos y completa la\nsiguiente ficha.",
-        "nivel_medio": "Continuamos con una otra ficha sobre el poeta. Cuando navegamos\npor internet podemos encontrarnos con información casi ilimitada y en\nocasiones tenemos que utilizar y combinar información de distintos\ndocumentos. Utiliza las pestañas para leer los distintos textos y completa la\nsiguiente ficha.",
-        "nivel_alto": "Continuamos con una otra ficha sobre el poeta. Cuando navegamos\npor internet podemos encontrarnos con información casi ilimitada y en\nocasiones tenemos que utilizar y combinar información de distintos\ndocumentos. Utiliza las pestañas para leer los distintos textos y completa la\nsiguiente ficha."
+        "nivel_bajo": "Docente: Continuamos con otra ficha sobre el poeta. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Esta información puede ser similar, distinta o incluso contradictoria. Utiliza las pestañas para leer los distintos textos y completa la siguiente ficha.",
+        "nivel_medio": "Docente: Continuamos con una otra ficha sobre el poeta. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y completa la siguiente ficha.",
+        "nivel_alto": "Docente: Continuamos con otra ficha sobre el poeta. Utiliza la información de los textos y completa la siguiente ficha."
       },
       "task_type": "subjetivo",
       "apartados_tabla": [
-        "Relación del poeta con la República o Guerra Civil", 
+        "Relación del poeta con la República o Guerra Civil",
         "Ideas o valores que defendía"
       ],
       "strategy": "navegar",
@@ -87,61 +131,100 @@
       "contenido": true,
       "conceptos": [],
       "rubric": {
-      "Punto 1 - Relación del poeta con la República o Guerra Civil": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
-      },
-      "Punto 2 - Ideas o valores que defendía": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
-      },      
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
-    }},
+        "Punto 1 - Relación del poeta con la República o Guerra Civil": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
+        },
+        "Punto 2 - Ideas o valores que defendía": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
+        },
+        "feedback": {
+          "success": "Correcto",
+          "failure": "Incorrecto"
+        }
+      }
+    },
     {
       "task_id": "lit_s1_t05",
       "task_prompt": {
-        "nivel_bajo": "Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
-        "nivel_medio": "Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
-        "nivel_alto": "Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él."
-      },        
+        "nivel_bajo": "Docente: Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. En este caso, se diferencian del resto del texto porque están subrayados y en color azul. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
+        "nivel_medio": "Docente: Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
+        "nivel_alto": "Docente: Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él."
+      },
       "task_text": null,
-      "task_image": ["./data/img/guerra.png"],
+      "task_image": [
+        "./data/img/guerra.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 441, "y": 221, "w": 134, "h": 29, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 441,
+          "y": 221,
+          "w": 134,
+          "h": 29,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t06",
       "task_prompt": {
-        "nivel_bajo": "Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
-        "nivel_medio": "Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
-        "nivel_alto": "Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él."
-      },        
+        "nivel_bajo": "Docente: Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior, ya que aparecen en rojo y con la numeración correspondiente. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
+        "nivel_medio": "Docente: Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
+        "nivel_alto": "Docente: Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él."
+      },
       "task_text": null,
-      "task_image": ["./data/img/viento.png"],
+      "task_image": [
+        "./data/img/viento.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 208, "y": 254, "w": 208, "h": 24, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 208,
+          "y": 254,
+          "w": 208,
+          "h": 24,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t07",
       "task_prompt": {
-        "nivel_bajo": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan?\na)1936\nb)1937\nc)1939\nd)1942",
-        "nivel_medio": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan?\na)1936\nb)1937\nc)1939\nd)1942",
-        "nivel_alto": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan?\na)1936\nb)1937\nc)1939\nd)1942"
+        "nivel_bajo": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Recuerda fijarte bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan”?\na) 1936\nb) 1937\nc) 1939\nd) 1942",
+        "nivel_medio": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan”?\na) 1936\nb) 1937\nc) 1939\nd) 1942",
+        "nivel_alto": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan”?\na) 1936\nb) 1937\nc) 1939\nd) 1942"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/pueblo.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/pueblo.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "navegar",
@@ -149,17 +232,27 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t08",
       "task_prompt": {
-        "nivel_bajo": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na)Los inicios\nb)El cambio\nc)La guerra\nd)El cautiverio",
-        "nivel_medio": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na)Los inicios\nb)El cambio\nc)La guerra\nd)El cautiverio",
-        "nivel_alto": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na)Los inicios\nb)El cambio\nc)La guerra\nd)El cautiverio"
+        "nivel_bajo": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Recuerda fijarte bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na) Los inicios\nb) El cambio\nc) La guerra\nd) El cautiverio",
+        "nivel_medio": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na) Los inicios\nb) El cambio\nc) La guerra\nd) El cautiverio",
+        "nivel_alto": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na) Los inicios\nb) El cambio\nc) La guerra\nd) El cautiverio"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/pueblo.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/pueblo.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "navegar",
@@ -167,17 +260,27 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t09",
       "task_prompt": {
-        "nivel_bajo": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na)Las miserias humanas\nb)Su compromiso social\nc)La soledad\nd)El nacimiento de su primer hijo",
-        "nivel_medio": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na)Las miserias humanas\nb)Su compromiso social\nc)La soledad\nd)El nacimiento de su primer hijo",
-        "nivel_alto": "En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na)Las miserias humanas\nb)Su compromiso social\nc)La soledad\nd)El nacimiento de su primer hijo"
+        "nivel_bajo": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Recuerda fijarte bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na) Las miserias humanas\nb) Su compromiso social\nc) La soledad\nd) El nacimiento de su primer hijo",
+        "nivel_medio": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na) Las miserias humanas\nb) Su compromiso social\nc) La soledad\nd) El nacimiento de su primer hijo",
+        "nivel_alto": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿Qué expresa Miguel Hernández en este poema?\na) Las miserias humanas\nb) Su compromiso social\nc) La soledad\nd) El nacimiento de su primer hijo"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/pueblo.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/pueblo.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "integrar",
@@ -185,12 +288,17 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t10",
       "task_text": null,
-      "task_image": ["./data/img/poema3.png"],
+      "task_image": [
+        "./data/img/poema3.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
         "nivel_medio": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
@@ -203,55 +311,94 @@
       "contenido": true,
       "conceptos": [],
       "rubric": {
-      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-      "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
-    },      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+      },
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t11",
       "task_prompt": {
-        "nivel_bajo": "Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena. ¿Dónde deberíamos clicar?",
-        "nivel_medio": "Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena. ¿Dónde deberíamos clicar?",
-        "nivel_alto": "Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena. ¿Dónde deberíamos clicar?"
-      },        
+        "nivel_bajo": "Avatar 2: Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre la censura y sobre su condena. Siguiendo el esquema de menús que tiene esta página web, yo me centraría en enlaces como “creaciones”, “literatura” o similares ¿Dónde deberíamos clicar?",
+        "nivel_medio": "Avatar 2: Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena. Siguiendo el esquema de menús que tiene esta página web ¿Dónde deberíamos clicar?",
+        "nivel_alto": "Avatar 2: Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena ¿Dónde deberíamos clicar?"
+      },
       "task_text": null,
-      "task_image": ["./data/img/miguel2.png"],
+      "task_image": [
+        "./data/img/miguel2.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 158, "y": 90, "w": 61, "h": 25, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 158,
+          "y": 90,
+          "w": 61,
+          "h": 25,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t12",
       "task_prompt": {
-        "nivel_bajo": "Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado. ¿Qué enlace deberíamos escoger?",
-        "nivel_medio": "Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado. ¿Qué enlace deberíamos escoger?",
-        "nivel_alto": "Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado. ¿Qué enlace deberíamos escoger?"
-      },        
+        "nivel_bajo": "Avatar 2: Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado, yo buscaría algún enlace del tipo “juicio”, “expedientes” o similares. ¿Qué enlace deberíamos escoger?",
+        "nivel_medio": "Avatar 2: Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado. ¿Qué enlace deberíamos escoger?",
+        "nivel_alto": "Avatar 2: Primero vamos a centrarnos en la información sobre su condena. ¿Qué enlace deberíamos escoger?"
+      },
       "task_text": null,
-      "task_image": ["./data/img/miguel4.png"],
+      "task_image": [
+        "./data/img/miguel4.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 152, "y": 326, "w": 181, "h": 29, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 152,
+          "y": 326,
+          "w": 181,
+          "h": 29,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t13",
       "task_prompt": {
-        "nivel_bajo": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio",
-        "nivel_medio": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio",
-        "nivel_alto": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio"
-      },        
+        "nivel_bajo": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Recuerda que navegar por internet requiere localizar la información qué necesitamos e integrar, en ocasiones, el contenido de distintos documentos. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?",
+        "nivel_medio": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?",
+        "nivel_alto": "Docente: Como puedes observar, tienes a tu disposición los expedientes penitenciarios de Miguel Hernández y los textos anteriores. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?"
+      },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/expedientes.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/expedientes.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "integrar",
@@ -259,17 +406,27 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t14",
       "task_prompt": {
-        "nivel_bajo": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio",
-        "nivel_medio": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio",
-        "nivel_alto": "Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?\na)La infancia\nb)Los inicios\nc)El cambio\nd)La guerra\ne)El cautiverio"
-      },        
+        "nivel_bajo": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Recuerda que navegar por internet requiere localizar la información qué necesitamos e integrar, en ocasiones, el contenido de distintos documentos. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?",
+        "nivel_medio": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?",
+        "nivel_alto": "Docente: Como puedes observar, tienes a tu disposición los expedientes penitenciarios de Miguel Hernández y los textos anteriores. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos información desarrollada sobre la condena de Miguel Hernández?"
+      },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/expedientes.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/expedientes.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "integrar",
@@ -277,16 +434,26 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t15",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/expedientes.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/expedientes.png"
+      ],
       "task_prompt": {
-        "nivel_bajo": "¿Cuál fue la útima cárcel en la que estuvo Miguel Hernández?",
-        "nivel_medio": "¿Cuál fue la útima cárcel en la que estuvo Miguel Hernández?",
-        "nivel_alto": "¿Cuál fue la útima cárcel en la que estuvo Miguel Hernández?"
+        "nivel_bajo": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Recuerda que navegar por internet requiere localizar la información qué necesitamos e integrar, en ocasiones, el contenido de distintos documentos. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿Cuál fue la última cárcel en la que estuvo Miguel Hernández?",
+        "nivel_medio": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿Cuál fue la última cárcel en la que estuvo Miguel Hernández?",
+        "nivel_alto": "Docente: Como puedes observar, tienes a tu disposición los expedientes penitenciarios de Miguel Hernández y los textos anteriores. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿Cuál fue la última cárcel en la que estuvo Miguel Hernández?"
       },
       "task_type": "subjetivo",
       "strategy": "integrar",
@@ -295,10 +462,13 @@
       "contenido": true,
       "conceptos": [],
       "rubric": {
-      "0": "'Huelva', 'Sevilla', 'Torrijos (Madrid)', 'Orihuela', 'Palencia' u 'Ocaña'.",
-      "1": "'Alicante'."
-    },
-          "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+        "0": "'Huelva', 'Sevilla', 'Torrijos (Madrid)', 'Orihuela', 'Palencia' u 'Ocaña'.",
+        "1": "'Alicante'."
+      },
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t16",
@@ -306,44 +476,65 @@
         "nivel_bajo": "Selecciona el último expediente penitenciario para conocer en profundidad los motivos de su última condena, su procesamiento y fallecimiento.",
         "nivel_medio": "Selecciona el último expediente penitenciario para conocer en profundidad los motivos de su última condena, su procesamiento y fallecimiento.",
         "nivel_alto": "Selecciona el último expediente penitenciario para conocer en profundidad los motivos de su última condena, su procesamiento y fallecimiento."
-      },        
+      },
       "task_text": null,
-      "task_image": ["./data/img/expediente.png"],
+      "task_image": [
+        "./data/img/expediente.png"
+      ],
       "task_type": "interactivo",
-      "regions": [{"x": 509, "y": 242, "w": 177, "h": 80, "is_correct": true, "feedback_ok": "Bien hecho."}],
+      "regions": [
+        {
+          "x": 509,
+          "y": 242,
+          "w": 177,
+          "h": 80,
+          "is_correct": true,
+          "feedback_ok": "Bien hecho."
+        }
+      ],
       "strategy": "navegar",
       "sub_strategy": "N1",
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t17",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/inicios.png","./data/img/cambio.png","./data/img/guerra.png", "./data/img/cautiverio.png", "./data/img/expediente2.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/inicios.png",
+        "./data/img/cambio.png",
+        "./data/img/guerra.png",
+        "./data/img/cautiverio.png",
+        "./data/img/expediente2.png"
+      ],
       "task_prompt": {
-        "nivel_bajo": "Con toda la información disponible, completad la siguiente ficha.",
-        "nivel_medio": "Con toda la información disponible, completad la siguiente ficha.",
-        "nivel_alto": "Con toda la información disponible, completad la siguiente ficha."
+        "nivel_bajo": "Con toda la información disponible, completad la siguiente ficha. He rellenado algunas partes que ya teníamos hechas de tareas anteriores. Completa el resto de la ficha:",
+        "nivel_medio": "Con toda la información disponible,completad la siguiente ficha. He rellenado algunas partes que ya teníamos hechas de tareas anteriores. Completa el resto de la ficha:",
+        "nivel_alto": "Con toda la información disponible, completad la siguiente ficha. He rellenado algunas partes que ya teníamos hechas de tareas anteriores. Completa el resto de la ficha:"
       },
       "task_type": "subjetivo",
       "apartados_tabla": [
-        "Lugar y año de nacimiento", 
+        "Lugar y año de nacimiento",
         "Lugar y año de muerte",
-        "Relancion con la Republica o Guerra Civil", 
+        "Relancion con la Republica o Guerra Civil",
         "Circunstancias de su muerte",
         "Ideas o valores que defendía",
         "Condenas recibidas",
         "Motivos de las condenas",
         "Circunstancias de su muerte"
       ],
-      "valores_iniciales":{
-          "Lugar y año de nacimiento": "Alicante, el 30 de octubre de 1910",
-          "Lugar y año de muerte": "Alicante, el 28 de marzo de 1942",
-          "Relancion con la Republica o Guerra Civil": "Perteneció al bando republicano. Escribió y difundió poesía comprometida políticamente, como en Viento del pueblo",
-          "Ideas o valores que defendía": "Defendía al pueblo y la causa republicana",
-          "Circunstancias de su muerte": "Murió en la enfermería de la prisión de Alicante a causa de una tuberculosis pulmonar"
+      "valores_iniciales": {
+        "Lugar y año de nacimiento": "Alicante, el 30 de octubre de 1910",
+        "Lugar y año de muerte": "Alicante, el 28 de marzo de 1942",
+        "Relancion con la Republica o Guerra Civil": "Perteneció al bando republicano. Escribió y difundió poesía comprometida políticamente, como en Viento del pueblo",
+        "Ideas o valores que defendía": "Defendía al pueblo y la causa republicana",
+        "Circunstancias de su muerte": "Murió en la enfermería de la prisión de Alicante a causa de una tuberculosis pulmonar"
       },
       "strategy": "navegar",
       "sub_strategy": "I1",
@@ -351,28 +542,37 @@
       "contenido": true,
       "conceptos": [],
       "rubric": {
-      "Punto 1 - Sentencia/Condena": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+        "Punto 1 - Sentencia/Condena": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+        },
+        "Punto 2 - Acusación": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
+        }
       },
-      "Punto 2 - Acusación": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
-      }},      
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s1_t18",
       "task_type": "tabla_grid",
       "task_prompt": {
-        "nivel_bajo": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna con SI/NO:",
-        "nivel_medio": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna con SI/NO:",
-        "nivel_alto": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna con SI/NO:"
+        "nivel_bajo": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna de la tabla con SI/NO para acabar la ficha de tu defensa:",
+        "nivel_medio": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna de la tabla con SI/NO para acabar la ficha de tu defensa:",
+        "nivel_alto": "Bien hecho, ahora ampliaremos la tabla para analizar algunos de los motivos por los que fue encarcelado. Completa la última columna de la tabla con SI/NO para acabar la ficha de tu defensa:"
       },
       "strategy": "integrar",
       "contenido": true,
-      "conceptos": ["Contexto histórico y legal"],
-      "opciones": ["SI", "NO"],
+      "conceptos": [
+        "Contexto histórico y legal"
+      ],
+      "opciones": [
+        "SI",
+        "NO"
+      ],
       "filas": [
         {
           "motivo": "Defender el gobierno de la República",
@@ -401,11 +601,13 @@
       }
     }
   ],
-  "sesion2":[
+  "sesion2": [
     {
       "task_id": "lit_s2_t01",
       "task_text": null,
-      "task_image": ["./data/img/poema3.png"],
+      "task_image": [
+        "./data/img/poema3.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\n¿De qué trata el poema?",
         "nivel_medio": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\n¿De qué trata el poema?",
@@ -418,12 +620,17 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t02",
       "task_text": null,
-      "task_image": ["./data/img/poema3.png"],
+      "task_image": [
+        "./data/img/poema3.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\nTono del poema: triste, crítico, esperanzador, misterioso, violento, melancólico, otro…",
         "nivel_medio": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\nTono del poema: triste, crítico, esperanzador, misterioso, violento, melancólico, otro…",
@@ -436,12 +643,17 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t03",
       "task_text": null,
-      "task_image": ["./data/img/poema3.png"],
+      "task_image": [
+        "./data/img/poema3.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\n¿Hay crítica social o política? Si, no, no lo sé",
         "nivel_medio": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\n¿Hay crítica social o política? Si, no, no lo sé",
@@ -454,12 +666,17 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t04",
       "task_text": null,
-      "task_image": ["./data/img/poema3.png"],
+      "task_image": [
+        "./data/img/poema3.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\nValores defendidos (elige 2 o 3) libertad, justicia, dignidad, esperanza, lucha, paz, igualdad, amor…",
         "nivel_medio": "En la última sesión nos quedamos leyendo el poema “Rueda que irás muy lejos”. Vamos a analizarlo y ver si encontramos alguna prueba para el juicio.\n\nValores defendidos (elige 2 o 3) libertad, justicia, dignidad, esperanza, lucha, paz, igualdad, amor…",
@@ -472,12 +689,21 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t05",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "Además de toda la información que ya tenemos he pensado que podemos preguntar a Chatgpt para que nos dé una respuesta. Le he preguntado sobre Miguel Hernández de manera general. Leyendo el texto me he dado cuenta de información nueva que contradice la que leímos en la sesión anterior.\nLee y compara ambos textos para contestar a la siguiente pregunta: ¿Qué texto crees que tiene información falsa? ",
         "nivel_medio": "Además de toda la información que ya tenemos he pensado que podemos preguntar a Chatgpt para que nos dé una respuesta. Le he preguntado sobre Miguel Hernández de manera general. Leyendo el texto me he dado cuenta de información nueva que contradice la que leímos en la sesión anterior.\nLee y compara ambos textos para contestar a la siguiente pregunta: ¿Qué texto crees que tiene información falsa? ",
@@ -490,7 +716,10 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t06",
@@ -500,7 +729,13 @@
         "nivel_alto": "Identifica la información que aparece en los textos y responde a las siguientes preguntas:\n\n¿Qué hechos denunciamos?\na)Que Miguel Hernández dejó de escribir poesía\nb)Que fue detenido, encarcelado y condenado durante la posguerra\nc)Que viajó a Madrid varias veces\nd)Que participó en actos culturales"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "integrar",
@@ -508,7 +743,10 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t07",
@@ -518,7 +756,13 @@
         "nivel_alto": "Identifica la información que aparece en los textos y responde a las siguientes preguntas:\n\n¿Qué le ocurrió al poeta?\na)Se exilió en otro país y vivió allí muchos años\nb)Fue detenido, pasó por varias cárceles, enfermó y murió en prisión\nc) Se convirtió en profesor universitario\nd)Abandonó la literatura y se dedicó al campo"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "b",
       "strategy": "integrar",
@@ -526,7 +770,10 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t08",
@@ -536,7 +783,13 @@
         "nivel_alto": "Identifica la información que aparece en los textos y responde a las siguientes preguntas:\n\n¿Qué relación tiene lo que le ocurrió con la Guerra Civil?\na)No tiene ninguna relación con la guerra\nb)Ocurrió porque dejó de escribir poesía\nc)Ocurrió en el contexto de la guerra y la posguerra tras participar en el bando republicano\nd)Ocurrió porque quería viajar a Portugal"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "c",
       "strategy": "integrar",
@@ -544,7 +797,10 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t09",
@@ -554,7 +810,13 @@
         "nivel_alto": "Identifica la información que aparece en los textos y responde a las siguientes preguntas:\n\nDerechos vulnerados:\na)Solo el derecho a la educación\nb) El derecho a la propiedad privada\nc)El derecho a la vida, a la libertad ideológica y a un juicio justo\nd)Ninguno, ya que no sufrió consecuencias graves"
       },
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_type": "objetivo",
       "correct_answer": "c",
       "strategy": "integrar",
@@ -562,12 +824,21 @@
       "description": "Identificar sección en web",
       "contenido": false,
       "conceptos": [],
-      "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+      "feedback": {
+        "success": "¡Correcto!",
+        "failure": "Incorrecto"
+      }
     },
     {
       "task_id": "lit_s2_t10",
       "task_text": null,
-      "task_image": ["./data/img/infancia.png","./data/img/publicaciones.png","./data/img/madrid.png","./data/img/muerte.png", "./data/img/gpt.png"],
+      "task_image": [
+        "./data/img/infancia.png",
+        "./data/img/publicaciones.png",
+        "./data/img/madrid.png",
+        "./data/img/muerte.png",
+        "./data/img/gpt.png"
+      ],
       "task_prompt": {
         "nivel_bajo": "Ya habéis investigado el caso. Ahora tenéis que defender al poeta en el juicio. Para ello, vais a escribir un pequeño informe en 5-8 frases con tus propias palabras en el que expliques con tus propias palabras quién es Miguel Hernández, describas de manera breve su situación y lo que ocurrió durante la Guerra Civil y tu defensa final.",
         "nivel_medio": "Ya habéis investigado el caso. Ahora tenéis que defender al poeta en el juicio. Para ello, vais a escribir un pequeño informe en 5-8 frases con tus propias palabras en el que expliques con tus propias palabras quién es Miguel Hernández, describas de manera breve su situación y lo que ocurrió durante la Guerra Civil y tu defensa final.",
@@ -580,7 +851,10 @@
       "contenido": true,
       "conceptos": [],
       "rubric": "Si dice que la información es complementaria, 1 punto. Si dice que es contradictoria 0 puntos.",
-      "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+      "feedback": {
+        "success": "Correcto",
+        "failure": "Incorrecto"
+      }
     }
   ]
 }

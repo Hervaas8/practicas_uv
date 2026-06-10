@@ -4,14 +4,21 @@
       {
         "task_id": "cien_s1_t01",
         "task_text": null,
-        "task_image": ["./data/img/video1.png"],
+        "task_image": [
+          "./data/img/video1.png"
+        ],
         "task_prompt": {
           "nivel_bajo": "Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto.",
           "nivel_medio": "Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto.",
           "nivel_alto": "Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto."
         },
         "task_type": "conectar",
-        "concepts": ["BIOTOPO", "BIOCENOSIS", "ECOLOGÍA", "ECOSISTEMA"],
+        "concepts": [
+          "BIOTOPO",
+          "BIOCENOSIS",
+          "ECOLOGÍA",
+          "ECOSISTEMA"
+        ],
         "definitions": [
           "Factores bióticos, componentes vivos y organismos que habitan un ecosistema",
           "Ciencia que estudia las relaciones entre los diferentes seres vivos",
@@ -20,19 +27,28 @@
           "Factores abióticos, componentes no vivos como el medio físico"
         ],
         "correct_mapping": {
-          "BIOTOPO": ["Factores abióticos, componentes no vivos como el medio físico"],
-          "BIOCENOSIS": ["Factores bióticos, componentes vivos y organismos que habitan un ecosistema"],
+          "BIOTOPO": [
+            "Factores abióticos, componentes no vivos como el medio físico"
+          ],
+          "BIOCENOSIS": [
+            "Factores bióticos, componentes vivos y organismos que habitan un ecosistema"
+          ],
           "ECOLOGÍA": [
             "Ciencia que estudia las relaciones entre los diferentes seres vivos",
             "Ciencia que estudia las características de los seres vivos y los diferentes medios donde viven"
           ],
-          "ECOSISTEMA": ["Conjunto formado por seres vivos, el medio físico donde habitan y las relaciones que se establecen entre ellos"]
+          "ECOSISTEMA": [
+            "Conjunto formado por seres vivos, el medio físico donde habitan y las relaciones que se establecen entre ellos"
+          ]
         },
         "strategy": "contenido",
         "sub_strategy": null,
         "description": "Conectar conceptos",
         "contenido": true,
-        "conceptos": ["Ecosistemas", "Biotopo y Biocenosis"],
+        "conceptos": [
+          "Ecosistemas",
+          "Biotopo y Biocenosis"
+        ],
         "feedback": {
           "success": "Correcto",
           "failure": "Incorrecto"
@@ -41,50 +57,71 @@
       {
         "task_id": "cien_s1_t02",
         "task_prompt": {
-          "nivel_bajo": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
-          "nivel_medio": "He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
-          "nivel_alto": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”"
+          "nivel_bajo": "Avatar: He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable. De hecho, yo me centraría en páginas web oficiales o creadas por expertos ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
+          "nivel_medio": "Avatar: He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
+          "nivel_alto": "Avatar: He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras"
         },
         "task_text": null,
-        "task_image": ["./data/img/sierra_calderona.png"],
+        "task_image": [
+          "./data/img/sierra_calderona.png"
+        ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
         "sub_strategy": "N1",
         "rubric": {
-      "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
-      "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
-    },
+          "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
+          "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
+        },
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t03",
         "task_prompt": {
-          "nivel_bajo": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
-          "nivel_medio": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”",
-          "nivel_alto": "Ahora vamos a entender mejor qué está sucediendo. Para ello, accede a la página web de “Parcs Naturals de la Comunitat Valenciana-Conócenos-PN Serra Calderona- Generalitat Valenciana”"
+          "nivel_bajo": "Ahora ya estamos dentro de la página web de la Generalitat Valenciana. Esta página web contiene secciones para organizar la información. Como queremos saber más sobre la construcción del centro comercial, yo buscaría secciones como “presente”, “novedades” o similares. Observa la imagen y haz clic en una de las secciones para conocer más detalles sobre la noticia.",
+          "nivel_medio": "Ahora ya estamos dentro de la página web de la Generalitat Valenciana. Esta página web contiene secciones para organizar la información. Observa la imagen y haz clic en una de las secciones para conocer más detalles sobre la noticia.",
+          "nivel_alto": "Ahora ya estamos dentro de la página web de la Generalitat Valenciana. Observa la imagen y haz clic en una de las secciones para conocer más detalles sobre la noticia."
         },
         "task_text": null,
-        "task_image": ["./data/img/parque_natural.png"],
-        "regions": [{"x": 430, "y": 324, "w": 122, "h": 48, "is_correct": true, "feedback_ok": "¡Correcto!."}],
+        "task_image": [
+          "./data/img/parque_natural.png"
+        ],
+        "regions": [
+          {
+            "x": 430,
+            "y": 324,
+            "w": 122,
+            "h": 48,
+            "is_correct": true,
+            "feedback_ok": "¡Correcto!."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t04",
         "task_text": null,
-        "task_image": ["./data/img/actualidad.png"],
+        "task_image": [
+          "./data/img/actualidad.png"
+        ],
         "task_prompt": {
-          "nivel_bajo": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, una ideas en cada casilla:",
-          "nivel_medio": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
-          "nivel_alto": "Utiliza la información del primer texto (Actualidad) para completar la siguiente tabla. Escribe, al menos, una ideas en cada casilla:"
+          "nivel_bajo": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Esta información puede ser complementaria o contradictoria. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+          "nivel_medio": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+          "nivel_alto": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:"
         },
         "task_type": "v_y_d",
         "strategy": "integrar",
@@ -93,20 +130,25 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles.",
-      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
-    },
-        "feedback": {"success": "Has completado la tabla adecuadamente.", "failure": "No has completado la tabla de manera correcta"}
+          "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles.",
+          "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+        },
+        "feedback": {
+          "success": "Has completado la tabla adecuadamente.",
+          "failure": "No has completado la tabla de manera correcta"
+        }
       },
       {
         "task_id": "cien_s1_t05",
         "task_text": null,
-        "task_image": ["./data/img/naquera.png"],
+        "task_image": [
+          "./data/img/naquera.png"
+        ],
         "task_prompt": {
-          "nivel_bajo": "Utiliza la información del segundo texto (Náquera) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:",
-          "nivel_medio": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
-          "nivel_alto": "Utiliza la información del segundo texto (Náquera) para completar la siguiente tabla. Escribe, al menos, dos ideas en cada casilla:"
+          "nivel_bajo": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Esta información puede ser complementaria o contradictoria. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+          "nivel_medio": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
+          "nivel_alto": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:"
         },
         "task_type": "v_y_d",
         "strategy": "integrar",
@@ -116,18 +158,25 @@
         "conceptos": [],
         "rubric": {
           "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad.",          "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad.",
+          "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
         },
-        "feedback": {"success": "Has completado la tabla adecuadamente.", "failure": "No has completado la tabla de manera correcta"}
+        "feedback": {
+          "success": "Has completado la tabla adecuadamente.",
+          "failure": "No has completado la tabla de manera correcta"
+        }
       },
       {
         "task_id": "cien_s1_t06",
         "task_text": null,
-        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_image": [
+          "./data/img/actualidad.png",
+          "./data/img/naquera.png"
+        ],
         "task_prompt": {
-          "nivel_bajo": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contradictoria?",
-          "nivel_medio": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
-          "nivel_alto": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 1. ¿La información de los textos es complementaria o contradictoria?"
+          "nivel_bajo": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Por ello, es importante diferenciar cuando la información de varios documentos es complementaria o contradictoria. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
+          "nivel_medio": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
+          "nivel_alto": "Docente: Como acabáis de ver, la información de internet es casi ilimitada. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:"
         },
         "task_type": "subjetivo",
         "strategy": "integrar",
@@ -136,59 +185,88 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-      "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
-      "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
-    },
-        "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+          "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
+          "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+        },
+        "feedback": {
+          "success": "Correcto",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t07",
         "task_text": null,
-        "task_image": ["./data/img/actualidad.png","./data/img/naquera.png"],
+        "task_image": [
+          "./data/img/actualidad.png",
+          "./data/img/naquera.png"
+        ],
         "task_prompt": {
-          "nivel_bajo": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?",
-          "nivel_medio": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
-          "nivel_alto": "Utiliza la información de los dos textos para contestar a la siguiente pregunta en una o dos frases con tus propias palabras:\n\nPregunta 2. ¿Cual es la idea principal de ambos textos?"
+          "nivel_bajo": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Por ello, es importante diferenciar cuando la información de varios documentos es complementaria o contradictoria. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
+          "nivel_medio": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
+          "nivel_alto": "Docente: Como acabáis de ver, la información de internet es casi ilimitada. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:"
         },
         "task_type": "subjetivo",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Pregunta noticias 2",
         "contenido": true,
-        "conceptos": ["Impacto ambiental", "Desarrollo y sociedad"],
-"rubric": {
-      "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
-      "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
-    },
-            "feedback": {"success": "Correcto", "failure": "Incorrecto"}
+        "conceptos": [
+          "Impacto ambiental",
+          "Desarrollo y sociedad"
+        ],
+        "rubric": {
+          "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
+          "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+        },
+        "feedback": {
+          "success": "Correcto",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t08",
         "task_prompt": {
-          "nivel_bajo": "Buscando en instagram he encontrado el siguiente post. Si haces click en los comentarios podrás ver todas las respuestas al post.",
-          "nivel_medio": "Buscando en instagram he encontrado el siguiente post. Si haces click en los comentarios podrás ver todas las respuestas al post.",
-          "nivel_alto": "Buscando en instagram he encontrado el siguiente post. Si haces click en los comentarios podrás ver todas las respuestas al post."
+          "nivel_bajo": "Docente: En Internet también encontramos información en redes sociales, donde el contenido puede aparecer en comentarios y opiniones de otros usuarios. Como queremos conocer qué piensa la gente, busca apartados como “mensajes”, “opiniones” o similares. Observa la imagen y haz clic en la opción que consideres adecuada para ver las opiniones de los usuarios.",
+          "nivel_medio": "Docente: En Internet también encontramos información en redes sociales, donde el contenido puede aparecer en comentarios y opiniones de otros usuarios. Observa la imagen y haz clic en la opción que consideres adecuada para ver las opiniones de los usuarios.",
+          "nivel_alto": "Docente: En Internet también encontramos información en redes sociales. Observa la imagen y haz clic en la opción que consideres adecuada para ver las opiniones de los usuarios."
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil1.png"],
-        "regions": [{"x": 14, "y": 378, "w": 102, "h": 22, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "task_image": [
+          "./data/img/mobil1.png"
+        ],
+        "regions": [
+          {
+            "x": 14,
+            "y": 378,
+            "w": 102,
+            "h": 22,
+            "is_correct": true,
+            "feedback_ok": "Bien hecho."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t09",
         "task_prompt": {
-          "nivel_bajo": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:",
-          "nivel_medio": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial // Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos// Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
-          "nivel_alto": "¿Qué postura consideras más acertada, la de Jaime o la de Elena? Explica por qué en dos o tres frases con tus propias palabras:"
+          "nivel_bajo": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial \n\n Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos\n\n Docente: Recordad que en Internet no toda la información es de calidad. Un buen indicador de la calidad y la fiabilidad de la información es si el autor es experto o no ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
+          "nivel_medio": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial \n\n Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos\n\n Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
+          "nivel_alto": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial \n\n Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos\n\n Docente: ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:"
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil1.png", "./data/img/mobil2.png"],
+        "task_image": [
+          "./data/img/mobil1.png",
+          "./data/img/mobil2.png"
+        ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
         "sub_strategy": "E1",
@@ -196,28 +274,45 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-      "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-      "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
-    },
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+          "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+          "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+        },
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t10",
         "task_prompt": {
-          "nivel_bajo": "Además, he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen!",
-          "nivel_medio": "Además, he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen!",
-          "nivel_alto": "Además, he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen!"
+          "nivel_bajo": "Avatar: También he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen! En este formato de instagram, además de comentarios a una publicación, la gente puede responder a un comentario concreto. Yo haría clic en enlaces como “ver reacciones”, “ver contestaciones” o similares. Visualiza la imagen y haz clic donde consideres para ver las respuestas al comentario de @Naturaviva. Una vez hayas leído las respuestas, contesta a las preguntas que aparecerán a continuación.",
+          "nivel_medio": "Avatar: También he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen! En este formato de instagram, además de comentarios a una publicación, la gente puede responder a un comentario concreto. Visualiza la imagen y haz clic donde consideres para ver las respuestas al comentario de @Naturaviva. Una vez hayas leído las respuestas, contesta a las preguntas que aparecerán a continuación.",
+          "nivel_alto": "Avatar: También he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen! Visualiza la imagen y haz clic donde consideres para ver las respuestas al comentario de @Naturaviva. Una vez hayas leído las respuestas, contesta a las preguntas que aparecerán a continuación."
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil2.png"],
-        "regions": [{"x": 31, "y": 234, "w": 153, "h": 31, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "task_image": [
+          "./data/img/mobil2.png"
+        ],
+        "regions": [
+          {
+            "x": 31,
+            "y": 234,
+            "w": 153,
+            "h": 31,
+            "is_correct": true,
+            "feedback_ok": "Bien hecho."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t11",
@@ -227,7 +322,10 @@
           "nivel_alto": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n1.¿Cuántas respuestas tiene @Naturaviva en su comentario?\na)2\nb)3\nc)4\nd)0"
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_image": [
+          "./data/img/mobil2.png",
+          "./data/img/mobil3.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "c",
         "strategy": "navegar",
@@ -235,17 +333,23 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t12",
         "task_prompt": {
-          "nivel_bajo": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n2.¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
-          "nivel_medio": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n2.¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
-          "nivel_alto": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n2.¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc"
+          "nivel_bajo": "Avatar: Aquí aparecen las cuatro respuestas del comentario de @Naturaviva. En redes sociales podemos encontrar multitud de información a través de los comentarios y respuestas de los perfiles. Esta información no siempre es similar, sino que también puede contener ser diferente o incluso contradictoria. Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na) @NaturerLover\nb) @Almalibre\nc) @David82\nd) @UniversidadVlc",
+          "nivel_medio": "Avatar: Aquí aparecen las cuatro respuestas del comentario de @Naturaviva. En redes sociales podemos encontrar multitud de información a través de los comentarios y respuestas de los perfiles. Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na) @NaturerLover\nb) @Almalibre\nc) @David82\nd) @UniversidadVlc",
+          "nivel_alto": "Avatar: Aquí aparecen las cuatro respuestas del comentario de @Naturaviva. Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na) @NaturerLover\nb) @Almalibre\nc) @David82\nd) @UniversidadVlc"
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_image": [
+          "./data/img/mobil2.png",
+          "./data/img/mobil3.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "c",
         "strategy": "integrar",
@@ -253,28 +357,37 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s1_t13",
         "task_prompt": {
-          "nivel_bajo": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc",
-          "nivel_medio": "En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
-          "nivel_alto": "Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n3.¿Qué perfil consideras más fiable para hablar sobre el tema?\na)@NaturerLover\nb)@Almalibre\nc)@David82\nd)@UniversidadVlc"
+          "nivel_bajo": "Seguimos con las respuestas del comentario de @Naturaviva. En instagram, todo el mundo puede publicar, aunque no sepan del tema. No obstante, en estos formatos también podemos encontrar fuentes fiables escritas por expertos o que formen parte de instituciones oficiales. En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
+          "nivel_medio": "Seguimos con las respuestas del comentario de @Naturaviva. En instagram todo el mundo puede publicar, aunque no sepan del tema. En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
+          "nivel_alto": "Seguimos con las respuestas del comentario de @Naturaviva. En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:"
         },
         "task_text": null,
-        "task_image": ["./data/img/mobil2.png", "./data/img/mobil3.png"],
+        "task_image": [
+          "./data/img/mobil2.png",
+          "./data/img/mobil3.png"
+        ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
         "sub_strategy": "E1",
         "description": "Identificar sección en web",
         "rubric": {
-      "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-      "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
-    },
+          "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+          "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+        },
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       }
     ],
     "sesion2": [
@@ -286,15 +399,23 @@
           "nivel_alto": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 1: ¿De qué manera un ecosistema logra su autorregulación para mantener un equilibrio dinámico?\na) Manteniendo un número de individuos estrictamente fijo e inalterable en todas sus poblaciones.\nb) Mediante mecanismos que contrarrestan los cambios en las poblaciones.\nc) Eliminando por completo a los depredadores.\nd) Dependiendo exclusivamente de la migración de especies."
         },
         "task_text": null,
-        "task_image": ["./data/img/video1.png"],
+        "task_image": [
+          "./data/img/video1.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "b",
         "strategy": "contenido",
         "sub_strategy": null,
         "description": "Identificar sección en web",
         "contenido": true,
-        "conceptos": ["Autorregulación de ecosistemas", "Equilibrio dinámico"],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "conceptos": [
+          "Autorregulación de ecosistemas",
+          "Equilibrio dinámico"
+        ],
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t15",
@@ -304,15 +425,23 @@
           "nivel_alto": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 2: ¿Cuál es el valor fundamental de la biodiversidad según su importancia ecológica y como fuente de recursos?\na) Su capacidad para garantizar que las poblaciones de seres vivos se mantengan estáticas.\nb) Su papel esencial en el mantenimiento del equilibrio planetario.\nc) El hecho de que la desaparición de una especie vegetal no tiene impacto.\nd) Su utilidad exclusiva para facilitar el crecimiento urbanístico."
         },
         "task_text": null,
-        "task_image": ["./data/img/video1.png"],
+        "task_image": [
+          "./data/img/video1.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "b",
         "strategy": "contenido",
         "sub_strategy": null,
         "description": "Identificar sección en web",
         "contenido": true,
-        "conceptos": ["Biodiversidad", "Equilibrio planetario"],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "conceptos": [
+          "Biodiversidad",
+          "Equilibrio planetario"
+        ],
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t16",
@@ -322,79 +451,136 @@
           "nivel_alto": "Visualiza el vídeo y contesta a las preguntas. Haz click en la flecha de la derecha para continuar.\n\nPregunta 3: ¿Cuál de las siguientes acciones humanas puede desencadenar un grave desequilibrio en un ecosistema?\na) La captura de dióxido de carbono y la emisión de oxígeno por parte de los vegetales.\nb) El proceso natural de evolución.\nc) El crecimiento urbanístico y el desarrollo industrial.\nd) La obtención de medicamentos de forma sostenible."
         },
         "task_text": null,
-        "task_image": ["./data/img/video1.png"],
+        "task_image": [
+          "./data/img/video1.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "c",
         "strategy": "contenido",
         "sub_strategy": null,
         "description": "Identificar sección en web",
         "contenido": true,
-        "conceptos": ["Impacto humano", "Desequilibrio ecológico"],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "conceptos": [
+          "Impacto humano",
+          "Desequilibrio ecológico"
+        ],
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t17",
         "task_prompt": {
-          "nivel_bajo": "Ahora vamos a volver a la página de la Generalitat Valenciana. ¿Accede al apartado conócenos para obtener información relevante sobre la fauna y la flora características de la Sierra Calderona?",
-          "nivel_medio": "Ahora vamos a volver a la página de la Generalitat Valenciana. ¿Accede al apartado conócenos para obtener información relevante sobre la fauna y la flora características de la Sierra Calderona?",
-          "nivel_alto": "Ahora vamos a volver a la página de la Generalitat Valenciana. ¿Accede al apartado conócenos para obtener información relevante sobre la fauna y la flora características de la Sierra Calderona?"
+          "nivel_bajo": "Docente: Ahora vamos a volver a la página de la Generalitat Valenciana. Este tipo de páginas web cuenta con menús desplegables laterales y secciones en la parte inferior para organizar la información. Para saber más sobre el parque natural de la Sierra Calderona, yo buscaría enlaces como “descúbrenos” o similares. Haz clic en el enlace del menú desplegable que consideres para saber más sobre las características de la Sierra Calderona.",
+          "nivel_medio": "Docente: Ahora vamos a volver a la página de la Generalitat Valenciana. Este tipo de páginas web cuenta con menús desplegables para organizar la información. Haz clic en el enlace del menú desplegable que consideres para saber más sobre las características de la Sierra Calderona.",
+          "nivel_alto": "Docente: Ahora vamos a volver a la página de la Generalitat Valenciana. Haz clic en el enlace del menú desplegable que consideres para saber más sobre las características de la Sierra Calderona."
         },
         "task_text": null,
-        "task_image": ["./data/img/parque_natural.png"],
-        "regions": [{"x": 373, "y": 271, "w": 125, "h": 62, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "task_image": [
+          "./data/img/parque_natural.png"
+        ],
+        "regions": [
+          {
+            "x": 373,
+            "y": 271,
+            "w": 125,
+            "h": 62,
+            "is_correct": true,
+            "feedback_ok": "Bien hecho."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}   
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t18",
         "task_prompt": {
-          "nivel_bajo": "Y dentro de “Conócenos”, accede al apartado “Naturaleza” para encontrar dicha información.",
-          "nivel_medio": "Y dentro de “Conócenos”, accede al apartado “Naturaleza” para encontrar dicha información.",
-          "nivel_alto": "Y dentro de “Conócenos”, accede al apartado “Naturaleza” para encontrar dicha información."
+          "nivel_bajo": "Docente: Seguimos navegando por la página web de la Generalitat Valenciana. El formato sigue organizando la información a través de menús desplegables y secciones. Como queremos profundizar cómo la construcción del centro comercial puede afectar a la fauna de la Sierra Calderona, vamos a buscar enlaces similares a “medioambiente” o “ecosistema”. Haz clic en el apartado que consideres para obtener más información sobre el ecosistema natural de la región.",
+          "nivel_medio": "Docente: Seguimos navegando por la página web de la Generalitat Valenciana. El formato sigue organizando la información a través de menús desplegables y secciones. Haz clic en el apartado que consideres para obtener más información sobre el ecosistema natural de la región.",
+          "nivel_alto": "Docente: Seguimos navegando por la página web de la Generalitat Valenciana. Haz clic en el apartado que consideres para obtener más información sobre el ecosistema natural de la región."
         },
         "task_text": null,
-        "task_image": ["./data/img/generalitat.png"],
-        "regions": [{"x": 225, "y": 224, "w": 84, "h": 54, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "task_image": [
+          "./data/img/generalitat.png"
+        ],
+        "regions": [
+          {
+            "x": 225,
+            "y": 224,
+            "w": 84,
+            "h": 54,
+            "is_correct": true,
+            "feedback_ok": "Bien hecho."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}   
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t19",
         "task_prompt": {
-          "nivel_bajo": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información.",
-          "nivel_medio": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información.",
-          "nivel_alto": "Ahora vamos a conocer más en profundidad la fauna típica de la Sierra Calderona. Para ello, haz click en el apartado “Fauna” para acceder a dicha información."
+          "nivel_bajo": "Muy bien, hemos llegado a la página final. Accede al apartado que consideres para obtener información sobre los seres vivos que habitan la región.",
+          "nivel_medio": "Muy bien, hemos llegado a la página final. Accede al apartado que consideres para obtener información sobre los seres vivos que habitan la región.",
+          "nivel_alto": "Muy bien, hemos llegado a la página final. Accede al apartado que consideres para obtener información sobre los seres vivos que habitan la región."
         },
         "task_text": null,
-        "task_image": ["./data/img/generalitat2.png"],
-        "regions": [{"x": 225, "y": 224, "w": 84, "h": 54, "is_correct": true, "feedback_ok": "Bien hecho."}],
+        "task_image": [
+          "./data/img/generalitat2.png"
+        ],
+        "regions": [
+          {
+            "x": 225,
+            "y": 224,
+            "w": 84,
+            "h": 54,
+            "is_correct": true,
+            "feedback_ok": "Bien hecho."
+          }
+        ],
         "task_type": "interactivo",
         "strategy": "navegar",
         "sub_strategy": "N1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}   
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t20",
         "task_prompt": {
-          "nivel_bajo": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
-          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na)Las libélulas..\nb)Los Efemerópteros y los Plecópteros\nc)Ambas son correctas.\nd)Los invertebrados no pueden indicar la calidad del agua.",
-          "nivel_alto": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua."
+          "nivel_bajo": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na) Las libélulas\nb) Los Efemerópteros y los Plecópteros\nc) Ambas son correctas\nd) Los invertebrados no pueden indicar la calidad del agua",
+          "nivel_medio": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na) Las libélulas\nb) Los Efemerópteros y los Plecópteros\nc) Ambas son correctas\nd) Los invertebrados no pueden indicar la calidad del agua",
+          "nivel_alto": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na) Las libélulas\nb) Los Efemerópteros y los Plecópteros\nc) Ambas son correctas\nd) Los invertebrados no pueden indicar la calidad del agua"
         },
         "task_text": null,
-        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
+        "task_image": [
+          "./data/img/invertebrados.png",
+          "./data/img/vertebrados.png",
+          "./data/img/peces.png",
+          "./data/img/reptiles.png",
+          "./data/img/aves.png",
+          "./data/img/mamiferos.png"
+        ],
         "task_type": "objetivo",
         "correct_answer": "c",
         "strategy": "integrar",
@@ -402,56 +588,81 @@
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t21",
         "task_prompt": {
-          "nivel_bajo": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua.",
-          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales vertebrados podemos encontrar en la Sierra Calderona?\na)Aves y mamíferos.\nb)Peces, reptiles y anfibios, aves y mamíferos\nc)No hay animales vertebrados.\nd)Reptiles y anfibios.",
-          "nivel_alto": "Pregunta 1. Según ambas fuentes, ¿qué grupo de animales destaca por su gran diversidad en la Sierra Calderona?\n\na)Los mamíferos, por su tamaño y facilidad de observación.\nb)Las aves, especialmente las rapaces diurnas y nocturnas.\nc)Los invertebrados, presentes en numerosos hábitats y con gran variedad de especies.\nd)Los peces, por la abundancia de cursos de agua."
+          "nivel_bajo": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales vertebrados podemos encontrar en la Sierra Calderona?\na) Aves y mamíferos\nb) Peces, reptiles y anfibios, aves y mamíferos\nc) No hay animales vertebrados\nd) Reptiles y anfibios",
+          "nivel_medio": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales vertebrados podemos encontrar en la Sierra Calderona?\na) Aves y mamíferos\nb) Peces, reptiles y anfibios, aves y mamíferos\nc) No hay animales vertebrados\nd) Reptiles y anfibios",
+          "nivel_alto": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales vertebrados podemos encontrar en la Sierra Calderona?\na) Aves y mamíferos\nb) Peces, reptiles y anfibios, aves y mamíferos\nc) No hay animales vertebrados\nd) Reptiles y anfibios"
         },
         "task_text": null,
-        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
+        "task_image": [
+          "./data/img/invertebrados.png",
+          "./data/img/vertebrados.png",
+          "./data/img/peces.png",
+          "./data/img/reptiles.png",
+          "./data/img/aves.png",
+          "./data/img/mamiferos.png"
+        ],
         "task_type": "objetivo",
-        "correct_answer": "c",
+        "correct_answer": "b",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Identificar sección en web",
         "contenido": false,
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t22",
         "task_prompt": {
-          "nivel_bajo": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común.",
-          "nivel_medio": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
-          "nivel_alto": "Pregunta 3.¿Qué especie aparece destacada en ambas fuentes como especialmente vulnerable o necesitada de conservación?\n\na)El Águila-azor perdicera.\nb)La Ardilla roja.\nc)El Gallipato.\nd)El Conejo común."
+          "nivel_bajo": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
+          "nivel_medio": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
+          "nivel_alto": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?"
         },
         "task_text": null,
-        "task_image": ["./data/img/invertebrados.png", "./data/img/vertebrados.png", "./data/img/peces.png", "./data/img/reptiles.png", "./data/img/aves.png", "./data/img/mamiferos.png"],
+        "task_image": [
+          "./data/img/invertebrados.png",
+          "./data/img/vertebrados.png",
+          "./data/img/peces.png",
+          "./data/img/reptiles.png",
+          "./data/img/aves.png",
+          "./data/img/mamiferos.png"
+        ],
         "task_type": "subjetivo",
         "strategy": "integrar",
         "sub_strategy": "I1",
         "description": "Identificar sección en web",
         "contenido": false,
         "rubric": {
-      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-      "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
-    },
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
+        },
         "conceptos": [],
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       },
       {
         "task_id": "cien_s2_t23",
         "task_prompt": {
-          "nivel_bajo": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
-          "nivel_medio": "Avatar: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? // Avatar: Yo me fiaría de “El Rincón del Estudiante” , nosotros somos estudiantes y seguro que tiene materiales fáciles // Docente: Recordad que en Internet no toda la información es de calidad¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
-          "nivel_alto": "¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:"
+          "nivel_bajo": "Elena: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? \n\n Jaime: Yo me fiaría de “El Rincón del Estudiante”, nosotros somos estudiantes y seguro que tiene materiales fáciles \n\n Docente: Recordad que en Internet no toda la información es de calidad. Un buen indicador de la calidad y la fiabilidad de la información es si el autor es experto o no ¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
+          "nivel_medio": "Elena: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? \n\n Jaime: Yo me fiaría de “El Rincón del Estudiante”, nosotros somos estudiantes y seguro que tiene materiales fáciles \n\n Docente: Recordad que en Internet no toda la información es de calidad ¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
+          "nivel_alto": "Elena: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? \n\n Jaime: Yo me fiaría de “El Rincón del Estudiante”, nosotros somos estudiantes y seguro que tiene materiales fáciles \n\n Docente: ¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:"
         },
         "task_text": null,
-        "task_image": ["./data/img/web.png"],
+        "task_image": [
+          "./data/img/web.png"
+        ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
         "sub_strategy": "E1",
@@ -459,18 +670,20 @@
         "contenido": false,
         "conceptos": [],
         "rubric": {
-      "Punto 1 - Acuerdo con Jaime": {
-        "0": "Estar de acuerdo con la afirmación de Jaime.",
-        "1": "No estar de acuerdo con la afirmación de Jaime."
-      },
-      "Punto 2 - Selección de web y justificación": {
-        "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
-        "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
+          "Punto 1 - Acuerdo con Jaime": {
+            "0": "Estar de acuerdo con la afirmación de Jaime.",
+            "1": "No estar de acuerdo con la afirmación de Jaime."
+          },
+          "Punto 2 - Selección de web y justificación": {
+            "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
+            "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
+          }
+        },
+        "feedback": {
+          "success": "¡Correcto!",
+          "failure": "Incorrecto"
+        }
       }
-    },
-        "feedback": {"success": "¡Correcto!", "failure": "Incorrecto"}     
-      }
-      
     ]
   }
 }
