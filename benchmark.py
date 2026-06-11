@@ -14,7 +14,9 @@ MODELOS_A_EVALUAR = [
     "deepseek-r1:32b",
     "llama3.1:8b",
     "phi4-mini:3.8b",
-    "poligpt-vision",
+    "qwen3:4b",
+    "gemma3:4b",
+    "poligpt-code",
     "poligpt"
 ]
 

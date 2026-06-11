@@ -16,7 +16,7 @@ eval_subjective_prompt: |
 
   **Instrucciones:**
   1. Analiza la respuesta del alumno comparándola con cada uno de los ítems o apartados mencionados en la rúbrica.
-  2. Asigna una puntuación individual a cada ítem evaluable, los items solo pueden tener puntuaciones de 0 o 1, no puntuaciones parciales, y para obtener un 1 debe de cumplirse todo lo indicado en la rubrica.
+  2. 2. Asigna una puntuación individual a cada ítem evaluable. **MUY IMPORTANTE: Usa ÚNICAMENTE los valores numéricos exactos que se indican en la rúbrica (0.0 o 1.0). NO inventes puntuaciones intermedias como 0.5 ni valores fuera de la rúbrica.**.
   3. Calcula el 'score' (Nota Global) sumando matemáticamente todas las puntuaciones individuales de los ítems.
   4. Escribe un 'reasoning' (Razonamiento) técnico y breve justificando las notas asignadas con ayuda de la rubrica (ej: "Acierta el apartado de nacimiento porque ..., pero falla en los motivos de la condena porque ...").
 

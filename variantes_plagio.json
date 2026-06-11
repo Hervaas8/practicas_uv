@@ -1,0 +1,112 @@
+{
+  "cien_s1_t02": {
+    "alto": {
+      "respuesta_original": "La mejor página sería la de Parcs Naturals de la Comunitat Valenciana. Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo.",
+      "variantes": null,
+      "error": true
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que la mejor es la de Parcs Naturals, o sea la de la Generalitat. Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso.",
+      "variantes": null,
+      "error": true
+    },
+    "menos_nivel": {
+      "respuesta_original": "Yo pondría la de AllTrails porque sale la montaña y rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno. Creo que esa es más verdadera.",
+      "variantes": null,
+      "error": true
+    },
+    "ambiguo": {
+      "respuesta_original": "Depende de lo que queramos buscar. Puede ser mejor la oficial, pero las otras también pueden tener información. Yo creo que más o menos la de Parcs Naturals, aunque no estoy seguro del todo.",
+      "variantes": null,
+      "error": true
+    }
+  },
+  "cien_s1_t04": {
+    "alto": {
+      "respuesta_original": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
+      "variantes": null,
+      "error": true
+    },
+    "normal": {
+      "respuesta_original": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
+      "variantes": null,
+      "error": true
+    },
+    "menos_nivel": {
+      "respuesta_original": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan.",
+      "variantes": null,
+      "error": true
+    },
+    "ambiguo": {
+      "respuesta_original": "Ventajas: puede crear empleo y ayudar al pueblo, más o menos.\nDesventajas: quizá aumente el tráfico y afecte al parque.",
+      "variantes": null,
+      "error": true
+    }
+  },
+  "cien_s1_t06": {
+    "alto": {
+      "respuesta_original": "Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas.",
+      "variantes": null,
+      "error": true
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que son complementarios, o sea, no dicen cosas contrarias. Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico.",
+      "variantes": null,
+      "error": true
+    },
+    "menos_nivel": {
+      "respuesta_original": "Son contradictorias porque una dice que es bueno y la otra que es malo. Pero las dos hablan del centro comercial y de que puede aver trabajo.",
+      "variantes": null,
+      "error": true
+    },
+    "ambiguo": {
+      "respuesta_original": "Puede ser complementaria, pero depende de cómo se mire. Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo.",
+      "variantes": null,
+      "error": true
+    }
+  },
+  "cien_s1_t07": {
+    "alto": {
+      "respuesta_original": "Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad.",
+      "variantes": null,
+      "error": true
+    },
+    "normal": {
+      "respuesta_original": "Los textos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona. Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches.",
+      "variantes": null,
+      "error": true
+    },
+    "menos_nivel": {
+      "respuesta_original": "Los textos dicen que van a hacer un centro comercial en la montaña. Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura.",
+      "variantes": null,
+      "error": true
+    },
+    "ambiguo": {
+      "respuesta_original": "Los textos hablan más o menos de un centro comercial cerca de la Sierra Calderona. Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado.",
+      "variantes": null,
+      "error": true
+    }
+  },
+  "cien_s1_t09": {
+    "alto": {
+      "respuesta_original": "La postura de Elena me parece más acertada. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos.",
+      "variantes": null,
+      "error": true
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que Elena tiene más razón, o sea, los comentarios pueden ayudar a saber lo que piensa la gente. Pero no vale solo con eso, hay que mirar información más fiable y ya.",
+      "variantes": null,
+      "error": true
+    },
+    "menos_nivel": {
+      "respuesta_original": "Yo creo que Jaime porque si todos ponen comentarios malos será que el centro comercial está mal. Aunque Elena dice de mirar expertos y eso también puede servir.",
+      "variantes": null,
+      "error": true
+    },
+    "ambiguo": {
+      "respuesta_original": "Puede que Elena tenga más razón, pero depende. Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros.",
+      "variantes": null,
+      "error": true
+    }
+  }
+}

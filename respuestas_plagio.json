@@ -1,0 +1,256 @@
+{
+  "cien_s1_t02": {
+    "alto": {
+      "respuesta_original": "La mejor página sería la de Parcs Naturals de la Comunitat Valenciana. Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo.",
+      "variantes": {
+"nivel_0": "La mejor página sería la de Parcs Naturals de la Comunitat Valenciana. Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo.",
+"nivel_1": "Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo. La mejor página sería la de Parcs Naturals de la Comunitat Valenciana.",
+"nivel_2": "La mejor web sería la de Parcs Naturals de la Comunitat Valenciana. Es una página institucional de la Generalitat, así que me resulta más fiable. Las demás pueden servir, pero algunas son más de senderos o turismo.",
+"nivel_3": "Yo escogería la página de Parcs Naturals de la Comunitat Valenciana. Como es oficial de la Generalitat, me parece más de confianza. Las otras pueden servir, pero algunas son más de rutas o turismo.",
+"nivel_4": "Yo usaría el portal de Parcs Naturals, que pertenece a la Comunitat Valenciana. Al venir de la Generalitat, creo que da más confianza. Las demás webs también pueden ayudar, aunque varias parecen estar más enfocadas en excursiones o turismo.",
+"nivel_5": "Yo miraría primero la web oficial del parque natural, porque normalmente tiene información más correcta y actualizada. Las páginas de viajes están bien para visitar sitios, pero para informarse de verdad prefiero una fuente oficial."
+}
+
+
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que la mejor es la de Parcs Naturals, o sea la de la Generalitat. Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso.",
+      "variantes": {
+"nivel_0": "Yo creo que la mejor es la de Parcs Naturals, o sea la de la Generalitat. Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso.",
+"nivel_1": "Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso. Yo creo que la mejor es la de Parcs Naturals, o sea la de la Generalitat.",
+"nivel_2": "Yo pienso que la mejor es la de Parcs Naturals, o sea la de la Generalitat. Porque parece oficial y trata del parque de verdad. Las otras también cuentan cosas, pero son más de salidas y eso.",
+"nivel_3": "Para mí, la mejor página es Parcs Naturals, que es la de la Generalitat. Porque parece oficial y habla del parque de verdad. Las otras también dicen cosas, pero son más de excursiones y eso.",
+"nivel_4": "Para informarme elegiría Parcs Naturals, que viene de la Generalitat. Me da confianza porque es oficial y se centra en el parque. Las demás webs también cuentan algo, aunque van más sobre excursiones y cosas así.",
+"nivel_5": "Yo usaría una web oficial antes que una de viajes, porque así la información será más segura. Las páginas de turismo pueden estar bien para ver rutas, pero no tanto para saber datos del parque."
+}
+
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Yo pondría la de AllTrails porque sale la montaña y rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno. Creo que esa es más verdadera.",
+      "variantes": {
+"nivel_0": "Yo pondría la de AllTrails porque sale la montaña y rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno. Creo que esa es más verdadera.",
+"nivel_1": "Creo que esa es más verdadera. Yo pondría la de AllTrails porque sale la montaña y rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno.",
+"nivel_2": "Yo escogería la de AllTrails porque aparece la montaña y senderos. Pero también la de la Generalitat puede estar bien porque es de la administración. Creo que esa es más fiable.",
+"nivel_3": "Yo elegiría la de AllTrails porque se ve la montaña y hay rutas. Pero también la de la Generalitat puede estar bien porque es del gobierno. Creo que esa es más verdadera.",
+"nivel_4": "Me quedaría con AllTrails, porque enseña la sierra y caminos para hacer. Aunque la página de Generalitat también sirve, ya que viene del gobierno. Por eso pienso que esa tiene información más cierta.",
+"nivel_5": "Yo miraría la página oficial del parque, porque parece que tendrá datos más seguros. Las webs de rutas pueden ayudar para ir de excursión, pero para informarse me fiaría más de una oficial."
+}
+
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Depende de lo que queramos buscar. Puede ser mejor la oficial, pero las otras también pueden tener información. Yo creo que más o menos la de Parcs Naturals, aunque no estoy seguro del todo.",
+      "variantes": {
+"nivel_0": "Depende de lo que queramos buscar. Puede ser mejor la oficial, pero las otras también pueden tener información. Yo creo que más o menos la de Parcs Naturals, aunque no estoy seguro del todo.",
+"nivel_1": "Yo creo que más o menos la de Parcs Naturals, aunque no estoy seguro del todo. Depende de lo que queramos buscar. Puede ser mejor la oficial, pero las otras también pueden tener información.",
+"nivel_2": "Depende de lo que queramos encontrar. Puede ser mejor la oficial, pero las demás también pueden tener datos. Yo pienso que más o menos la de Parcs Naturals, aunque no estoy seguro del todo.",
+"nivel_3": "Según lo que queramos mirar, puede cambiar. Puede ser mejor la oficial, pero las otras también pueden tener información. Yo diría que quizá la de Parcs Naturals, aunque tampoco lo tengo muy claro.",
+"nivel_4": "Según la información que se quiera mirar, una página puede venir mejor que otra. La web oficial quizá sea la opción más adecuada, aunque las demás también aportan datos. Yo elegiría probablemente Parcs Naturals, pero tampoco lo tengo claro.",
+"nivel_5": "Yo usaría una página oficial del parque, porque me da más confianza que una web cualquiera. Las de rutas pueden estar bien para hacer excursiones, pero para informarse no sé si son las mejores."
+}
+
+
+    }
+  },
+  "cien_s1_t04": {
+    "alto": {
+      "respuesta_original": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
+      "variantes": {
+"nivel_0": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
+"nivel_1": "Desventajas: aumento del tráfico y alteración de especies sensibles.\nVentajas: creación de empleo y turismo local.",
+"nivel_2": "Ventajas: generación de trabajo y turismo local.\nDesventajas: incremento del tráfico y alteración de especies sensibles.",
+"nivel_3": "Ventajas: se crearían puestos de trabajo y se favorecería el turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
+"nivel_4": "Aspectos positivos: daría trabajo y ayudaría a atraer visitantes a la zona.\nAspectos negativos: habría más coches y podría afectar a animales delicados.",
+"nivel_5": "Sería bueno porque podría traer dinero al pueblo y más gente visitaría la zona.\nPero también puede ser malo porque habría más contaminación y se podría dañar el parque natural."
+}
+
+    },
+    "normal": {
+      "respuesta_original": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
+      "variantes": {
+"nivel_0": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
+"nivel_1": "Desventajas: puede haber más tráfico y afectar a animales o plantas.\nVentajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.",
+"nivel_2": "Ventajas: genera trabajo y puede atraer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más circulación y afectar a animales o vegetales.",
+"nivel_3": "Ventajas: se crearían puestos de trabajo y podría venir más gente de turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
+"nivel_4": "Ventajas: daría puestos de trabajo y quizá llegarían visitantes, así que entraría más dinero en el municipio.\nDesventajas: habría más coches y podría dañar seres vivos del entorno.",
+"nivel_5": "A favor estaría que la zona tendría más movimiento y algunas personas podrían encontrar trabajo allí.\nEn contra, se podría estropear parte del parque y molestar a la naturaleza."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan.",
+      "variantes": {
+"nivel_0": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan..",
+"nivel_1": "Desventajas: se puede romper el abitad y los coches molestan..\nVentajas: que hacen tiendas y la gente compra más.",
+"nivel_2": "Ventajas: que hacen comercios y la gente compra más.\nDesventajas: se puede dañar el abitad y los vehículos molestan..",
+"nivel_3": "Ventajas: que construyen tiendas y la gente va a comprar más.\nDesventajas: se puede romper el abitad y los coches molestan..",
+"nivel_4": "Bueno: ponen comercios y la gente gasta más.\nMalo: el abitad se puede estropear y los coches fastidian.",
+"nivel_5": "Lo bueno es que vendría más gente al sitio y habría cosas nuevas.\nLo malo es que igual ensucian más y los animales no estarían tranquilos."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Ventajas: puede crear empleo y ayudar al pueblo, más o menos.\nDesventajas: quizá aumente el tráfico y afecte al parque.",
+      "variantes": {
+"nivel_0": "Ventajas: puede crear empleo y ayudar al pueblo, más o menos.\nDesventajas: quizá aumente el tráfico y afecte al parque.",
+"nivel_1": "Desventajas: quizá aumente el tráfico y afecte al parque.\nVentajas: puede crear empleo y ayudar al pueblo, más o menos.",
+"nivel_2": "Ventajas: puede generar trabajo y ayudar al pueblo, más o menos.\nDesventajas: quizá suba el tráfico y perjudique al parque.",
+"nivel_3": "Ventajas: puede dar trabajo y venir bien al pueblo, más o menos.\nDesventajas: quizá aumente el tráfico y afecte al parque.",
+"nivel_4": "Bueno: podría haber más trabajo y el pueblo saldría algo beneficiado.\nMalo: igual hay más coches y el parque sale perjudicado.",
+"nivel_5": "Yo pienso que serviría para que la zona tuviera más movimiento.\nPero al estar cerca de la sierra también podría molestar a la naturaleza."
+}
+
+    }
+  },
+  "cien_s1_t06": {
+    "alto": {
+      "respuesta_original": "Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas.",
+      "variantes": {
+"nivel_0": "Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas.",
+"nivel_1": "Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas. Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas.",
+"nivel_2": "Son complementarios, porque los dos tratan del mismo centro comercial y aportan ideas similares. Uno explica más los efectos ambientales y el otro cuenta mejor la opinión de habitantes y ecologistas.",
+"nivel_3": "Son complementarios, ya que las dos fuentes tratan sobre el centro comercial y dicen cosas bastante parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas.",
+"nivel_4": "Las fuentes se pueden completar entre ellas, ya que tratan sobre el mismo proyecto y no dicen cosas opuestas. La primera se centra más en los problemas para el entorno, mientras que la segunda muestra mejor lo que piensan la gente del pueblo y los grupos ecologistas.",
+"nivel_5": "Yo diría que son complementarias porque cada una aporta una parte distinta de la noticia. Una parece más oficial y habla de los posibles efectos del proyecto, y la otra enseña más el debate que hay entre la gente."
+}
+    },
+    "normal": {
+
+      "respuesta_original": "Yo creo que son complementarios, o sea, no dicen cosas contrarias. Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico.",
+      "variantes": {
+"nivel_0": "Yo creo que son complementarios, o sea, no dicen cosas contrarias. Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico.",
+"nivel_1": "Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico. Yo creo que son complementarios, o sea, no dicen cosas contrarias.",
+"nivel_2": "Yo pienso que son complementarios, o sea, no dicen cosas opuestas. Los dos dicen que puede generar empleo, pero también que puede dañar al parque y al tráfico.",
+"nivel_3": "Me parece que son complementarios, o sea, no cuentan cosas opuestas. Los dos dicen que puede crear empleo, pero también que puede afectar al parque y al tráfico.",
+"nivel_4": "A mí me parece que se completan, porque no se contradicen. En ambas fuentes aparece que el proyecto daría trabajo, aunque también podría dañar el parque y hacer que hubiera más tráfico.",
+"nivel_5": "Yo diría que se complementan porque una fuente habla más de la noticia oficial y la otra de lo que piensa la gente. Las dos muestran cosas buenas y problemas del centro comercial."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Son contradictorias porque una dice que es bueno y la otra que es malo. Pero las dos hablan del centro comercial y de que puede aver trabajo.",
+      "variantes": {
+"nivel_0": "Son contradictorias porque una dice que es bueno y la otra que es malo. Pero las dos hablan del centro comercial y de que puede aver trabajo.",
+"nivel_1": "Pero las dos hablan del centro comercial y de que puede aver trabajo. Son contradictorias porque una dice que es bueno y la otra que es malo.",
+"nivel_2": "Son opuestas porque una comenta que es positivo y la otra que es malo. Pero las dos tratan del centro comercial y de que puede aver empleo.",
+"nivel_3": "Son contradictorias porque una lo presenta como bueno y la otra como malo. Pero las dos hablan del centro comercial y de que puede aver trabajo.",
+"nivel_4": "Para mí se contradicen, porque en una fuente parece algo positivo y en la otra negativo. Aun así, ambas tratan sobre ese centro comercial y también dicen que podría aver empleo.",
+"nivel_5": "Yo creo que no dicen exactamente lo mismo, porque una fuente parece apoyar más el proyecto y la otra se fija más en los problemas. Aun así, las dos van sobre la misma noticia."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Puede ser complementaria, pero depende de cómo se mire. Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo.",
+      "variantes": {
+"nivel_0": "Puede ser complementaria, pero depende de cómo se mire. Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo.",
+"nivel_1": "Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo. Puede ser complementaria, pero depende de cómo se mire.",
+"nivel_2": "Puede ser complementaria, pero depende de cómo se vea. Más o menos los dos artículos dicen cosas similares, aunque no sé si explican exactamente lo mismo.",
+"nivel_3": "Yo diría que puede ser complementaria, aunque según cómo se entienda. Más o menos los dos textos dicen cosas parecidas, aunque no sé si cuentan exactamente lo mismo.",
+"nivel_4": "Creo que se pueden completar, aunque no lo tengo del todo claro. En general, ambas fuentes van por una idea semejante, pero no estoy seguro de que expliquen justo la misma cosa.",
+"nivel_5": "Yo creo que no son contrarias del todo, porque hablan del mismo tema. Una cuenta unas cosas y la otra añade otras, aunque algunas partes no están explicadas igual."
+}
+
+    }
+  },
+  "cien_s1_t07": {
+    "alto": {
+      "respuesta_original": "Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad.",
+      "variantes": {
+"nivel_0": "Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad.",
+"nivel_1": "La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad. Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona.",
+"nivel_2": "Los dos textos tratan de la idea de hacer un centro comercial cerca de la Sierra Calderona. El tema principal es que puede generar empleo, turismo y más servicios, pero también puede causar dificultades en el parque, como más tráfico, perjuicio al ecosistema y falta de tranquilidad.",
+"nivel_3": "Ambos textos tratan sobre construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad.",
+"nivel_4": "En ambos textos se trata el posible nuevo centro comercial junto a la Sierra Calderona. Se explica que podría ayudar al pueblo con puestos de trabajo, visitantes y servicios, aunque también tendría riesgos para el parque, por ejemplo más circulación, perjuicios al entorno natural y menos calma.",
+"nivel_5": "El tema de los textos es el proyecto de hacer un centro comercial al lado de la Sierra Calderona. Por una parte se dice que sería bueno para la economía y para el pueblo, pero por otra parte hay preocupación porque puede afectar a la naturaleza, aumentar los coches y cambiar la zona."
+}
+
+    },
+    "normal": {
+      "respuesta_original": "Los textos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona. Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches.",
+      "variantes": {
+"nivel_0": "Los textos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona. Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches.",
+"nivel_1": "Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches. Los textos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona.",
+"nivel_2": "Los documentos tratan de un centro comercial que quieren hacer cerca de la Sierra Calderona. Puede ser positivo porque crea empleo y viene más gente, pero también puede ser negativo porque puede perjudicar el monte y aumentar los vehículos.",
+"nivel_3": "Los dos textos hablan sobre un centro comercial que se quiere construir cerca de la Sierra Calderona. Puede ser bueno porque crea trabajo y viene más gente, pero también puede ser malo porque puede dañar el monte y aumentar los coches.",
+"nivel_4": "Ambos escritos explican el proyecto de hacer una zona comercial junto a la Sierra Calderona. Se dice que ayudaría al pueblo con empleo y visitantes, aunque también podría perjudicar la naturaleza y provocar más tráfico.",
+"nivel_5": "El tema es que quieren poner un centro comercial al lado de la Sierra Calderona. Tiene cosas buenas, como que habría más trabajo y más movimiento en el pueblo, pero también preocupa porque puede estropear el entorno y traer demasiados coches."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Los textos dicen que van a hacer un centro comercial en la montaña. Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura.",
+      "variantes": {
+"nivel_0": "Los textos dicen que van a hacer un centro comercial en la montaña. Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura.",
+"nivel_1": "Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura. Los textos dicen que van a hacer un centro comercial en la montaña.",
+"nivel_2": "Los documentos cuentan que van a construir un centro comercial en el monte. Eso puede ser positivo porque las personas compran y trabajan, pero malo porque los animales se pueden marchar y hay muchos vehículos y basura.",
+"nivel_3": "Los textos explican que quieren construir un centro comercial en una zona de montaña. Eso puede ser bueno porque la gente compra y trabaja, pero malo porque los animales se pueden ir y hay muchos coches y basura.",
+"nivel_4": "En los dos textos se habla de poner una zona de tiendas junto a la sierra. Puede ayudar porque habría compras y empleo, aunque también sería negativo para la naturaleza, ya que habría más tráfico, residuos y los animales podrían marcharse.",
+"nivel_5": "El tema es que quieren construir tiendas cerca de la Sierra Calderona. Unos piensan que eso ayuda al pueblo y trae más visitantes, pero otros creen que puede estropear la zona natural y molestar a los animales."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Los textos hablan más o menos de un centro comercial cerca de la Sierra Calderona. Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado.",
+      "variantes": {
+"nivel_0": "Los textos hablan más o menos de un centro comercial cerca de la Sierra Calderona. Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado.",
+"nivel_1": "Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado. Los textos hablan más o menos de un centro comercial cerca de la Sierra Calderona.",
+"nivel_2": "Los textos tratan más o menos de un centro comercial próximo a la Sierra Calderona. Puede tener aspectos buenos y negativos, depende de si perjudica mucho al parque o si al final lo hacen con precaución.",
+"nivel_3": "Los dos textos van sobre la idea de construir un centro comercial cerca de la Sierra Calderona. Puede tener cosas buenas y malas, depende de si afecta mucho al parque o si al final lo hacen con cuidado.",
+"nivel_4": "En las dos lecturas se comenta el proyecto de hacer una zona comercial al lado de la Sierra Calderona. Podría salir bien o mal, según el daño que haga al parque y si se construye respetando el entorno.",
+"nivel_5": "El tema principal es que quieren construir tiendas grandes cerca del parque natural. Hay gente que piensa que eso ayudaría al pueblo, pero otros creen que puede ser un problema para la naturaleza."
+}
+
+    }
+  },
+  "cien_s1_t09": {
+    "alto": {
+      "respuesta_original": "La postura de Elena me parece más acertada. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos.",
+      "variantes": {
+"nivel_0": "La postura de Elena me parece más acertada. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos.",
+"nivel_1": "Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos. La postura de Elena me parece más acertada.",
+"nivel_2": "La postura de Elena me parece más adecuada. Los comentarios de Instagram son puntos de vista de personas, pero antes de decidir hay que consultar fuentes oficiales y lo que digan los especialistas.",
+"nivel_3": "Creo que Elena tiene una opinión más razonable. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos.",
+"nivel_4": "Creo que Elena tiene más razón. En Instagram la gente solo expresa lo que piensa, así que para tomar una decisión habría que consultar páginas oficiales y tener en cuenta a especialistas.",
+"nivel_5": "Yo haría más caso a Elena, porque en redes cualquiera puede escribir sin saber mucho. Los comentarios sirven para ver lo que preocupa a la gente, pero no deberían ser la única base para decidir."
+}
+
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que Elena tiene más razón, o sea, los comentarios pueden ayudar a saber lo que piensa la gente. Pero no vale solo con eso, hay que mirar información más fiable y ya.",
+      "variantes": {
+"nivel_0": "Yo creo que Elena tiene más razón, o sea, los comentarios pueden ayudar a saber lo que piensa la gente. Pero no vale solo con eso, hay que mirar información más fiable y ya.",
+"nivel_1": "Pero no vale solo con eso, hay que mirar información más fiable y ya. Yo creo que Elena tiene más razón, o sea, los comentarios pueden ayudar a saber lo que piensa la gente.",
+"nivel_2": "Yo pienso que Elena tiene más razón, o sea, los comentarios pueden servir a conocer lo que opina la gente. Pero no vale solo con eso, hay que consultar información más segura y ya.",
+"nivel_3": "Yo pienso que Elena está más en lo cierto, porque los comentarios pueden servir para saber la opinión de la gente. Pero no vale solo con eso, hay que mirar información más fiable y ya.",
+"nivel_4": "Me quedo con Elena, porque las opiniones en Instagram sirven para ver qué piensa mucha gente. Aun así, no basta con eso; también habría que buscar datos más seguros.",
+"nivel_5": "Estoy más con Elena, porque los comentarios están bien para hacerse una idea. Pero para decidir algo importante no puedes fijarte solo en Instagram, hay que comprobarlo en sitios serios."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Yo creo que Jaime porque si todos ponen comentarios malos será que el centro comercial está mal. Aunque Elena dice de mirar expertos y eso también puede servir.",
+      "variantes": {
+"nivel_0": "Yo creo que Jaime porque si todos ponen comentarios malos será que el centro comercial está mal. Aunque Elena dice de mirar expertos y eso también puede servir.",
+"nivel_1": "Aunque Elena dice de mirar expertos y eso también puede servir. Yo creo que Jaime porque si todos ponen comentarios malos será que el centro comercial está mal.",
+"nivel_2": "Yo pienso que Jaime porque si todos escriben comentarios negativos será que el centro comercial está mal. Aunque Elena dice de consultar expertos y eso también puede servir.",
+"nivel_3": "Yo estoy más de acuerdo con Jaime, porque si mucha gente comenta cosas malas será por algo. Aunque Elena dice de mirar expertos y eso también puede servir.",
+"nivel_4": "Estoy más con Jaime, ya que cuando mucha gente escribe cosas negativas parece que el centro comercial no está bien. De todas formas, lo de Elena sobre consultar a expertos también vale.",
+"nivel_5": "Yo haría caso un poco a Jaime, porque los comentarios enseñan lo que opina mucha gente. Pero antes de decidir del todo miraría alguna página seria, porque en Instagram a veces se exagera."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Puede que Elena tenga más razón, pero depende. Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros.",
+      "variantes": {
+"nivel_0": "Puede que Elena tenga más razón, pero depende. Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros..",
+"nivel_1": "Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros.. Puede que Elena tenga más razón, pero depende.",
+"nivel_2": "Puede que Elena tenga más razón, pero depende. Los comentarios muestran una cosa, aunque quizá habría que consultar más información para estar seguros..",
+"nivel_3": "A lo mejor Elena tiene más razón, pero según el caso. Los comentarios dicen una cosa, aunque igual habría que mirar más información para estar seguros..",
+"nivel_4": "Quizá Elena esté más acertada, aunque no siempre. Lo que se escribe en comentarios da una idea, pero haría falta buscar otros datos para estar seguros.",
+"nivel_5": "Yo diría que Elena, porque los comentarios pueden orientar un poco, pero no son suficientes. Para decidir bien habría que comprobarlo en alguna fuente más seria."
+}
+
+    }
+  }
+}

@@ -147,18 +147,27 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         # Lógica Híbrida: Visión vs OCR
         modelo_activo = override_model if override_model else "poligpt-vision"
         es_vision = is_vision_model(modelo_activo)
-        llm_evaluador = get_llm_evaluador(override_model=modelo_activo)
 
-        texto_ocr_adicional = ""
         rutas_imagenes = task.get("task_image", [])
         if isinstance(rutas_imagenes, str): rutas_imagenes = [rutas_imagenes]
 
+        # --- RESTRICCIÓN ESPECÍFICA: SOLO QWEN SE PASA A OCR SI HAY >5 IMÁGENES ---
+        if es_vision and len(rutas_imagenes) > 5 and "qwen" in modelo_activo.lower():
+            # Apagamos el modo visión solo para los modelos Qwen en esta tarea
+            es_vision = False
+
+        # Cargamos el LLM
+        llm_evaluador = get_llm_evaluador(override_model=modelo_activo)
+
+        texto_ocr_adicional = ""
+        
+        # Si NO es visión (o si lo acabamos de apagar por ser un Qwen sobrecargado)
         if not es_vision:
             partes_ocr = []
             for img_path in rutas_imagenes:
                 if img_path: partes_ocr.append(extract_text_from_image(img_path))
-            texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES]:\n" + "\n".join(filter(None, partes_ocr))
-
+            texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES MEDIANTE OCR]:\n" + "\n".join(filter(None, partes_ocr))
+            
         texto_base = task.get("task_text", "")
         if texto_base is None: texto_base = ""
         contexto_completo = texto_base + texto_ocr_adicional
