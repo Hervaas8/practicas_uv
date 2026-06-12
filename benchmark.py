@@ -10,12 +10,11 @@ ARCHIVO_CSV_SALIDA = "resultados_benchmark.csv"
 
 # Modelos disponibles en la UPV que vamos a comparar
 MODELOS_A_EVALUAR = [
-    "qwen3-vl:30b",
     "deepseek-r1:32b",
     "llama3.1:8b",
+    "llama3.2:3b",
     "phi4-mini:3.8b",
-    "qwen3:4b",
-    "gemma3:4b",
+    "qwen3-vl:30b",
     "poligpt-code",
     "poligpt"
 ]

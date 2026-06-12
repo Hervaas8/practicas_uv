@@ -5,7 +5,7 @@ POLIGPT_API_BASE = "https://api.poligpt.upv.es"
 POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"
 
 # --- MODELOS CON CAPACIDAD VISUAL ---
-MODELOS_VISION = ["poligpt-vision", "qwen2.5vl:32b", "qwen3-vl:30b"]
+MODELOS_VISION = ["poligpt-code", "Qwen3.6-35B-A3B", "llama3.2:3b"]
 
 # --- MAPAS DE ENRUTAMIENTO ---
 MAPA_MODELOS = {
@@ -13,16 +13,18 @@ MAPA_MODELOS = {
     "feedback_estrategia": "poligpt",
     "plagio": "poligpt",
     "general": "poligpt",
-    "generador": "poligpt"
+    "generador": "poligpt",
+    "ocr": "llama3.2:3b"  # <-- Nuevo modelo integrado
 }
 
-# --- MAPA DE TEMPERATURAS (Nuevo) ---
+# --- MAPA DE TEMPERATURAS ---
 MAPA_TEMPERATURAS = {
-    "evaluacion": 0.0,           # Determinista y estricto. Misma respuesta siempre.
-    "plagio": 0.0,               # Análisis riguroso, no queremos que invente similitudes.
-    "general": 0.3,              # Interacciones estándar, bajo riesgo de alucinación.
-    "generador": 0.3,            # Generación de pistas (scaffolding). Necesita algo de creatividad para no dar la respuesta directa.
-    "feedback_estrategia": 0.5   # Alta creatividad para redactar consideraciones variadas, empáticas y con un tono natural.
+    "evaluacion": 0.0,           
+    "plagio": 0.0,               
+    "general": 0.3,              
+    "generador": 0.3,            
+    "feedback_estrategia": 0.5,  
+    "ocr": 0.0                   # Determinista: Solo debe extraer texto, sin inventar.
 }
 
 MAPA_ESQUEMAS = {
@@ -40,7 +42,6 @@ def is_vision_model(model_name: str) -> bool:
 def get_llm(tipo_tarea="general", override_model=None):
     nombre_modelo = override_model if override_model else MAPA_MODELOS.get(tipo_tarea, MAPA_MODELOS["general"])
     
-    # Extraemos la temperatura específica de la tarea (por defecto usa la "general")
     temperatura_asignada = MAPA_TEMPERATURAS.get(tipo_tarea, 0.3)
     
     return ChatOpenAI(

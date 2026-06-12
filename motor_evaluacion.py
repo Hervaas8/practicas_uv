@@ -10,9 +10,9 @@ from langchain_core.messages import HumanMessage
 
 # --- IMPORTACIÓN DE UTILIDADES OCR ---
 try:
-    from utils_easy import extract_text_from_image
+    from utils_easy import extract_with_llm 
 except ImportError:
-    def extract_text_from_image(path): return "[ERROR: Módulo OCR no encontrado]"
+    def extract_with_llm(path): return "[ERROR: Módulo OCR no encontrado]"
 
 # --- CARGAR CONFIGURACIÓN GLOBAL ---
 try:
@@ -165,7 +165,7 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         if not es_vision:
             partes_ocr = []
             for img_path in rutas_imagenes:
-                if img_path: partes_ocr.append(extract_text_from_image(img_path))
+                if img_path: partes_ocr.append(extract_with_llm(img_path))
             texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES MEDIANTE OCR]:\n" + "\n".join(filter(None, partes_ocr))
             
         texto_base = task.get("task_text", "")

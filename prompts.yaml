@@ -55,7 +55,7 @@ eval_strategy_feedback_prompt: |
 plagio_prompt: |
   Eres un auditor académico. Tu tarea es analizar si dos estudiantes han copiado entre sí.
   Ignora que el significado sea idéntico (es normal porque responden a la misma pregunta).
-  Céntrate ÚNICAMENTE en la similitud estructural, orden de ideas, uso de conectores o repetición de errores inusuales.
+  Céntrate ÚNICAMENTE en la similitud estructural, orden de ideas, uso de conectores o repetición de errores inusuales, tanto gramaticales como de la respuesta.
   
   Pregunta original: "{pregunta}"
   Respuesta Alumno 1: "{resp_a}"
