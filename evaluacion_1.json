@@ -3,9 +3,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
     "rubric": {
-      "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
-      "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
-    },
+      "Punto 1 - Evaluación": {
+        "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
+        "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
+      }},
     "task_image": [
       "./data/img/sierra_calderona.png"
     ],
@@ -44,8 +45,10 @@
     "tipo_tarea": "v_y_d",
     "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
     "rubric": {
-      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles.",
+      "Punto 1 - Evaluación": {
+        "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+        "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles."
+      },
       "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
@@ -86,8 +89,10 @@
     "tipo_tarea": "v_y_d",
     "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
     "rubric": {
-      "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-      "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad.",
+      "Punto 1 - Evaluación": {
+        "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+        "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad."
+      },
       "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
@@ -127,10 +132,10 @@
   "cien_s1_t06": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
-    "rubric": {
-      "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
-      "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
-    },
+    "Punto 1 - Evaluación": {
+        "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
+        "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+      },
     "task_image": [
       "./data/img/actualidad.png",
       "./data/img/naquera.png"
@@ -170,8 +175,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
     "rubric": {
-      "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
-      "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+      "Punto 1 - Evaluación": {
+        "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
+        "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+      }
     },
     "task_image": [
       "./data/img/actualidad.png",
@@ -212,8 +219,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial // Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos// Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
     "rubric": {
-      "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-      "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+      "Punto 1 - Evaluación": {
+        "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+        "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+      }
     },
     "task_image": [
       "./data/img/mobil1.png",
@@ -254,8 +263,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
     "rubric": {
-      "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-      "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+      "Punto 1 - Evaluación": {
+        "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+        "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+      }
     },
     "task_image": [
       "./data/img/mobil2.png",
@@ -296,9 +307,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
     "rubric": {
-      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-      "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
-    },
+      "Punto 1 - Evaluación": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
+      }},
     "task_image": [
       "./data/img/invertebrados.png",
       "./data/img/vertebrados.png",
@@ -491,8 +503,10 @@
     "tipo_tarea": "subjetivo",
     "task_prompt": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
     "rubric": {
-      "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-      "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+      "Punto 1 - Evaluación": {
+        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+        "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+      }
     },
     "task_image": [
       "./data/img/poema3.png"

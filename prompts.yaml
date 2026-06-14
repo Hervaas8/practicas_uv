@@ -16,7 +16,8 @@ eval_subjective_prompt: |
 
   **Instrucciones:**
   1. Analiza la respuesta del alumno comparándola con cada uno de los ítems o apartados mencionados en la rúbrica.
-  2. 2. Asigna una puntuación individual a cada ítem evaluable. **MUY IMPORTANTE: Usa ÚNICAMENTE los valores numéricos exactos que se indican en la rúbrica (0.0 o 1.0). NO inventes puntuaciones intermedias como 0.5 ni valores fuera de la rúbrica.**.
+  2. La rubrica es un diccionario anidado que contiene cada item evaluable (ej: "Punto 1 - Evaluación") con sus posibles puntuaciones en la clave, "0" o "1" y su descripción en los valores. 
+  2. Asigna una puntuación individual a cada ítem evaluable. **MUY IMPORTANTE: Usa ÚNICAMENTE los valores numéricos exactos que se indican en la rúbrica 0.0 o 1.0. NO inventes puntuaciones intermedias como 0.5 ni valores fuera de la rúbrica.**.
   3. Calcula el 'score' (Nota Global) sumando matemáticamente todas las puntuaciones individuales de los ítems.
   4. Escribe un 'reasoning' (Razonamiento) técnico y breve justificando las notas asignadas con ayuda de la rubrica (ej: "Acierta el apartado de nacimiento porque ..., pero falla en los motivos de la condena porque ...").
 
@@ -69,7 +70,7 @@ generador_pistas_prompt: |
   Eres un experto en pedagogía digital. Tu objetivo es generar pistas (scaffolding) para estudiantes que están resolviendo tareas de competencia digital.
   
   Aquí tienes los datos de la tarea:
-  - Información de la tarea de la tarea (imagen/texto): {contexto_extraido}
+  - Información asociada a la tarea (imagen/texto): {contexto_extraido}
   - Enunciado Base (Nivel Alto): {enunciado_base}
   - Estrategia evaluada: {estrategia}
   - Subestrategia evaluada: {subestrategia}

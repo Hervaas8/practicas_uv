@@ -129,20 +129,14 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
     else:
         rubric = task.get("rubric", {})
         
-        # 1. Detectar inteligentemente si es un ítem único o multi-ítem
-        es_multi_item = False
+        # 1. Contar dinámicamente los apartados a evaluar
+        # Al tener todas las rúbricas estandarizadas, solo contamos las claves que son diccionarios
         if isinstance(rubric, dict):
-            # Si algún valor dentro de la rúbrica es otro diccionario, hay sub-ítems
-            if any(isinstance(v, dict) for v in rubric.values()):
-                es_multi_item = True
-                # Contamos solo las claves que son diccionarios (ignoramos cosas como "Instrucciones")
-                items_evaluables = [k for k, v in rubric.items() if isinstance(v, dict)]
-                max_score = float(len(items_evaluables))
-            else:
-                # Es un ítem único (sus valores son strings descriptivos para el 0 y el 1)
-                max_score = 1.0
+            items_evaluables = [k for k, v in rubric.items() if isinstance(v, dict)]
+            max_score = float(len(items_evaluables))
         else:
-            max_score = 1.0
+            max_score = 1.0 # Fallback de seguridad
+            items_evaluables = []
 
         # Lógica Híbrida: Visión vs OCR
         modelo_activo = override_model if override_model else "poligpt-vision"
@@ -172,21 +166,16 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         if texto_base is None: texto_base = ""
         contexto_completo = texto_base + texto_ocr_adicional
 
-        # 2. Instrucción dinámica para el LLM
-        # 2. Instrucción dinámica para el LLM (REFORZADA PARA FORZAR EL ESQUEMA)
-        if es_multi_item:
-            nota_llm = (
-                f"NOTA CRÍTICA: Esta tarea tiene {int(max_score)} apartados. Evalúa CADA UNO por separado. "
-                f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON de salida incluya el campo 'scores_por_item' "
-                f"conteniendo un diccionario con la nota de cada apartado. (Total máximo: {max_score})"
-            )
-        else:
-            nota_llm = (
-                f"NOTA CRÍTICA: Esta tarea evalúa un ÚNICO ítem. "
-                f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON incluya el campo 'scores_por_item' con un único elemento. "
-                f"Ejemplo del formato que DEBES usar: {{\"score\": 1.0, \"scores_por_item\": {{\"Concepto_Unico\": 1.0}}, \"reasoning\": \"...\"}}. "
-                f"(Total máximo: {max_score})"
-            )
+        # 2. Instrucción dinámica unificada para el LLM
+        texto_apartados = "apartado" if max_score == 1.0 else "apartados"
+        nota_llm = (
+            f"NOTA CRÍTICA: Esta tarea tiene {int(max_score)} {texto_apartados} a evaluar según la rúbrica. "
+            f"Evalúa CADA UNO por separado. "
+            f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON de salida incluya el campo 'scores_por_item' "
+            f"conteniendo un diccionario con la nota asignada a cada apartado (usando las claves exactas de la rúbrica). "
+            f"Si uno de los apartados la clave se llama Instrucciones, no es un apartado a evaluar, simplemente es información adicional de la rúbrica."
+            f"(Total máximo: {max_score})"
+        )
 
         instrucciones = PROMPT_TEMPLATE.replace("{task_text}", contexto_completo)\
                                        .replace("{rubrica_text}", json.dumps(rubric, ensure_ascii=False) if isinstance(rubric, dict) else str(rubric))\
@@ -207,7 +196,7 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
             resultado = llm_evaluador.invoke([msg])
             scores_por_item = resultado.scores_por_item
             
-            # Sumamos las notas asegurándonos de que no alucine
+            # Sumamos las notas de forma segura
             if scores_por_item:
                 score = float(sum(scores_por_item.values()))
             else:

@@ -5,7 +5,7 @@ POLIGPT_API_BASE = "https://api.poligpt.upv.es"
 POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"
 
 # --- MODELOS CON CAPACIDAD VISUAL ---
-MODELOS_VISION = ["poligpt-code", "Qwen3.6-35B-A3B", "llama3.2:3b"]
+MODELOS_VISION = ["poligpt-code", "qwen3-vl:30b",]
 
 # --- MAPAS DE ENRUTAMIENTO ---
 MAPA_MODELOS = {
@@ -22,7 +22,7 @@ MAPA_TEMPERATURAS = {
     "evaluacion": 0.0,           
     "plagio": 0.0,               
     "general": 0.3,              
-    "generador": 0.3,            
+    "generador": 0.4,            
     "feedback_estrategia": 0.5,  
     "ocr": 0.0                   # Determinista: Solo debe extraer texto, sin inventar.
 }
@@ -49,7 +49,7 @@ def get_llm(tipo_tarea="general", override_model=None):
         api_key=POLIGPT_API_KEY,
         base_url=POLIGPT_API_BASE,
         temperature=temperatura_asignada,
-        max_tokens=2048,
+        max_tokens=10000,
     )
 
 def get_llm_estructurado(tipo_tarea, override_model=None):

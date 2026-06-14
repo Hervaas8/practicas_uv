@@ -58,11 +58,11 @@
       "respuesta_original": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
       "variantes": {
 "nivel_0": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
-"nivel_1": "Desventajas: aumento del tráfico y alteración de especies sensibles.\nVentajas: creación de empleo y turismo local.",
+"nivel_1": "Ventajas: turismo local y creación de empleo .Desventajas: alteración de especies sensibles y aumento del tráfico.\n",
 "nivel_2": "Ventajas: generación de trabajo y turismo local.\nDesventajas: incremento del tráfico y alteración de especies sensibles.",
 "nivel_3": "Ventajas: se crearían puestos de trabajo y se favorecería el turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
-"nivel_4": "Aspectos positivos: daría trabajo y ayudaría a atraer visitantes a la zona.\nAspectos negativos: habría más coches y podría afectar a animales delicados.",
-"nivel_5": "Sería bueno porque podría traer dinero al pueblo y más gente visitaría la zona.\nPero también puede ser malo porque habría más contaminación y se podría dañar el parque natural."
+"nivel_4": "Ventajas: daría trabajo y ayudaría a atraer visitantes a la zona.\nDesventajas: habría más coches y podría afectar a animales delicados.",
+"nivel_5": "Ventajas: podría traer dinero al pueblo y más gente visitaría la zona.\nDesventajas: habría más contaminación y se podría dañar el parque natural."
 }
 
     },
@@ -70,23 +70,23 @@
       "respuesta_original": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
       "variantes": {
 "nivel_0": "Ventajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
-"nivel_1": "Desventajas: puede haber más tráfico y afectar a animales o plantas.\nVentajas: crea empleo y puede traer más turismo, o sea, más dinero al pueblo.",
+"nivel_1": "Ventajas:  puede traer más turismo y crea empleo, o sea, más dinero al pueblo.\nDesventajas: puede afectar a animales o plantas y haber más tráfico.",
 "nivel_2": "Ventajas: genera trabajo y puede atraer más turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más circulación y afectar a animales o vegetales.",
 "nivel_3": "Ventajas: se crearían puestos de trabajo y podría venir más gente de turismo, o sea, más dinero al pueblo.\nDesventajas: puede haber más tráfico y afectar a animales o plantas.",
 "nivel_4": "Ventajas: daría puestos de trabajo y quizá llegarían visitantes, así que entraría más dinero en el municipio.\nDesventajas: habría más coches y podría dañar seres vivos del entorno.",
-"nivel_5": "A favor estaría que la zona tendría más movimiento y algunas personas podrían encontrar trabajo allí.\nEn contra, se podría estropear parte del parque y molestar a la naturaleza."
+"nivel_5": "Ventajas: la zona tendría más movimiento y algunas personas podrían encontrar trabajo allí.\nDesventajas: se podría estropear parte del parque y molestar a la naturaleza."
 }
 
     },
     "menos_nivel": {
       "respuesta_original": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan.",
       "variantes": {
-"nivel_0": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan..",
-"nivel_1": "Desventajas: se puede romper el abitad y los coches molestan..\nVentajas: que hacen tiendas y la gente compra más.",
-"nivel_2": "Ventajas: que hacen comercios y la gente compra más.\nDesventajas: se puede dañar el abitad y los vehículos molestan..",
-"nivel_3": "Ventajas: que construyen tiendas y la gente va a comprar más.\nDesventajas: se puede romper el abitad y los coches molestan..",
-"nivel_4": "Bueno: ponen comercios y la gente gasta más.\nMalo: el abitad se puede estropear y los coches fastidian.",
-"nivel_5": "Lo bueno es que vendría más gente al sitio y habría cosas nuevas.\nLo malo es que igual ensucian más y los animales no estarían tranquilos."
+"nivel_0": "Ventajas: que hacen tiendas y la gente compra más.\nDesventajas: se puede romper el abitad y los coches molestan.",
+"nivel_1": "Ventajas: la gente compra más y que hacen tiendas.\nDesventajas: los coches molestan y se puede romper el abitad.",
+"nivel_2": "Ventajas: que hacen comercios y la gente compra más.\nDesventajas: se puede dañar el abitad y los vehículos molestan.",
+"nivel_3": "Ventajas: que construyen tiendas y la gente va a comprar más.\nDesventajas: se puede romper el abitad y los coches molestan.",
+"nivel_4": "Ventajas: ponen comercios y la gente gasta más.\nDesventajas: el abitad se puede estropear y los coches fastidian.",
+"nivel_5": "Ventajas: vendría más gente al sitio y habría cosas nuevas.\nDesventajas: igual ensucian más y los animales no estarían tranquilos."
 }
 
     },
@@ -97,8 +97,8 @@
 "nivel_1": "Desventajas: quizá aumente el tráfico y afecte al parque.\nVentajas: puede crear empleo y ayudar al pueblo, más o menos.",
 "nivel_2": "Ventajas: puede generar trabajo y ayudar al pueblo, más o menos.\nDesventajas: quizá suba el tráfico y perjudique al parque.",
 "nivel_3": "Ventajas: puede dar trabajo y venir bien al pueblo, más o menos.\nDesventajas: quizá aumente el tráfico y afecte al parque.",
-"nivel_4": "Bueno: podría haber más trabajo y el pueblo saldría algo beneficiado.\nMalo: igual hay más coches y el parque sale perjudicado.",
-"nivel_5": "Yo pienso que serviría para que la zona tuviera más movimiento.\nPero al estar cerca de la sierra también podría molestar a la naturaleza."
+"nivel_4": "Ventajas: podría haber más trabajo y el pueblo saldría algo beneficiado.\nDesventajas: igual hay más coches y el parque sale perjudicado.",
+"nivel_5": "Ventajas: serviría para que la zona tuviera más movimiento.\nDesventajas: al estar cerca de la sierra también podría molestar a la naturaleza."
 }
 
     }
@@ -253,4 +253,107 @@
 
     }
   }
+  
+,
+"lit_s1_t10": {
+    "alto": {
+      "respuesta_original": "Los 'bueyes' representan a la gente que se deja mandar y baja la cabeza ante los castigos. Los 'leones' son las personas valientes que se levantan y luchan por lo que creen justo.",
+      "variantes": {
+"nivel_0": "Los 'bueyes' representan a la gente que se deja mandar y baja la cabeza ante los castigos. Los 'leones' son las personas valientes que se levantan y luchan por lo que creen justo.",
+"nivel_1": "Los 'leones' son las personas valientes que se levantan y luchan por lo que creen justo. Los 'bueyes' representan a la gente que se deja mandar y baja la cabeza ante los castigos.",
+"nivel_2": "Los 'bueyes' simbolizan a la gente que se deja mandar y agacha la cabeza ante los castigos. Los 'leones' son las personas valientes que se alzan y luchan por lo que creen correcto.",
+"nivel_3": "Los 'bueyes' simbolizan a quienes obedecen sin resistirse y agachan la cabeza cuando reciben castigos. Los 'leones' son las personas valientes que se levantan y luchan por lo que creen justo.",
+"nivel_4": "Con los 'bueyes' se habla de quienes aceptan órdenes sin protestar y se resignan cuando los castigan. En cambio, los 'leones' serían los que tienen valor, se rebelan y defienden aquello que consideran justo.",
+"nivel_5": "Creo que los bueyes son como las personas que aguantan todo y no se atreven a enfrentarse. Los leones, en cambio, representan a la gente fuerte que no se queda callada y pelea por sus ideas."
 }
+
+    },
+    "normal": {
+      "respuesta_original": "Yo creo que los bueyes son como la gente que obedece y no se defiende. Los leones son los que tienen fuerza y valentía para levantarse, o sea, para luchar.",
+      "variantes": {
+"nivel_0": "Yo creo que los bueyes son como la gente que obedece y no se defiende. Los leones son los que tienen fuerza y valentía para levantarse, o sea, para luchar.",
+"nivel_1": "Los leones son los que tienen fuerza y valentía para levantarse, o sea, para luchar. Yo creo que los bueyes son como la gente que obedece y no se defiende.",
+"nivel_2": "Yo creo que los bueyes son como las personas que obedece y no se defiende. Los leones son los que tienen fuerza y coraje para levantarse, o sea, para pelear.",
+"nivel_3": "Pienso que los bueyes representan a la gente que obedece y no se defiende. Los leones son los que tienen fuerza y valentía para levantarse, o sea, para luchar.",
+"nivel_4": "Para mí, los bueyes representan a personas sumisas, que aceptan lo que les mandan y no reaccionan. En cambio, los leones serían quienes muestran valor y se rebelan para defenderse.",
+"nivel_5": "Los bueyes pueden significar la gente que aguanta los castigos sin protestar. Los leones, en cambio, representan a las personas valientes que no se quedan quietas y se enfrentan a lo que pasa."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Los bueyes son como personas flojas que no hacen nada y les castigan. Los leones son los valientes que se enfadan y pelean por su pueblo.",
+      "variantes": {
+"nivel_0": "Los bueyes son como personas flojas que no hacen nada y les castigan. Los leones son los valientes que se enfadan y pelean por su pueblo.",
+"nivel_1": "Los leones son los valientes que se enfadan y pelean por su pueblo. Los bueyes son como personas flojas que no hacen nada y les castigan.",
+"nivel_2": "Los bueyes son como personas débiles que no hacen nada y les castigan. Los leones son los valientes que se enfadan y luchan por su gente.",
+"nivel_3": "Los bueyes representan a personas flojas que no hacen nada y reciben castigos. Los leones son los valientes que se enfadan y pelean por su pueblo.",
+"nivel_4": "Yo entiendo que los bueyes serían gente débil, que aguanta sin hacer mucho aunque la castiguen. En cambio, los leones serían los valientes, que se cabrean y luchan por su gente.",
+"nivel_5": "Para mí, los bueyes son los que se dejan mandar y no protestan aunque les hagan daño. Los leones son la gente con valor que se enfrenta para defender al pueblo."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Creo que los bueyes pueden representar a gente que no se defiende mucho. Los leones quizá son los que tienen valor, aunque no estoy seguro de si se refiere exactamente a eso.",
+      "variantes": {
+"nivel_0": "Creo que los bueyes pueden representar a gente que no se defiende mucho. Los leones quizá son los que tienen valor, aunque no estoy seguro de si se refiere exactamente a eso.",
+"nivel_1": "Los leones quizá son los que tienen valor, aunque no estoy seguro de si se refiere exactamente a eso. Creo que los bueyes pueden representar a gente que no se defiende mucho.",
+"nivel_2": "Creo que los bueyes pueden simbolizar a personas que no se protege mucho. Los leones quizá son los que tienen valentía, aunque no estoy seguro de si se refiere exactamente a eso.",
+"nivel_3": "Pienso que los bueyes pueden ser personas que casi no se defienden. Los leones quizá son los que tienen valor, aunque no estoy seguro de si se refiere exactamente a eso.",
+"nivel_4": "Yo diría que los bueyes hablan de personas que aguantan y apenas reaccionan. En cambio, los leones tal vez son quienes muestran valentía, pero no sé si esa es justo la idea.",
+"nivel_5": "Para mí, los bueyes serían los que bajan la cabeza y aceptan los castigos. Los leones pueden ser la gente fuerte que se atreve a levantarse, aunque no lo tengo clarísimo."
+}
+
+    }
+  },
+  "lit_s1_t17": {
+    "alto": {
+      "respuesta_original": "Condenas recibidas: Primero fue condenado a muerte y después le cambiaron la condena por 30 años de prisión.\nMotivos de las condenas: Lo acusaron de apoyar la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra.",
+      "variantes": {
+"nivel_0": "Condenas recibidas: Primero fue condenado a muerte y después le cambiaron la condena por 30 años de prisión.\nMotivos de las condenas: Lo acusaron de apoyar la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra.",
+"nivel_1": "Condenas recibidas: Después le cambiaron la condena por 30 años de prisión y primero fue condenado a muerte.\nMotivos de las condenas: Lo acusaron de escribir poemas a favor del pueblo durante la guerra y de apoyar la rebelión por sus ideas.",
+"nivel_2": "Condenas recibidas: Primero fue sentenciado a muerte y después le cambiaron la pena por 30 años de cárcel.\nMotivos de las condenas: Lo acusaron de respaldar la rebelión por sus ideas y por escribir poesías a favor del pueblo durante la guerra.",
+"nivel_3": "Condenas recibidas: Al principio lo condenaron a muerte, pero luego le sustituyeron esa condena por 30 años de cárcel.\nMotivos de las condenas: Lo acusaron de apoyar la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra.",
+"nivel_4": "Condenas recibidas: Al comienzo recibió una sentencia de pena capital, aunque más tarde se la sustituyeron por una condena de 30 años en prisión.\nMotivos de las condenas: Se le culpó de estar del lado de la rebelión por sus pensamientos y por componer poemas que defendían al pueblo en la guerra.",
+"nivel_5": "Condenas recibidas: Le pusieron pena de muerte, pero al final no se mantuvo y pasó a ser una condena larga de cárcel, de 30 años.\nMotivos de las condenas: Fue acusado por sus ideas políticas y por haber escrito textos y poemas relacionados con el pueblo y la guerra."
+}
+
+    },
+    "normal": {
+      "respuesta_original": "Condenas recibidas: Le pusieron pena de muerte, pero luego se la cambiaron por 30 años de cárcel.\nMotivos de las condenas: Fue por sus ideas políticas y porque escribía poemas apoyando al pueblo y a la República.",
+      "variantes": {
+"nivel_0": "Condenas recibidas: Le pusieron pena de muerte, pero luego se la cambiaron por 30 años de cárcel.\nMotivos de las condenas: Fue por sus ideas políticas y porque escribía poemas apoyando al pueblo y a la República.",
+"nivel_1": "Condenas recibidas: Luego se la cambiaron por 30 años de cárcel, pero le pusieron pena de muerte.\nMotivos de las condenas: Fue porque escribía poemas apoyando al pueblo y a la República y por sus ideas políticas.",
+"nivel_2": "Condenas recibidas: Le impusieron pena de muerte, pero luego se la cambiaron por 30 años de prisión.\nMotivos de las condenas: Fue por sus ideas políticas y porque escribía versos apoyando al pueblo y a la República.",
+"nivel_3": "Condenas recibidas: Primero fue condenado a muerte y después le cambiaron la condena por 30 años de cárcel.\nMotivos de las condenas: Fue por sus ideas políticas y porque escribía poemas apoyando al pueblo y a la República.",
+"nivel_4": "Sanciones: al principio lo sentenciaron a morir, aunque más tarde esa decisión pasó a ser una condena de treinta años en prisión.\nRazones: lo castigaron por su postura política y por escribir textos en defensa del pueblo y del bando republicano.",
+"nivel_5": "Condenas recibidas: Al principio recibió una condena de muerte y después quedó en muchos años de cárcel.\nMotivos de las condenas: Lo castigaron por sus ideas y por escribir a favor del pueblo y de la República."
+}
+
+    },
+    "menos_nivel": {
+      "respuesta_original": "Condenas recibidas: Lo condenaron a muerte, pero despues eran 30 años en la carcel.\nMotivos de las condenas: Porque estaba con la Republica y escribia cosas del pueblo en la guerra.",
+      "variantes": {
+"nivel_0": "Condenas recibidas: Lo condenaron a muerte, pero despues eran 30 años en la carcel.\nMotivos de las condenas: Porque estaba con la Republica y escribia cosas del pueblo en la guerra.",
+"nivel_1": "Condenas recibidas: Despues eran 30 años en la carcel, pero lo condenaron a muerte.\nMotivos de las condenas: Porque escribia cosas del pueblo en la guerra y estaba con la Republica.",
+"nivel_2": "Condenas recibidas: Lo sentenciaron a muerte, pero despues eran 30 años en la prision.\nMotivos de las condenas: Porque estaba con la Republica y escribia textos del pueblo en la guerra.",
+"nivel_3": "Condenas recibidas: Primero le dieron pena de muerte, aunque luego eso paso a ser 30 años en la carcel.\nMotivos de las condenas: Porque estaba con la Republica y escribia cosas del pueblo en la guerra.",
+"nivel_4": "Castigo recibido: al principio le pusieron la pena maxima, aunque mas tarde quedo en treinta años preso.\nRazon: lo acusaban por apoyar a los republicanos y por hacer escritos sobre la gente durante la guerra.",
+"nivel_5": "Condenas recibidas: Primero le pusieron una condena muy fuerte y al final termino muchos años preso.\nMotivos de las condenas: Fue por estar del lado de la Republica y por escribir cosas de la gente en la guerra."
+}
+
+    },
+    "ambiguo": {
+      "respuesta_original": "Condenas recibidas: Parece que primero fue condenado a muerte y luego se cambió por prisión.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que escribió durante la guerra, aunque no sé todos los detalles.",
+      "variantes": {
+"nivel_0": "Condenas recibidas: Parece que primero fue condenado a muerte y luego se cambió por prisión.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que escribió durante la guerra, aunque no sé todos los detalles.",
+"nivel_1": "Condenas recibidas: Parece que luego se cambió por prisión y primero fue condenado a muerte.\nMotivos de las condenas: Creo que fue por lo que escribió durante la guerra y por sus ideas, aunque no sé todos los detalles.",
+"nivel_2": "Condenas recibidas: Parece que inicialmente fue sentenciado a muerte y luego se modificó por cárcel.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que redactó durante la guerra, aunque no sé todos los detalles.",
+"nivel_3": "Condenas recibidas: Al parecer, al principio lo condenaron a muerte y después esa pena pasó a ser de prisión.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que escribió durante la guerra, aunque no sé todos los detalles.",
+"nivel_4": "Condena: por lo visto, al inicio le dieron la pena de muerte, aunque más tarde quedó sustituida por cárcel.\nRazones: pienso que tuvo que ver con sus ideas y con sus escritos en la guerra, pero no conozco bien todo lo ocurrido.",
+"nivel_5": "Condenas recibidas: Creo que primero tuvo una condena muy grave y después acabó en la cárcel.\nMotivos de las condenas: Parece que fue por estar relacionado con la República y por escribir sobre esas ideas durante la guerra."
+}
+  }
+    
+}
+}
+  
