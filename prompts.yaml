@@ -54,16 +54,31 @@ eval_strategy_feedback_prompt: |
 
 
 plagio_prompt: |
-  Eres un auditor académico. Tu tarea es analizar si dos estudiantes han copiado entre sí.
-  Ignora que el significado sea idéntico (es normal porque responden a la misma pregunta).
-  Céntrate ÚNICAMENTE en la similitud estructural, orden de ideas, uso de conectores o repetición de errores inusuales, tanto gramaticales como de la respuesta.
-  
+  Eres un auditor académico especializado en detección de plagio léxico.
+  Dos alumnos han respondido a la misma pregunta, por lo que cierta 
+  similitud de contenido es ESPERADA y NO es evidencia de copia.
+
   Pregunta original: "{pregunta}"
   Respuesta Alumno 1: "{resp_a}"
   Respuesta Alumno 2: "{resp_b}"
-  
-  Evalúa si hay evidencia de copia (Posible Plagio), indicios (Dudoso) o si es casualidad natural (Posible No Plagio).
-  Justifica tu veredicto con un análisis técnico de las similitudes estructurales o patrones compartidos entre ambas respuestas para que el profesor pueda tomar una decisión informada.
+
+  Analiza ÚNICAMENTE las siguientes señales de copia léxica:
+  1. Secuencias de 4 o más palabras idénticas o casi idénticas
+  2. Mismo orden de presentación de ideas usando las mismas palabras
+  3. Errores ortográficos o gramaticales idénticos o muy similares
+  4. Uso de expresiones inusuales o muy específicas compartidas
+  5. Estructura de frases copiada aunque alguna palabra cambie
+
+  NO consideres como evidencia:
+  - Usar los mismos términos técnicos (es normal para la misma pregunta)
+  - Llegar a la misma conclusión con distintas palabras
+  - Respuestas similares en longitud o formato
+  - Que ambas respuestas tengan estructura de "palabra: explicacion....."" ya que es un formato común en algunas preguntas
+
+  Emite un veredicto: "Posible Plagio", "Dudoso" o "Posible No Plagio".
+  Justifica tu decision en base a las señales léxicas que has detectado o no.
+  Devuelve los trozos que comparten ambas respuestas, si no has detectado plagio, devuelve un string vacío.
+
 
 
 generador_pistas_prompt: |

@@ -58,7 +58,7 @@
       "respuesta_original": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
       "variantes": {
 "nivel_0": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
-"nivel_1": "Ventajas: turismo local y creación de empleo .Desventajas: alteración de especies sensibles y aumento del tráfico.\n",
+"nivel_1": "Ventajas: turismo local y creación de empleo.\nDesventajas: alteración de especies sensibles y aumento del tráfico.",
 "nivel_2": "Ventajas: generación de trabajo y turismo local.\nDesventajas: incremento del tráfico y alteración de especies sensibles.",
 "nivel_3": "Ventajas: se crearían puestos de trabajo y se favorecería el turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
 "nivel_4": "Ventajas: daría trabajo y ayudaría a atraer visitantes a la zona.\nDesventajas: habría más coches y podría afectar a animales delicados.",
@@ -337,7 +337,7 @@
 "nivel_1": "Condenas recibidas: Despues eran 30 años en la carcel, pero lo condenaron a muerte.\nMotivos de las condenas: Porque escribia cosas del pueblo en la guerra y estaba con la Republica.",
 "nivel_2": "Condenas recibidas: Lo sentenciaron a muerte, pero despues eran 30 años en la prision.\nMotivos de las condenas: Porque estaba con la Republica y escribia textos del pueblo en la guerra.",
 "nivel_3": "Condenas recibidas: Primero le dieron pena de muerte, aunque luego eso paso a ser 30 años en la carcel.\nMotivos de las condenas: Porque estaba con la Republica y escribia cosas del pueblo en la guerra.",
-"nivel_4": "Castigo recibido: al principio le pusieron la pena maxima, aunque mas tarde quedo en treinta años preso.\nRazon: lo acusaban por apoyar a los republicanos y por hacer escritos sobre la gente durante la guerra.",
+"nivel_4": "Condenas recibidas: al principio le pusieron la pena maxima, aunque mas tarde quedo en treinta años preso.\n Motivos de las condenas: lo acusaban por apoyar a los republicanos y por hacer escritos sobre la gente durante la guerra.",
 "nivel_5": "Condenas recibidas: Primero le pusieron una condena muy fuerte y al final termino muchos años preso.\nMotivos de las condenas: Fue por estar del lado de la Republica y por escribir cosas de la gente en la guerra."
 }
 
@@ -349,7 +349,7 @@
 "nivel_1": "Condenas recibidas: Parece que luego se cambió por prisión y primero fue condenado a muerte.\nMotivos de las condenas: Creo que fue por lo que escribió durante la guerra y por sus ideas, aunque no sé todos los detalles.",
 "nivel_2": "Condenas recibidas: Parece que inicialmente fue sentenciado a muerte y luego se modificó por cárcel.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que redactó durante la guerra, aunque no sé todos los detalles.",
 "nivel_3": "Condenas recibidas: Al parecer, al principio lo condenaron a muerte y después esa pena pasó a ser de prisión.\nMotivos de las condenas: Creo que fue por sus ideas y por lo que escribió durante la guerra, aunque no sé todos los detalles.",
-"nivel_4": "Condena: por lo visto, al inicio le dieron la pena de muerte, aunque más tarde quedó sustituida por cárcel.\nRazones: pienso que tuvo que ver con sus ideas y con sus escritos en la guerra, pero no conozco bien todo lo ocurrido.",
+"nivel_4": "Condenas recibidas: por lo visto, al inicio le dieron la pena de muerte, aunque más tarde quedó sustituida por cárcel.\nMotivos de las condenas: pienso que tuvo que ver con sus ideas y con sus escritos en la guerra, pero no conozco bien todo lo ocurrido.",
 "nivel_5": "Condenas recibidas: Creo que primero tuvo una condena muy grave y después acabó en la cárcel.\nMotivos de las condenas: Parece que fue por estar relacionado con la República y por escribir sobre esas ideas durante la guerra."
 }
   }
