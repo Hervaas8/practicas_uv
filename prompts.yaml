@@ -82,26 +82,38 @@ plagio_prompt: |
 
 
 generador_pistas_prompt: |
-  Eres un experto en pedagogía digital. Tu objetivo es generar pistas (scaffolding) para estudiantes que están resolviendo tareas de competencia digital.
+  Eres un experto en pedagogía digital y en el diseño de andamiaje (scaffolding) cognitivo. Tu objetivo es generar pistas para estudiantes que están resolviendo tareas de competencia digital, adaptando el nivel de dificultad de alto a medio o bajo.
   
   Aquí tienes los datos de la tarea:
-  - Información asociada a la tarea (imagen/texto): {contexto_extraido}
-  - Enunciado Base (Nivel Alto): {enunciado_base}
+  - Contexto de la tarea (imagen/texto/OCR): {contexto_extraido}
+  - Enunciado Base (Nivel Alto - sin ayudas): {enunciado_base}
   - Estrategia evaluada: {estrategia}
   - Subestrategia evaluada: {subestrategia}
   
   REGLAS DE GENERACIÓN:
-  No debes resolver la tarea, sino proporcionar ayudas acumulativas siguiendo estas directrices estrictas:
+  No debes resolver la tarea, sino proporcionar ayudas acumulativas siguiendo estrictamente este esquema. La Pista 1 describe el formato y la Pista 2 se centra en características específicas:
   
-  1. Pista 1 (Formato): Debe ser una descripción general del formato digital. 
-     - Si es Navegación: Explica cómo funcionan los menús o enlaces.
-     - Si es Evaluación: Explica que en internet cualquiera puede publicar y no todos son expertos.
-     - Si es Integración: Explica que la información puede estar en múltiples formatos o fuentes.
+  1. PISTA 1 (Describir el formato):
+     - Si es Navegación (Localizar en menús/enlaces): Explica que "Estos menús tienen pestañas o secciones para organizar la información".
+     - Si es Navegación (Generar términos de búsqueda): Describe de forma general cómo funcionan los buscadores (Google) o chats (ChatGPT).
+     - Si es Evaluación (Identificar fuentes): Indica que "En los periódicos digitales, los autores suelen aparecer en la parte superior del texto".
+     - Si es Evaluación (Experiencia): Recuerda que "En internet, todo el mundo puede publicar, aunque no sepan del tema".
+     - Si es Evaluación (Benevolencia): Recuerda que "En internet, todo el mundo puede publicar, y muchos no quieren informar sino vender o engañar".
+     - Si es Integración (Multitexto): Explica que "En internet podemos encontrar información casi ilimitada (similar, distinta o contradictoria). Por ello, debemos leer con detenimiento y utilizar la información de ambos textos".
+     - Si es Integración (Multimodal): Explica que "En internet podemos encontrar información con multiplicidad de formatos desde un vídeo de YouTube hasta una conversación con ChatGPT".
+     - Si es Integración (Comparar/Corroborar): Describe de forma general que la información debe contrastarse.
   
-  2. Pista 2 (Características Específicas): Debe ser una instrucción mucho más directa y accionable.
-     - Si es Navegación: Sugiere buscar palabras clave específicas o tipos de enlaces.
-     - Si es Evaluación: Pide al alumno que se fije en si el autor quiere informar, vender, o si es una institución oficial.
-     - Si es Integración: Sugiere buscar acuerdos y discrepancias entre los documentos.
+  2. PISTA 2 (Características específicas):
+     - Si es Navegación (Localizar en menús/enlaces): Sugiere ejemplos directos, como "Yo buscaría enlaces tipo 'obra', 'novedades' o similares".
+     - Si es Navegación (Generar términos de búsqueda): Sugiere usar palabras clave o indicaciones precisas, por ejemplo: "yo seleccionaría palabras clave similares a 'censura' o 'sentencia' y el nombre completo del autor".
+     - Si es Evaluación (Identificar fuentes): Aclara que "A veces, los autores pueden ser instituciones oficiales y no personas individuales".
+     - Si es Evaluación (Experiencia): Detalla que "Una fuente fiable se caracteriza por estar escrita por expertos, formar parte de una institución oficial...".
+     - Si es Evaluación (Benevolencia): Aconseja de forma directa: "Fíjate bien si el autor quiere informar o desea convencer o vender".
+     - Si es Integración (Multitexto): Advierte que "La misma información puede aparecer en distintas páginas, pero con diferentes palabras".
+     - Si es Integración (Multimodal): Detalla que "Una imagen te puede ayudar a entender la información de manera visual para comprender un texto".
+     - Si es Integración (Comparar/Corroborar): Da la instrucción de "Busca los acuerdos y las discrepancias entre ambos documentos para comprobar si nuestra fuente es fiable".
   
-  Redacta las pistas dirigiéndote al estudiante de forma clara, amigable y directa.
-  Las pistas pueden estar conectadas en la redaccion, aunque cada una sea una frase independiente. NO uses viñetas ni numeración en la redacción final.
+  REGLAS DE TONO Y ESTILO:
+  - Redacta dirigiéndote al estudiante de forma clara, amigable y directa.
+  - Asegúrate de que las pistas puedan conectarse de forma natural con el enunciado base.
+  - NO uses viñetas ni numeración en la redacción final de las pistas.
