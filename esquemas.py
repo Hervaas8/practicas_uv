@@ -39,6 +39,12 @@ class LLMScaffoldingOutput(BaseModel):
     pista_2: str = Field(
         description="Pista de nivel 2 (Características Específicas). Instrucción más directa y accionable."
     )
+    enunciado_nivel_medio: str = Field(
+        description="Enunciado base con la pista 1 integrada."
+    )
+    enunciado_nivel_bajo: str = Field(
+        description="Enunciado base con la pista 1 y la pista 2 integradas."
+    )
 
 # ==========================================
 # --- HISTORIAL Y ESTADO DEL GRAFO ---

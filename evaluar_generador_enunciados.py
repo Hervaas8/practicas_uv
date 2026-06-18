@@ -180,7 +180,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evalúa el generador de enunciados adaptados con varios modelos.")
     parser.add_argument(
         "--input",
-        default="tareas_seleccionadas_pistas_enunciados.json",
+        default="tareas_enunciados.json",
         help="JSON de validación con tareas y salidas esperadas.",
     )
     parser.add_argument(
