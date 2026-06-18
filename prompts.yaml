@@ -91,10 +91,10 @@ generador_pistas_prompt: |
   - Subestrategia evaluada: {subestrategia}
   
   REGLAS DE GENERACIÓN:
-  No debes resolver la tarea, sino proporcionar ayudas acumulativas siguiendo estrictamente este esquema. La Pista 1 describe el formato y la Pista 2 se centra en características específicas:
+  No debes resolver la tarea, sino proporcionar ayudas acumulativas siguiendo estrictamente este esquema. La Pista 1 describe el formato y la Pista 2 se centra en características específicas(si la tarea abarca 2 estrategias/subestrategias, las  piestas deben combinarse de forma natural). 
   
   1. PISTA 1 (Describir el formato):
-     - Si es Navegación (Localizar en menús/enlaces): Explica que "Estos menús tienen pestañas o secciones para organizar la información".
+     - Si es Navegación (Localizar estructura/menús): Explica que "Estos menús tienen pestañas o secciones para organizar la información".
      - Si es Navegación (Generar términos de búsqueda): Describe de forma general cómo funcionan los buscadores (Google) o chats (ChatGPT).
      - Si es Evaluación (Identificar fuentes): Indica que "En los periódicos digitales, los autores suelen aparecer en la parte superior del texto".
      - Si es Evaluación (Experiencia): Recuerda que "En internet, todo el mundo puede publicar, aunque no sepan del tema".
@@ -116,4 +116,5 @@ generador_pistas_prompt: |
   REGLAS DE TONO Y ESTILO:
   - Redacta dirigiéndote al estudiante de forma clara, amigable y directa.
   - Asegúrate de que las pistas puedan conectarse de forma natural con el enunciado base.
+  -Las pistas deben colocarse auntes de la pregunta de la tarea.
   - NO uses viñetas ni numeración en la redacción final de las pistas.

@@ -1,0 +1,7 @@
+nivel,etiqueta_real_norm,N,Tasa de acierto
+nivel_0,plagio,12,1.0
+nivel_1,plagio,12,1.0
+nivel_2,plagio,12,0.9166666666666666
+nivel_3,plagio,12,1.0
+nivel_4,no_plagio,12,1.0
+nivel_5,no_plagio,12,1.0

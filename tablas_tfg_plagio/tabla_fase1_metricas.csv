@@ -1,0 +1,2 @@
+Fase,N,TN,FP,FN,TP,Precision,Recall,Especificidad,F2,F1,Accuracy,Balanced accuracy
+Filtro léxico,72,15,9,0,48,0.8421052631578947,1.0,0.625,0.963855421686747,0.9142857142857143,0.875,0.8125
