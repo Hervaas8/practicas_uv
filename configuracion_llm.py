@@ -49,7 +49,7 @@ def get_llm(tipo_tarea="general", override_model=None):
         api_key=POLIGPT_API_KEY,
         base_url=POLIGPT_API_BASE,
         temperature=temperatura_asignada,
-        max_tokens=8000,
+        max_tokens=5000,
     )
 
 def get_llm_estructurado(tipo_tarea, override_model=None):

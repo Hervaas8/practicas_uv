@@ -1,16 +1,4 @@
-"""Benchmark del módulo generador de pistas y enunciados adaptados.
-
-Lee un JSON de validación con los campos esperados y genera un CSV con las
-salidas de varios modelos.
-
-Uso recomendado:
-    python evaluar_generador_enunciados.py \
-        --input tareas_seleccionadas_pistas_enunciados.json \
-        --output resultados_generador_enunciados.csv
-
-Para probar solo unas pocas tareas:
-    python evaluar_generador_enunciados.py --limite 2
-"""
+"""Benchmark del módulo generador de pistas y enunciados adaptados."""
 
 from __future__ import annotations
 
@@ -54,12 +42,7 @@ COLUMNAS_CSV = [
 
 
 def cargar_tareas_validacion(path: str, limite: Optional[int] = None) -> List[Dict[str, Any]]:
-    """Carga tareas de validación desde JSON.
-
-    Espera una lista de tareas con los campos creados para la validación:
-    `id`, `task_imagen`, `enunciado_nivel_alto`, `enunciado_nivel_medio`,
-    `enunciado_nivel_bajo`, `estrategia`, `subestrategia`, `pista_1`, `pista_2`.
-    """
+    """Carga tareas de validación desde JSON."""
     with open(path, "r", encoding="utf-8-sig") as f:
         data = json.load(f)
 
@@ -77,19 +60,33 @@ def _serializar_imagenes(valor: Any) -> str:
     return str(valor)
 
 
-def _leer_resultados_existentes(path: str) -> Set[Tuple[str, str]]:
-    """Devuelve pares (id, modelo) ya procesados para poder reanudar."""
+def _leer_resultados_existentes_y_limpiar_errores(path: str) -> Set[Tuple[str, str]]:
+    """Devuelve pares (id, modelo) exitosos y limpia las filas con error del CSV."""
     procesados: Set[Tuple[str, str]] = set()
     if not os.path.exists(path):
         return procesados
 
+    filas_validas = []
+    
     with open(path, "r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            task_id = row.get("id")
-            modelo = row.get("modelo_usado")
-            if task_id and modelo:
-                procesados.add((task_id, modelo))
+            task_id = row.get("id", "").strip()
+            modelo = row.get("modelo_usado", "").strip()
+            error = row.get("error", "").strip()
+            
+            # Solo guardamos como procesadas las filas que NO tienen error
+            if not error:
+                if task_id and modelo:
+                    procesados.add((task_id, modelo))
+                filas_validas.append(row)
+
+    # Sobrescribimos el archivo conservando solo las correctas
+    with open(path, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=COLUMNAS_CSV)
+        writer.writeheader()
+        writer.writerows(filas_validas)
+
     return procesados
 
 
@@ -125,12 +122,18 @@ def evaluar_modelos_generador(
     tareas = cargar_tareas_validacion(input_json, limite=limite)
     modelos = list(modelos)
 
+    if reanudar:
+        procesados = _leer_resultados_existentes_y_limpiar_errores(output_csv)
+    else:
+        procesados = set()
+
     existe_csv = os.path.exists(output_csv)
-    procesados = _leer_resultados_existentes(output_csv) if reanudar else set()
 
     with open(output_csv, "a" if reanudar else "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=COLUMNAS_CSV)
-        if not existe_csv or not reanudar:
+        
+        # Solo escribe cabecera si el archivo es nuevo o forzamos no reanudar
+        if not existe_csv or not reanudar or os.path.getsize(output_csv) == 0:
             writer.writeheader()
 
         total = len(tareas) * len(modelos)
@@ -141,8 +144,9 @@ def evaluar_modelos_generador(
 
             for modelo in modelos:
                 contador += 1
+                
                 if reanudar and (task_id, modelo) in procesados:
-                    print(f"[{contador}/{total}] Saltando {task_id} con {modelo}: ya existe en CSV.")
+                    print(f"[{contador}/{total}] Saltando {task_id} con {modelo}: ya procesado correctamente.")
                     continue
 
                 print(f"[{contador}/{total}] Generando {task_id} con {modelo}...")
@@ -160,7 +164,7 @@ def evaluar_modelos_generador(
                             "error": "",
                         }
                     )
-                except Exception as exc:  # noqa: BLE001 - interesa registrar cualquier fallo del modelo
+                except Exception as exc: 
                     fila["error"] = str(exc)
                     print(f"ERROR en {task_id} con {modelo}: {exc}")
 
@@ -177,33 +181,12 @@ def _parse_modelos(modelos_arg: Optional[str]) -> List[str]:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Evalúa el generador de enunciados adaptados con varios modelos.")
-    parser.add_argument(
-        "--input",
-        default="tareas_enunciados.json",
-        help="JSON de validación con tareas y salidas esperadas.",
-    )
-    parser.add_argument(
-        "--output",
-        default="resultados_generador_enunciados.csv",
-        help="CSV donde se guardarán los resultados.",
-    )
-    parser.add_argument(
-        "--modelos",
-        default=None,
-        help="Lista de modelos separados por coma. Si se omite, usa MODELOS_A_EVALUAR.",
-    )
-    parser.add_argument(
-        "--limite",
-        type=int,
-        default=None,
-        help="Número máximo de tareas a evaluar. Útil para pruebas rápidas.",
-    )
-    parser.add_argument(
-        "--no-reanudar",
-        action="store_true",
-        help="Sobrescribe el CSV en lugar de continuar desde resultados existentes.",
-    )
+    parser = argparse.ArgumentParser(description="Evalúa el generador de enunciados adaptados.")
+    parser.add_argument("--input", default="tareas_enunciados.json", help="JSON de validación.")
+    parser.add_argument("--output", default="resultados.csv", help="CSV de salida.")
+    parser.add_argument("--modelos", default=None, help="Modelos separados por coma.")
+    parser.add_argument("--limite", type=int, default=None, help="Límite de tareas.")
+    parser.add_argument("--no-reanudar", action="store_true", help="Sobrescribe el CSV.")
 
     args = parser.parse_args()
 

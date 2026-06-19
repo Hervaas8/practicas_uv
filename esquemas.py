@@ -46,6 +46,7 @@ class LLMScaffoldingOutput(BaseModel):
         description="Enunciado base con la pista 1 y la pista 2 integradas."
     )
 
+
 # ==========================================
 # --- HISTORIAL Y ESTADO DEL GRAFO ---
 # ==========================================
