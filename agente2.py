@@ -6,10 +6,26 @@ from langgraph.checkpoint.memory import MemorySaver
 from esquemas import StudentGraphState, TaskEvaluationHistory
 from motor_evaluacion import evaluate_task
 
-def get_resolved_prompt(prompt_data, level_val):
+def get_resolved_prompt(task_data: dict, competency_levels: dict) -> str:
+    """
+    Resuelve el enunciado basándose en el nivel del alumno para esa estrategia.
+    Si la estrategia es 'contenido' (o tiene la flag contenido=True), fuerza siempre el nivel medio.
+    """
+    prompt_data = task_data.get("task_prompt", "")
+    strat = task_data.get("strategy", "general")
+    is_contenido = task_data.get("contenido", False)
+    
+    # Condición para forzar el nivel medio si es de contenido
+    if strat == "contenido" or is_contenido:
+        level_val = "nivel_2"
+    else:
+        # Obtenemos el nivel del alumno en esta estrategia concreta (por defecto nivel_1)
+        level_val = competency_levels.get(strat, "nivel_1")
+        
     if isinstance(prompt_data, dict):
         nivel_map = {"nivel_1": "nivel_bajo", "nivel_2": "nivel_medio", "nivel_3": "nivel_alto"}
         return prompt_data.get(nivel_map.get(level_val, "nivel_bajo"), str(prompt_data))
+    
     return str(prompt_data)
 
 def load_test_inicial():
@@ -18,7 +34,9 @@ def load_test_inicial():
             raw_tasks = json.load(f)
         adapted_tasks = []
         for t in raw_tasks:
-            prompt_str = get_resolved_prompt(t.get("task_prompt"), "nivel_1")
+            # Le pasamos la tarea completa y un diccionario de niveles vacío. 
+            # Automáticamente asignará nivel_2 si es contenido, o nivel_1 en el resto.
+            prompt_str = get_resolved_prompt(t, {})
             adapted_tasks.append({
                 "task_id": t.get("id"),
                 "task_prompt": prompt_str,
@@ -102,9 +120,8 @@ def node_load_curriculum(state: StudentGraphState): return {}
 def node_select_task(state: StudentGraphState):
     if state.remaining_tasks:
         next_task = state.remaining_tasks[0]
-        strat = next_task.get("strategy", "general")
-        level_val = state.competency_levels.get(strat, "nivel_1")
-        resolved_prompt = get_resolved_prompt(next_task.get("task_prompt", ""), level_val)
+        # Delegamos toda la lógica de selección de nivel a la nueva función
+        resolved_prompt = get_resolved_prompt(next_task, state.competency_levels)
         return {"current_task": next_task, "current_task_prompt": resolved_prompt}
     
     if state.test_mode:
@@ -112,7 +129,9 @@ def node_select_task(state: StudentGraphState):
         main_tasks = load_curriculum(state.current_session or "sesion1")
         msg = "Test inicial completado. Hemos adaptado el curso a tu nivel."
         first_task = main_tasks[0] if main_tasks else None
-        first_prompt = get_resolved_prompt(first_task.get("task_prompt", ""), new_levels.get(first_task.get("strategy", "general"), "nivel_1")) if first_task else ""
+        
+        # Igual aquí, utilizamos la función actualizada
+        first_prompt = get_resolved_prompt(first_task, new_levels) if first_task else ""
 
         return {"test_mode": False, "competency_levels": new_levels, "remaining_tasks": main_tasks, "total_tasks": len(main_tasks), "current_task": first_task, "current_task_prompt": first_prompt, "last_feedback_message": msg}
 
