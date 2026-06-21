@@ -10,6 +10,7 @@ from typing import Dict, Any
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from sistema.config import RESULTS_DIR, resolve_project_path
 
 # --- 1. CONFIGURACIÓN API ---
 POLIGPT_API_BASE = "https://api.poligpt.upv.es"
@@ -83,8 +84,15 @@ def get_juez_llm():
     )
     return llm.with_structured_output(EvaluacionJuez)
 
-def evaluar_con_juez(input_csv="resultados_similitud.csv", output_csv="resultados_finales_v2.csv"):
-    if not os.path.exists(input_csv):
+
+def evaluar_con_juez(
+    input_csv=RESULTS_DIR / "resultados_similitud.csv",
+    output_csv=RESULTS_DIR / "resultados_finales_v2.csv"
+):
+    input_csv = resolve_project_path(input_csv)
+    output_csv = resolve_project_path(output_csv)
+
+    if not input_csv.exists():
         print(f"ERROR: No se encuentra {input_csv}.")
         return
 
@@ -175,4 +183,4 @@ def evaluar_con_juez(input_csv="resultados_similitud.csv", output_csv="resultado
     print(f"\n¡Re-Evaluación v2 completada! Guardado en: {output_csv}")
 
 if __name__ == "__main__":
-    evaluar_con_juez("resultados_similitud.csv", "resultados_finales_v2.csv")
+    evaluar_con_juez()

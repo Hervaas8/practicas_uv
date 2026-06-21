@@ -12,19 +12,17 @@ import random
 import os
 import time  # <-- AÑADIDO: Módulo para medir el tiempo
 from collections import defaultdict
-from detector_plagio import (
+from sistema.modulos.detector_plagio import (
     limpiar_texto,
     calcular_trigramas,
     calcular_levenshtein_palabras,
     verificar_plagio_llm,
 )
 
-# ==========================================
-# CONFIGURACIÓN
-# ==========================================
+from sistema.config import JSON_DIR, RESULTS_DIR
 
-ARCHIVO_VARIANTES = "respuestas_plagio.json"  # Tu archivo de entrada
-ARCHIVO_SALIDA = "resultados_comparativa_llm.csv"  # Tu archivo de salida
+ARCHIVO_VARIANTES = JSON_DIR / "respuestas_plagio.json"
+ARCHIVO_SALIDA = RESULTS_DIR / "resultados_comparativa_llm.csv"
 
 UMBRAL = 0.25          # Umbral óptimo de la Fase 1
 MIN_PALABRAS = 15

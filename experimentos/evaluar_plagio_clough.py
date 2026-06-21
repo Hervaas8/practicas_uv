@@ -9,7 +9,7 @@ donde cada fila contiene los resultados de TODOS los modelos evaluados.
 import csv
 import time
 from pathlib import Path
-from detector_plagio import (
+from sistema.modulos.detector_plagio import (
     limpiar_texto,
     calcular_trigramas,
     calcular_levenshtein_palabras,
@@ -20,8 +20,10 @@ from detector_plagio import (
 # CONFIGURACIÓN
 # ==========================================
 
-CORPUS_DIR = "./data/clough"
-OUTPUT_FILE = "resultados_clough_ancho.csv"
+from sistema.config import DATA_DIR, RESULTS_DIR
+
+CORPUS_DIR = DATA_DIR / "clough"
+OUTPUT_FILE = RESULTS_DIR / "resultados_clough_ancho.csv"
 
 UMBRAL = 0.25
 MIN_PALABRAS = 15

@@ -9,6 +9,7 @@ import math
 import time
 from typing import List, Dict, Tuple
 from langchain_openai import OpenAIEmbeddings
+from sistema.config import RESULTS_DIR, resolve_project_path
 
 # --- CONFIGURACIÓN DE LA API ---
 POLIGPT_API_BASE = "https://api.poligpt.upv.es"
@@ -57,7 +58,12 @@ def similitud_coseno(vec1: List[float], vec2: List[float]) -> float:
         
     return dot_product / (norm_a * norm_b)
 
-def evaluar_similitud_csv(input_csv="resultados.csv", output_csv="resultados_similitud.csv"):
+def evaluar_similitud_csv(
+    input_csv=RESULTS_DIR / "resultados_generador_enunciados.csv",
+    output_csv=RESULTS_DIR / "resultados_similitud.csv"
+):
+    input_csv = resolve_project_path(input_csv)
+    output_csv = resolve_project_path(output_csv)
     embedder = obtener_modelo_embeddings()
     filas = []
     
@@ -127,4 +133,4 @@ def evaluar_similitud_csv(input_csv="resultados.csv", output_csv="resultados_sim
     print(f"\n¡Evaluación semántica finalizada! Resultados guardados en {output_csv}")
 
 if __name__ == "__main__":
-    evaluar_similitud_csv(input_csv="resultados_generador_enunciados.csv", output_csv="resultados_similitud.csv")
+    evaluar_similitud_csv()

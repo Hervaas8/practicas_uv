@@ -8,8 +8,9 @@ import json
 import os
 from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 
-from generador_enunciados import generar_enunciados_adaptados
+from sistema.modulos.generador_enunciados import generar_enunciados_adaptados
 
+from sistema.config import JSON_DIR, RESULTS_DIR, resolve_project_path
 
 MODELOS_A_EVALUAR = [
     "deepseek-r1:32b",
@@ -43,6 +44,7 @@ COLUMNAS_CSV = [
 
 def cargar_tareas_validacion(path: str, limite: Optional[int] = None) -> List[Dict[str, Any]]:
     """Carga tareas de validación desde JSON."""
+    path = resolve_project_path(path)
     with open(path, "r", encoding="utf-8-sig") as f:
         data = json.load(f)
 
@@ -182,8 +184,17 @@ def _parse_modelos(modelos_arg: Optional[str]) -> List[str]:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evalúa el generador de enunciados adaptados.")
-    parser.add_argument("--input", default="tareas_enunciados.json", help="JSON de validación.")
-    parser.add_argument("--output", default="resultados.csv", help="CSV de salida.")
+    parser.add_argument(
+    "--input",
+    default=str(JSON_DIR / "tareas_enunciados.json"),
+    help="JSON de validación."
+)
+
+    parser.add_argument(
+    "--output",
+    default=str(RESULTS_DIR / "resultados_generador_enunciados.csv"),
+    help="CSV de salida."
+)
     parser.add_argument("--modelos", default=None, help="Modelos separados por coma.")
     parser.add_argument("--limite", type=int, default=None, help="Límite de tareas.")
     parser.add_argument("--no-reanudar", action="store_true", help="Sobrescribe el CSV.")

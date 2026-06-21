@@ -2,11 +2,12 @@ import json
 import time
 import os
 import pandas as pd
-from motor_evaluacion import evaluate_task
+from sistema.modulos.motor_evaluacion import evaluate_task
 
-# 1. Parámetros de configuración
-ARCHIVO_JSON = "evaluacion_1.json" 
-ARCHIVO_CSV_SALIDA = "resultados_benchmark.csv"
+from sistema.config import JSON_DIR, RESULTS_DIR
+
+ARCHIVO_JSON = JSON_DIR / "evaluacion_1.json"
+ARCHIVO_CSV_SALIDA = RESULTS_DIR / "resultados_benchmark.csv"
 
 # Modelos disponibles en la UPV que vamos a comparar
 MODELOS_A_EVALUAR = [
