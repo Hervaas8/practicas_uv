@@ -21,18 +21,21 @@ from pydantic import ValidationError
 from langchain_core.messages import HumanMessage
 
 # Importamos el esquema centralizado y la configuración de LLM
-from esquemas import LLMScaffoldingOutput
-from configuracion_llm import get_llm, is_vision_model
+from sistema.utils.esquemas import LLMScaffoldingOutput
+from sistema.utils.configuracion_llm import get_llm, is_vision_model
+from sistema.config import PROMPTS_PATH, resolve_project_path
+
+
 
 # Importación de utilidades OCR
 try:
-    from utils_easy import extract_with_llm 
+    from sistema.utils.utils_easy import extract_text_with_llm 
 except ImportError:
-    def extract_with_llm(path): return "[ERROR: Módulo OCR no encontrado]"
+    def extract_text_with_llm(path): return "[ERROR: Módulo OCR no encontrado]"
 
 # Carga del prompt desde YAML
 try:
-    with open("prompts.yaml", "r", encoding="utf-8-sig") as f:
+    with open(PROMPTS_PATH, "r", encoding="utf-8-sig") as f:
         prompts = yaml.safe_load(f)
     # Utilizamos el prompt de generador de pistas
     PROMPT_GENERADOR_ENUNCIADOS = prompts.get("generador_pistas_prompt", "")
@@ -44,7 +47,9 @@ except Exception as e:
 
 def encode_image(image_path, max_size=(800, 800)):
     """Redimensiona, comprime a JPEG y codifica una imagen a Base64 para no saturar los tokens."""
-    if not os.path.exists(image_path):
+    image_path = resolve_project_path(image_path)
+
+    if not image_path.exists():
         return None
     try:
         with Image.open(image_path) as img:
@@ -188,7 +193,7 @@ def generar_enunciados_adaptados(
         partes_ocr = []
         for img_path in rutas_imagenes:
             if img_path: 
-                partes_ocr.append(extract_with_llm(img_path))
+                partes_ocr.append(extract_text_with_llm(img_path))
         texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES MEDIANTE OCR]:\n" + "\n".join(filter(None, partes_ocr))
 
     # 3. Construir contexto y prompt final
@@ -284,8 +289,9 @@ if __name__ == "__main__":
     parser.add_argument("input_json", help="Ruta del JSON con tareas.")
     parser.add_argument("modelo", nargs="?", default="poligpt", help="Modelo a utilizar.")
     args = parser.parse_args()
+    input_path = resolve_project_path(args.input_json)
 
-    with open(args.input_json, "r", encoding="utf-8-sig") as f:
+    with open(input_path, "r", encoding="utf-8-sig") as f:
         tareas = json.load(f)
 
     if not isinstance(tareas, list) or not tareas:

@@ -2,48 +2,48 @@
   {
     "id": "tarea_01",
     "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n1. Ve al nuevo foro y lee el mensaje de Car22. ¿Quién ha sido el último en responder?\na. Andrés\nb. Car22\nc. Pat00\nd. Virdo",
-    "task_image": ["./data/img_pre/foro_arbol.png"],
+    "task_image": ["data/img_pre/foro_arbol.png"],
     "strategy": "navegar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_02",
     "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n2. ¿Consideras que Andrés y Virdo están de acuerdo en la solución al problema de Car22?\na. Sí, porque ambos están de acuerdo en que el árbol de Navidad es demasiado débil para poder replantarlo.\nb. No, porque uno le aconseja que lo replante, y el otro que no lo haga.\nc. Sí, porque ambos le recomiendan que replante el árbol de Navidad y les parece una opción muy ecológica.\nd. No, porque mientras un participante le aconseja regalar el árbol de Navidad, otro le aconseja que lo use como abono.",
-    "task_image": ["./data/img_pre/foro_arbol.png"],
+    "task_image": ["data/img_pre/foro_arbol.png"],
     "strategy": "integrar",
     "correct_answer": "b"
   },
   {
     "id": "tarea_03",
     "task_prompt": "A continuación leerás una nueva discusión de un foro, titulada REPLANTAR ARBOL.\n\n3.¿Qué recomendación crees que debería seguir Car22?\na. La de Pat00, porque le anima con su mensaje.\nb. La de Virdo, porque sabe mucho de árboles de Navidad.\nc. La de Andrés, porque es un experto en el tema.\nd. Las tres son buenas recomendaciones.",
-    "task_image": ["./data/img_pre/foro_arbol.png"],
+    "task_image": ["data/img_pre/foro_arbol.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_04",
     "task_prompt": "Quieres abrirte una cuenta en una nueva red social llamada Lingo. Has escuchado que tiene mejores prestaciones que Instagram pero que podría tener problemas de seguridad. Has hecho la consulta en Internet y has obtenido los siguientes 4 resultados.\n\n4. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema?\na. Ventajas...\nb. Diviértete...\nc. Tutorial.\nd. Beneficios...",
-    "task_image": ["./data/img_pre/google_1.png"],
+    "task_image": ["data/img_pre/google_1.png"],
     "strategy": "integrar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_05",
     "task_prompt": "Quieres abrirte una cuenta en una nueva red social llamada Lingo. Has escuchado que tiene mejores prestaciones que Instagram pero que podría tener problemas de seguridad. Has hecho la consulta en Internet y has obtenido los siguientes 4 resultados.\n\n5. ¿El/la autor/a de qué página crees que es más experto/a en el tema? \na. Ventajas… porque sale primero en la lista.\nb. Diviértete… porque escribe bien del tema.\nc. Tutorial...porque tiene un blog de tecnología.\nd. Beneficios...porque viene de la universidad.",
-    "task_image": ["./data/img_pre/google_1.png"],
+    "task_image": ["data/img_pre/google_1.png"],
     "strategy": "integrar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_06",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n6. Debes acceder a la sección '2.2. Las Revueltas Populares' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿Qué nueva fuerza armada de carácter revolucionario se organizó en París tras la toma de La Bastilla? \na. El ejército real de Versalles.\nb.La Guardia Nacional.\nc. Los Estados Generales.\nd. El ayuntamiento popular",
-    "task_image": ["./data/img_pre/wiki_francesa.png"],
+    "task_image": ["data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "a",
     "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/wiki_francesa.png",
+        "image": "data/img_pre/wiki_francesa.png",
         "links": [
           {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
           {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
@@ -52,19 +52,19 @@
         ]
       },
       "revueltas": {
-        "image": "./data/img_pre/revueltas.png",
+        "image": "data/img_pre/revueltas.png",
         "links": []
       },
       "huida": {
-        "image": "./data/img_pre/huida.png",
+        "image": "data/img_pre/huida.png",
         "links": []
       },
       "iglesia": {
-        "image": "./data/img_pre/iglesia.png",
+        "image": "data/img_pre/iglesia.png",
         "links": []
       },
       "derechos": {
-        "image": "./data/img_pre/derechos.png",
+        "image": "data/img_pre/derechos.png",
         "links": []
       }
     }
@@ -72,13 +72,13 @@
   {
     "id": "tarea_07",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n7.Debes acceder a la sección '3.1. La Declaración de los Derechos del Hombre' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿Cuál de las siguientes afirmaciones define el concepto de soberanía nacional recogido en la Declaración de agosto de 1789?\na. El poder reside en el conjunto de los ciudadanos.\nb. La ley garantiza la libertad de expresión religiosa.\nc.El monarca mantiene el control de las instituciones.\nd. Todos los franceses tienen derecho a las propiedades.",
-    "task_image": ["./data/img_pre/wiki_francesa.png"],
+    "task_image": ["data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "d",
         "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/wiki_francesa.png",
+        "image": "data/img_pre/wiki_francesa.png",
         "links": [
           {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
           {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
@@ -87,19 +87,19 @@
         ]
       },
       "revueltas": {
-        "image": "./data/img_pre/revueltas.png",
+        "image": "data/img_pre/revueltas.png",
         "links": []
       },
       "huida": {
-        "image": "./data/img_pre/huida.png",
+        "image": "data/img_pre/huida.png",
         "links": []
       },
       "iglesia": {
-        "image": "./data/img_pre/iglesia.png",
+        "image": "data/img_pre/iglesia.png",
         "links": []
       },
       "derechos": {
-        "image": "./data/img_pre/derechos.png",
+        "image": "data/img_pre/derechos.png",
         "links": []
       }
     }
@@ -107,13 +107,13 @@
   {
     "id": "tarea_08",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n8.Debes acceder a la sección '3.2. Pérdida de poder de la iglesia' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta:\n¿Por qué una parte importante de los eclesiásticos franceses decidió liderar revueltas contrarrevolucionarias en algunas regiones? Porque...\na. No estaban de acuerdo con pagar las deudas del Rey.\nb. Rechazaban someter la Iglesia al control del nuevo Estado.\nc. Exigían que la Guardia Nacional protegiera sus monasterios.\nd. Querían obligar a los ciudadanos a cumplir los sacramentos.",
-    "task_image": ["./data/img_pre/wiki_francesa.png"],
+    "task_image": ["data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "d",
         "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/wiki_francesa.png",
+        "image": "data/img_pre/wiki_francesa.png",
         "links": [
           {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
           {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
@@ -122,19 +122,19 @@
         ]
       },
       "revueltas": {
-        "image": "./data/img_pre/revueltas.png",
+        "image": "data/img_pre/revueltas.png",
         "links": []
       },
       "huida": {
-        "image": "./data/img_pre/huida.png",
+        "image": "data/img_pre/huida.png",
         "links": []
       },
       "iglesia": {
-        "image": "./data/img_pre/iglesia.png",
+        "image": "data/img_pre/iglesia.png",
         "links": []
       },
       "derechos": {
-        "image": "./data/img_pre/derechos.png",
+        "image": "data/img_pre/derechos.png",
         "links": []
       }
     }
@@ -142,13 +142,13 @@
   {
     "id": "tarea_09",
     "task_prompt": "A continuación visitarás la página web de Wikipedia sobre la Revolución Francesa para responder a unas preguntas. Recuerda que debes navegar por los enlaces, las palabras en azul, para responder a las preguntas.\n\n9. Debes acceder a la sección '3.3. Huida del Rey' de la página web principal 'La Revolución Francesa', y contestar a la siguiente pregunta: ¿En qué localidad francesa fue reconocido y detenido el monarca en su intento de fuga?\na. La ciudad de Varennes.\nb. El palacio de Versalles.\nc. La capital de París.\nd. La provincia de Lyon.",
-    "task_image": ["./data/img_pre/wiki_francesa.png"],
+    "task_image": ["data/img_pre/wiki_francesa.png"],
     "strategy": "navegar",
     "correct_answer": "d",
         "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/wiki_francesa.png",
+        "image": "data/img_pre/wiki_francesa.png",
         "links": [
           {"x": 375, "y": 675, "w": 385, "h": 53, "target": "revueltas"},
           {"x": 392, "y": 839, "w": 209, "h": 34, "target": "huida"},
@@ -157,19 +157,19 @@
         ]
       },
       "revueltas": {
-        "image": "./data/img_pre/revueltas.png",
+        "image": "data/img_pre/revueltas.png",
         "links": []
       },
       "huida": {
-        "image": "./data/img_pre/huida.png",
+        "image": "data/img_pre/huida.png",
         "links": []
       },
       "iglesia": {
-        "image": "./data/img_pre/iglesia.png",
+        "image": "data/img_pre/iglesia.png",
         "links": []
       },
       "derechos": {
-        "image": "./data/img_pre/derechos.png",
+        "image": "data/img_pre/derechos.png",
         "links": []
       }
     }
@@ -177,34 +177,34 @@
   {
     "id": "tarea_10",
     "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n10. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema? \na. Morenos...\nb. Consejos...\nc. Uso...\nd. Ponte...",
-    "task_image": ["./data/img_pre/web_rayos.png"],
+    "task_image": ["data/img_pre/web_rayos.png"],
     "strategy": "integrar",
     "correct_answer": "c"
   },
   {
     "id": "tarea_11",
     "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n11. ¿Cuál de los/las autores/as que aparecen en los resultados es más experto/a en el tema?  \na. La experta Isabel Belmonte\nb. El Dr. García\nc. El autor del blog Mis trucos…\nd. El peluquero R. Garrido",
-    "task_image": ["./data/img_pre/web_rayos.png"],
+    "task_image": ["data/img_pre/web_rayos.png"],
     "strategy": "integrar",
     "correct_answer": "b"
   },
   {
     "id": "tarea_12",
     "task_prompt": "Se acerca el verano y quieres broncearte. Has escuchado que las cabinas de rayos uva son una opción rápida para broncearte, pero que podrían producir problemas de salud. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n12.  ¿Cuál de las páginas crees que quiere venderte un producto? \na. Morenos...\nb. Consejos...\nc. Uso...\nd. Ponte...",
-    "task_image": ["./data/img_pre/web_rayos.png"],
+    "task_image": ["data/img_pre/web_rayos.png"],
     "strategy": "integrar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_13",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n13. Te gustaría aprender a cantar, y para ello decides apuntarte a la oferta formativa del Servicio de Juventud. Busca la dirección del centro donde aprenderás a cantar. Se encuentra en la calle…\na. Padre Vitoria\nb. Central\nc. Donoso Cortés\nd.Goya",
-    "task_image": ["./data/img_pre/main.png"],
+    "task_image": ["data/img_pre/main.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -229,7 +229,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -237,290 +237,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -528,13 +528,13 @@
   {
     "id": "tarea_14",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n¿Qué talla española de sujetador utilizará una chica cuyo contorno son 104 cm y la medida de bajo pecho es 82 cm?\na. La 90 C\nb.La 100 B\nc.La 95 D\nd. La 115 A",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -559,7 +559,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -567,290 +567,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -858,13 +858,13 @@
   {
     "id": "tarea_15",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n15.Kobe Bryant es uno de los mejores baloncestistas de la NBA. Averigua qué hacía cuando fue seleccionado para la NBA:\na. Estudiaba en el Instituto.\nb. Estaba sentado junto a su familia y amigos viendo un partido.\nc. Estudiaba en un centro de alto rendimiento para deportistas.\nd. Jugaba en un equipo universitario.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -889,7 +889,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -897,290 +897,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -1188,13 +1188,13 @@
   {
     "id": "tarea_16",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n16.¿Cuál es el videojuego más vendido para la videoconsola NDS?\na. Pokemon Platinum.\nb. Pokemon Oro\nc. Red Dead Redemption.\nd. Pokemon Plata.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -1219,7 +1219,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -1227,290 +1227,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -1518,13 +1518,13 @@
   {
     "id": "tarea_17",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n17.De todos los talleres de fotografía que se anuncian. ¿Cuál ofrece más horas de clase?\na. El de Foto Aula.\nb. El de Photolocus.\nc. El de Escuela Cinderela\nd. El de la Asociación Culturarte.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -1549,7 +1549,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -1557,290 +1557,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -1848,13 +1848,13 @@
   {
     "id": "tarea_18",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\nAlgunas compañías envían SMS de descargas multimedia para captar clientes y cobrar esas descargas a precios muy altos. Estos mensajes suelen ser...\na.De numeros muy cortos o muy largos. \nb. Mensajes muy largos o muy cortos.\nc. Siempre de compañías telefónicas.\nd. Mensajes 100% seguros.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -1879,7 +1879,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -1887,290 +1887,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -2178,13 +2178,13 @@
   {
     "id": "tarea_18",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n19.Siempre que uses materiales reciclados para hacer manualidades, se recomienda que:\na. Evites usar materiales peligrosos, como botellas de vidrio o latas.\nb. Compres libros de manualidades y reciclaje.\nc. El material esté limpio y seco.\nd. Uses siempre guantes.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -2209,7 +2209,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -2217,290 +2217,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -2508,13 +2508,13 @@
   {
     "id": "tarea_19",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n20.Eres usuario de la Web Joven y quieres conseguir una raqueta de tenis. Para ello visitas la tienda on-line con mejor valoración de los usuarios de la Web Joven. ¿Cuánto te costará que te envíen la raqueta a casa?\na. Nada, es gratis.\nb. Depende del tipo de producto que compre.\nc. 5 € por producto.\nd. 3 € por producto.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -2539,7 +2539,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -2547,290 +2547,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -2838,13 +2838,13 @@
   {
     "id": "tarea_20",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n21.Según las recomendaciones de la Web Joven, ¿cuál puede ser la razón por la que el ordenador abra programas por sí solo?\na. El ordenador va demasiado lento.\nb. El ordenador necesita un parche\nc. El ordenador tiene virus\nd. El sistema no se puede analizar.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -2869,7 +2869,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -2877,290 +2877,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -3168,13 +3168,13 @@
   {
     "id": "tarea_21",
     "task_prompt": "A continuación navegarás por una web para jóvenes para responder a unas preguntas. Recuerda que el menú de la izquierda te permite navegar por las distintas secciones, y acceder a información para responder a las preguntas.\n\n22.La Web Joven acaba de publicar un informe sobre el riesgo de extinción de aves y mamíferos. ¿Qué riesgo de extinción existe en Canadá?\na. Riesgo alto.\nb. Riesgo intermedio.\nc. Riesgo bajo.\nd. No hay información de Canadá.",
-    "task_image": ["./data/img_pre/web_j.png"],
+    "task_image": ["data/img_pre/web_j.png"],
     "strategy": "integrar",
     "task_type": "navegacion_test",
     "correct_answer": "c",
     "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/main.png",
+        "image": "data/img_pre/main.png",
         "links": [
           {"x": 37, "y": 97, "w": 124, "h": 28, "target": "mediambiente"},
           {"x": 66, "y": 130, "w": 70, "h": 24, "target": "reciclaje"},
@@ -3199,7 +3199,7 @@
         ]
       },
       "medioambiente": {
-        "image": "./data/img_pre/medioambiente.png",
+        "image": "data/img_pre/medioambiente.png",
         "links": [
           {"x": 512, "y": 172, "w": 80, "h": 25, "target": "reciclaje"},
           {"x": 624, "y": 171, "w": 84, "h": 28, "target": "animales"},
@@ -3207,290 +3207,290 @@
         ]
       },
       "tecnologia": {
-        "image": "./data/img_pre/tecnologia.png",
+        "image": "data/img_pre/tecnologia.png",
         "links": [{"x": 487, "y": 167, "w": 104, "h": 20, "target": "videojuegos"},
       {"x": 878, "y": 170, "w": 70, "h": 17, "target": "moviles"},
     {"x": 438, "y": 192, "w": 110, "h": 23, "target": "ordenadores"}]
       },
       "salud": {
-        "image": "./data/img_pre/salud.png",
+        "image": "data/img_pre/salud.png",
         "links": [{"x": 686, "y": 179, "w": 62, "h": 20, "target": "cuerpo"},
       {"x": 780, "y": 180, "w": 105, "h": 20, "target": "sentimientos"},
     {"x": 422, "y": 201, "w": 85, "h": 17, "target": "adicciones"}]
       },
       "deportes": {
-        "image": "./data/img_pre/deportes.png",
+        "image": "data/img_pre/deportes.png",
         "links": [{"x": 569, "y": 173, "w": 96, "h": 20, "target": "baloncesto"},
       {"x": 681, "y": 173, "w": 58, "h": 28, "target": "futbol"},
     {"x": 432, "y": 197, "w": 231, "h": 24, "target": "material"}]
       },
       "cursos": {
-        "image": "./data/img_pre/cursos.png",
+        "image": "data/img_pre/cursos.png",
         "links": [{"x": 408, "y": 175, "w": 63, "h": 15, "target": "musica"},
       {"x": 480, "y": 175, "w": 56, "h": 21, "target": "danza"},
     {"x": 554, "y": 175, "w": 111, "h": 16, "target": "plastica"}]
       },
       "reciclaje": {
-        "image": "./data/img_pre/reciclaje.png",
+        "image": "data/img_pre/reciclaje.png",
         "links": [{"x": 200, "y": 178, "w": 304, "h": 36, "target": "contenedor"},
       {"x": 205, "y": 218, "w": 224, "h": 27, "target": "manualidades"},
     {"x": 204, "y": 258, "w": 203, "h": 29, "target": "erres"}]
       },
       "animales": {
-        "image": "./data/img_pre/animales.png",
+        "image": "data/img_pre/animales.png",
         "links": [{"x": 197, "y": 180, "w": 309, "h": 26, "target": "lince"},
       {"x": 199, "y": 211, "w": 340, "h": 26, "target": "especies"},
     {"x": 198, "y": 249, "w": 529, "h": 30, "target": "causas"}]
       },
       "plantas": {
-        "image": "./data/img_pre/plantas.png",
+        "image": "data/img_pre/plantas.png",
         "links": [
       {"x": 204, "y": 213, "w": 357, "h": 24, "target": "consumo"},
     {"x": 201, "y": 249, "w": 257, "h": 22, "target": "cambio"}]
       },
       "videojuegos": {
-        "image": "./data/img_pre/videojuegos.png",
+        "image": "data/img_pre/videojuegos.png",
         "links": [{"x": 203, "y": 177, "w": 236, "h": 29, "target": "maniac"},
       {"x": 205, "y": 221, "w": 251, "h": 20, "target": "vendidos"},
     {"x": 206, "y": 255, "w": 152, "h": 27, "target": "estrenos"}]
       },
       "moviles": {
-        "image": "./data/img_pre/moviles.png",
+        "image": "data/img_pre/moviles.png",
         "links": [{"x": 198, "y": 177, "w": 212, "h": 22, "target": "nuevo"},
       {"x": 200, "y": 212, "w": 437, "h": 25, "target": "consejos"},
     {"x": 201, "y": 254, "w": 261, "h": 20, "target": "nacio"}]
       },
       "ordenadores": {
-        "image": "./data/img_pre/ordenadores.png",
+        "image": "data/img_pre/ordenadores.png",
         "links": [{"x": 205, "y": 183, "w": 100, "h": 30, "target": "multimedia"},
       {"x": 209, "y": 223, "w": 215, "h": 24, "target": "problemas"},
     {"x": 208, "y": 263, "w": 173, "h": 22, "target": "informatica"}]
       },
       "cuerpo": {
-        "image": "./data/img_pre/cuerpo.png",
+        "image": "data/img_pre/cuerpo.png",
         "links": [{"x": 210, "y": 176, "w": 206, "h": 26, "target": "calzado"},
       {"x": 208, "y": 213, "w": 141, "h": 22, "target": "acne"},
     {"x": 210, "y": 255, "w": 141, "h": 23, "target": "senos"}]
       },
       "sentimientos": {
-        "image": "./data/img_pre/sentiminetos.png",
+        "image": "data/img_pre/sentiminetos.png",
         "links": [{"x": 204, "y": 176, "w": 251, "h": 25, "target": "examen"},
       {"x": 202, "y": 216, "w": 246, "h": 21, "target": "presion"},
     {"x": 200, "y": 251, "w": 128, "h": 28, "target": "autoestima"}]
       },
       "adicciones": {
-        "image": "./data/img_pre/adicciones.png",
+        "image": "data/img_pre/adicciones.png",
         "links": [{"x": 200, "y": 175, "w": 213, "h": 28, "target": "tabaco"},
       {"x": 206, "y": 215, "w": 95, "h": 27, "target": "botellon"}]
       },
       "baloncesto": {
-        "image": "./data/img_pre/baloncesto.png",
+        "image": "data/img_pre/baloncesto.png",
         "links": [{"x": 192, "y": 182, "w": 337, "h": 28, "target": "altura"},
       {"x": 197, "y": 219, "w": 322, "h": 23, "target": "nba"},
     {"x": 195, "y": 256, "w": 290, "h": 32, "target": "eleccion"}]
       },
       "futbol": {
-        "image": "./data/img_pre/futbol.png",
+        "image": "data/img_pre/futbol.png",
         "links": [{"x": 200, "y": 175, "w": 299, "h": 33, "target": "futbolista"},
       {"x": 204, "y": 220, "w": 234, "h": 25, "target": "cantera"},
     {"x": 200, "y": 257, "w": 283, "h": 23, "target": "femenino"}]
       },
       "material": {
-        "image": "./data/img_pre/material.png",
+        "image": "data/img_pre/material.png",
         "links": [{"x": 190, "y": 171, "w": 179, "h": 24, "target": "aventura"},
       {"x": 193, "y": 207, "w": 175, "h": 28, "target": "compras"},
     {"x": 189, "y": 245, "w": 248, "h": 26, "target": "nike"}]
       },
       "musica": {
-        "image": "./data/img_pre/musica.png",
+        "image": "data/img_pre/musica.png",
         "links": [{"x": 210, "y": 181, "w": 299, "h": 25, "target": "solfeo"},
       {"x": 209, "y": 216, "w": 127, "h": 25, "target": "canto"},
     {"x": 210, "y": 253, "w": 308, "h": 24, "target": "guitarra"}]
       },
       "danza": {
-        "image": "./data/img_pre/danza.png",
+        "image": "data/img_pre/danza.png",
         "links": [{"x": 200, "y": 183, "w": 220, "h": 26, "target": "aprende"},
       {"x": 204, "y": 219, "w": 248, "h": 23, "target": "apuntate"},
     {"x": 204, "y": 257, "w": 351, "h": 22, "target": "baile"}]
       },
       "plastica": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": [{"x": 203, "y": 175, "w": 170, "h": 27, "target": "fotografia"},
       {"x": 202, "y": 218, "w": 135, "h": 21, "target": "grafiti"},
     {"x": 202, "y": 251, "w": 240, "h": 27, "target": "pintura"}]
       },
       "contenedor": {
-        "image": "./data/img_pre/contenedor.png",
+        "image": "data/img_pre/contenedor.png",
         "links": []
       },
       "manualidades": {
-        "image": "./data/img_pre/manualidades.png",
+        "image": "data/img_pre/manualidades.png",
         "links": []
       },
       "erres": {
-        "image": "./data/img_pre/erres.png",
+        "image": "data/img_pre/erres.png",
         "links": []
       },
       "lince": {
-        "image": "./data/img_pre/linces.png",
+        "image": "data/img_pre/linces.png",
         "links": []
       },
       "especies": {
-        "image": "./data/img_pre/planeta.png",
+        "image": "data/img_pre/planeta.png",
         "links": []
       },
       "causa": {
-        "image": "./data/img_pre/causas.png",
+        "image": "data/img_pre/causas.png",
         "links": []
       }
       ,
       "consumo": {
-        "image": "./data/img_pre/consumo.png",
+        "image": "data/img_pre/consumo.png",
         "links": []
       },
       "cambio": {
-        "image": "./data/img_pre/adaptacion.png",
+        "image": "data/img_pre/adaptacion.png",
         "links": []
       },
       "maniac": {
-        "image": "./data/img_pre/maniac.png",
+        "image": "data/img_pre/maniac.png",
         "links": []
       },
       "vendidos": {
-        "image": "./data/img_pre/vendidos.png",
+        "image": "data/img_pre/vendidos.png",
         "links": []
       },
       "estrenos": {
-        "image": "./data/img_pre/estrenos.png",
+        "image": "data/img_pre/estrenos.png",
         "links": []
       },
 
       "nuevo": {
-        "image": "./data/img_pre/nuevo.png",
+        "image": "data/img_pre/nuevo.png",
         "links": []
       },
       "consejos": {
-        "image": "./data/img_pre/seguridad.png",
+        "image": "data/img_pre/seguridad.png",
         "links": []
       },
       "nacio": {
-        "image": "./data/img_pre/nacimiento.png",
+        "image": "data/img_pre/nacimiento.png",
         "links": []
       },
       "multimedia": {
-        "image": "./data/img_pre/multimedia.png",
+        "image": "data/img_pre/multimedia.png",
         "links": []
       },
       "problemas": {
-        "image": "./data/img_pre/problemas.png",
+        "image": "data/img_pre/problemas.png",
         "links": []
       },
       "informatica": {
-        "image": "./data/img_pre/informatica.png",
+        "image": "data/img_pre/informatica.png",
         "links": []
       },
       "calzado": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "acne": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "senos": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "examen": {
-        "image": "./data/img_pre/examen.png",
+        "image": "data/img_pre/examen.png",
         "links": []
       },
       "presion": {
-        "image": "./data/img_pre/grupo.png",
+        "image": "data/img_pre/grupo.png",
         "links": []
       },
       "autoestima": {
-        "image": "./data/img_pre/autoestima.png",
+        "image": "data/img_pre/autoestima.png",
         "links": []
       },
       "tabaco": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "drogas": {
-        "image": "./data/img_pre/plastica.png",
+        "image": "data/img_pre/plastica.png",
         "links": []
       },
       "altura": {
-        "image": "./data/img_pre/altura.png",
+        "image": "data/img_pre/altura.png",
         "links": []
       },
       "nba": {
-        "image": "./data/img_pre/jugadas.png",
+        "image": "data/img_pre/jugadas.png",
         "links": []
       },
       "eleccion": {
-        "image": "./data/img_pre/eleccion.png",
+        "image": "data/img_pre/eleccion.png",
         "links": []
       },
       "futbolista": {
-        "image": "./data/img_pre/consejos.png",
+        "image": "data/img_pre/consejos.png",
         "links": []
       },
       "cantera": {
-        "image": "./data/img_pre/cantera.png",
+        "image": "data/img_pre/cantera.png",
         "links": []
       },
       "femenino": {
-        "image": "./data/img_pre/femenino.png",
+        "image": "data/img_pre/femenino.png",
         "links": []
       },
       "aventura": {
-        "image": "./data/img_pre/aventura.png",
+        "image": "data/img_pre/aventura.png",
         "links": []
       },
       "compras": {
-        "image": "./data/img_pre/compras.png",
+        "image": "data/img_pre/compras.png",
         "links": []
       },
       "nike": {
-        "image": "./data/img_pre/nike.png",
+        "image": "data/img_pre/nike.png",
         "links": []
       },
       "solfeo": {
-        "image": "./data/img_pre/solfeo.png",
+        "image": "data/img_pre/solfeo.png",
         "links": []
       },
       "canto": {
-        "image": "./data/img_pre/canto.png",
+        "image": "data/img_pre/canto.png",
         "links": []
       },
       "guitarra": {
-        "image": "./data/img_pre/guitarra.png",
+        "image": "data/img_pre/guitarra.png",
         "links": []
       },
       "aprende": {
-        "image": "./data/img_pre/aprende.png",
+        "image": "data/img_pre/aprende.png",
         "links": []
       },
       "apuntate": {
-        "image": "./data/img_pre/bailar.png",
+        "image": "data/img_pre/bailar.png",
         "links": []
       },
       "baile": {
-        "image": "./data/img_pre/fundacion_1.png",
+        "image": "data/img_pre/fundacion_1.png",
         "links": []
       },
       "fotografia": {
-        "image": "./data/img_pre/fotografias.png",
+        "image": "data/img_pre/fotografias.png",
         "links": []
       },
       "grafiti": {
-        "image": "./data/img_pre/grafiti.png",
+        "image": "data/img_pre/grafiti.png",
         "links": []
       },
       "pintura": {
-        "image": "./data/img_pre/pintura.png",
+        "image": "data/img_pre/pintura.png",
         "links": []
       }
     }
@@ -3498,21 +3498,21 @@
   {
     "id": "tarea_22",
     "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n23. Solo con la información de los resultados de tu búsqueda, ¿qué página es la mejor para informarte sobre el tema? \na. Los videos...\nb. Concurso...\nc. Problemas...\nd. Peligro...",
-    "task_image": ["./data/img_pre/web_tik.png"],
+    "task_image": ["data/img_pre/web_tik.png"],
     "strategy": "integrar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_23",
     "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n24. ¿El/la autor/a de qué página crees que tiene más experiencia en saber si los vídeos de TikTok pueden ser robados para fines publicitarios? \na. Los videos...porque sale primero en la lista.\nb. Concurso... porque es del Ministerio.\nc. Problemas...porque tiene un blog de tecnología.\nd. Peligro...porque es una asociación que ayuda a los usuarios.",
-    "task_image": ["./data/img_pre/web_tik.png"],
+    "task_image": ["data/img_pre/web_tik.png"],
     "strategy": "integrar",
     "correct_answer": "d"
   },
   {
     "id": "tarea_24",
     "task_prompt": "Has colgado en TikTok todos los vídeos del viaje de fin de curso. Al verlos, un compañero de clase te ha dicho que elimines sus vídeos porque cualquier vídeo colgado en TikTok puede ser robado para fines publicitarios. Has hecho la consulta en Internet y has obtenido 4 resultados.\n\n25.  ¿Cuál de las páginas crees que quiere venderte un producto? \na. Los videos...\nb. Concurso...\nc. Problemas...\nd. Peligro...",
-    "task_image": ["./data/img_pre/web_tik.png"],
+    "task_image": ["data/img_pre/web_tik.png"],
     "strategy": "integrar",
     "correct_answer": "a"
   },
@@ -3526,13 +3526,13 @@
   {
     "id": "tarea_26",
     "task_prompt": "28.   Lee las webs “Las energías renovables ayudan...” y “Es demasiado tarde para luchar…” y a continuación contesta a la siguiente pregunta. ¿Cuál de las siguientes afirmaciones recoge la información esencial de las dos páginas? Las energías renovables…\na. reducen la emisión de gases perjudiciales, pero tienen un coste demasiado elevado.\nb.están impulsando la economía mundial, y pueden salvar al planeta según la Hipótesis Gaia.\nc. aumentan  en el uso de petróleo y de gas, pero solo en zonas desérticas como el Sahara.\nd.no representan una solución al cambio climático, y además contribuyen al calentamiento.",
-    "task_image": ["./data/img_pre/web_cambio.jpg"],
+    "task_image": ["data/img_pre/web_cambio.jpg"],
     "strategy": "integrar",
     "correct_answer": "a",
     "task_type": "navegacion_test",
       "pantallas": {
       "inicio": {
-        "image": "./data/img_pre/web_cambio.jpg",
+        "image": "data/img_pre/web_cambio.jpg",
         "links": [
           {"x": 44, "y": 234, "w": 617, "h": 40, "target": "periodico"},
           {"x": 42, "y": 401, "w": 637, "h": 41, "target": "blog"},
@@ -3542,23 +3542,23 @@
         ]
       },
       "periodico": {
-        "image": "./data/img_pre/periodico.png",
+        "image": "data/img_pre/periodico.png",
         "links": []
       },
       "blog": {
-        "image": "./data/img_pre/blog.png",
+        "image": "data/img_pre/blog.png",
         "links": []
       },
       "uv": {
-        "image": "./data/img_pre/uv.png",
+        "image": "data/img_pre/uv.png",
         "links": []
       },
       "ciencia": {
-        "image": "./data/img_pre/ciencia.png",
+        "image": "data/img_pre/ciencia.png",
         "links": []
       },
       "iberdrola": {
-        "image": "./data/img_pre/iberdrola.png",
+        "image": "data/img_pre/iberdrola.png",
         "links": []
       }
     }

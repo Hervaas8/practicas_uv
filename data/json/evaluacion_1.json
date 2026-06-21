@@ -8,7 +8,7 @@
         "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
       }},
     "task_image": [
-      "./data/img/sierra_calderona.png"
+      "data/img/sierra_calderona.png"
     ],
     "respuestas": [
       {
@@ -52,7 +52,7 @@
       "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
-      "./data/img/actualidad.png"
+      "data/img/actualidad.png"
     ],
     "respuestas": [
       {
@@ -96,7 +96,7 @@
       "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
-      "./data/img/naquera.png"
+      "data/img/naquera.png"
     ],
     "respuestas": [
       {
@@ -137,8 +137,8 @@
         "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
       },
     "task_image": [
-      "./data/img/actualidad.png",
-      "./data/img/naquera.png"
+      "data/img/actualidad.png",
+      "data/img/naquera.png"
     ],
     "respuestas": [
       {
@@ -181,8 +181,8 @@
       }
     },
     "task_image": [
-      "./data/img/actualidad.png",
-      "./data/img/naquera.png"
+      "data/img/actualidad.png",
+      "data/img/naquera.png"
     ],
     "respuestas": [
       {
@@ -225,8 +225,8 @@
       }
     },
     "task_image": [
-      "./data/img/mobil1.png",
-      "./data/img/mobil2.png"
+      "data/img/mobil1.png",
+      "data/img/mobil2.png"
     ],
     "respuestas": [
       {
@@ -269,8 +269,8 @@
       }
     },
     "task_image": [
-      "./data/img/mobil2.png",
-      "./data/img/mobil3.png"
+      "data/img/mobil2.png",
+      "data/img/mobil3.png"
     ],
     "respuestas": [
       {
@@ -312,12 +312,12 @@
         "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
       }},
     "task_image": [
-      "./data/img/invertebrados.png",
-      "./data/img/vertebrados.png",
-      "./data/img/peces.png",
-      "./data/img/reptiles.png",
-      "./data/img/aves.png",
-      "./data/img/mamiferos.png"
+      "data/img/invertebrados.png",
+      "data/img/vertebrados.png",
+      "data/img/peces.png",
+      "data/img/reptiles.png",
+      "data/img/aves.png",
+      "data/img/mamiferos.png"
     ],
     "respuestas": [
       {
@@ -364,7 +364,7 @@
       }
     },
     "task_image": [
-      "./data/img/web.png"
+      "data/img/web.png"
     ],
     "respuestas": [
       {
@@ -411,11 +411,11 @@
       }
     },
     "task_image": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png"
     ],
     "respuestas": [
       {
@@ -462,11 +462,11 @@
       }
     },
     "task_image": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png"
     ],
     "respuestas": [
       {
@@ -509,7 +509,7 @@
       }
     },
     "task_image": [
-      "./data/img/poema3.png"
+      "data/img/poema3.png"
     ],
     "respuestas": [
       {
@@ -556,12 +556,12 @@
       }
     },
     "task_image": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png",
-      "./data/img/expedientes2.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png",
+      "data/img/expedientes2.png"
     ],
     "respuestas": [
       {

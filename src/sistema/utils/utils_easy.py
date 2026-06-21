@@ -5,6 +5,7 @@ import io
 from PIL import Image
 from langchain_core.messages import HumanMessage
 from configuracion_llm import get_llm
+from sistema.config import resolve_project_path
 
 # ==========================================
 # --- 1. MODELO ANTIGUO: EASYOCR ---
@@ -25,7 +26,9 @@ def extract_text_from_image(path):
 # ==========================================
 def encode_image(image_path, max_size=(1024, 1024)):
     """Redimensiona y codifica la imagen a Base64 para la API."""
-    if not os.path.exists(image_path):
+    image_path = resolve_project_path(image_path)
+
+    if not image_path.exists():
         return None
     try:
         with Image.open(image_path) as img:

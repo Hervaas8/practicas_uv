@@ -5,18 +5,19 @@ import base64
 import os
 from PIL import Image
 import io
-from configuracion_llm import get_llm_evaluador, is_vision_model
+from sistema.utils.configuracion_llm import get_llm_evaluador, is_vision_model
 from langchain_core.messages import HumanMessage
+from sistema.config import PROMPTS_PATH, resolve_project_path
 
 # --- IMPORTACIÓN DE UTILIDADES OCR ---
 try:
-    from utils_easy import extract_with_llm 
+    from sistema.utils.utils_easy import extract_text_with_llm 
 except ImportError:
-    def extract_with_llm(path): return "[ERROR: Módulo OCR no encontrado]"
+    def extract_text_with_llm(path): return "[ERROR: Módulo OCR no encontrado]"
 
 # --- CARGAR CONFIGURACIÓN GLOBAL ---
 try:
-    with open("prompts.yaml", "r", encoding="utf-8-sig") as f:
+    with open(PROMPTS_PATH, "r", encoding="utf-8-sig") as f:
         prompts = yaml.safe_load(f)
     PROMPT_TEMPLATE = prompts["eval_subjective_prompt"]
     PROMPT_FEEDBACK_FINAL = prompts["eval_strategy_feedback_prompt"]
@@ -26,7 +27,9 @@ except Exception as e:
 
 def encode_image(image_path, max_size=(800, 800)):
     """Redimensiona, comprime a JPEG y codifica una imagen a Base64 para no saturar los tokens."""
-    if not os.path.exists(image_path):
+    image_path = resolve_project_path(image_path)
+
+    if not image_path.exists():
         return None
     try:
         with Image.open(image_path) as img:
@@ -159,7 +162,7 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         if not es_vision:
             partes_ocr = []
             for img_path in rutas_imagenes:
-                if img_path: partes_ocr.append(extract_with_llm(img_path))
+                if img_path: partes_ocr.append(extract_text_with_llm(img_path))
             texto_ocr_adicional = "\n\n[TEXTO EXTRAÍDO DE LAS IMÁGENES MEDIANTE OCR]:\n" + "\n".join(filter(None, partes_ocr))
             
         texto_base = task.get("task_text", "")

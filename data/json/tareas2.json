@@ -5,7 +5,7 @@
         "task_id": "cien_s1_t01",
         "task_text": null,
         "task_image": [
-          "./data/img/video1.png"
+          "data/img/video1.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Antes de saber qué está sucediendo, deberíamos repasar algunos términos relacionados con esta noticia. He encontrado este vídeo sobre los ecosistemas. Vamos a verlo y unimos las distintas casillas de la tabla, pero cuidado, que hay dos definiciones que corresponden a un mismo concepto.",
@@ -63,7 +63,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/sierra_calderona.png"
+          "data/img/sierra_calderona.png"
         ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
@@ -89,7 +89,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/parque_natural.png"
+          "data/img/parque_natural.png"
         ],
         "regions": [
           {
@@ -116,7 +116,7 @@
         "task_id": "cien_s1_t04",
         "task_text": null,
         "task_image": [
-          "./data/img/actualidad.png"
+          "data/img/actualidad.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Esta información puede ser complementaria o contradictoria. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
@@ -143,7 +143,7 @@
         "task_id": "cien_s1_t05",
         "task_text": null,
         "task_image": [
-          "./data/img/naquera.png"
+          "data/img/naquera.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Esta información puede ser complementaria o contradictoria. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
@@ -170,8 +170,8 @@
         "task_id": "cien_s1_t06",
         "task_text": null,
         "task_image": [
-          "./data/img/actualidad.png",
-          "./data/img/naquera.png"
+          "data/img/actualidad.png",
+          "data/img/naquera.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Por ello, es importante diferenciar cuando la información de varios documentos es complementaria o contradictoria. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
@@ -197,8 +197,8 @@
         "task_id": "cien_s1_t07",
         "task_text": null,
         "task_image": [
-          "./data/img/actualidad.png",
-          "./data/img/naquera.png"
+          "data/img/actualidad.png",
+          "data/img/naquera.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Por ello, es importante diferenciar cuando la información de varios documentos es complementaria o contradictoria. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
@@ -232,7 +232,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil1.png"
+          "data/img/mobil1.png"
         ],
         "regions": [
           {
@@ -264,8 +264,8 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil1.png",
-          "./data/img/mobil2.png"
+          "data/img/mobil1.png",
+          "data/img/mobil2.png"
         ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
@@ -291,7 +291,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil2.png"
+          "data/img/mobil2.png"
         ],
         "regions": [
           {
@@ -323,8 +323,8 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil2.png",
-          "./data/img/mobil3.png"
+          "data/img/mobil2.png",
+          "data/img/mobil3.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "c",
@@ -347,8 +347,8 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil2.png",
-          "./data/img/mobil3.png"
+          "data/img/mobil2.png",
+          "data/img/mobil3.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "c",
@@ -371,8 +371,8 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/mobil2.png",
-          "./data/img/mobil3.png"
+          "data/img/mobil2.png",
+          "data/img/mobil3.png"
         ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
@@ -400,7 +400,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/video1.png"
+          "data/img/video1.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -426,7 +426,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/video1.png"
+          "data/img/video1.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -452,7 +452,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/video1.png"
+          "data/img/video1.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "c",
@@ -478,7 +478,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/parque_natural.png"
+          "data/img/parque_natural.png"
         ],
         "regions": [
           {
@@ -510,7 +510,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/generalitat.png"
+          "data/img/generalitat.png"
         ],
         "regions": [
           {
@@ -542,7 +542,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/generalitat2.png"
+          "data/img/generalitat2.png"
         ],
         "regions": [
           {
@@ -574,12 +574,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/invertebrados.png",
-          "./data/img/vertebrados.png",
-          "./data/img/peces.png",
-          "./data/img/reptiles.png",
-          "./data/img/aves.png",
-          "./data/img/mamiferos.png"
+          "data/img/invertebrados.png",
+          "data/img/vertebrados.png",
+          "data/img/peces.png",
+          "data/img/reptiles.png",
+          "data/img/aves.png",
+          "data/img/mamiferos.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "c",
@@ -602,12 +602,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/invertebrados.png",
-          "./data/img/vertebrados.png",
-          "./data/img/peces.png",
-          "./data/img/reptiles.png",
-          "./data/img/aves.png",
-          "./data/img/mamiferos.png"
+          "data/img/invertebrados.png",
+          "data/img/vertebrados.png",
+          "data/img/peces.png",
+          "data/img/reptiles.png",
+          "data/img/aves.png",
+          "data/img/mamiferos.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -630,12 +630,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/invertebrados.png",
-          "./data/img/vertebrados.png",
-          "./data/img/peces.png",
-          "./data/img/reptiles.png",
-          "./data/img/aves.png",
-          "./data/img/mamiferos.png"
+          "data/img/invertebrados.png",
+          "data/img/vertebrados.png",
+          "data/img/peces.png",
+          "data/img/reptiles.png",
+          "data/img/aves.png",
+          "data/img/mamiferos.png"
         ],
         "task_type": "subjetivo",
         "strategy": "integrar-navegar",
@@ -661,7 +661,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/web.png"
+          "data/img/web.png"
         ],
         "task_type": "subjetivo",
         "strategy": "evaluar",
@@ -697,7 +697,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/miguel.png"
+          "data/img/miguel.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -729,7 +729,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/miguel2.png"
+          "data/img/miguel2.png"
         ],
         "regions": [
           {
@@ -756,11 +756,11 @@
         "task_id": "lit_s1_t03",
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Fíjate bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos y completa la siguiente ficha con tus palabras.",
@@ -797,11 +797,11 @@
         "task_id": "lit_s1_t04",
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Docente: Continuamos con otra ficha sobre el poeta. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Esta información puede ser similar, distinta o incluso contradictoria. Utiliza las pestañas para leer los distintos textos y completa la siguiente ficha.",
@@ -842,7 +842,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/guerra.png"
+          "data/img/guerra.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -874,7 +874,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/viento.png"
+          "data/img/viento.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -906,12 +906,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/pueblo.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/pueblo.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -934,12 +934,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/pueblo.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/pueblo.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -962,12 +962,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/pueblo.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/pueblo.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -988,7 +988,7 @@
         "task_id": "lit_s1_t10",
         "task_text": null,
         "task_image": [
-          "./data/img/poema3.png"
+          "data/img/poema3.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
@@ -1019,7 +1019,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/miguel2.png"
+          "data/img/miguel2.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -1051,7 +1051,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/miguel4.png"
+          "data/img/miguel4.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -1083,12 +1083,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/expedientes.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/expedientes.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -1111,12 +1111,12 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/expedientes.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/expedientes.png"
         ],
         "task_type": "objetivo",
         "correct_answer": "b",
@@ -1134,12 +1134,12 @@
         "task_id": "lit_s1_t15",
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/expedientes.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/expedientes.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Recuerda que navegar por internet requiere localizar la información qué necesitamos e integrar, en ocasiones, el contenido de distintos documentos. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿Cuál fue la última cárcel en la que estuvo Miguel Hernández?",
@@ -1170,7 +1170,7 @@
         },
         "task_text": null,
         "task_image": [
-          "./data/img/expediente.png"
+          "data/img/expediente.png"
         ],
         "task_type": "interactivo",
         "regions": [
@@ -1197,12 +1197,12 @@
         "task_id": "lit_s1_t17",
         "task_text": null,
         "task_image": [
-          "./data/img/infancia.png",
-          "./data/img/inicios.png",
-          "./data/img/cambio.png",
-          "./data/img/guerra.png",
-          "./data/img/cautiverio.png",
-          "./data/img/expediente2.png"
+          "data/img/infancia.png",
+          "data/img/inicios.png",
+          "data/img/cambio.png",
+          "data/img/guerra.png",
+          "data/img/cautiverio.png",
+          "data/img/expediente2.png"
         ],
         "task_prompt": {
           "nivel_bajo": "Con toda la información disponible, completad la siguiente ficha. He rellenado algunas partes que ya teníamos hechas de tareas anteriores. Completa el resto de la ficha:",

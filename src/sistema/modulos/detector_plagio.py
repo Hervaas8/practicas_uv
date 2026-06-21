@@ -3,14 +3,15 @@ import unicodedata
 import itertools
 import yaml
 import sys
-from configuracion_llm import get_llm_estructurado
+from sistema.utils.configuracion_llm import get_llm_estructurado
 from langchain_core.prompts import ChatPromptTemplate
+from sistema.config import PROMPTS_PATH
 
 # ==========================================
 # --- CARGAR CONFIGURACIÓN DE PROMPTS ---
 # ==========================================
 try:
-    with open("prompts.yaml", "r", encoding="utf-8-sig") as f:
+    with open(PROMPTS_PATH, "r", encoding="utf-8-sig") as f:
         prompts = yaml.safe_load(f)
     PROMPT_PLAGIO = prompts["plagio_prompt"]
 except Exception as e:

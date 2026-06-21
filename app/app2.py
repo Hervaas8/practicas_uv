@@ -6,10 +6,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # --- IMPORTACIONES DEL AGENTE Y BASE DE DATOS ---
-from agente2 import app, load_test_inicial, load_curriculum
-from motor_evaluacion import generate_strategy_feedback
-from database import authenticate_user, save_student_results, get_professor_students_data
-from detector_plagio import auditar_sesion_completa
+from sistema.agente2 import app, load_test_inicial, load_curriculum
+from sistema.modulos.motor_evaluacion import generate_strategy_feedback
+from sistema.utils.database import authenticate_user, save_student_results, get_professor_students_data
+from sistema.modulos.detector_plagio import auditar_sesion_completa
+
+from sistema.config import resolve_project_path, TASKS_PATH, INITIAL_PATH, IMAGES_DIR, PRE_DIR
 
 # --- CONFIGURACIÓN ---
 st.set_page_config(page_title="Tutor IA - Ciencias", layout="wide")
@@ -44,7 +46,7 @@ def get_val(obj, key):
 
 def get_available_sessions():
     try:
-        with open("tareas2.json", "r", encoding="utf-8-sig") as f:
+        with open(TASKS_PATH, "r", encoding="utf-8-sig") as f:
             data = json.load(f)
             return list(data.get("ciencias", {}).keys())
     except Exception:
@@ -748,11 +750,13 @@ elif st.session_state.user_role == 'alumno':
                     img_fallback = img_raw[0] if isinstance(img_raw, list) and len(img_raw) > 0 else img_raw
                     img_path = pantalla_data.get("image", img_fallback)
 
-                    if os.path.exists(img_path):
+                    img_path_resolved = resolve_project_path(img_path)
+                    
+                    if img_path_resolved.exists():
                         coords = streamlit_image_coordinates(
-                            img_path, 
-                            key=f"nav_{task_id_key}_{pantalla_actual_id}_{len(st.session_state.ruta_nav)}"
-                        )
+                            str(img_path_resolved),
+                             key=f"nav_{task_id_key}_{pantalla_actual_id}_{len(st.session_state.ruta_nav)}"
+                                 )
                         
                         if coords:
                             for link in pantalla_data.get("links", []):
@@ -784,13 +788,14 @@ elif st.session_state.user_role == 'alumno':
                             with tabs[idx]: st.write(text_context)
                             idx += 1
                         for i, img_path in enumerate(img_list):
+                            img_path_resolved = resolve_project_path(img_path)
                             with tabs[idx]:
-                                if os.path.exists(img_path):
+                                if img_path_resolved.exists():
                                     if task.get("task_type") == "interactivo" and st.session_state.current_step == "working":
-                                        coords = streamlit_image_coordinates(img_path, key=f"click_{task.get('task_id', i)}")
+                                        coords = streamlit_image_coordinates(str(img_path_resolved), key=f"click_{task.get('task_id', i)}")
                                         if coords: submit_answer(f"CLICK: {coords['x']}, {coords['y']}")
                                     else:
-                                        st.image(img_path, use_column_width=True)
+                                        st.image(str(img_path_resolved), use_column_width=True)
                                 else:
                                     st.warning(f"Imagen no encontrada: {img_path}")
                             idx += 1
