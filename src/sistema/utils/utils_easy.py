@@ -4,7 +4,7 @@ import os
 import io
 from PIL import Image
 from langchain_core.messages import HumanMessage
-from configuracion_llm import get_llm
+from sistema.utils.configuracion_llm import get_llm
 from sistema.config import resolve_project_path
 
 # ==========================================

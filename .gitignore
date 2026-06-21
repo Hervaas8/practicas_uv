@@ -9,8 +9,10 @@ wheels/
 # Virtual environments
 .venv
 
-# Env / secrets
+# Variables de entorno
 .env
+.env.*
+!.env.example
 
 # Editors
 .vscode/

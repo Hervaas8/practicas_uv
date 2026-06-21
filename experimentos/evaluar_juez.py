@@ -12,9 +12,23 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from sistema.config import RESULTS_DIR, resolve_project_path
 
-# --- 1. CONFIGURACIÓN API ---
-POLIGPT_API_BASE = "https://api.poligpt.upv.es"
-POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"  # Idealmente usa variables de entorno
+import os
+from dotenv import load_dotenv
+
+try:
+    from sistema.config import PROJECT_ROOT
+    load_dotenv(PROJECT_ROOT / ".env")
+except Exception:
+    load_dotenv()
+
+POLIGPT_API_BASE = os.getenv("POLIGPT_API_BASE", "https://api.poligpt.upv.es")
+POLIGPT_API_KEY = os.getenv("POLIGPT_API_KEY")
+
+if not POLIGPT_API_KEY:
+    raise RuntimeError(
+        "Falta la variable POLIGPT_API_KEY. "
+        "Crea un archivo .env en la raíz del proyecto."
+    )  # Idealmente usa variables de entorno
 
 # --- 2. ESQUEMA DEL MEGA-JUEZ ---
 class EvaluacionJuez(BaseModel):

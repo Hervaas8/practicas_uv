@@ -1,8 +1,23 @@
 from langchain_openai import ChatOpenAI
-from esquemas import LLMEvaluationOutput, LLMPlagiarismOutput, LLMFeedbackEstrategia, LLMScaffoldingOutput
+from sistema.utils.esquemas import LLMEvaluationOutput, LLMPlagiarismOutput, LLMFeedbackEstrategia, LLMScaffoldingOutput
 
-POLIGPT_API_BASE = "https://api.poligpt.upv.es"
-POLIGPT_API_KEY = "[CLAVE_ELIMINADA]"
+import os
+from dotenv import load_dotenv
+
+try:
+    from sistema.config import PROJECT_ROOT
+    load_dotenv(PROJECT_ROOT / ".env")
+except Exception:
+    load_dotenv()
+
+POLIGPT_API_BASE = os.getenv("POLIGPT_API_BASE", "https://api.poligpt.upv.es")
+POLIGPT_API_KEY = os.getenv("POLIGPT_API_KEY")
+
+if not POLIGPT_API_KEY:
+    raise RuntimeError(
+        "Falta la variable POLIGPT_API_KEY. "
+        "Crea un archivo .env en la raíz del proyecto."
+    )
 
 # --- MODELOS CON CAPACIDAD VISUAL ---
 MODELOS_VISION = ["poligpt-code", "qwen3-vl:30b",]

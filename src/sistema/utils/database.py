@@ -1,7 +1,9 @@
 import sqlite3
 import json
 
-DB_NAME = "tutor_ia.db"
+from sistema.config import DB_PATH
+
+DB_NAME = str(DB_PATH)
 
 def init_db():
     """Crea las tablas y añade datos de prueba si la base de datos está vacía."""

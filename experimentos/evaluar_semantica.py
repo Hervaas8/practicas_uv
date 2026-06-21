@@ -11,9 +11,23 @@ from typing import List, Dict, Tuple
 from langchain_openai import OpenAIEmbeddings
 from sistema.config import RESULTS_DIR, resolve_project_path
 
-# --- CONFIGURACIÓN DE LA API ---
-POLIGPT_API_BASE = "https://api.poligpt.upv.es"
-POLIGPT_API_KEY = "[CLAVE_ELIMINADA]" # En producción, usa os.getenv("POLIGPT_API_KEY")
+import os
+from dotenv import load_dotenv
+
+try:
+    from sistema.config import PROJECT_ROOT
+    load_dotenv(PROJECT_ROOT / ".env")
+except Exception:
+    load_dotenv()
+
+POLIGPT_API_BASE = os.getenv("POLIGPT_API_BASE", "https://api.poligpt.upv.es")
+POLIGPT_API_KEY = os.getenv("POLIGPT_API_KEY")
+
+if not POLIGPT_API_KEY:
+    raise RuntimeError(
+        "Falta la variable POLIGPT_API_KEY. "
+        "Crea un archivo .env en la raíz del proyecto."
+    )
 
 # Caché en memoria para no repetir peticiones a la API del mismo texto
 # Clave: Texto (str), Valor: Vector (List[float])

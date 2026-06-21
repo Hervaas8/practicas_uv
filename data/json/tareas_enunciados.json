@@ -2,7 +2,7 @@
   {
     "id": "cien_s1_t02",
     "task_imagen": [
-      "./data/img/sierra_calderona.png"
+      "data/img/sierra_calderona.png"
     ],
     "enunciado_nivel_alto": "Avatar: He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
     "enunciado_nivel_medio": "Avatar: He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
@@ -15,7 +15,7 @@
   {
     "id": "cien_s1_t03",
     "task_imagen": [
-      "./data/img/parque_natural.png"
+      "data/img/parque_natural.png"
     ],
     "enunciado_nivel_alto": "Ahora ya estamos dentro de la página web de la Generalitat Valenciana. Observa la imagen y haz clic en una de las secciones para conocer más detalles sobre la noticia.",
     "enunciado_nivel_medio": "Ahora ya estamos dentro de la página web de la Generalitat Valenciana. Esta página web contiene secciones para organizar la información. Observa la imagen y haz clic en una de las secciones para conocer más detalles sobre la noticia.",
@@ -28,7 +28,7 @@
   {
     "id": "cien_s1_t04",
     "task_imagen": [
-      "./data/img/actualidad.png"
+      "data/img/actualidad.png"
     ],
     "enunciado_nivel_alto": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
     "enunciado_nivel_medio": "Avatar: He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto \n Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
@@ -41,8 +41,8 @@
   {
     "id": "cien_s1_t06",
     "task_imagen": [
-      "./data/img/actualidad.png",
-      "./data/img/naquera.png"
+      "data/img/actualidad.png",
+      "data/img/naquera.png"
     ],
     "enunciado_nivel_alto": "Docente: Como acabáis de ver, la información de internet es casi ilimitada. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
     "enunciado_nivel_medio": "Docente: Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
@@ -55,7 +55,7 @@
   {
     "id": "cien_s1_t08",
     "task_imagen": [
-      "./data/img/mobil1.png"
+      "data/img/mobil1.png"
     ],
     "enunciado_nivel_alto": "Docente: En Internet también encontramos información en redes sociales. Observa la imagen y haz clic en la opción que consideres adecuada para ver las opiniones de los usuarios.",
     "enunciado_nivel_medio": "Docente: En Internet también encontramos información en redes sociales, donde el contenido puede aparecer en comentarios y opiniones de otros usuarios. Observa la imagen y haz clic en la opción que consideres adecuada para ver las opiniones de los usuarios.",
@@ -68,8 +68,8 @@
   {
     "id": "cien_s1_t09",
     "task_imagen": [
-      "./data/img/mobil1.png",
-      "./data/img/mobil2.png"
+      "data/img/mobil1.png",
+      "data/img/mobil2.png"
     ],
     "enunciado_nivel_alto": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial \n\n Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos\n\n Docente: ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
     "enunciado_nivel_medio": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial \n\n Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos\n\n Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
@@ -82,7 +82,7 @@
   {
     "id": "cien_s1_t10",
     "task_imagen": [
-      "./data/img/mobil2.png"
+      "data/img/mobil2.png"
     ],
     "enunciado_nivel_alto": "Avatar: También he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen! Visualiza la imagen y haz clic donde consideres para ver las respuestas al comentario de @Naturaviva. Una vez hayas leído las respuestas, contesta a las preguntas que aparecerán a continuación.",
     "enunciado_nivel_medio": "Avatar: También he observado que en el comentario de @Naturaviva hay varias respuestas. ¡Vamos a ver qué dicen! En este formato de instagram, además de comentarios a una publicación, la gente puede responder a un comentario concreto. Visualiza la imagen y haz clic donde consideres para ver las respuestas al comentario de @Naturaviva. Una vez hayas leído las respuestas, contesta a las preguntas que aparecerán a continuación.",
@@ -95,8 +95,8 @@
   {
     "id": "cien_s1_t12",
     "task_imagen": [
-      "./data/img/mobil2.png",
-      "./data/img/mobil3.png"
+      "data/img/mobil2.png",
+      "data/img/mobil3.png"
     ],
     "enunciado_nivel_alto": "Avatar: Aquí aparecen las cuatro respuestas del comentario de @Naturaviva. Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na) @NaturerLover\nb) @Almalibre\nc) @David82\nd) @UniversidadVlc",
     "enunciado_nivel_medio": "Avatar: Aquí aparecen las cuatro respuestas del comentario de @Naturaviva. En redes sociales podemos encontrar multitud de información a través de los comentarios y respuestas de los perfiles. Observa las imágenes de instagram y contesta a las siguientes preguntas:\n\n¿Qué perfil muestra una postura totalmente contraria a @Naturaviva?\na) @NaturerLover\nb) @Almalibre\nc) @David82\nd) @UniversidadVlc",
@@ -109,8 +109,8 @@
   {
     "id": "cien_s1_t13",
     "task_imagen": [
-      "./data/img/mobil2.png",
-      "./data/img/mobil3.png"
+      "data/img/mobil2.png",
+      "data/img/mobil3.png"
     ],
     "enunciado_nivel_alto": "Seguimos con las respuestas del comentario de @Naturaviva. En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
     "enunciado_nivel_medio": "Seguimos con las respuestas del comentario de @Naturaviva. En instagram todo el mundo puede publicar, aunque no sepan del tema. En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
@@ -123,7 +123,7 @@
   {
     "id": "cien_s2_t17",
     "task_imagen": [
-      "./data/img/parque_natural.png"
+      "data/img/parque_natural.png"
     ],
     "enunciado_nivel_alto": "Docente: Ahora vamos a volver a la página de la Generalitat Valenciana. Haz clic en el enlace del menú desplegable que consideres para saber más sobre las características de la Sierra Calderona.",
     "enunciado_nivel_medio": "Docente: Ahora vamos a volver a la página de la Generalitat Valenciana. Este tipo de páginas web cuenta con menús desplegables para organizar la información. Haz clic en el enlace del menú desplegable que consideres para saber más sobre las características de la Sierra Calderona.",
@@ -136,7 +136,7 @@
   {
     "id": "cien_s2_t18",
     "task_imagen": [
-      "./data/img/generalitat.png"
+      "data/img/generalitat.png"
     ],
     "enunciado_nivel_alto": "Docente: Seguimos navegando por la página web de la Generalitat Valenciana. Haz clic en el apartado que consideres para obtener más información sobre el ecosistema natural de la región.",
     "enunciado_nivel_medio": "Docente: Seguimos navegando por la página web de la Generalitat Valenciana. El formato sigue organizando la información a través de menús desplegables y secciones. Haz clic en el apartado que consideres para obtener más información sobre el ecosistema natural de la región.",
@@ -149,12 +149,12 @@
   {
     "id": "cien_s2_t20",
     "task_imagen": [
-      "./data/img/invertebrados.png",
-      "./data/img/vertebrados.png",
-      "./data/img/peces.png",
-      "./data/img/reptiles.png",
-      "./data/img/aves.png",
-      "./data/img/mamiferos.png"
+      "data/img/invertebrados.png",
+      "data/img/vertebrados.png",
+      "data/img/peces.png",
+      "data/img/reptiles.png",
+      "data/img/aves.png",
+      "data/img/mamiferos.png"
     ],
     "enunciado_nivel_alto": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na) Las libélulas\nb) Los Efemerópteros y los Plecópteros\nc) Ambas son correctas\nd) Los invertebrados no pueden indicar la calidad del agua",
     "enunciado_nivel_medio": "Docente: Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Qué tipos de animales invertebrados pueden indicar la calidad del agua?\na) Las libélulas\nb) Los Efemerópteros y los Plecópteros\nc) Ambas son correctas\nd) Los invertebrados no pueden indicar la calidad del agua",
@@ -167,7 +167,7 @@
   {
     "id": "cien_s2_t23",
     "task_imagen": [
-      "./data/img/web.png"
+      "data/img/web.png"
     ],
     "enunciado_nivel_alto": "Elena: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? \n\n Jaime: Yo me fiaría de “El Rincón del Estudiante”, nosotros somos estudiantes y seguro que tiene materiales fáciles \n\n Docente: ¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
     "enunciado_nivel_medio": "Elena: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? \n\n Jaime: Yo me fiaría de “El Rincón del Estudiante”, nosotros somos estudiantes y seguro que tiene materiales fáciles \n\n Docente: Recordad que en Internet no toda la información es de calidad ¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
@@ -180,7 +180,7 @@
   {
     "id": "lit_s1_t01",
     "task_imagen": [
-      "./data/img/miguel.png"
+      "data/img/miguel.png"
     ],
     "enunciado_nivel_alto": "Avatar 1: Hola, buscando en internet “Miguel Hernández” me salen los siguientes enlaces. Haz clic en el enlace que deberíamos escoger.",
     "enunciado_nivel_medio": "Avatar 1: Hola, buscando en internet “Miguel Hernández” me salen los siguientes enlaces. Por mi experiencia, la información en internet no siempre es de calidad. Haz clic en el enlace que deberíamos escoger.",
@@ -193,7 +193,7 @@
   {
     "id": "lit_s1_t02",
     "task_imagen": [
-      "./data/img/miguel2.png"
+      "data/img/miguel2.png"
     ],
     "enunciado_nivel_alto": "Docente: En esta web hay información sobre la vida y obra de Miguel Hernández. Primero, vamos a investigar sobre su vida ¿Dónde deberíamos clicar?",
     "enunciado_nivel_medio": "Docente: En esta web hay información sobre la vida y obra de Miguel Hernández. Primero, vamos a investigar sobre su vida. Este tipo de webs tiene menús para organizar la información ¿Dónde deberíamos clicar?",
@@ -206,11 +206,11 @@
   {
     "id": "lit_s1_t03",
     "task_imagen": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png"
     ],
     "enunciado_nivel_alto": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. Completa la siguiente ficha con tus palabras.",
     "enunciado_nivel_medio": "Docente: Recuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
@@ -223,11 +223,11 @@
   {
     "id": "lit_s1_t04",
     "task_imagen": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png"
     ],
     "enunciado_nivel_alto": "Docente: Continuamos con otra ficha sobre el poeta. Utiliza la información de los textos y completa la siguiente ficha.",
     "enunciado_nivel_medio": "Docente: Continuamos con una otra ficha sobre el poeta. Cuando navegamos por internet podemos encontrarnos con información casi ilimitada y en ocasiones tenemos que utilizar y combinar información de distintos documentos. Utiliza las pestañas para leer los distintos textos y completa la siguiente ficha.",
@@ -240,7 +240,7 @@
   {
     "id": "lit_s1_t05",
     "task_imagen": [
-      "./data/img/guerra.png"
+      "data/img/guerra.png"
     ],
     "enunciado_nivel_alto": "Docente: Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
     "enunciado_nivel_medio": "Docente: Ahora vamos a leer alguno de sus poemas a ver si nos da algo más de información. Como podéis ver, en los distintos textos aparecen hipervínculos con los nombres de los poemas. Busca el enlace del poema “Viento del pueblo” y haz clic sobre él.",
@@ -253,7 +253,7 @@
   {
     "id": "lit_s1_t06",
     "task_imagen": [
-      "./data/img/viento.png"
+      "data/img/viento.png"
     ],
     "enunciado_nivel_alto": "Docente: Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
     "enunciado_nivel_medio": "Docente: Bien hecho, has accedido a la página web con todos los poemas incluidos en la obra “Viento del pueblo”. En este caso, el formato de los hipervínculos es distinto al anterior. Busca el poema “Vientos del pueblo me llevan” y haz click sobre él.",
@@ -266,12 +266,12 @@
   {
     "id": "lit_s1_t07",
     "task_imagen": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png",
-      "./data/img/pueblo.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png",
+      "data/img/pueblo.png"
     ],
     "enunciado_nivel_alto": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan”?\na) 1936\nb) 1937\nc) 1939\nd) 1942",
     "enunciado_nivel_medio": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Contesta a las siguientes preguntas:\n\n¿En qué año se publica “Vientos del pueblo me llevan”?\na) 1936\nb) 1937\nc) 1939\nd) 1942",
@@ -284,12 +284,12 @@
   {
     "id": "lit_s1_t08",
     "task_imagen": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png",
-      "./data/img/pueblo.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png",
+      "data/img/pueblo.png"
     ],
     "enunciado_nivel_alto": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na) Los inicios\nb) El cambio\nc) La guerra\nd) El cautiverio",
     "enunciado_nivel_medio": "Docente: En esta nueva pestaña tenemos los tres primeros párrafos del poema. Vamos a realizar una nueva tarea y puede que para ello necesites acudir también a la información que aparece en los textos anteriores. Contesta a las siguientes preguntas:\n\n¿A qué época pertenece este poema?\na) Los inicios\nb) El cambio\nc) La guerra\nd) El cautiverio",
@@ -302,7 +302,7 @@
   {
     "id": "lit_s1_t11",
     "task_imagen": [
-      "./data/img/miguel2.png"
+      "data/img/miguel2.png"
     ],
     "enunciado_nivel_alto": "Avatar 2: Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena ¿Dónde deberíamos clicar?",
     "enunciado_nivel_medio": "Avatar 2: Ya voy entendiendo un poco más todo lo sucedido. No obstante, necesitamos más información sobre su condena. Siguiendo el esquema de menús que tiene esta página web ¿Dónde deberíamos clicar?",
@@ -315,7 +315,7 @@
   {
     "id": "lit_s1_t12",
     "task_imagen": [
-      "./data/img/miguel4.png"
+      "data/img/miguel4.png"
     ],
     "enunciado_nivel_alto": "Avatar 2: Primero vamos a centrarnos en la información sobre su condena. ¿Qué enlace deberíamos escoger?",
     "enunciado_nivel_medio": "Avatar 2: Primero vamos a centrarnos en la información sobre su condena, según el menú que aparece desplegado. ¿Qué enlace deberíamos escoger?",
@@ -328,12 +328,12 @@
   {
     "id": "lit_s1_t13",
     "task_imagen": [
-      "./data/img/infancia.png",
-      "./data/img/inicios.png",
-      "./data/img/cambio.png",
-      "./data/img/guerra.png",
-      "./data/img/cautiverio.png",
-      "./data/img/expedientes.png"
+      "data/img/infancia.png",
+      "data/img/inicios.png",
+      "data/img/cambio.png",
+      "data/img/guerra.png",
+      "data/img/cautiverio.png",
+      "data/img/expedientes.png"
     ],
     "enunciado_nivel_alto": "Docente: Como puedes observar, tienes a tu disposición los expedientes penitenciarios de Miguel Hernández y los textos anteriores. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?",
     "enunciado_nivel_medio": "Docente: Como puedes observar, en esta página web aparecen tres expedientes penitenciarios de Miguel Hernández. Además, tienes a tu disposición los textos anteriores con su formato de pestañas. Utiliza toda la información disponible para contestar a las siguientes preguntas.\n\n¿En qué pestaña encontraremos los documentos sobre la condena de Miguel Hernández?",
