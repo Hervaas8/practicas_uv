@@ -1,8 +1,0 @@
-modelo_usado,Tareas_Completadas,Tiempo_Medio_s,Similitud_Media,P1_Andamiaje_Media,Integ_Bajo_Media,Fidelidad_Media,Nota_Global_Media
-poligpt,24,14.55,0.57,3.58,3.29,4.67,3.98
-poligpt-code,24,13.65,0.58,3.54,3.29,4.62,3.89
-qwen3-vl:30b,24,5.69,0.57,3.54,3.08,4.54,3.82
-llama3.1:8b,24,46.16,0.53,3.42,3.12,4.58,3.79
-deepseek-r1:32b,24,173.88,0.52,3.38,3.17,4.25,3.67
-phi4-mini:3.8b,24,30.11,0.49,2.92,2.88,3.96,3.42
-llama3.2:3b,24,23.9,0.46,3.04,2.79,3.54,3.2

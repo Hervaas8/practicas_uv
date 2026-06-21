@@ -1,8 +1,0 @@
-﻿modelo_usado,Calidad_Pedagogica_Global,Fidelidad,Integracion_Enunciados,Sim_Pistas,Sim_Enunciados,Tiempo_Medio_s,Velocidad
-poligpt,3.98,4.67,3.4,0.52,0.58,14.55,Rápido
-poligpt-code,3.89,4.62,3.4,0.52,0.6,13.65,Rápido
-qwen3-vl:30b,3.82,4.54,3.23,0.53,0.59,5.69,Rápido
-llama3.1:8b,3.79,4.58,3.33,0.52,0.55,46.16,Aceptable
-deepseek-r1:32b,3.67,4.25,3.25,0.53,0.52,173.88,Lento
-phi4-mini:3.8b,3.42,3.96,3.04,0.55,0.46,30.11,Aceptable
-llama3.2:3b,3.2,3.54,2.96,0.53,0.47,23.9,Aceptable
