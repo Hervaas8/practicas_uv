@@ -1213,8 +1213,7 @@
         "apartados_tabla": [
           "Lugar y año de nacimiento",
           "Lugar y año de muerte",
-          "Relancion con la Republica o Guerra Civil",
-          "Circunstancias de su muerte",
+          "Relacion con la Republica o Guerra Civil",
           "Ideas o valores que defendía",
           "Condenas recibidas",
           "Motivos de las condenas",
@@ -1223,7 +1222,7 @@
         "valores_iniciales": {
           "Lugar y año de nacimiento": "Alicante, el 30 de octubre de 1910",
           "Lugar y año de muerte": "Alicante, el 28 de marzo de 1942",
-          "Relancion con la Republica o Guerra Civil": "Perteneció al bando republicano. Escribió y difundió poesía comprometida políticamente, como en Viento del pueblo",
+          "Relacion con la Republica o Guerra Civil": "Perteneció al bando republicano. Escribió y difundió poesía comprometida políticamente, como en Viento del pueblo",
           "Ideas o valores que defendía": "Defendía al pueblo y la causa republicana",
           "Circunstancias de su muerte": "Murió en la enfermería de la prisión de Alicante a causa de una tuberculosis pulmonar"
         },
@@ -1233,11 +1232,11 @@
         "contenido": true,
         "conceptos": [],
         "rubric": {
-          "Punto 1 - Sentencia/Condena": {
+          "Punto 1 - Condena recibida": {
             "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
             "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
           },
-          "Punto 2 - Acusación": {
+          "Punto 2 - Motivos de la condena": {
             "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
             "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
           }

@@ -24,11 +24,11 @@ MODELOS_VISION = ["poligpt-code", "qwen3-vl:30b",]
 
 # --- MAPAS DE ENRUTAMIENTO ---
 MAPA_MODELOS = {
-    "evaluacion": "poligpt-vision",
-    "feedback_estrategia": "poligpt",
-    "plagio": "poligpt",
-    "general": "poligpt",
-    "generador": "poligpt",
+    "evaluacion": "poligpt-code",
+    "feedback_estrategia": "poligpt-code",
+    "plagio": "poligpt-code",
+    "general": "poligpt-code",
+    "generador": "poligpt-code",
     "ocr": "llama3.2:3b"  # <-- Nuevo modelo integrado
 }
 
@@ -64,7 +64,7 @@ def get_llm(tipo_tarea="general", override_model=None):
         api_key=POLIGPT_API_KEY,
         base_url=POLIGPT_API_BASE,
         temperature=temperatura_asignada,
-        max_tokens=5000,
+        max_tokens=7000,
     )
 
 def get_llm_estructurado(tipo_tarea, override_model=None):

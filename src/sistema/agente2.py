@@ -5,7 +5,7 @@ from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
 from sistema.utils.esquemas import StudentGraphState, TaskEvaluationHistory
 from sistema.modulos.motor_evaluacion import evaluate_task
-from sistema.config import INITIAL_PATH, TASK_PATH
+from sistema.config import INITIAL_PATH, TASKS_PATH
 
 def get_resolved_prompt(task_data: dict, competency_levels: dict) -> str:
     """
@@ -55,7 +55,7 @@ def load_test_inicial():
 
 def load_curriculum(session_id="sesion1"):
     try:
-        with open(TASK_PATH, "r", encoding="utf-8-sig") as f:
+        with open(TASKS_PATH, "r", encoding="utf-8-sig") as f:
             data = json.load(f)
             return data.get("ciencias", {}).get(session_id, [])
     except Exception:

@@ -457,11 +457,27 @@ elif st.session_state.user_role == 'profesor':
                 if st.button("🔍 Iniciar Auditoría Completa", use_container_width=True, type="primary"):
                     with st.spinner("Analizando respuestas y consultando a PoliGPT... Esto puede tardar un poco."):
                         
-                        # Llamamos a nuestro motor de plagio (el umbral está en 70% por defecto)
-                        reporte_plagio = auditar_sesion_completa(session_data, umbral=0.70)
+                        # --- CÓDIGO ACTUALIZADO: Filtrar solo por tareas de tipo "subjetivo" ---
+                        # 1. Cargar las tareas de la sesión actual
+                        tareas_sesion = load_curriculum(selected_prof_session)
+                        
+                        # 2. Extraer los IDs de aquellas tareas que sean específicamente de tipo "subjetivo"
+                        subjetivas_ids = [
+                            t.get("task_id") or t.get("id")
+                            for t in tareas_sesion 
+                            if str(t.get("task_type", "")).strip().lower() == "subjetivo"
+                        ]
+                        
+                        # 3. Llamar al motor de plagio pasando el filtro de IDs permitidos
+                        reporte_plagio = auditar_sesion_completa(
+                            session_data, 
+                            umbral=0.70, 
+                            valid_task_ids=subjetivas_ids
+                        )
+                        # ----------------------------------------------------------------------
                         
                         if not reporte_plagio:
-                            st.success("✅ ¡Todo limpio! No se han detectado coincidencias estructurales anómalas en las respuestas de texto libre de esta sesión.")
+                            st.success("✅ ¡Todo limpio! No se han detectado coincidencias estructurales anómalas en las respuestas de las tareas subjetivas de esta sesión.")
                         else:
                             st.warning("⚠️ Se han detectado similitudes matemáticas. Revisa los análisis detallados a continuación.")
                             st.divider()
