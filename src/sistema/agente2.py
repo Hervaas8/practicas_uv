@@ -53,11 +53,11 @@ def load_test_inicial():
     except Exception:
         return []
 
-def load_curriculum(session_id="sesion1"):
+def load_curriculum(subject_id="ciencias", session_id="sesion1"):
     try:
         with open(TASKS_PATH, "r", encoding="utf-8-sig") as f:
             data = json.load(f)
-            return data.get("ciencias", {}).get(session_id, [])
+            return data.get(subject_id, {}).get(session_id, [])
     except Exception:
         return []
 
@@ -127,7 +127,7 @@ def node_select_task(state: StudentGraphState):
     
     if state.test_mode:
         new_levels = calculate_levels_from_test(state.task_history)
-        main_tasks = load_curriculum(state.current_session or "sesion1")
+        main_tasks = load_curriculum(state.current_subject or "ciencias", state.current_session or "sesion1")
         msg = "Test inicial completado. Hemos adaptado el curso a tu nivel."
         first_task = main_tasks[0] if main_tasks else None
         

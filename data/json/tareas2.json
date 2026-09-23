@@ -776,6 +776,7 @@
         "strategy": "evaluar",
         "sub_strategy": "experiencia de las fuentes",
         "description": "Información poema",
+        "es_tabla": true,
         "contenido": true,
         "conceptos": [],
         "rubric": {
@@ -816,6 +817,7 @@
         "strategy": "integrar",
         "sub_strategy": "multitexto",
         "description": "Información poema",
+        "es_tabla": true,
         "contenido": true,
         "conceptos": [],
         "rubric": {
@@ -1229,6 +1231,7 @@
         "strategy": "integrar",
         "sub_strategy": "multitexto",
         "description": "Información poema",
+        "es_tabla": true,
         "contenido": true,
         "conceptos": [],
         "rubric": {

@@ -243,7 +243,7 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
         if sub_code != "General" and sub_code: sub_vistas.add(f"- {sub_code}: {MAPA_SUBESTRATEGIAS.get(sub_code, 'Habilidad general')}")
         historial_texto += f"Tarea {i+1}: Respuesta: {get_val(h, 'student_response')} | Nota: {get_val(h, 'score', 0)}/{get_val(h, 'max_score', 1)}\n"
 
-    from configuracion_llm import get_llm_estructurado
+    from sistema.utils.configuracion_llm import get_llm_estructurado
     from langchain_core.prompts import ChatPromptTemplate
     prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_FEEDBACK_FINAL)
     llm_feedback = get_llm_estructurado("feedback_estrategia") 

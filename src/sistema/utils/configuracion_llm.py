@@ -24,9 +24,9 @@ MODELOS_VISION = ["poligpt-code", "qwen3-vl:30b",]
 
 # --- MAPAS DE ENRUTAMIENTO ---
 MAPA_MODELOS = {
-    "evaluacion": "poligpt-code",
-    "feedback_estrategia": "poligpt-code",
-    "plagio": "poligpt-code",
+    "evaluacion": "qwen3-vl:30b",
+    "feedback_estrategia": "qwen3-vl:30b",
+    "plagio": "poligpt",
     "general": "poligpt-code",
     "generador": "poligpt-code",
     "ocr": "llama3.2:3b"  # <-- Nuevo modelo integrado

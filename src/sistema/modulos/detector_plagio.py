@@ -112,8 +112,9 @@ def verificar_plagio_llm(pregunta: str, resp_a: str, resp_b: str, modelo: str = 
 
 def auditar_sesion_completa(
     session_data: list,
-    umbral: float = 0.70,
-    min_palabras: int = 15
+    umbral: float = 0.25,
+    min_palabras: int = 15,
+    valid_task_ids: list = None  # <-- PARÁMETRO AÑADIDO
 ) -> dict:
     """
     Analiza todas las respuestas abiertas de una sesión y devuelve un reporte estructurado.
@@ -136,6 +137,13 @@ def auditar_sesion_completa(
 
         for tarea in historial:
             t_id     = tarea.get('task_id')     if isinstance(tarea, dict) else getattr(tarea, 'task_id', None)
+            
+            # --- FILTRO DE TAREAS SUBJETIVAS ---
+            # Si nos pasan una lista de valid_task_ids y la tarea no está en ella, la ignoramos.
+            if valid_task_ids is not None and t_id not in valid_task_ids:
+                continue
+            # -----------------------------------
+
             t_prompt = tarea.get('task_prompt') if isinstance(tarea, dict) else getattr(tarea, 'task_prompt', '')
             t_resp   = tarea.get('student_response') if isinstance(tarea, dict) else getattr(tarea, 'student_response', '')
 

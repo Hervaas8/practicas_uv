@@ -14,7 +14,7 @@ from sistema.modulos.detector_plagio import auditar_sesion_completa
 from sistema.config import resolve_project_path, TASKS_PATH, INITIAL_PATH, IMAGES_DIR, PRE_DIR
 
 # --- CONFIGURACIÓN ---
-st.set_page_config(page_title="Tutor IA - Ciencias", layout="wide")
+st.set_page_config(page_title="Tutor IA", layout="wide")
 
 st.markdown(
     """
@@ -44,21 +44,20 @@ config = {"configurable": {"thread_id": st.session_state.thread_id}}
 def get_val(obj, key):
     return getattr(obj, key) if hasattr(obj, key) else obj.get(key)
 
-def get_available_sessions():
+def get_available_data():
     try:
         with open(TASKS_PATH, "r", encoding="utf-8-sig") as f:
-            data = json.load(f)
-            return list(data.get("ciencias", {}).keys())
+            return json.load(f)
     except Exception:
-        return ["sesion1"]
+        return {"ciencias": {"sesion1": []}}
 
-def start_agent(do_test, session_id):
+def start_agent(do_test, subject_id, session_id):
     if do_test:
         initial_tasks = load_test_inicial()
         is_test_mode = True
         default_levels = {} 
     else:
-        initial_tasks = load_curriculum(session_id)
+        initial_tasks = load_curriculum(subject_id, session_id)
         is_test_mode = False
         default_levels = {"navegar": "nivel_1", "integrar": "nivel_1", "evaluar": "nivel_1"}
 
@@ -68,7 +67,7 @@ def start_agent(do_test, session_id):
         "total_tasks": len(initial_tasks),
         "test_mode": is_test_mode,
         "competency_levels": default_levels,
-        "current_subject": "ciencias",
+        "current_subject": subject_id,
         "current_session": session_id,
         "task_history": [],
         "detailed_feedback": {}
@@ -96,28 +95,6 @@ def handle_next():
     st.session_state.current_step = "working"
     st.session_state.last_feedback = None
     st.rerun()
-
-def render_competency_sidebar(levels, is_test):
-    st.sidebar.title(f"👤 {st.session_state.user_name}")
-    st.sidebar.divider()
-    st.sidebar.title("📊 Tu Progreso")
-    
-    if is_test:
-        st.sidebar.info("Evaluando nivel inicial...")
-    else:
-        st.sidebar.markdown("### Niveles de Competencia")
-        colors = {"nivel_1": "🔴 Nivel 1 (Básico)", "nivel_2": "🟠 Nivel 2 (Intermedio)", "nivel_3": "🟢 Nivel 3 (Avanzado)"}
-        names = {"navegar": "Navegación", "integrar": "Integración", "evaluar": "Evaluación"}
-        for strategy, level_key in levels.items():
-            if strategy in names:
-                clean_name = names[strategy]
-                level_text = colors.get(level_key, level_key)
-                st.sidebar.metric(label=clean_name, value=level_text.split(" ")[1] + " " + level_text.split(" ")[2])
-                st.sidebar.divider()
-    
-    if st.sidebar.button("🚪 Cerrar Sesión"):
-        st.session_state.clear()
-        st.rerun()
 
 def render_student_dashboard(history, final_levels, current_session, detailed_feedback=None, enable_evolution_chart=False):
     if detailed_feedback is None:
@@ -305,8 +282,6 @@ if not st.session_state.logged_in:
                     st.rerun()
                 else:
                     st.error("Usuario o contraseña incorrectos.")
-                    
-        st.info("💡 **Cuentas de prueba:**\n- Profesor: `profe_ana` / `1234`\n- Alumnos: `juan`, `maria`, `luis` / `1234`")
 
 elif st.session_state.user_role == 'profesor':
     st.title(f"👨‍🏫 Panel Docente - {st.session_state.user_name}")
@@ -457,24 +432,27 @@ elif st.session_state.user_role == 'profesor':
                 if st.button("🔍 Iniciar Auditoría Completa", use_container_width=True, type="primary"):
                     with st.spinner("Analizando respuestas y consultando a PoliGPT... Esto puede tardar un poco."):
                         
-                        # --- CÓDIGO ACTUALIZADO: Filtrar solo por tareas de tipo "subjetivo" ---
-                        # 1. Cargar las tareas de la sesión actual
-                        tareas_sesion = load_curriculum(selected_prof_session)
+                        # Buscar a qué asignatura pertenece la sesión seleccionada para cargar las tareas correctamente
+                        all_data = get_available_data()
+                        subject_for_session = "ciencias"
+                        for subj, s_dict in all_data.items():
+                            if selected_prof_session in s_dict:
+                                subject_for_session = subj
+                                break
+                                
+                        tareas_sesion = load_curriculum(subject_for_session, selected_prof_session)
                         
-                        # 2. Extraer los IDs de aquellas tareas que sean específicamente de tipo "subjetivo"
                         subjetivas_ids = [
                             t.get("task_id") or t.get("id")
                             for t in tareas_sesion 
                             if str(t.get("task_type", "")).strip().lower() == "subjetivo"
                         ]
                         
-                        # 3. Llamar al motor de plagio pasando el filtro de IDs permitidos
                         reporte_plagio = auditar_sesion_completa(
                             session_data, 
                             umbral=0.70, 
                             valid_task_ids=subjetivas_ids
                         )
-                        # ----------------------------------------------------------------------
                         
                         if not reporte_plagio:
                             st.success("✅ ¡Todo limpio! No se han detectado coincidencias estructurales anómalas en las respuestas de las tareas subjetivas de esta sesión.")
@@ -482,21 +460,18 @@ elif st.session_state.user_role == 'profesor':
                             st.warning("⚠️ Se han detectado similitudes matemáticas. Revisa los análisis detallados a continuación.")
                             st.divider()
                             
-                            # Iteramos sobre las tareas que han dado positivo
                             for task_id, info_tarea in reporte_plagio.items():
                                 st.markdown(f"#### 📝 Pregunta: *{info_tarea['prompt']}*")
                                 
-                                # Iteramos sobre las alertas de esa tarea
                                 for alerta in info_tarea['alertas']:
                                     veredicto = alerta['analisis'].get('veredicto', 'Sospechoso')
                                     
-                                    # Asignar semáforo de colores según el LLM
                                     if veredicto == "Posible Plagio":
                                         color_icon = "🔴"
                                     elif veredicto == "Dudoso":
                                         color_icon = "🟠"
                                     else:
-                                        color_icon = "🟢" # Falso Positivo
+                                        color_icon = "🟢" 
                                     
                                     titulo_expander = f"{color_icon} {alerta['alumno_1']} vs {alerta['alumno_2']} - Similitud: {alerta['similitud_matematica']}% [{veredicto}]"
                                     
@@ -510,7 +485,6 @@ elif st.session_state.user_role == 'profesor':
                                         st.divider()
                                         st.markdown(f"**🤖 Veredicto IA:** {alerta['analisis'].get('justificacion', '')}")
                                         
-                                        # Mostrar bloques idénticos si los hay
                                         frases = alerta['analisis'].get('frases_identicas', [])
                                         if frases:
                                             st.markdown("**🔍 Bloques idénticos detectados:**")
@@ -527,29 +501,45 @@ elif st.session_state.user_role == 'profesor':
 elif st.session_state.user_role == 'alumno':
 
     if st.session_state.current_step == "setup":
-        st.title(f"🎓 Tutor IA - Ciencias")
+        st.title(f"🎓 Tutor IA")
         st.markdown(f"¡Hola **{st.session_state.user_name}**! Antes de empezar, nos gustaría conocerte mejor.")
         
-        sessions = get_available_sessions()
-        selected_session = st.selectbox("📂 Selecciona la sesión que deseas realizar:", sessions)
-        st.divider()
+        # --- CARGA DINÁMICA DE ASIGNATURAS Y SESIONES ---
+        curriculum_data = get_available_data()
+        subjects = list(curriculum_data.keys())
+        selected_subject = st.selectbox("📚 Selecciona la asignatura:", subjects, format_func=lambda x: x.capitalize())
         
-        st.info("¿Deseas realizar un test inicial para adaptar el nivel de las tareas?")
-        
-        c1, c2 = st.columns(2)
-        with c1:
-            if st.button("✅ Sí, realizar test inicial", use_container_width=True):
-                start_agent(do_test=True, session_id=selected_session)
-        with c2:
-            if st.button("❌ No, ir directamente a la sesión", use_container_width=True):
-                start_agent(do_test=False, session_id=selected_session)
+        if selected_subject:
+            sessions = list(curriculum_data.get(selected_subject, {}).keys())
+            selected_session = st.selectbox("📂 Selecciona la sesión que deseas realizar:", sessions)
+            
+            st.divider()
+            st.info("¿Deseas realizar un test inicial para adaptar el nivel de las tareas?")
+            
+            c1, c2 = st.columns(2)
+            with c1:
+                if st.button("✅ Sí, realizar test inicial", use_container_width=True):
+                    start_agent(do_test=True, subject_id=selected_subject, session_id=selected_session)
+            with c2:
+                if st.button("❌ No, ir directamente a la sesión", use_container_width=True):
+                    start_agent(do_test=False, subject_id=selected_subject, session_id=selected_session)
 
     else:
         state_vals = app.get_state(config).values
         is_test_mode = get_val(state_vals, "test_mode")
         competencies = get_val(state_vals, "competency_levels") or {}
+        current_subject = get_val(state_vals, "current_subject") or "ciencias"
+        current_session = get_val(state_vals, "current_session") or "sesion1"
         
-        render_competency_sidebar(competencies, is_test_mode)
+        # --- NUEVA CABECERA SUPERIOR PARA EL ALUMNO (Reemplaza la barra lateral) ---
+        col_user_1, col_user_2 = st.columns([8, 2])
+        with col_user_1:
+            st.info(f"👤 **Usuario:** {st.session_state.user_name} | 📚 **Asignatura:** {current_subject.capitalize()} | 📂 **Sesión:** {current_session}")
+        with col_user_2:
+            if st.button("🚪 Cerrar Sesión", use_container_width=True, key="logout_student_top"):
+                st.session_state.clear()
+                st.rerun()
+        # --------------------------------------------------------------------------
         
         task = st.session_state.display_task
 
@@ -561,7 +551,6 @@ elif st.session_state.user_role == 'alumno':
             
             history = get_val(state_vals, "task_history") or []
             final_levels = competencies
-            current_session = get_val(state_vals, "current_session")
             
             detailed_feedback = get_val(state_vals, "detailed_feedback") or {}
             
@@ -595,7 +584,7 @@ elif st.session_state.user_role == 'alumno':
 
             st.divider()
             
-            all_sessions = get_available_sessions()
+            all_sessions = list(get_available_data().get(current_subject, {}).keys())
             try:
                 current_idx = all_sessions.index(current_session)
                 if current_idx < len(all_sessions) - 1:
@@ -603,7 +592,7 @@ elif st.session_state.user_role == 'alumno':
                     st.info(f"Tienes una sesión pendiente: **{next_session}**")
                     
                     if st.button(f"➡️ Continuar a {next_session}", use_container_width=True):
-                        new_tasks = load_curriculum(next_session)
+                        new_tasks = load_curriculum(current_subject, next_session)
                         app.update_state(config, {
                             "current_session": next_session, "remaining_tasks": new_tasks, "total_tasks": len(new_tasks),
                             "current_task": new_tasks[0], "current_task_prompt": new_tasks[0].get("task_prompt", ""),
