@@ -1,12 +1,16 @@
 {
-  "cien_s1_t02": {
+  "cien_e1_s1_t01": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "He buscado en internet “Sierra Calderona” y esto es lo que he encontrado. Docente: Recordad que no toda la información que encontramos en internet es fiable ¿Qué página es mejor para informarnos sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
-        "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
-      }},
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "Elige la fuente 'Parcs Naturals de la Comunitat Valenciana/Generalitat Valenciana', pero no justifica su respuesta. Elige la fuente pero basa su justificación en criterios subjetivos, irrelevantes o falsos.",
+          "1": "Justifica su elección en base a criterios de fiabilidad de la información (p.e. fuente oficial, institución pública, información revisada, datos verificables, autores expertos...)."
+        }
+      },
+      "instrucciones": ""
+    },
     "task_image": [
       "data/img/sierra_calderona.png"
     ],
@@ -41,15 +45,17 @@
       }
     ]
   },
-  "cien_s1_t04": {
+  "cien_e1_s1_t03": {
     "tipo_tarea": "v_y_d",
     "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-        "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles."
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: creación de empleo, dinamización económica, incorporación de medidas de eficiencia energética y sostenibilidad, impulso del turismo local. Ejemplos de desventajas: impactos ecológicos, fragmentación del hábitat, incremento del tráfico, alteración de especies sensibles."
+        }
       },
-      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+      "instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
       "data/img/actualidad.png"
@@ -85,15 +91,17 @@
       }
     ]
   },
-  "cien_s1_t05": {
+  "cien_e1_s1_t04": {
     "tipo_tarea": "v_y_d",
     "task_prompt": "Avatar:He encontrado esta otra noticia en un periódico online ¿Qué os parece? Voy a escribir una ventaja y desventaja de cada texto / Docente: Cuando entramos internet, podemos encontrar y utilizar información de diversos documentos. Lee ambos textos y escribe, al menos, dos ideas en cada casilla de la tabla que aparece a continuación:",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
-        "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad."
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "No menciona ninguna idea correcta por cada casilla. Es decir, no menciona ninguna ventaja o desventaja sobre el texto",
+          "1": "Menciona, al menos, una o más ideas correctas por cada casilla. Ejemplos de ventajas: generar empleo, atraer visitantes, diseño sostenible. Ejemplos de desventajas: aumento del tráfico, aumento de la presión humana, dañar el monte, alterar su tranquilidad."
+        }
       },
-      "Instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
+      "instrucciones": "Los ejemplos de ventajas y desventajas no tienen que estar escritos literalmente igual, pueden estar parafraseados, por ejemplo, en vez de decir 'creación de empleo' puede decir 'generación de puestos de trabajo', pero sí deben reflejar esas ideas."
     },
     "task_image": [
       "data/img/naquera.png"
@@ -129,13 +137,18 @@
       }
     ]
   },
-  "cien_s1_t06": {
+  "cien_e1_s1_t05": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\n¿La información de los textos es complementaria o contradictoria? Responde en una o dos frases con tus propias palabras y justifica tu respuesta:",
-    "Punto 1 - Evaluación": {
-        "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
-        "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+    "rubric": {
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "Indica que son contradictorios y no justifica su respuesta, o muestra una justificación basada en criterios subjetivos, irrelevantes o falsos. Indica que son complementarios, pero muestra una justificación vaga o basada en criterios subjetivos, irrelevantes o falsos.",
+          "1": "Explica que ambos aportan diferentes perspectivas o información sobre el mismo tema, aunque la información no sea exactamente idéntica."
+        }
       },
+      "instrucciones": ""
+    },
     "task_image": [
       "data/img/actualidad.png",
       "data/img/naquera.png"
@@ -171,14 +184,17 @@
       }
     ]
   },
-  "cien_s1_t07": {
+  "cien_e1_s1_t06": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Como acabáis de ver, la información de internet es casi ilimitada y muchas veces podemos extraer información de más de un documento. Lee ambos textos y contesta a las siguientes preguntas:\n\nExplica de manera detallada el tema o idea principal de ambos textos y sus consecuencias asociadas en dos o tres frases con tus propias palabras:",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
-        "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
-      }
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "No identifica el tema principal sobre la posible construcción del centro comercial en la Sierra Calderona o no menciona las consecuencias. La explicación es incoherente, falsa o demasiado vaga.",
+          "1": "Menciona la idea principal (posible construcción el centro comercial en la Sierra Calderona) y sus consecuencias positivas y negativas asociadas o que existe debate."
+        }
+      },
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/actualidad.png",
@@ -215,14 +231,17 @@
       }
     ]
   },
-  "cien_s1_t09": {
+  "cien_e1_s1_t08": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Jaime: Viendo los comentarios (@Lucas03, @VeronicaRuiz, @Pedro_MS y @SunRise), creo que ya tengo una opinión clara de que no se debería construir el centro comercial // Elena: Puede que tengas razón, pero deberíamos contrastarlo con más información, fuentes oficiales y opiniones de expertos// Docente: Recordad que en Internet no toda la información es de calidad ¿Qué postura entonces consideras más acertada, la de Jaime o la de Elena? Responde de manera breve con tus propias palabras:",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-        "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
-      }
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "No toma postura o basa su justificación en criterios subjetivos, falsos o irrelevantes. Afirma que la postura correcta es la de Jaime o la de Elena, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+          "1": "Afirma que la postura correcta es la de Elena y justifica su elección en base a criterios de fiabilidad de la información."
+        }
+      },
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/mobil1.png",
@@ -259,14 +278,17 @@
       }
     ]
   },
-  "cien_s1_t13": {
+  "cien_e1_s1_t11": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "En relación a las cuatro respuestas que obtuvo el comentario de @Naturaviva ¿Qué perfil elegirías para informarte sobre el tema? Justifica tu respuesta de manera breve y con tus propias palabras:",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
-        "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
-      }
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "No toma postura o adopta posturas incorrectas (Almalibre, NaturerLover, David 82) con justificaciones subjetivas, falsas o irrelevantes. Adopta la postura de Universidad VIc, pero basa su justificación en criterios subjetivos, falsos o irrelevantes.",
+          "1": "Adopta la postura de UniversidadVIc y justifica su elección en base a criterios de fiabilidad de la información."
+        }
+      },
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/mobil2.png",
@@ -303,19 +325,22 @@
       }
     ]
   },
-  "cien_s2_t22": {
+  "cien_e1_s2_t17": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Estupendo, ya hemos encontrado la información sobre la fauna de la Sierra Calderona. Utiliza las pestañas para leer los distintos textos y contesta a las siguientes preguntas:\n\n¿Es la Sierra Calderona un espacio natural declarado zona ZEPA? ¿Qué significa este término?",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
-      }},
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "La Sierra Calderona es una espacio natural declarado también zona ZEPA (Zona de Espacial Protección para las Aves). Puede no reproducir la respuesta literal, pero explica claramente que es un espacio protegido para aves."
+        }
+      },
+      "instrucciones": ""
+    },
     "task_image": [
       "data/img/invertebrados.png",
       "data/img/vertebrados.png",
       "data/img/peces.png",
-      "data/img/reptiles.png",
       "data/img/aves.png",
       "data/img/mamiferos.png"
     ],
@@ -350,18 +375,21 @@
       }
     ]
   },
-  "cien_s2_t23": {
+  "retirada:cien_e1_s2_t23": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Avatar: Buscando en internet he encontrado más fuentes de información, ¿Cual de las siguientes páginas creéis que es más experta en el tema? // Avatar: Yo me fiaría de “El Rincón del Estudiante” , nosotros somos estudiantes y seguro que tiene materiales fáciles // Docente: Recordad que en Internet no toda la información es de calidad¿Estás de acuerdo con la decisión de Jaime? ¿A qué página web acudirías para obtener información sobre la Fauna de la Sierra Calderona? Responde en una o dos frases con tus propias palabras:",
     "rubric": {
-      "Punto 1 - Acuerdo con Jaime": {
-        "0": "Estar de acuerdo con la afirmación de Jaime.",
-        "1": "No estar de acuerdo con la afirmación de Jaime."
+      "items": {
+        "Punto 1 - Acuerdo con Jaime": {
+          "0": "Estar de acuerdo con la afirmación de Jaime.",
+          "1": "No estar de acuerdo con la afirmación de Jaime."
+        },
+        "Punto 2 - Selección de web y justificación": {
+          "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
+          "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
+        }
       },
-      "Punto 2 - Selección de web y justificación": {
-        "0": "Acudir a: 'Rincón del Estudiante', 'Turismo Rural y Ecoturismo' o 'EcoLodge Verde Montaña'. Acudir a 'Recursos para Estudiantes...' pero con justificación en criterios subjetivos, falsos o irrelevantes.",
-        "1": "Acudir a: 'Recursos para Estudiantes de Medio Ambiente - Facultad de Ciencias Ambientales' y basa su decisión en criterios de fiabilidad de la información."
-      }
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/web.png"
@@ -397,18 +425,21 @@
       }
     ]
   },
-  "lit_s1_t03": {
+  "lit_e1_s1_t04": {
     "tipo_tarea": "subjetivo_tabla",
     "task_prompt": "Estupendo, ya tenemos los textos con la información que necesitamos. Empezaremos creando una ficha de Miguel Hernández con información básica del poeta.\nRecuerda que para completar la ficha con información básica, debes localizar la información que necesitas. En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos. Completa la siguiente ficha con tus palabras.",
     "rubric": {
-      "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+      "items": {
+        "Punto 1 - Lugar y año de nacimiento y Luegar y año de muerte": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": " Lugar y año de nacimiento: 30 octubre de 1910 en Orihuela (Alicante). Lugar y año de muerte: 28 de marzo de 1942, Alicante."
+        },
+        "Punto 2- Circunstancias de su muerte": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
+        }
       },
-      "Punto 2- Circunstancias de su muerte": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Murió en prisión. Fue condenado a pena de muerte, lo cual se conmutó por 30 años de prisión."
-      }
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/infancia.png",
@@ -448,18 +479,21 @@
       }
     ]
   },
-  "lit_s1_t04": {
+  "lit_e1_s1_t05": {
     "tipo_tarea": "subjetivo_tabla",
     "task_prompt": "Continuamos con una otra ficha sobre el poeta. Cuando navegamos\npor internet podemos encontrarnos con información casi ilimitada y en\nocasiones tenemos que utilizar y combinar información de distintos\ndocumentos. Utiliza las pestañas para leer los distintos textos y completa la\nsiguiente ficha.",
     "rubric": {
-      "Punto 1 - Relación del poeta con la República o Guerra Civil": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
+      "items": {
+        "Punto 1 - Relación del poeta con la República o Guerra Civil": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Menciona la implicación del poeta con la República o la Guerra Civil en al menos uno de los siguientes aspectos: Se alistó en ejército republicano, fue comisario cultural, participó en el frente, estaba comprometido políticamente."
+        },
+        "Punto 2 - Ideas o valores que defendía": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
+        }
       },
-      "Punto 2 - Ideas o valores que defendía": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Menciona, al menos, uno de los siguientes aspectos: compromiso social, defensa de la República, justicia social, lucha política, solidaridad, compromiso con el pueblo."
-      }
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/infancia.png",
@@ -499,14 +533,17 @@
       }
     ]
   },
-  "lit_s1_t10": {
+  "retirada:lit_e1_s1_t10": {
     "tipo_tarea": "subjetivo",
     "task_prompt": "Encuentro algunas de esas ideas, las he subrayado en negrita. Entiendo que el poeta se identifica con el pueblo, pero no entiendo muy bien lo de los bueyes y los leones ¿Vosotros lo entendéis? Explícame con tus palabras qué significado o qué representan los términos “bueyes” y “leones”",
     "rubric": {
-      "Punto 1 - Evaluación": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
-      }
+      "items": {
+        "Punto 1 - Evaluación": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Bueyes: personas que obedecen sin protestar. Leones: personas que luchan, pueblo que defiende."
+        }
+      },
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/poema3.png"
@@ -542,18 +579,21 @@
       }
     ]
   },
-  "lit_s1_t17": {
+  "lit_e1_s2_t14": {
     "tipo_tarea": "subjetivo_tabla",
     "task_prompt": "Con toda la información disponible, completad la siguiente ficha.",
     "rubric": {
-      "Punto 1 - Sentencia/Condena": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+      "items": {
+        "Punto 1 - Sentencia/Condena": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Pena de muerte conmutada por una sentencia de 30 años de prisión."
+        },
+        "Punto 2 - Acusación": {
+          "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
+          "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
+        }
       },
-      "Punto 2 - Acusación": {
-        "0": "Respuesta vaga, subjetiva, irrelevante o incorrecta.",
-        "1": "Adhesión a la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra."
-      }
+      "instrucciones": ""
     },
     "task_image": [
       "data/img/infancia.png",

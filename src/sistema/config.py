@@ -15,6 +15,8 @@ PRE_DIR = DATA_DIR / "img_pre"
 DATABASE_DIR = DATA_DIR / "db"
 DB_PATH = DATABASE_DIR / "tutor_ia.db"
 RESULTS_DIR = PROJECT_ROOT / "resultados"
+PLAGIARISM_THRESHOLD = 0.25
+PLAGIARISM_MIN_WORDS = 15
 
 
 def resolve_project_path(path_str: str) -> Path:

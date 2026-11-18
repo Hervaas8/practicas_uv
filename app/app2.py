@@ -1,14 +1,18 @@
 import streamlit as st
 from streamlit_image_coordinates import streamlit_image_coordinates
 import uuid, os, re, json
+import time
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
 # --- IMPORTACIONES DEL AGENTE Y BASE DE DATOS ---
-from sistema.agente2 import app, load_test_inicial, load_curriculum
+from sistema.agente2 import app, load_test_inicial, load_curriculum, load_curriculum_data
 from sistema.modulos.motor_evaluacion import generate_strategy_feedback
-from sistema.utils.database import authenticate_user, save_student_results, get_professor_students_data
+from sistema.utils.database import (
+    authenticate_user, save_student_results, get_professor_students_data, save_student_rating,
+)
+from sistema.utils.esquemas import get_strategies, normalized_score, aggregate_score
 from sistema.modulos.detector_plagio import auditar_sesion_completa
 
 from sistema.config import resolve_project_path, TASKS_PATH, INITIAL_PATH, IMAGES_DIR, PRE_DIR
@@ -46,64 +50,102 @@ def get_val(obj, key):
 
 def get_available_data():
     try:
-        with open(TASKS_PATH, "r", encoding="utf-8-sig") as f:
-            return json.load(f)
-    except Exception:
-        return {"ciencias": {"sesion1": []}}
+        return load_curriculum_data()
+    except ValueError as exc:
+        st.error(str(exc))
+        st.stop()
 
-def start_agent(do_test, subject_id, session_id):
-    if do_test:
-        initial_tasks = load_test_inicial()
-        is_test_mode = True
-        default_levels = {} 
-    else:
-        initial_tasks = load_curriculum(subject_id, session_id)
-        is_test_mode = False
-        default_levels = {"navegar": "nivel_1", "integrar": "nivel_1", "evaluar": "nivel_1"}
+
+def set_display_task(state):
+    st.session_state.display_task = get_val(state, "current_task")
+    st.session_state.display_prompt = get_val(state, "current_task_prompt")
+    st.session_state.current_step = "working"
+    st.session_state.last_feedback = None
+    st.session_state.answer_started_at = time.monotonic()
+    st.session_state.evaluation_wait = 0.0
+    st.session_state.evaluation_error = False
+    st.session_state.navigation_history = []
+
+
+def start_agent(do_test, subject_id, scenario_id, session_id, initial_levels=None):
+    try:
+        curriculum = load_curriculum(subject_id, session_id, scenario_id)
+        initial_tasks = load_test_inicial() if do_test else curriculum
+    except ValueError as exc:
+        st.error(str(exc))
+        return
+    default_levels = {} if do_test else (initial_levels or {
+        "navegar": "nivel_1", "integrar": "nivel_1", "evaluar": "nivel_1",
+    })
 
     app.invoke({
         "student_id": st.session_state.user_name,
         "remaining_tasks": initial_tasks,
         "total_tasks": len(initial_tasks),
-        "test_mode": is_test_mode,
+        "test_mode": do_test,
         "competency_levels": default_levels,
         "current_subject": subject_id,
+        "current_scenario": scenario_id,
         "current_session": session_id,
         "task_history": [],
-        "detailed_feedback": {}
+        "detailed_feedback": {},
+        "current_task": None,
+        "current_student_response": None,
+        "current_response_time": 0.0,
+        "current_evaluation_time": 0.0,
+        "current_navigation_history": [],
+        "last_evaluation": None,
     }, config=config)
     
     new_state = app.get_state(config).values
-    st.session_state.display_task = get_val(new_state, "current_task")
-    st.session_state.display_prompt = get_val(new_state, "current_task_prompt")
-    st.session_state.current_step = "working"
+    st.session_state.attempt_id = str(uuid.uuid4())
+    set_display_task(new_state)
     st.rerun()
 
-def submit_answer(user_input):
+def submit_answer(user_input, retry=False):
+    if retry:
+        elapsed = st.session_state.response_elapsed
+    else:
+        elapsed = max(0.0, time.monotonic() - st.session_state.answer_started_at
+                      - st.session_state.evaluation_wait)
+    st.session_state.response_elapsed = elapsed
+    started = time.monotonic()
     with st.spinner("Evaluando..."):
-        app.update_state(config, {"current_student_response": user_input})
-        for event in app.stream(None, config=config): pass
+        app.update_state(config, {
+            "current_student_response": user_input,
+            "current_response_time": elapsed,
+            "current_navigation_history": st.session_state.navigation_history,
+        })
+        try:
+            for event in app.stream(None, config=config):
+                pass
+        except ValueError as exc:
+            st.session_state.evaluation_wait += time.monotonic() - started
+            st.error(str(exc))
+            return
+        st.session_state.evaluation_wait += time.monotonic() - started
         new_state = app.get_state(config).values
         st.session_state.last_feedback = get_val(new_state, "last_feedback_message")
-        st.session_state.current_step = "reviewed"
+        result = get_val(new_state, "last_evaluation") or {}
+        st.session_state.evaluation_error = result.get("status") == "error"
+        st.session_state.current_step = "working" if st.session_state.evaluation_error else "reviewed"
     st.rerun()
 
 def handle_next():
     new_state = app.get_state(config).values
-    st.session_state.display_task = get_val(new_state, "current_task")
-    st.session_state.display_prompt = get_val(new_state, "current_task_prompt")
-    st.session_state.current_step = "working"
-    st.session_state.last_feedback = None
+    set_display_task(new_state)
     st.rerun()
 
 def render_student_dashboard(history, final_levels, current_session, detailed_feedback=None, enable_evolution_chart=False):
     if detailed_feedback is None:
         detailed_feedback = {}
+    if any(float(get_val(entry, "max_score") or 0) <= 0 for entry in history):
+        st.warning("Hay puntuaciones antiguas sin un máximo válido; se excluyen de las notas de resumen.")
         
     max_streak = 0
     current_streak = 0
     for h in history:
-        score = h.get('score', 0) if isinstance(h, dict) else getattr(h, 'score', 0)
+        score = normalized_score(h)
         if score >= 0.5: 
             current_streak += 1
             if current_streak > max_streak: max_streak = current_streak
@@ -135,13 +177,10 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
         strat_scores = {"navegar": [], "integrar": [], "evaluar": []}
         for h in history:
             is_dict = isinstance(h, dict)
-            strat = h.get('strategy', '') if is_dict else getattr(h, 'strategy', '')
-            score = h.get('score', 0) if is_dict else getattr(h, 'score', 0)
-            strat = strat.replace("navegacion", "navegar").replace("integracion", "integrar").replace("evaluacion", "evaluar")
-            if strat in strat_scores:
-                strat_scores[strat].append(score)
+            for strat in get_strategies(h):
+                strat_scores[strat].append(h)
         
-        avg_scores = {k: sum(v)/len(v) if v else 0.0 for k, v in strat_scores.items()}
+        avg_scores = {k: aggregate_score(v) for k, v in strat_scores.items()}
             
         with col_barras:
             df_barras = pd.DataFrame({
@@ -206,8 +245,7 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
         if not content_history:
             st.info("En esta sesión no se han evaluado tareas de contenido específico.")
         else:
-            scores = [h.get('score', 0) if isinstance(h, dict) else getattr(h, 'score', 0) for h in content_history]
-            global_score = sum(scores) / len(scores) if scores else 0
+            global_score = aggregate_score(content_history)
             global_score_10 = global_score * 10 
             
             col_nota, col_feedback = st.columns([1, 2], gap="large")
@@ -226,15 +264,14 @@ def render_student_dashboard(history, final_levels, current_session, detailed_fe
             concept_scores = {}
             for h in content_history:
                 c_list = h.get('conceptos', []) if isinstance(h, dict) else getattr(h, 'conceptos', [])
-                score = h.get('score', 0) if isinstance(h, dict) else getattr(h, 'score', 0)
                 for c in c_list:
                     if c not in concept_scores: concept_scores[c] = []
-                    concept_scores[c].append(score)
+                    concept_scores[c].append(h)
             
             if concept_scores:
                 domina, repasar, medio = [], [], []
                 for c, s_list in concept_scores.items():
-                    avg = sum(s_list) / len(s_list)
+                    avg = aggregate_score(s_list)
                     item_text = f"**{c}** *(Nota: {avg * 10:.1f}/10)*"
                     if avg >= 0.8: domina.append(f"🟢 {item_text}")
                     elif avg < 0.5: repasar.append(f"🔴 {item_text}")
@@ -295,10 +332,23 @@ elif st.session_state.user_role == 'profesor':
             st.session_state.clear()
             st.rerun()
     else:
-        available_sessions = sorted(list(set([d['session_id'] for d in completed_data])))
-        selected_prof_session = st.selectbox("📂 Selecciona la sesión a analizar:", available_sessions)
-        
-        session_data = [d for d in completed_data if d['session_id'] == selected_prof_session]
+        available_sessions = sorted({(d['subject_id'], d['scenario_id'], d['session_id']) for d in completed_data})
+        selected_prof_subject, selected_prof_scenario, selected_prof_session = st.selectbox(
+            "📂 Selecciona la asignatura, escenario y sesión a analizar:", available_sessions,
+            format_func=lambda value: f"{value[0].capitalize()} / {value[1]} / {value[2]}",
+        )
+        session_attempts = [d for d in completed_data
+                            if d['subject_id'] == selected_prof_subject
+                            and d['scenario_id'] == selected_prof_scenario
+                            and d['session_id'] == selected_prof_session]
+        latest_by_student = {}
+        for attempt in session_attempts:
+            latest_by_student.setdefault(attempt['alumno_id'], attempt)
+        session_data = list(latest_by_student.values())
+        st.caption("La visión de clase y la auditoría utilizan el último intento de cada alumno.")
+        if any(float(task.get("max_score", 1)) <= 0
+               for result in session_data for task in result['task_history']):
+            st.warning("Algunas puntuaciones antiguas no tienen máximo válido y se excluyen de las notas.")
         
         if not session_data:
             st.warning("No hay datos completados por tus alumnos para esta sesión.")
@@ -306,32 +356,36 @@ elif st.session_state.user_role == 'profesor':
             all_strat_scores = {"navegar": [], "integrar": [], "evaluar": []}
             all_concept_scores = {}
             student_global_scores = [] 
+            class_strategy_history = []
+            class_content_history = []
             
             for student in session_data:
                 history = student['task_history']
                 student_content_scores = []
                 
                 for task in history:
-                    score = task.get('score', 0)
-                    strat = task.get('strategy', '')
-                    if strat in all_strat_scores:
-                        all_strat_scores[strat].append(score)
+                    strategies = get_strategies(task)
+                    for strat in strategies:
+                        all_strat_scores[strat].append(task)
+                    if strategies:
+                        class_strategy_history.append(task)
                     
                     if task.get('contenido'):
-                        student_content_scores.append(score)
+                        student_content_scores.append(task)
+                        class_content_history.append(task)
                         for c in task.get('conceptos', []):
                             if c not in all_concept_scores:
                                 all_concept_scores[c] = []
-                            all_concept_scores[c].append(score)
+                            all_concept_scores[c].append(task)
                 
-                s_avg = sum(student_content_scores)/len(student_content_scores) if student_content_scores else 0
+                s_avg = aggregate_score(student_content_scores)
                 student_global_scores.append({"nombre": student['alumno_name'], "nota": s_avg})
             
-            avg_strats = {k: (sum(v)/len(v) if v else 0) for k, v in all_strat_scores.items()}
-            avg_concepts = {k: (sum(v)/len(v) if v else 0) for k, v in all_concept_scores.items()}
+            avg_strats = {k: aggregate_score(v) for k, v in all_strat_scores.items()}
+            avg_concepts = {k: aggregate_score(v) for k, v in all_concept_scores.items()}
             
-            global_strat_score = sum(avg_strats.values()) / len(avg_strats) if avg_strats else 0
-            global_content_score = sum(avg_concepts.values()) / len(avg_concepts) if avg_concepts else 0
+            global_strat_score = aggregate_score(class_strategy_history)
+            global_content_score = aggregate_score(class_content_history)
 
             tab_general, tab_emparejamiento, tab_individual, tab_auditoria = st.tabs([
                 "📊 Visión de la Clase", 
@@ -412,7 +466,12 @@ elif st.session_state.user_role == 'profesor':
                 sel_student_id = st.selectbox("Selecciona un alumno para ver su dashboard:", list(student_dict.keys()), format_func=lambda x: student_dict[x])
                 
                 if sel_student_id:
-                    student_specific_data = next(d for d in session_data if d['alumno_id'] == sel_student_id)
+                    student_attempts = [d for d in session_attempts if d['alumno_id'] == sel_student_id]
+                    attempt_index = st.selectbox(
+                        "Intento:", range(len(student_attempts)),
+                        format_func=lambda index: f"{student_attempts[index]['timestamp']} · Intento {len(student_attempts) - index}",
+                    )
+                    student_specific_data = student_attempts[attempt_index]
                     st.markdown(f"**Viendo datos de: {student_specific_data['alumno_name']} - {selected_prof_session}**")
                     st.divider()
                     
@@ -429,51 +488,54 @@ elif st.session_state.user_role == 'profesor':
                 st.markdown(f"### 🕵️ Auditoría de Originalidad - {selected_prof_session}")
                 st.write("Analiza las respuestas de texto libre de esta sesión buscando coincidencias estructurales sospechosas entre los alumnos.")
                 
-                if st.button("🔍 Iniciar Auditoría Completa", use_container_width=True, type="primary"):
+                if "sin_identificar" in (selected_prof_subject, selected_prof_scenario):
+                    st.info("Estos resultados antiguos no tienen asignatura o escenario identificables para cargar sus tareas.")
+                if st.button("🔍 Iniciar Auditoría Completa", use_container_width=True, type="primary",
+                             disabled="sin_identificar" in (selected_prof_subject, selected_prof_scenario)):
                     with st.spinner("Analizando respuestas y consultando a PoliGPT... Esto puede tardar un poco."):
                         
-                        # Buscar a qué asignatura pertenece la sesión seleccionada para cargar las tareas correctamente
-                        all_data = get_available_data()
-                        subject_for_session = "ciencias"
-                        for subj, s_dict in all_data.items():
-                            if selected_prof_session in s_dict:
-                                subject_for_session = subj
-                                break
-                                
-                        tareas_sesion = load_curriculum(subject_for_session, selected_prof_session)
+                        try:
+                            tareas_sesion = load_curriculum(selected_prof_subject, selected_prof_session, selected_prof_scenario)
+                        except ValueError as exc:
+                            st.error(str(exc))
+                            st.stop()
                         
                         subjetivas_ids = [
                             t.get("task_id") or t.get("id")
                             for t in tareas_sesion 
-                            if str(t.get("task_type", "")).strip().lower() == "subjetivo"
+                            if t.get("task_type") in ("subjetivo", "v_y_d") or t.get("es_tabla")
                         ]
                         
                         reporte_plagio = auditar_sesion_completa(
                             session_data, 
-                            umbral=0.70, 
                             valid_task_ids=subjetivas_ids
                         )
                         
                         if not reporte_plagio:
-                            st.success("✅ ¡Todo limpio! No se han detectado coincidencias estructurales anómalas en las respuestas de las tareas subjetivas de esta sesión.")
+                            st.success("✅ No se han encontrado casos que requieran revisión en las respuestas abiertas.")
                         else:
-                            st.warning("⚠️ Se han detectado similitudes matemáticas. Revisa los análisis detallados a continuación.")
+                            st.info("Se muestran los casos revisados, distinguiendo el veredicto y los errores de evaluación.")
                             st.divider()
                             
                             for task_id, info_tarea in reporte_plagio.items():
                                 st.markdown(f"#### 📝 Pregunta: *{info_tarea['prompt']}*")
                                 
                                 for alerta in info_tarea['alertas']:
-                                    veredicto = alerta['analisis'].get('veredicto', 'Sospechoso')
+                                    analysis = alerta['analisis']
+                                    veredicto = analysis.get('veredicto') or "Error técnico"
                                     
                                     if veredicto == "Posible Plagio":
                                         color_icon = "🔴"
                                     elif veredicto == "Dudoso":
                                         color_icon = "🟠"
+                                    elif analysis.get('status') == 'error':
+                                        color_icon = "⚪"
                                     else:
                                         color_icon = "🟢" 
                                     
-                                    titulo_expander = f"{color_icon} {alerta['alumno_1']} vs {alerta['alumno_2']} - Similitud: {alerta['similitud_matematica']}% [{veredicto}]"
+                                    similarity = alerta['similitud_matematica']
+                                    similarity_text = f"{similarity}%" if similarity is not None else "No aplica"
+                                    titulo_expander = f"{color_icon} {alerta['alumno_1']} vs {alerta['alumno_2']} - Similitud: {similarity_text} [{veredicto}]"
                                     
                                     with st.expander(titulo_expander):
                                         col1, col2 = st.columns(2)
@@ -510,7 +572,10 @@ elif st.session_state.user_role == 'alumno':
         selected_subject = st.selectbox("📚 Selecciona la asignatura:", subjects, format_func=lambda x: x.capitalize())
         
         if selected_subject:
-            sessions = list(curriculum_data.get(selected_subject, {}).keys())
+            scenarios = list(curriculum_data[selected_subject].keys())
+            selected_scenario = st.selectbox("🗂️ Selecciona el escenario:", scenarios,
+                                             format_func=lambda x: x.replace("escenario", "Escenario "))
+            sessions = list(curriculum_data[selected_subject][selected_scenario].keys())
             selected_session = st.selectbox("📂 Selecciona la sesión que deseas realizar:", sessions)
             
             st.divider()
@@ -519,22 +584,23 @@ elif st.session_state.user_role == 'alumno':
             c1, c2 = st.columns(2)
             with c1:
                 if st.button("✅ Sí, realizar test inicial", use_container_width=True):
-                    start_agent(do_test=True, subject_id=selected_subject, session_id=selected_session)
+                    start_agent(do_test=True, subject_id=selected_subject, scenario_id=selected_scenario, session_id=selected_session)
             with c2:
                 if st.button("❌ No, ir directamente a la sesión", use_container_width=True):
-                    start_agent(do_test=False, subject_id=selected_subject, session_id=selected_session)
+                    start_agent(do_test=False, subject_id=selected_subject, scenario_id=selected_scenario, session_id=selected_session)
 
     else:
         state_vals = app.get_state(config).values
         is_test_mode = get_val(state_vals, "test_mode")
         competencies = get_val(state_vals, "competency_levels") or {}
         current_subject = get_val(state_vals, "current_subject") or "ciencias"
+        current_scenario = get_val(state_vals, "current_scenario") or "escenario1"
         current_session = get_val(state_vals, "current_session") or "sesion1"
         
         # --- NUEVA CABECERA SUPERIOR PARA EL ALUMNO (Reemplaza la barra lateral) ---
         col_user_1, col_user_2 = st.columns([8, 2])
         with col_user_1:
-            st.info(f"👤 **Usuario:** {st.session_state.user_name} | 📚 **Asignatura:** {current_subject.capitalize()} | 📂 **Sesión:** {current_session}")
+            st.info(f"👤 **Usuario:** {st.session_state.user_name} | 📚 **Asignatura:** {current_subject.capitalize()} | 🗂️ **Escenario:** {current_scenario} | 📂 **Sesión:** {current_session}")
         with col_user_2:
             if st.button("🚪 Cerrar Sesión", use_container_width=True, key="logout_student_top"):
                 st.session_state.clear()
@@ -566,7 +632,10 @@ elif st.session_state.user_role == 'alumno':
             if history:
                 save_student_results(
                     alumno_id=st.session_state.user_id,
+                    subject_id=current_subject,
+                    scenario_id=current_scenario,
                     session_id=current_session,
+                    attempt_id=st.session_state.attempt_id,
                     competency_levels=final_levels,
                     task_history=history,
                     detailed_feedback=detailed_feedback
@@ -578,13 +647,14 @@ elif st.session_state.user_role == 'alumno':
             st.write("¿Qué te ha parecido la sesión de hoy?")
             student_rating = st.feedback("faces")
             if student_rating is not None:
+                save_student_rating(st.session_state.user_id, st.session_state.attempt_id, student_rating)
                 if student_rating >= 3: st.success("¡Nos alegra mucho que te haya gustado!")
                 elif student_rating == 2: st.info("¡Gracias por tu valoración! Seguiremos mejorando.")
                 else: st.warning("Sentimos que haya sido dura. ¡Revisaremos el nivel para la próxima!")
 
             st.divider()
             
-            all_sessions = list(get_available_data().get(current_subject, {}).keys())
+            all_sessions = list(get_available_data().get(current_subject, {}).get(current_scenario, {}).keys())
             try:
                 current_idx = all_sessions.index(current_session)
                 if current_idx < len(all_sessions) - 1:
@@ -592,17 +662,7 @@ elif st.session_state.user_role == 'alumno':
                     st.info(f"Tienes una sesión pendiente: **{next_session}**")
                     
                     if st.button(f"➡️ Continuar a {next_session}", use_container_width=True):
-                        new_tasks = load_curriculum(current_subject, next_session)
-                        app.update_state(config, {
-                            "current_session": next_session, "remaining_tasks": new_tasks, "total_tasks": len(new_tasks),
-                            "current_task": new_tasks[0], "current_task_prompt": new_tasks[0].get("task_prompt", ""),
-                            "task_history": [], "last_feedback_message": None, "detailed_feedback": {}
-                        })
-                        st.session_state.display_task = new_tasks[0]
-                        st.session_state.display_prompt = new_tasks[0].get("task_prompt", "")
-                        st.session_state.current_step = "working"
-                        st.session_state.last_feedback = None
-                        st.rerun()
+                        start_agent(False, current_subject, current_scenario, next_session, initial_levels=competencies)
                         
             except ValueError: pass 
 
@@ -615,6 +675,10 @@ elif st.session_state.user_role == 'alumno':
             col_izq, col_der = st.columns([1, 1], gap="large")
 
             with col_izq:
+                if st.session_state.get("evaluation_error", False):
+                    st.error(st.session_state.last_feedback)
+                    if st.button("Reintentar evaluación"):
+                        submit_answer(get_val(state_vals, "current_student_response"), retry=True)
                 full_prompt = st.session_state.display_prompt
                 t_type = str(task.get("task_type", "")).strip().lower()
                 options_pattern = r"(?:^|\n)\s*([a-d][\)\.])\s*([^\n]+)"
@@ -657,6 +721,26 @@ elif st.session_state.user_role == 'alumno':
                     if st.session_state.current_step == "working":
                         if t_type == "interactivo":
                             st.info("🎯 Haz clic directamente en la imagen de la derecha para responder.")
+                        elif t_type == "verdadero_falso":
+                            with st.form(f"form_vf_{task.get('task_id', '0')}"):
+                                answers = []
+                                for i, statement in enumerate(task.get("afirmaciones", [])):
+                                    answer = st.selectbox(
+                                        f"{i + 1}. {statement['texto']}",
+                                        [None, True, False],
+                                        format_func=lambda value: {
+                                            None: "Selecciona una opción",
+                                            True: "Verdadero",
+                                            False: "Falso",
+                                        }[value],
+                                        key=f"vf_{task.get('task_id', '0')}_{i}",
+                                    )
+                                    answers.append(answer)
+                                if st.form_submit_button("Enviar respuestas"):
+                                    if any(answer is None for answer in answers):
+                                        st.error("Debes responder a todas las afirmaciones.")
+                                    else:
+                                        submit_answer(answers)
                         elif t_type == "v_y_d":
                             st.info("Completa la tabla:")
                             with st.form(f"form_vyd_{task.get('task_id', '0')}"):
@@ -748,6 +832,9 @@ elif st.session_state.user_role == 'alumno':
                         st.session_state.last_task_id = task_id_key
 
                     pantalla_actual_id = st.session_state.ruta_nav[-1]
+                    navigation_history = st.session_state.navigation_history
+                    if not navigation_history or navigation_history[-1] != pantalla_actual_id:
+                        navigation_history.append(pantalla_actual_id)
                     pantallas = task.get("pantallas", {})
                     pantalla_data = pantallas.get(pantalla_actual_id, {})
                     

@@ -22,7 +22,7 @@ from langchain_core.messages import HumanMessage
 
 # Importamos el esquema centralizado y la configuración de LLM
 from sistema.utils.esquemas import LLMScaffoldingOutput
-from sistema.utils.configuracion_llm import get_llm, is_vision_model
+from sistema.utils.configuracion_llm import get_llm, get_model_name, is_vision_model
 from sistema.config import PROMPTS_PATH, resolve_project_path
 
 
@@ -173,13 +173,14 @@ def _normalizar_salida(raw_output: Any) -> Dict[str, str]:
 
 def generar_enunciados_adaptados(
     tarea: Dict[str, Any],
-    modelo: str = "poligpt",
+    modelo: Optional[str] = None,
     contexto_extraido: Optional[str] = None,
     usar_salida_estructurada: bool = True,
 ) -> Dict[str, Any]:
     """Genera pistas y enunciados adaptados para una tarea integrando OCR o Visión."""
     
     # 1. Determinar si usamos visión o OCR
+    modelo = get_model_name("generador", modelo)
     rutas_imagenes = _get_task_images(tarea)
     es_vision = is_vision_model(modelo)
 
@@ -244,7 +245,7 @@ def generar_enunciados_adaptados(
 
 def generar_task_prompt_adaptado(
     tarea: Dict[str, Any],
-    modelo: str = "poligpt",
+    modelo: Optional[str] = None,
     contexto_extraido: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Devuelve una copia de la tarea con `task_prompt` actualizado con los niveles correspondientes."""
@@ -264,7 +265,7 @@ def generar_task_prompt_adaptado(
     tarea_adaptada["pistas_generadas"] = {
         "pista_1": salida["pista_1"],
         "pista_2": salida["pista_2"],
-        "modelo": modelo,
+        "modelo": get_model_name("generador", modelo),
         "tiempo_respuesta": salida["tiempo_respuesta"],
     }
     return tarea_adaptada
@@ -272,7 +273,7 @@ def generar_task_prompt_adaptado(
 
 def generar_enunciados_para_sesion(
     tareas: Iterable[Dict[str, Any]],
-    modelo: str = "poligpt",
+    modelo: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """Aplica la generación de enunciados adaptados a una lista completa de tareas."""
     return [generar_task_prompt_adaptado(tarea, modelo=modelo) for tarea in tareas]
@@ -287,7 +288,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Genera pistas y enunciados adaptados para la primera tarea de un JSON.")
     parser.add_argument("input_json", help="Ruta del JSON con tareas.")
-    parser.add_argument("modelo", nargs="?", default="poligpt", help="Modelo a utilizar.")
+    parser.add_argument("modelo", nargs="?", default=None, help="Modelo a utilizar; por defecto, el configurado.")
     args = parser.parse_args()
     input_path = resolve_project_path(args.input_json)
 

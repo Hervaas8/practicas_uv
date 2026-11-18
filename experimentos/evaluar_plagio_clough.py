@@ -14,19 +14,20 @@ from sistema.modulos.detector_plagio import (
     calcular_trigramas,
     calcular_levenshtein_palabras,
     verificar_plagio_llm,
+    plagiarism_prediction,
 )
 
 # ==========================================
 # CONFIGURACIÓN
 # ==========================================
 
-from sistema.config import DATA_DIR, RESULTS_DIR
+from sistema.config import DATA_DIR, RESULTS_DIR, PLAGIARISM_THRESHOLD, PLAGIARISM_MIN_WORDS
 
 CORPUS_DIR = DATA_DIR / "clough"
 OUTPUT_FILE = RESULTS_DIR / "resultados_clough_ancho.csv"
 
-UMBRAL = 0.25
-MIN_PALABRAS = 15
+UMBRAL = PLAGIARISM_THRESHOLD
+MIN_PALABRAS = PLAGIARISM_MIN_WORDS
 
 CATEGORIAS_PLAGIO = {"cut", "light"}
 CATEGORIAS_NO_PLAGIO = {"non", "heavy"}
@@ -112,6 +113,8 @@ def modelo_es_valido(fila_previa: dict, modelo: str) -> bool:
     - Contiene la palabra "error" Y el nombre del modelo.
     """
     if not fila_previa:
+        return False
+    if fila_previa.get(f"prediccion_{modelo}") not in ("plagio", "no_plagio"):
         return False
         
     veredicto = str(fila_previa.get(f"veredicto_{modelo}", "")).strip().lower()
@@ -210,15 +213,15 @@ def analizar_documento_completo(par: dict, umbral: float, min_palabras: int, fil
                 analisis = verificar_plagio_llm("(Clough corpus)", original, variante, modelo=modelo)
                 tiempo_total = time.time() - inicio
                 
-                veredicto = analisis.get("veredicto")
-                prediccion = "plagio" if veredicto == "Posible Plagio" else "no_plagio"
+                veredicto = analisis.get("veredicto") if analisis.get("status") != "error" else "Error técnico"
+                prediccion = plagiarism_prediction(analisis)
                 justificacion = analisis.get("justificacion")
                 
             except Exception as e:
                 tiempo_total = time.time() - inicio
                 # MODIFICACIÓN: Forzamos a que guarde la palabra "Error" y el modelo
                 veredicto = f"Error {modelo}" 
-                prediccion = "Error"
+                prediccion = None
                 justificacion = f"Fallo en ejecución: Error {modelo} - {str(e)}"
                 print("[!] Fallo.", end=" ")
 

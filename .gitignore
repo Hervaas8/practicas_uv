@@ -28,3 +28,9 @@ outputs/# Loophole CLI (binario y paquetes)
 tools/loophole/loophole
 tools/loophole/*.tar.gz
 tools/loophole/*.zip
+
+# Guía local del proyecto para consultar en futuras tareas (no publicar).
+/CONTEXTO_PROYECTO.local.md
+/data/db/*.before_results_identity.bak
+/data/db/*.before_science_task_renumbering.bak
+/data/db/*.before_scenarios.bak

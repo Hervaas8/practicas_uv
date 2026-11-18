@@ -16,10 +16,10 @@ eval_subjective_prompt: |
 
   **Instrucciones:**
   1. Analiza la respuesta del alumno comparándola con cada uno de los ítems o apartados mencionados en la rúbrica.
-  2. La rubrica es un diccionario anidado que contiene cada item evaluable (ej: "Punto 1 - Evaluación") con sus posibles puntuaciones en la clave, "0" o "1" y su descripción en los valores. 
-  2. Asigna una puntuación individual a cada ítem evaluable. **MUY IMPORTANTE: Usa ÚNICAMENTE los valores numéricos exactos que se indican en la rúbrica 0.0 o 1.0. NO inventes puntuaciones intermedias como 0.5 ni valores fuera de la rúbrica.**.
-  3. Calcula el 'score' (Nota Global) sumando matemáticamente todas las puntuaciones individuales de los ítems.
-  4. Escribe un 'reasoning' (Razonamiento) técnico y breve justificando las notas asignadas con ayuda de la rubrica (ej: "Acierta el apartado de nacimiento porque ..., pero falla en los motivos de la condena porque ...").
+  2. La rúbrica contiene 'items', un diccionario con cada apartado evaluable y sus puntuaciones permitidas, y 'instrucciones', información adicional que no se puntúa.
+  3. Asigna una puntuación a CADA apartado de 'items', usando sus claves exactas en 'scores_por_item'. Usa ÚNICAMENTE los valores numéricos indicados en sus criterios. No inventes puntuaciones intermedias ni apartados adicionales.
+  4. Calcula el 'score' (Nota Global) sumando matemáticamente todas las puntuaciones individuales de los ítems.
+  5. Escribe un 'reasoning' (Razonamiento) técnico y breve justificando las notas asignadas con ayuda de la rúbrica.
 
   **Estructura de Salida JSON OBLIGATORIA:**
   Debes devolver la información utilizando exactamente los campos solicitados: "score", "scores_por_item" y "reasoning". 

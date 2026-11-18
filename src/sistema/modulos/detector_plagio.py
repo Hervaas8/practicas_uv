@@ -5,7 +5,7 @@ import yaml
 import sys
 from sistema.utils.configuracion_llm import get_llm_estructurado
 from langchain_core.prompts import ChatPromptTemplate
-from sistema.config import PROMPTS_PATH
+from sistema.config import PROMPTS_PATH, PLAGIARISM_THRESHOLD, PLAGIARISM_MIN_WORDS
 
 # ==========================================
 # --- CARGAR CONFIGURACIÓN DE PROMPTS ---
@@ -81,30 +81,34 @@ def calcular_levenshtein_palabras(lista_a: list, lista_b: list) -> float:
 
 def verificar_plagio_llm(pregunta: str, resp_a: str, resp_b: str, modelo: str = None):
     """Pasa los casos sospechosos a PoliGPT para obtener el veredicto estructurado."""
-    # Añadimos override_model=modelo para que cambie de LLM
-    llm_detective = get_llm_estructurado("plagio", override_model=modelo)
-    
-    # Preparamos el template usando LangChain
-    prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_PLAGIO)
-    
-    # Conectamos el prompt con el LLM estructurado
-    chain = prompt_tmpl | llm_detective
-    
     try:
-        # Invocamos la cadena pasándole las variables necesarias
+        llm_detective = get_llm_estructurado("plagio", override_model=modelo)
+        prompt_tmpl = ChatPromptTemplate.from_template(PROMPT_PLAGIO)
+        chain = prompt_tmpl | llm_detective
         resultado = chain.invoke({
             "pregunta": pregunta,
             "resp_a": resp_a,
             "resp_b": resp_b
         })
-        return resultado.dict() 
+        return {"status": "ok", **resultado.model_dump()}
     except Exception as e:
         print(f"Error en LLM Plagio ({modelo}): {e}")
         return {
-            "veredicto": "Sospechoso", 
-            "justificacion": f"Alta similitud matemática, pero el LLM {modelo} no pudo verificarlo por un error técnico.", 
+            "status": "error",
+            "veredicto": None,
+            "justificacion": "No se pudo completar la revisión por un error técnico. Reintenta la auditoría.",
             "frases_identicas": []
         }
+
+
+def plagiarism_prediction(analysis: dict):
+    """Deja los fallos técnicos sin predicción, fuera de las métricas binarias."""
+    verdict = analysis.get("veredicto")
+    if analysis.get("status") == "error" or verdict not in (
+        "Posible Plagio", "Posible No Plagio", "Dudoso"
+    ):
+        return None
+    return "plagio" if verdict == "Posible Plagio" else "no_plagio"
 
 # ==========================================
 # 3. ORQUESTADOR PRINCIPAL
@@ -112,8 +116,8 @@ def verificar_plagio_llm(pregunta: str, resp_a: str, resp_b: str, modelo: str = 
 
 def auditar_sesion_completa(
     session_data: list,
-    umbral: float = 0.25,
-    min_palabras: int = 15,
+    umbral: float = PLAGIARISM_THRESHOLD,
+    min_palabras: int = PLAGIARISM_MIN_WORDS,
     valid_task_ids: list = None  # <-- PARÁMETRO AÑADIDO
 ) -> dict:
     """

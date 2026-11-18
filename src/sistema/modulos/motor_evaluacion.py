@@ -5,7 +5,9 @@ import base64
 import os
 from PIL import Image
 import io
-from sistema.utils.configuracion_llm import get_llm_evaluador, is_vision_model
+import math
+from sistema.utils.configuracion_llm import get_llm_evaluador, get_model_name, is_vision_model
+from sistema.utils.esquemas import normalize_rubric, get_strategies, validate_true_false_task
 from langchain_core.messages import HumanMessage
 from sistema.config import PROMPTS_PATH, resolve_project_path
 
@@ -54,13 +56,28 @@ def select_feedback(task: dict, normalized_score: float):
     feedback_dict = task.get("feedback", {})
     return feedback_dict.get(key, "Feedback no configurado.")
 
-def evaluate_task(task: dict, student_answer: any, student_level: str, override_model: str = None):
+def validate_item_scores(scores: dict, rubric: dict) -> float:
+    """Comprueba los ítems contra la rúbrica y calcula su suma en el servidor."""
+    items = rubric["items"]
+    if set(scores) != set(items):
+        raise ValueError("La evaluación debe incluir exactamente los apartados de la rúbrica.")
+    for name, score in scores.items():
+        allowed = {float(value) for value in items[name]}
+        if not math.isfinite(score) or score not in allowed:
+            raise ValueError(f"Puntuación no permitida en '{name}': {score}.")
+    return float(sum(scores.values()))
+
+
+def evaluate_task(task: dict, student_answer: any, student_level: str,
+                  override_model: str = None, resolved_prompt: str = None):
     task_id = task.get('task_id', 'Desconocida')
     task_type = task.get('task_type')
     
     # Resolver el prompt dependiendo de si es diccionario
     prompt_data = task.get("task_prompt", "")
-    if isinstance(prompt_data, dict):
+    if resolved_prompt is not None:
+        task_prompt_str = resolved_prompt
+    elif isinstance(prompt_data, dict):
         nivel_map = {"nivel_1": "nivel_bajo", "nivel_2": "nivel_medio", "nivel_3": "nivel_alto"}
         task_prompt_str = prompt_data.get(nivel_map.get(student_level, "nivel_bajo"), "")
     else:
@@ -94,6 +111,18 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         matches = sum(1 for i, v in enumerate(correct_list) if i < len(student_list) and student_list[i] == v)
         score = matches / len(correct_list) if correct_list else 0
         reasoning = f"Auto-corregido: {matches}/{len(correct_list)} aciertos."
+
+    # --- TIPO: VERDADERO / FALSO ---
+    elif task_type == "verdadero_falso":
+        statements = validate_true_false_task(task)
+        if (not isinstance(student_answer, list)
+                or len(student_answer) != len(statements)
+                or any(not isinstance(answer, bool) for answer in student_answer)):
+            raise ValueError("Debes responder verdadero o falso a cada afirmación.")
+        matches = sum(answer == statement["correcta"]
+                      for answer, statement in zip(student_answer, statements))
+        score = 1.0 if matches == len(statements) else 0.0
+        reasoning = f"Auto-corregido: {matches} de {len(statements)} afirmaciones correctas."
 
     # --- TIPO: INTERACTIVO ---
     elif task_type == "interactivo":
@@ -130,19 +159,12 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
 
 # --- TIPO: SUBJETIVO / V_Y_D / TABLAS (Evaluación Multi-Objetivo) ---
     else:
-        rubric = task.get("rubric", {})
-        
-        # 1. Contar dinámicamente los apartados a evaluar
-        # Al tener todas las rúbricas estandarizadas, solo contamos las claves que son diccionarios
-        if isinstance(rubric, dict):
-            items_evaluables = [k for k, v in rubric.items() if isinstance(v, dict)]
-            max_score = float(len(items_evaluables))
-        else:
-            max_score = 1.0 # Fallback de seguridad
-            items_evaluables = []
+        rubric = normalize_rubric(task.get("rubric", {}))
+        max_score = sum(max(float(value) for value in criteria)
+                        for criteria in rubric["items"].values())
 
         # Lógica Híbrida: Visión vs OCR
-        modelo_activo = override_model if override_model else "poligpt-vision"
+        modelo_activo = get_model_name("evaluacion", override_model)
         es_vision = is_vision_model(modelo_activo)
 
         rutas_imagenes = task.get("task_image", [])
@@ -170,13 +192,14 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
         contexto_completo = texto_base + texto_ocr_adicional
 
         # 2. Instrucción dinámica unificada para el LLM
-        texto_apartados = "apartado" if max_score == 1.0 else "apartados"
+        item_count = len(rubric["items"])
+        texto_apartados = "apartado" if item_count == 1 else "apartados"
         nota_llm = (
-            f"NOTA CRÍTICA: Esta tarea tiene {int(max_score)} {texto_apartados} a evaluar según la rúbrica. "
+            f"NOTA CRÍTICA: Esta tarea tiene {item_count} {texto_apartados} a evaluar según la rúbrica. "
             f"Evalúa CADA UNO por separado. "
             f"Es ESTRICTAMENTE OBLIGATORIO que tu JSON de salida incluya el campo 'scores_por_item' "
-            f"conteniendo un diccionario con la nota asignada a cada apartado (usando las claves exactas de la rúbrica). "
-            f"Si uno de los apartados la clave se llama Instrucciones, no es un apartado a evaluar, simplemente es información adicional de la rúbrica."
+            f"conteniendo un diccionario con la nota asignada a cada apartado (usando las claves exactas de 'items'). "
+            f"El campo 'instrucciones' es información adicional y no se puntúa. "
             f"(Total máximo: {max_score})"
         )
 
@@ -195,24 +218,27 @@ def evaluate_task(task: dict, student_answer: any, student_level: str, override_
 
         msg = HumanMessage(content=content)
 
-        try:
-            resultado = llm_evaluador.invoke([msg])
-            scores_por_item = resultado.scores_por_item
-            
-            # Sumamos las notas de forma segura
-            if scores_por_item:
-                score = float(sum(scores_por_item.values()))
-            else:
-                score = round(resultado.score, 2)
-                
-            reasoning = resultado.reasoning
-        except Exception as e:
-            print(f"Error LLM: {e}")
-            return None
+        messages = [msg]
+        for attempt in range(2):
+            try:
+                resultado = llm_evaluador.invoke(messages)
+                scores_por_item = resultado.scores_por_item
+                score = validate_item_scores(scores_por_item, rubric)
+                reasoning = resultado.reasoning
+                break
+            except Exception as exc:
+                if attempt == 1:
+                    print(f"Error LLM en tarea {task_id}: {exc}")
+                    return None
+                messages = [msg, HumanMessage(content=(
+                    "La evaluación anterior no fue válida. Repite la evaluación respetando "
+                    "exactamente los apartados y los valores permitidos por la rúbrica."
+                ))]
 
     return {
         "score": score,
         "max_score": max_score,
+        "normalized_score": score / max_score,
         "scores_por_item": scores_por_item, 
         "reasoning": reasoning,
         "feedback_shown": select_feedback(task, score / max_score if max_score > 0 else 0)
@@ -233,7 +259,8 @@ def generate_strategy_feedback(strategy_name: str, level: str, history: list) ->
     def get_val(item, key, default=""):
         return item.get(key, default) if isinstance(item, dict) else getattr(item, key, default)
 
-    strat_history = [h for h in history if get_val(h, 'strategy') == strategy_name and not get_val(h, 'is_test_task', False)]
+    strat_history = [h for h in history if strategy_name in get_strategies(h)
+                     and not get_val(h, 'is_test_task', False)]
     if not strat_history: return "No hay suficientes datos."
 
     sub_vistas = set()

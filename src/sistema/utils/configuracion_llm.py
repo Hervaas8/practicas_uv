@@ -53,9 +53,13 @@ def is_vision_model(model_name: str) -> bool:
     """Verifica si un modelo tiene capacidades de visión."""
     return model_name in MODELOS_VISION
 
+
+def get_model_name(tipo_tarea: str, override_model=None) -> str:
+    return override_model or MAPA_MODELOS.get(tipo_tarea, MAPA_MODELOS["general"])
+
 # --- FUNCIONES LLM ---
 def get_llm(tipo_tarea="general", override_model=None):
-    nombre_modelo = override_model if override_model else MAPA_MODELOS.get(tipo_tarea, MAPA_MODELOS["general"])
+    nombre_modelo = get_model_name(tipo_tarea, override_model)
     
     temperatura_asignada = MAPA_TEMPERATURAS.get(tipo_tarea, 0.3)
     

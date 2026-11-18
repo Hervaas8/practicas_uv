@@ -1,6 +1,6 @@
 [
   {
-    "id": "cien_s1_t02",
+    "id": "cien_e1_s1_t01",
     "task_imagen": [
       "data/img/sierra_calderona.png"
     ],
@@ -13,7 +13,7 @@
     "pista_2": "De hecho, yo me centraría en páginas web oficiales o creadas por expertos."
   },
   {
-    "id": "cien_s1_t03",
+    "id": "cien_e1_s1_t02",
     "task_imagen": [
       "data/img/parque_natural.png"
     ],
@@ -26,7 +26,7 @@
     "pista_2": "Como queremos saber más sobre la construcción del centro comercial, yo buscaría secciones como “presente”, “novedades” o similares."
   },
   {
-    "id": "cien_s1_t04",
+    "id": "cien_e1_s1_t03",
     "task_imagen": [
       "data/img/actualidad.png"
     ],
@@ -39,7 +39,7 @@
     "pista_2": "Esta información puede ser complementaria o contradictoria."
   },
   {
-    "id": "cien_s1_t06",
+    "id": "cien_e1_s1_t05",
     "task_imagen": [
       "data/img/actualidad.png",
       "data/img/naquera.png"
@@ -53,7 +53,7 @@
     "pista_2": "Por ello, es importante diferenciar cuando la información de varios documentos es complementaria o contradictoria."
   },
   {
-    "id": "cien_s1_t08",
+    "id": "cien_e1_s1_t07",
     "task_imagen": [
       "data/img/mobil1.png"
     ],
@@ -66,7 +66,7 @@
     "pista_2": "Como queremos conocer qué piensa la gente, busca apartados como “mensajes”, “opiniones” o similares."
   },
   {
-    "id": "cien_s1_t09",
+    "id": "cien_e1_s1_t08",
     "task_imagen": [
       "data/img/mobil1.png",
       "data/img/mobil2.png"
@@ -80,7 +80,7 @@
     "pista_2": "Un buen indicador de la calidad y la fiabilidad de la información es si el autor es experto o no."
   },
   {
-    "id": "cien_s1_t10",
+    "id": "cien_e1_s1_t09",
     "task_imagen": [
       "data/img/mobil2.png"
     ],
@@ -93,7 +93,7 @@
     "pista_2": "Yo haría clic en enlaces como “ver reacciones”, “ver contestaciones” o similares."
   },
   {
-    "id": "cien_s1_t12",
+    "id": "cien_e1_s1_t10",
     "task_imagen": [
       "data/img/mobil2.png",
       "data/img/mobil3.png"
@@ -107,7 +107,7 @@
     "pista_2": "Esta información no siempre es similar, sino que también puede ser diferente o incluso contradictoria."
   },
   {
-    "id": "cien_s1_t13",
+    "id": "cien_e1_s1_t11",
     "task_imagen": [
       "data/img/mobil2.png",
       "data/img/mobil3.png"
@@ -121,7 +121,7 @@
     "pista_2": "No obstante, en estos formatos también podemos encontrar fuentes fiables escritas por expertos o que formen parte de instituciones oficiales."
   },
   {
-    "id": "cien_s2_t17",
+    "id": "cien_e1_s2_t12",
     "task_imagen": [
       "data/img/parque_natural.png"
     ],
@@ -134,7 +134,7 @@
     "pista_2": "Los menús pueden ser desplegables laterales o secciones en la parte inferior. Para saber más sobre el parque natural de la Sierra Calderona, yo buscaría enlaces como “descúbrenos” o similares."
   },
   {
-    "id": "cien_s2_t18",
+    "id": "cien_e1_s2_t13",
     "task_imagen": [
       "data/img/generalitat.png"
     ],
@@ -147,12 +147,11 @@
     "pista_2": "Como queremos profundizar cómo la construcción del centro comercial puede afectar a la fauna de la Sierra Calderona, vamos a buscar enlaces similares a “medioambiente” o “ecosistema”."
   },
   {
-    "id": "cien_s2_t20",
+    "id": "cien_e1_s2_t15",
     "task_imagen": [
       "data/img/invertebrados.png",
       "data/img/vertebrados.png",
       "data/img/peces.png",
-      "data/img/reptiles.png",
       "data/img/aves.png",
       "data/img/mamiferos.png"
     ],
@@ -165,7 +164,7 @@
     "pista_2": "En esta página web, la información está distribuida en varias pestañas en las que puedes clicar para ver los distintos textos."
   },
   {
-    "id": "cien_s2_t23",
+    "id": "retirada:cien_e1_s2_t23",
     "task_imagen": [
       "data/img/web.png"
     ],
@@ -178,7 +177,7 @@
     "pista_2": "Un buen indicador de la calidad y la fiabilidad de la información es si el autor es experto o no."
   },
   {
-    "id": "lit_s1_t01",
+    "id": "lit_e1_s1_t02",
     "task_imagen": [
       "data/img/miguel.png"
     ],
@@ -191,7 +190,7 @@
     "pista_2": "Para preparar la defensa es mejor seleccionar páginas de instituciones oficiales. Evitaría páginas en las que pueda escribir cualquiera, como blogs."
   },
   {
-    "id": "lit_s1_t02",
+    "id": "lit_e1_s1_t03",
     "task_imagen": [
       "data/img/miguel2.png"
     ],
@@ -204,7 +203,7 @@
     "pista_2": "Como queremos profundizar en cómo fue su vida y su obra, yo me centraría en enlaces como “el poeta” o similares."
   },
   {
-    "id": "lit_s1_t03",
+    "id": "lit_e1_s1_t04",
     "task_imagen": [
       "data/img/infancia.png",
       "data/img/inicios.png",
@@ -221,7 +220,7 @@
     "pista_2": "Fíjate bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos."
   },
   {
-    "id": "lit_s1_t04",
+    "id": "lit_e1_s1_t05",
     "task_imagen": [
       "data/img/infancia.png",
       "data/img/inicios.png",
@@ -238,7 +237,7 @@
     "pista_2": "Esta información puede ser similar, distinta o incluso contradictoria."
   },
   {
-    "id": "lit_s1_t05",
+    "id": "lit_e1_s1_t06",
     "task_imagen": [
       "data/img/guerra.png"
     ],
@@ -251,7 +250,7 @@
     "pista_2": "En este caso, se diferencian del resto del texto porque están subrayados y en color azul."
   },
   {
-    "id": "lit_s1_t06",
+    "id": "lit_e1_s1_t07",
     "task_imagen": [
       "data/img/viento.png"
     ],
@@ -264,7 +263,7 @@
     "pista_2": "Aparecen en rojo y con la numeración correspondiente."
   },
   {
-    "id": "lit_s1_t07",
+    "id": "lit_e1_s1_t08",
     "task_imagen": [
       "data/img/infancia.png",
       "data/img/inicios.png",
@@ -282,7 +281,7 @@
     "pista_2": "Recuerda fijarte bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos."
   },
   {
-    "id": "lit_s1_t08",
+    "id": "lit_e1_s1_t09",
     "task_imagen": [
       "data/img/infancia.png",
       "data/img/inicios.png",
@@ -300,7 +299,7 @@
     "pista_2": "Recuerda fijarte bien en los nombres de las pestañas para encontrar la información que se relacione con tus objetivos."
   },
   {
-    "id": "lit_s1_t11",
+    "id": "lit_e1_s2_t11",
     "task_imagen": [
       "data/img/miguel2.png"
     ],
@@ -313,7 +312,7 @@
     "pista_2": "Yo me centraría en enlaces como “creaciones”, “literatura” o similares."
   },
   {
-    "id": "lit_s1_t12",
+    "id": "lit_e1_s2_t12",
     "task_imagen": [
       "data/img/miguel4.png"
     ],
@@ -326,7 +325,7 @@
     "pista_2": "Yo buscaría algún enlace del tipo “juicio”, “expedientes” o similares."
   },
   {
-    "id": "lit_s1_t13",
+    "id": "retirada:lit_e1_s1_t13",
     "task_imagen": [
       "data/img/infancia.png",
       "data/img/inicios.png",

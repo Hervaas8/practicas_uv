@@ -17,15 +17,16 @@ from sistema.modulos.detector_plagio import (
     calcular_trigramas,
     calcular_levenshtein_palabras,
     verificar_plagio_llm,
+    plagiarism_prediction,
 )
 
-from sistema.config import JSON_DIR, RESULTS_DIR
+from sistema.config import JSON_DIR, RESULTS_DIR, PLAGIARISM_THRESHOLD, PLAGIARISM_MIN_WORDS
 
 ARCHIVO_VARIANTES = JSON_DIR / "respuestas_plagio.json"
 ARCHIVO_SALIDA = RESULTS_DIR / "resultados_comparativa_llm.csv"
 
-UMBRAL = 0.25          # Umbral óptimo de la Fase 1
-MIN_PALABRAS = 15
+UMBRAL = PLAGIARISM_THRESHOLD
+MIN_PALABRAS = PLAGIARISM_MIN_WORDS
 SEED = 42              
 RATIO_DEV = 0.60       
 
@@ -166,9 +167,9 @@ def analizar_par(par: dict, umbral: float, min_palabras: int, modelos: list) -> 
             tiempo_segundos = round(fin - inicio, 2)
             
             veredicto = analisis.get("veredicto")
-            resultado[f"veredicto_{modelo}"] = veredicto
+            resultado[f"veredicto_{modelo}"] = veredicto if analisis.get("status") != "error" else "Error técnico"
             resultado[f"justificacion_{modelo}"] = analisis.get("justificacion")
-            resultado[f"prediccion_{modelo}"] = "plagio" if veredicto == "Posible Plagio" else "no_plagio"
+            resultado[f"prediccion_{modelo}"] = plagiarism_prediction(analisis)
             resultado[f"tiempo_{modelo}"] = tiempo_segundos  # <-- AÑADIDO: Guardar en el diccionario
 
     return resultado

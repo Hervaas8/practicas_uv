@@ -1,5 +1,5 @@
 {
-  "cien_s1_t02": {
+  "cien_e1_s1_t01": {
     "alto": {
       "respuesta_original": "La mejor página sería la de Parcs Naturals de la Comunitat Valenciana. Es una página oficial de la Generalitat, así que me parece más fiable. Las otras pueden servir, pero algunas son más de rutas o turismo.",
       "variantes": {
@@ -53,7 +53,7 @@
 
     }
   },
-  "cien_s1_t04": {
+  "cien_e1_s1_t03": {
     "alto": {
       "respuesta_original": "Ventajas: creación de empleo y turismo local.\nDesventajas: aumento del tráfico y alteración de especies sensibles.",
       "variantes": {
@@ -103,7 +103,7 @@
 
     }
   },
-  "cien_s1_t06": {
+  "cien_e1_s1_t05": {
     "alto": {
       "respuesta_original": "Son complementarios, porque los dos hablan del mismo centro comercial y dan ideas parecidas. Uno explica más los impactos ambientales y el otro cuenta mejor la opinión de vecinos y ecologistas.",
       "variantes": {
@@ -153,7 +153,7 @@
 
     }
   },
-  "cien_s1_t07": {
+  "cien_e1_s1_t06": {
     "alto": {
       "respuesta_original": "Los dos textos hablan de la propuesta de construir un centro comercial cerca de la Sierra Calderona. La idea principal es que puede traer empleo, turismo y más servicios, pero también puede causar problemas en el parque, como más tráfico, daño al ecosistema y pérdida de tranquilidad.",
       "variantes": {
@@ -203,7 +203,7 @@
 
     }
   },
-  "cien_s1_t09": {
+  "cien_e1_s1_t08": {
     "alto": {
       "respuesta_original": "La postura de Elena me parece más acertada. Los comentarios de Instagram son opiniones de gente, pero antes de decidir hay que mirar fuentes oficiales y lo que digan los expertos.",
       "variantes": {
@@ -255,7 +255,7 @@
   }
   
 ,
-"lit_s1_t10": {
+"retirada:lit_e1_s1_t10": {
     "alto": {
       "respuesta_original": "Los 'bueyes' representan a la gente que se deja mandar y baja la cabeza ante los castigos. Los 'leones' son las personas valientes que se levantan y luchan por lo que creen justo.",
       "variantes": {
@@ -305,7 +305,7 @@
 
     }
   },
-  "lit_s1_t17": {
+  "lit_e1_s2_t14": {
     "alto": {
       "respuesta_original": "Condenas recibidas: Primero fue condenado a muerte y después le cambiaron la condena por 30 años de prisión.\nMotivos de las condenas: Lo acusaron de apoyar la rebelión por sus ideas y por escribir poemas a favor del pueblo durante la guerra.",
       "variantes": {
